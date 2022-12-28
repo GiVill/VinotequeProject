@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
+import { MainNavComponent } from './main-nav/main-nav.component';
+import { FormsModule } from '@angular/forms';
 
 //AngularMaterials
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -16,24 +17,29 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 
 //Bootstrap
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeNavbarComponent,
+    MainNavComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
+    FormsModule,
 
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSidenavModule
+    MatSidenavModule,
+    LayoutModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
