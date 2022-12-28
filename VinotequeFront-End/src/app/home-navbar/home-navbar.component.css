@@ -1,0 +1,25 @@
+.spacer {
+  flex: 1 1 auto;
+}
+
+.search{
+  margin-top: 20px;
+  border-radius: 20%;
+  outline-color: rgb(0, 245, 73);
+  width: 500px;
+  height: 70px;
+}
+
+
+
+
+.viewList {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.viewList .mat-mdc-button-base {
+  color: white;
+  background-color: rgb(42, 42, 206);
+  margin: 8px 8px 8px 0;
+}
