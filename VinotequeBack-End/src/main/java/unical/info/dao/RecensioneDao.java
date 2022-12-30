@@ -7,11 +7,11 @@ import java.util.List;
 public interface RecensioneDao {
     public List<Recensione> findAll();
 
-    public List<Recensione> findByPrimaryKey(String username);
+    public Recensione findByPrimaryKey(long id);
 
-    public List<Recensione> findByVino(String IDvino);
+    public List<Recensione> findByVino(long IDvino);
 
-    public List<Recensione> findBySommelier(String IDutente);
+    public List<Recensione> findBySommelier(long IDutente);
 
     public void saveOrUpdate(Recensione recensione);
 

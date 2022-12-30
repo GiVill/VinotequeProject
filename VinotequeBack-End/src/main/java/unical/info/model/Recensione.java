@@ -5,8 +5,25 @@ import java.util.Date;
 public class Recensione {
     Long id;
     String descrizione;
-    Utente recensione_sommelier;
-    Vino recensione_vino;
+    Long recensione_sommelier;
+
+    public Long getRecensione_sommelier() {
+        return recensione_sommelier;
+    }
+
+    public void setRecensione_sommelier(Long recensione_sommelier) {
+        this.recensione_sommelier = recensione_sommelier;
+    }
+
+    public Long getRecensione_vino() {
+        return recensione_vino;
+    }
+
+    public void setRecensione_vino(Long recensione_vino) {
+        this.recensione_vino = recensione_vino;
+    }
+
+    Long recensione_vino;
     Date data;
 
     public Long getId() {
@@ -25,21 +42,8 @@ public class Recensione {
         this.descrizione = descrizione;
     }
 
-    public Utente getRecensione_sommelier() {
-        return recensione_sommelier;
-    }
 
-    public void setRecensione_sommelier(Utente recensione_sommelier) {
-        this.recensione_sommelier = recensione_sommelier;
-    }
 
-    public Vino getRecensione_vino() {
-        return recensione_vino;
-    }
-
-    public void setRecensione_vino(Vino recensione_vino) {
-        this.recensione_vino = recensione_vino;
-    }
 
     public Date getData() {
         return data;
