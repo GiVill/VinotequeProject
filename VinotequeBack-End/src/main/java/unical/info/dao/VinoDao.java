@@ -9,21 +9,23 @@ public interface VinoDao {
 
     public List<Vino> findAll();
 
-    public List<Vino> findByPrimaryKeyByCantina(String cantina);
+    public List<Vino> findByCantina(String cantina);
 
-    public Vino findByPrimaryKeyByNome(String vino);
+    public Vino findByNome(String vino);
 
-    public List<Vino> findByPrimaryKeyByAnnata(int annata);
+    public List<Vino> findBYAnnata(int annata);
+
+    public Vino findBYPrimaryKey(long id);
 
     public List<Vino> findRangePrezzo(int prezzoMin,int prezzoMax);
 
-    public List<Vino> findByPrimaryKeyByGradazione(int gradazione);
+    public List<Vino> findByGradazione(int gradazione);
 
     public List<Vino> findPlusCommenti();
 
     public List<Vino> findPlusRecensioni();
 
-    public List<Vino> findByPrimaryKeyByTipologia(String tipologia);
+    public List<Vino> findByTipologia(String tipologia);
 
     public void delete(Vino vino);
 }

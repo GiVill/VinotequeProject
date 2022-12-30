@@ -6,9 +6,9 @@ import java.util.Date;
 public class Vino {
     Long id;
     String nome;
-    Date annata;
+    int annata;
     BigDecimal prezzo;
-    String gradazione_alcolica;
+    int gradazione_alcolica;
     Long vino_cantina;
     String tipologia;
     String premi;
@@ -73,13 +73,7 @@ public class Vino {
         this.nome = nome;
     }
 
-    public Date getAnnata() {
-        return annata;
-    }
 
-    public void setAnnata(Date annata) {
-        this.annata = annata;
-    }
 
     public BigDecimal getPrezzo() {
         return prezzo;
@@ -89,19 +83,29 @@ public class Vino {
         this.prezzo = prezzo;
     }
 
-    public String getGradazione_alcolica() {
-        return gradazione_alcolica;
-    }
-
-    public void setGradazione_alcolica(String gradazione_alcolica) {
-        this.gradazione_alcolica = gradazione_alcolica;
-    }
 
     public Long getVino_cantina() {
         return vino_cantina;
     }
 
+
     public void setVino_cantina(Long vino_cantina) {
         this.vino_cantina = vino_cantina;
+    }
+
+    public int getAnnata() {
+        return annata;
+    }
+
+    public void setAnnata(int annata) {
+        this.annata = annata;
+    }
+
+    public int getGradazione_alcolica() {
+        return gradazione_alcolica;
+    }
+
+    public void setGradazione_alcolica(int gradazione_alcolica) {
+        this.gradazione_alcolica = gradazione_alcolica;
     }
 }

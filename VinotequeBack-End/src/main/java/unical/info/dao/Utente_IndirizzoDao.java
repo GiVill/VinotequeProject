@@ -11,7 +11,7 @@ public interface Utente_IndirizzoDao {
 
     public Indirizzo findByPrimaryKey(String nomeUtente);
 
-    public List<Indirizzo> indirizziDiUnUtente(String utente);
+    public List<Indirizzo> findByUtente(String utente);
 
     public Utente findByPrimaryKeyByIndirizzo(String indirizzo);
 

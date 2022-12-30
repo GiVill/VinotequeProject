@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01d0de63-fefc-47b9-a1f1-c06ab6e23ace" name="Changes" comment="" />
+    <list default="true" id="01d0de63-fefc-47b9-a1f1-c06ab6e23ace" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/RecensioneDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/RecensioneDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/UtenteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/UtenteDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/Utente_IndirizzoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/Utente_IndirizzoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/VinoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/VinoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/CantinaDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/CantinaDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/UtenteDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/UtenteDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/VinoDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/VinoDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Vino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/model/Vino.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,6 +22,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -26,13 +39,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b215950906bcc86de1d17652f91dd67c&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -42,6 +61,8 @@
       <option name="presentableId" value="Default" />
       <updated>1672159041139</updated>
       <workItem from="1672159042458" duration="27000" />
+      <workItem from="1672329482996" duration="7223000" />
+      <workItem from="1672415539854" duration="2439000" />
     </task>
     <servers />
   </component>
