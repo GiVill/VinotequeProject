@@ -14,16 +14,20 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 //Bootstrap
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
+import { WineCardComponent } from './wine-card/wine-card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
+    WineCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,9 @@ import { MatListModule } from '@angular/material/list';
     MatInputModule,
     MatSidenavModule,
     LayoutModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatGridListModule
   ],
   providers: [],
   bootstrap: [AppComponent]
