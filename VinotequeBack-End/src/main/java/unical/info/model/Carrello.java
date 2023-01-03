@@ -1,25 +1,21 @@
 package unical.info.model;
 
 public class Carrello {
-    Long id;
-    Carrello_utente carrello_cart;
+    long id;
+
     Vino carrello_vino;
 
-    public Long getId() {
+    long id_utente;
+
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
-    public Carrello_utente getCarrello_cart() {
-        return carrello_cart;
-    }
 
-    public void setCarrello_cart(Carrello_utente carrello_cart) {
-        this.carrello_cart = carrello_cart;
-    }
 
     public Vino getCarrello_vino() {
         return carrello_vino;
@@ -27,5 +23,13 @@ public class Carrello {
 
     public void setCarrello_vino(Vino carrello_vino) {
         this.carrello_vino = carrello_vino;
+    }
+
+    public long getId_utente() {
+        return id_utente;
+    }
+
+    public void setId_utente(long id_utente) {
+        this.id_utente = id_utente;
     }
 }

@@ -12,6 +12,9 @@ public class Utente{
     String password;
     String numero_telefono;
     String ruolo;
+
+
+    long utente_indirizzo;
     List<Promozione> utilizzati;
 
     public List<Promozione> getUtilizzati() {
@@ -85,5 +88,13 @@ public class Utente{
     public void setRuolo(String ruolo) {
         this.ruolo = ruolo;
     }
+    public long getUtente_indirizzo() {
+        return utente_indirizzo;
+    }
+
+    public void setUtente_indirizzo(long utente_indirizzo) {
+        this.utente_indirizzo = utente_indirizzo;
+    }
+
 
 }
