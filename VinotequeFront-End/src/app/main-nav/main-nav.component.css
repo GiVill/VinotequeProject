@@ -6,6 +6,10 @@
   width: 200px;
 }
 
+.mat-sidenav-content{
+  background-color: rgba(49, 2, 83, 0.74);
+}
+
 .sidenav .mat-toolbar {
   background: inherit;
 }
@@ -27,8 +31,6 @@
 
 .search{
   margin-top: 20px;
-  border-radius: 20%;
-  outline-color: rgb(0, 245, 73);
   width: 500px;
   height: 70px;
 }
