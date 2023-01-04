@@ -12,7 +12,7 @@ public interface MiPiaceDao {
 
     public List<Vino> findByUtente(long id) throws SQLException;
 
-    public int findByVino(long id) throws SQLException;
+    public int countByVino(long id) throws SQLException;
 
     public void saveOrUpdate(Utente utente);
 

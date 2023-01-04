@@ -20,7 +20,7 @@ public class MiPiaceDaoPostgres implements MiPiaceDao {
     }
 
     @Override
-    public int findByVino(long id) throws SQLException {
+    public int countByVino(long id) throws SQLException {
         return 0;
     }
 

@@ -21,7 +21,7 @@ public interface VinoDao {
 
     public List<Vino> findByGradazione(int gradazione);
 
-    public List<Vino> findPlusCommenti();
+
 
     public List<Vino> findPlusRecensioni();
 

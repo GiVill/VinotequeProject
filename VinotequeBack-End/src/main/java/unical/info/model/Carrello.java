@@ -7,6 +7,8 @@ public class Carrello {
 
     long id_utente;
 
+
+
     public long getId() {
         return id;
     }
@@ -33,3 +35,46 @@ public class Carrello {
         this.id_utente = id_utente;
     }
 }
+
+/*
+import java.util.ArrayList;
+import java.util.List;
+
+public class Carrello {
+  private Hashmap<Vino,Int> vini;
+  private double totale;
+  private double sconto;
+
+
+  public Carrello() {
+    this.prodotti = new Hashmap<>();
+    this.totale = 0;
+    this.sconto = 0;
+  }
+
+  public void aggiungiProdotto(Vino vino, Int quantita) {
+    vini.add(vino);
+    totale += vino.getPrezzo() * quantita;
+  }
+
+  public void rimuoviProdotto(Vino vino, int quantita) {
+    vini.remove(vino);
+    totale -= prodotto.getPrezzo() * quantita;
+  }
+
+  public void applicaSconto(double sconto) {
+    this.sconto = sconto;
+    calcolaTotale();
+  }
+
+  private void calcolaTotale() {
+    totale = totale - (totale * sconto);
+  }
+
+  public double getTotale() {
+    return totale;
+  }
+}
+
+
+ */

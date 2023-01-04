@@ -1,7 +1,11 @@
 package unical.info.model;
 
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 import java.util.Date;
 import java.util.List;
+
 
 public class Utente{
     Long id;
@@ -14,8 +18,24 @@ public class Utente{
     String ruolo;
 
 
+
     long utente_indirizzo;
     List<Promozione> utilizzati;
+
+    public Utente(Long id, String nome, String cognome, Date data_di_nascita, String email, String password, String numero_telefono, String ruolo, long utente_indirizzo) {
+        this.id = id;
+        this.nome = nome;
+        this.cognome = cognome;
+        this.data_di_nascita = data_di_nascita;
+        this.email = email;
+        this.password = password;
+        this.numero_telefono = numero_telefono;
+        this.ruolo = ruolo;
+        this.utente_indirizzo = utente_indirizzo;
+    }
+
+    public Utente() {    }
+
 
     public List<Promozione> getUtilizzati() {
         return utilizzati;
@@ -71,7 +91,8 @@ public class Utente{
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        String encryptedPassword = BCrypt.hashpw(password,BCrypt.gensalt(12));
+        this.password = encryptedPassword;
     }
 
     public String getNumero_telefono() {
@@ -89,13 +110,7 @@ public class Utente{
     public void setRuolo(String ruolo) {
         this.ruolo = ruolo;
     }
-    public long getUtente_indirizzo() {
-        return utente_indirizzo;
-    }
 
-    public void setUtente_indirizzo(long utente_indirizzo) {
-        this.utente_indirizzo = utente_indirizzo;
-    }
 
 //indirizzo: prendere i vari campi(citta, cap, nazione, via) in textbox separate e poi concatenarli in un unico attributo
 }

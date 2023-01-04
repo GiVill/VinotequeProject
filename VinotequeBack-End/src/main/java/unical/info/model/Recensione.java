@@ -7,6 +7,17 @@ public class Recensione {
     String descrizione;
     Long recensione_sommelier;
 
+    public Recensione(Long id, String descrizione, Long recensione_sommelier, Long recensione_vino, Date data) {
+        this.id = id;
+        this.descrizione = descrizione;
+        this.recensione_sommelier = recensione_sommelier;
+        this.recensione_vino = recensione_vino;
+        this.data = data;
+    }
+
+    public Recensione() {
+    }
+
     public Long getRecensione_sommelier() {
         return recensione_sommelier;
     }

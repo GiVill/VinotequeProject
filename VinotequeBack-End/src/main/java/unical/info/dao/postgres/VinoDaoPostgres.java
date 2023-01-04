@@ -171,11 +171,6 @@ public class VinoDaoPostgres implements VinoDao{
     }
 
     @Override
-    public List<Vino> findPlusCommenti() {
-        return null;
-    }
-
-    @Override
     public List<Vino> findPlusRecensioni() {
         return null;
     }

@@ -10,6 +10,18 @@ public class Metodo_Pagamento {
     Date data_scadenza;
     String cvv;
 
+    public Metodo_Pagamento(Long id, Utente metodo_pag_utente, String provider, String numero_carta, Date data_scadenza, String cvv) {
+        this.id = id;
+        this.metodo_pag_utente = metodo_pag_utente;
+        this.provider = provider;
+        this.numero_carta = numero_carta;
+        this.data_scadenza = data_scadenza;
+        this.cvv = cvv;
+    }
+
+    public Metodo_Pagamento() {
+    }
+
     public Long getId() {
         return id;
     }

@@ -6,6 +6,15 @@ public class Cantina {
     Indirizzo cantina_indirizzo;
     String descrizione ;
 
+    public Cantina(Long id, String nome, Indirizzo cantina_indirizzo, String descrizione) {
+        this.id = id;
+        this.nome = nome;
+        this.cantina_indirizzo = cantina_indirizzo;
+        this.descrizione = descrizione;
+    }
+
+    public Cantina() {
+    }
 
     public Long getId() {
         return id;

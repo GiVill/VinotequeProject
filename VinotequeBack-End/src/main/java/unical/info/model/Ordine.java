@@ -14,6 +14,22 @@ public class Ordine {
     Promozione ordine_promozione;
     Date data;
 
+    public Ordine() {
+
+    }
+
+    public Ordine(Long id, Utente ordine_utente, Carrello ordine_carrello, Metodo_Pagamento ordine_metodo_pag, Indirizzo ordine_indirizzo, BigDecimal totale, String status, Promozione ordine_promozione, Date data) {
+        this.id = id;
+        this.ordine_utente = ordine_utente;
+        this.ordine_carrello = ordine_carrello;
+        this.ordine_metodo_pag = ordine_metodo_pag;
+        this.ordine_indirizzo = ordine_indirizzo;
+        this.totale = totale;
+        this.status = status;
+        this.ordine_promozione = ordine_promozione;
+        this.data = data;
+    }
+
     public Date getData() {
         return data;
     }
