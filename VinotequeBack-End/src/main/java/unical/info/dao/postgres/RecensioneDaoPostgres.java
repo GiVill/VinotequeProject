@@ -115,5 +115,14 @@ public class RecensioneDaoPostgres implements RecensioneDao {
         }
         return recensioni;
     }
+
+    @Override
+    public void saveOrUpdate(Recensione recensione) {
+
+    }
+
+    @Override
+    public void delete(Recensione recensione) {
+
     }
 }

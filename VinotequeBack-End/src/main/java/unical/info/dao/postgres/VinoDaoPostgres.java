@@ -15,6 +15,11 @@ public class VinoDaoPostgres implements VinoDao{
     }
 
     @Override
+    public void saveOrUpdate(Vino vino) {
+
+    }
+
+    @Override
     public List<Vino> findAll() {
         List<Vino> vini = new ArrayList<Vino>();
         String query = "select * from vino";
@@ -41,6 +46,11 @@ public class VinoDaoPostgres implements VinoDao{
             throw new RuntimeException(e);
         }
         return vini;
+    }
+
+    @Override
+    public List<Vino> findByCantina(String cantina) {
+        return null;
     }
 
     @Override
@@ -158,6 +168,16 @@ public class VinoDaoPostgres implements VinoDao{
             throw new RuntimeException(e);
         }
         return vini;
+    }
+
+    @Override
+    public List<Vino> findPlusCommenti() {
+        return null;
+    }
+
+    @Override
+    public List<Vino> findPlusRecensioni() {
+        return null;
     }
 
     @Override
