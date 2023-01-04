@@ -66,6 +66,7 @@ public class Utente{
     }
 
     public String getPassword() {
+
         return password;
     }
 
@@ -96,5 +97,5 @@ public class Utente{
         this.utente_indirizzo = utente_indirizzo;
     }
 
-
+//indirizzo: prendere i vari campi(citta, cap, nazione, via) in textbox separate e poi concatenarli in un unico attributo
 }
