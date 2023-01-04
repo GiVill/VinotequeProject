@@ -6,5 +6,4 @@ export interface Vino {
   gradazione : number;
   tipologia : string;
   cantina : string;
-
 }
