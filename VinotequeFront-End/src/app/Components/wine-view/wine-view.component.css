@@ -2,6 +2,10 @@ section {
   display: table;
 }
 
+.Filters{
+  display: flex;
+}
+
 .filterContainer{
   display: table-cell;
   font-size: 14px;

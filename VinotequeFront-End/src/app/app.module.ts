@@ -21,6 +21,8 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
 import { WineCardComponent } from './Components/wine-card/wine-card.component';
 import { WineViewComponent } from './Components/wine-view/wine-view.component';
+import { ReviewCardComponent } from './Components/review-card/review-card.component';
+import {MatMenuModule} from '@angular/material/menu';
 
 
 @NgModule({
@@ -29,6 +31,7 @@ import { WineViewComponent } from './Components/wine-view/wine-view.component';
     MainNavComponent,
     WineCardComponent,
     WineViewComponent,
+    ReviewCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { WineViewComponent } from './Components/wine-view/wine-view.component';
     LayoutModule,
     MatListModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]

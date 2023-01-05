@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01d0de63-fefc-47b9-a1f1-c06ab6e23ace" name="Changes" comment="" />
+    <list default="true" id="01d0de63-fefc-47b9-a1f1-c06ab6e23ace" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-view/wine-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-view/wine-view.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-view/wine-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-view/wine-view.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.module.ts" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

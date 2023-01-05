@@ -42,9 +42,19 @@
           </mat-form-field>
         </span>
         <span class="spacer"></span>
-        <button mat-icon-button class="account">
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
           <mat-icon>account_circle</mat-icon>
         </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>warning</mat-icon>
+            <span>Accedi</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>delete_forever</mat-icon>
+            <span>Registrati</span>
+          </button>
+        </mat-menu>
         <button mat-icon-button class="cart">
           <mat-icon>shopping_cart</mat-icon>
         </button>
@@ -77,9 +87,28 @@
     </mat-toolbar>
     <router-outlet></router-outlet>
    <!-- SOLO PER PROVA!! DA SISTEAMRE-->
-    <app-wine-view></app-wine-view>
-    <p class="Credits">
-      Cazzatine varie.
-    </p>
+    <app-wine-view [isHandset]="isHandset$"></app-wine-view>
+    <app-review-card></app-review-card>
+    <mat-grid-list cols="2" rowHeight="10:1">
+      <mat-grid-tile >
+        <h1><strong>Vinoteque</strong></h1>
+      </mat-grid-tile>
+      <mat-grid-tile rowspan="2">
+        <h1>Kevin puzza.</h1>
+      </mat-grid-tile>
+      <mat-grid-tile >
+        <h3>
+          Vinoteque è un'enoteca online specializzata nella vendita di vino.
+        </h3>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <img src="https://www.callmewine.com/images/metodipagamento.fbf9f2cc.png">
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <p>© Callmewine 2021, tutti i diritti riservati. CALLMEWINE S.R.L., Via Lovanio 5, 20121 Milano (IT), Capitale Sociale 12.245,92 euro (IV), CF/P.IVA 07130650968, Cam.Com MI REA 1937916 - Società soggetta a direzione e coordinamento di
+        Italmobiliare S.p.A., C.F. 00796400158
+        E-comerce by WebDev.it - Sitemap</p>
+      </mat-grid-tile>
+    </mat-grid-list>
   </mat-sidenav-content>
 </mat-sidenav-container>
