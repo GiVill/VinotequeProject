@@ -14,7 +14,7 @@
       [ngClass]="{hidden: !(isHandset$ |async)}">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item >Shop</a>
+      <a mat-list-item routerLink="shop" >Shop</a>
       <a mat-list-item>Vini Rossi</a>
       <a mat-list-item>Vini Bianchi</a>
       <a mat-list-item>Vini Rosé</a>
@@ -72,7 +72,7 @@
             <mat-toolbar-row>
               <div fxShow="true" fxHide.lt-md="true" class="viewList">
                 <button mat-raised-button type="button"
-                *ngIf="!(isHandset$ |async)" color="primary">Shop</button>
+                *ngIf="!(isHandset$ |async)" color="primary" routerLink="shop" >Shop</button>
                 <button mat-raised-button type="button"
                 *ngIf="!(isHandset$ |async)" color="primary">Vini Rossi</button>
                 <button mat-raised-button type="button"
@@ -85,10 +85,14 @@
           <span class="spacer"></span>
         </mat-toolbar-row>
     </mat-toolbar>
+
+
+
     <router-outlet></router-outlet>
+
+
+
    <!-- SOLO PER PROVA!! DA SISTEAMRE-->
-    <app-wine-view [isHandset]="isHandset$"></app-wine-view>
-    <app-review-card></app-review-card>
     <mat-grid-list cols="2" rowHeight="10:1">
       <mat-grid-tile >
         <h1><strong>Vinoteque</strong></h1>
