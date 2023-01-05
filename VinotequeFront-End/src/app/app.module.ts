@@ -4,7 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MainNavComponent } from './main-nav/main-nav.component';
+import { MainNavComponent } from './Components/main-nav/main-nav.component';
 import { FormsModule } from '@angular/forms';
 
 //AngularMaterials
@@ -16,18 +16,19 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
-
-//Bootstrap
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
-import { WineCardComponent } from './wine-card/wine-card.component';
+import { WineCardComponent } from './Components/wine-card/wine-card.component';
+import { WineViewComponent } from './Components/wine-view/wine-view.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     MainNavComponent,
     WineCardComponent,
+    WineViewComponent,
   ],
   imports: [
     BrowserModule,
