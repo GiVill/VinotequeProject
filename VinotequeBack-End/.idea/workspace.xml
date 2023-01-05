@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01d0de63-fefc-47b9-a1f1-c06ab6e23ace" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/Utente_IndirizzoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/Utente_IndirizzoDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/Utente_IndirizzoDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Carrello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/model/Carrello.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Carrello_utente.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/model/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Utente_Indirizzo.java" beforeDir="false" />
-    </list>
+    <list default="true" id="01d0de63-fefc-47b9-a1f1-c06ab6e23ace" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
