@@ -1,6 +1,7 @@
 package unical.info.dao.postgres;
 
 import unical.info.dao.UtenteDao;
+import unical.info.model.Promozione;
 import unical.info.model.Utente;
 
 import java.sql.*;
@@ -100,6 +101,11 @@ public class UtenteDaoPostgres implements UtenteDao {
             throw new RuntimeException(e);
         }
         return utente;
+    }
+
+    @Override
+    public List<Promozione> findByPromotion() {
+        return null;
     }
 
     @Override

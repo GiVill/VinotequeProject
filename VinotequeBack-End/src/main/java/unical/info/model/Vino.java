@@ -14,25 +14,31 @@ public class Vino {
     String premi;
     byte foto;
 
-
-    int numCommenti=0;
-    int numRecensioni=0;
-
-    public int getNumCommenti() {
-        return numCommenti;
+    int mipiace=0;
+    public Vino(Long id, String nome, int annata, BigDecimal prezzo, int gradazione_alcolica, Long vino_cantina, String tipologia, String premi, byte foto) {
+        this.id = id;
+        this.nome = nome;
+        this.annata = annata;
+        this.prezzo = prezzo;
+        this.gradazione_alcolica = gradazione_alcolica;
+        this.vino_cantina = vino_cantina;
+        this.tipologia = tipologia;
+        this.premi = premi;
+        this.foto = foto;
     }
 
-    public void setNumCommenti(int numCommenti) {
-        this.numCommenti = numCommenti;
+    public Vino() {
     }
 
-    public int getNumRecensioni() {
-        return numRecensioni;
+    public int getMipiace() {
+        return mipiace;
     }
 
-    public void setNumRecensioni(int numRecensioni) {
-        this.numRecensioni = numRecensioni;
+    public void setMipiace(int mipiace) {
+        this.mipiace = mipiace;
     }
+
+
 
     public String getTipologia() {
         return tipologia;

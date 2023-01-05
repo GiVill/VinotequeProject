@@ -13,4 +13,18 @@ public class Metodo_pagamentoDaoPostgres implements Metodo_PagamentoDao {
         this.conn =connection;
     }
 
+    @Override
+    public List<Metodo_Pagamento> findByPrimaryKey(String IDutente) {
+        return null;
+    }
+
+    @Override
+    public void saveOrUpdate(Metodo_Pagamento metodo, String IDutente) {
+
+    }
+
+    @Override
+    public void delete(Metodo_Pagamento metodo, String IDutente) {
+
+    }
 }

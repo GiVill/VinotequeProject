@@ -33,6 +33,7 @@ public class CantinaDaoPostgres implements CantinaDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+        return cantine;
     }
 
     @Override
@@ -60,6 +61,16 @@ public class CantinaDaoPostgres implements CantinaDao {
     }
 
     @Override
+    public List<Cantina> findByNameVino(String vino) {
+        return null;
+    }
+
+    @Override
+    public void saveOrUpdate(Cantina cantina) {
+
+    }
+
+    @Override
     public void delete(Cantina cantina) {
         String query = "DELETE FROM cantina WHERE id = ?";
         try {
@@ -70,5 +81,5 @@ public class CantinaDaoPostgres implements CantinaDao {
             throw new RuntimeException(e);
         }//todo
     }
-    }
 }
+
