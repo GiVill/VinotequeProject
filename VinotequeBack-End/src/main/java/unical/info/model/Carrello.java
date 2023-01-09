@@ -1,9 +1,11 @@
 package unical.info.model;
 
+import java.util.List;
+
 public class Carrello {
     long id;
 
-    Vino carrello_vino;
+    List<Vino> carrello_vino;
 
     long id_utente;
 
@@ -18,12 +20,11 @@ public class Carrello {
     }
 
 
-
-    public Vino getCarrello_vino() {
+    public List<Vino> getCarrello_vino() {
         return carrello_vino;
     }
 
-    public void setCarrello_vino(Vino carrello_vino) {
+    public void setCarrello_vino(List<Vino> carrello_vino) {
         this.carrello_vino = carrello_vino;
     }
 

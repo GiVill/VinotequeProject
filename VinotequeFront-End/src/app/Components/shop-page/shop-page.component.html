@@ -1,0 +1,38 @@
+<div class="Filters" *ngIf="(isHandset |async)">
+  <a mat-list-item >Gradazione</a>
+  <a mat-list-item>Prezzo</a>
+  <a mat-list-item>Cantina</a>
+</div>
+<section>
+  <span class="spacer" *ngIf="!(isHandset |async)"></span>
+  <div class="filterContainer">
+    <mat-nav-list *ngIf="!(isHandset|async)">
+      <h2 style="text-align: center; margin-top: 20px;">Filtra:</h2>
+      <a mat-list-item >Gradazione</a>
+      <a mat-list-item>Prezzo</a>
+      <a mat-list-item>Cantina</a>
+    </mat-nav-list>
+  </div>
+  <span class="spacer" *ngIf="!(isHandset |async)"></span>
+    <div class="wineCardContainer">
+      <app-wine-card></app-wine-card>
+      <app-wine-card></app-wine-card>
+      <app-wine-card></app-wine-card>
+      <app-wine-card></app-wine-card>
+      <app-wine-card></app-wine-card>
+      <app-wine-card></app-wine-card>
+      <app-wine-card></app-wine-card>
+      <app-wine-card></app-wine-card>
+      <app-wine-card></app-wine-card>
+      <app-wine-card></app-wine-card>
+      <app-wine-card></app-wine-card>
+      <app-wine-card></app-wine-card>
+      <app-wine-card></app-wine-card>
+      <app-wine-card></app-wine-card>
+      <app-wine-card></app-wine-card>
+    </div>
+    <mat-paginator [length]="100"
+              [pageSize]="10"
+              aria-label="Select page">
+    </mat-paginator>
+</section>

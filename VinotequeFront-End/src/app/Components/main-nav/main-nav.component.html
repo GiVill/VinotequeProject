@@ -1,0 +1,118 @@
+<!--
+  Navbar abbastaza responsive generata al 70% dal comandi da terminale
+  e al 30% da prove varie... grosso modo questa espessione: *ngIf="isHandset$ | async"
+  è un if che dipende dal fatto che il sito sia o meno in modaltià "mobile"
+  usa una fuzione nel typescript già implementata in angula.
+  Comando per generare una navbar resposive base: ng generate @angular/material:material-nav
+-->
+
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false"
+      [ngClass]="{hidden: !(isHandset$ |async)}">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="shop" >Shop</a>
+      <a mat-list-item>Vini Rossi</a>
+      <a mat-list-item>Vini Bianchi</a>
+      <a mat-list-item>Vini Rosé</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Vinoteque</span>
+        <span class="spacer"></span>
+        <span>
+          <mat-form-field appearance="fill" class="search"  *ngIf="!(isHandset$ |async)">
+            <input matInput placeholder="search">
+              <button mat-icon-button matSuffix>
+                <mat-icon matSuffix>search</mat-icon>
+              </button>
+          </mat-form-field>
+        </span>
+        <span class="spacer"></span>
+        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+          <mat-icon>account_circle</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item routerLink="login">
+            <mat-icon>warning</mat-icon>
+            <span>Accedi</span>
+          </button>
+          <button mat-menu-item>
+            <mat-icon>delete_forever</mat-icon>
+            <span>Registrati</span>
+          </button>
+        </mat-menu>
+        <button mat-icon-button class="cart">
+          <mat-icon>shopping_cart</mat-icon>
+        </button>
+        </mat-toolbar-row>
+        <span class="spacer"></span>
+        <mat-toolbar-row>
+          <span class="spacer"></span>
+          <mat-form-field appearance="fill" class="search"  *ngIf="(isHandset$ |async)">
+            <input matInput placeholder="search">
+              <button mat-icon-button matSuffix>
+                <mat-icon matSuffix>search</mat-icon>
+              </button>
+          </mat-form-field>
+          <div class="viewList">
+            <mat-toolbar-row>
+              <div fxShow="true" fxHide.lt-md="true" class="viewList">
+                <button mat-raised-button type="button"
+                *ngIf="!(isHandset$ |async)" color="primary" routerLink="shop" >Shop</button>
+                <button mat-raised-button type="button"
+                *ngIf="!(isHandset$ |async)" color="primary">Vini Rossi</button>
+                <button mat-raised-button type="button"
+                *ngIf="!(isHandset$ |async)" color="primary">Vini Bianchi</button>
+                <button mat-raised-button type="button"
+                *ngIf="!(isHandset$ |async)" color="primary">Vini Rosé</button>
+              </div>
+            </mat-toolbar-row>
+          </div>
+          <span class="spacer"></span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+
+
+    <router-outlet></router-outlet>
+
+
+
+   <!-- SOLO PER PROVA!! DA SISTEAMRE-->
+    <mat-grid-list cols="2" rowHeight="10:1">
+      <mat-grid-tile >
+        <h1><strong>Vinoteque</strong></h1>
+      </mat-grid-tile>
+      <mat-grid-tile rowspan="2">
+        <h1>Kevin puzza.</h1>
+      </mat-grid-tile>
+      <mat-grid-tile >
+        <h3>
+          Vinoteque è un'enoteca online specializzata nella vendita di vino.
+        </h3>
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <img src="https://www.callmewine.com/images/metodipagamento.fbf9f2cc.png">
+      </mat-grid-tile>
+      <mat-grid-tile colspan="2">
+        <p>© Callmewine 2021, tutti i diritti riservati. CALLMEWINE S.R.L., Via Lovanio 5, 20121 Milano (IT), Capitale Sociale 12.245,92 euro (IV), CF/P.IVA 07130650968, Cam.Com MI REA 1937916 - Società soggetta a direzione e coordinamento di
+        Italmobiliare S.p.A., C.F. 00796400158
+        E-comerce by WebDev.it - Sitemap</p>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-sidenav-content>
+</mat-sidenav-container>
