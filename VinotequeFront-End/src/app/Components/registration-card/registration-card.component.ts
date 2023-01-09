@@ -21,7 +21,7 @@ export class RegistrationCardComponent {
     //console.log(currentYear,currentMonth,currentDay)
   }
 
-  states : string[] = ['Italia', 'Germany','Spain']
+  states : string[] = ['Albania', 'Andorra', 'Armenia', 'Austria', 'Azerbaigian', 'Bielorussia', 'Belgio', 'Bosnia-Erzegovina', 'Bulgaria', 'Cipro', 'Croazia', 'Danimarca', 'Estonia', 'Finlandia', 'Francia', 'Georgia', 'Germania', 'Grecia', 'Inghilterra', 'Irlanda', 'Islanda', 'Italia', 'Lettonia', 'Liechtenstein', 'Lituania', 'Lussemburgo', 'Malta', 'Moldavia', 'Monaco', 'Montenegro', 'Norvegia', 'Olanda', 'Polonia', 'Portogallo', 'Repubblica Ceca', 'Romania', 'San Marino', 'Serbia', 'Slovacchia', 'Slovenia', 'Spagna', 'Svezia', 'Svizzera', 'Turchia', 'Ucraina', 'Ungheria']
 
   hide = true;
 
