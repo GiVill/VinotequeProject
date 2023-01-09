@@ -4,11 +4,16 @@ import unical.info.dao.MiPiaceDao;
 import unical.info.model.Utente;
 import unical.info.model.Vino;
 
+import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
 public class MiPiaceDaoPostgres implements MiPiaceDao {
 
+    Connection conn;
+    public MiPiaceDaoPostgres(Connection connection) {
+        this.conn =connection;
+    }
     @Override
     public List<Vino> findAll() {
         return null;

@@ -18,8 +18,8 @@ public class Utente{
     String ruolo;
     String indirizzo;
 
-    public Utente(Long id, String nome, String cognome, String data_di_nascita, String email, String password, String numero_telefono, String indirizzo) {
-        this.id = id;
+    public Utente( String nome, String cognome, String data_di_nascita, String email, String password, String numero_telefono, String indirizzo) {
+
         this.nome = nome;
         this.cognome = cognome;
         this.data_di_nascita = data_di_nascita;
