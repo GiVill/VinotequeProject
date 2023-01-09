@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './Components/main-nav/main-nav.component';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 //AngularMaterials
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -20,9 +21,11 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatListModule } from '@angular/material/list';
 import { WineCardComponent } from './Components/wine-card/wine-card.component';
-import { WineViewComponent } from './Components/wine-view/wine-view.component';
 import { ReviewCardComponent } from './Components/review-card/review-card.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { LoginCardComponent } from './Components/login-card/login-card.component';
+import { ShopPageComponent } from './Components/shop-page/shop-page.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 
 @NgModule({
@@ -30,16 +33,17 @@ import {MatMenuModule} from '@angular/material/menu';
     AppComponent,
     MainNavComponent,
     WineCardComponent,
-    WineViewComponent,
     ReviewCardComponent,
+    LoginCardComponent,
+    ShopPageComponent,
   ],
   imports: [
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
     FormsModule,
-
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
@@ -50,7 +54,8 @@ import {MatMenuModule} from '@angular/material/menu';
     MatListModule,
     MatCardModule,
     MatGridListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
