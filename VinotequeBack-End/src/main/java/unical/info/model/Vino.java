@@ -13,8 +13,8 @@ public class Vino {
     String tipologia;
     String premi;
     byte foto;
-
     int mipiace=0;
+
     public Vino(Long id, String nome, int annata, BigDecimal prezzo, int gradazione_alcolica, Long vino_cantina, String tipologia, String premi, byte foto) {
         this.id = id;
         this.nome = nome;

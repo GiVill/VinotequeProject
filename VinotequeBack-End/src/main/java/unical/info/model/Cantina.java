@@ -3,13 +3,13 @@ package unical.info.model;
 public class Cantina {
     Long id;
     String nome;
-    Indirizzo cantina_indirizzo;
+    String indirizzo;
     String descrizione ;
 
-    public Cantina(Long id, String nome, Indirizzo cantina_indirizzo, String descrizione) {
+    public Cantina(Long id, String nome, String indirizzo, String descrizione) {
         this.id = id;
         this.nome = nome;
-        this.cantina_indirizzo = cantina_indirizzo;
+        this.indirizzo = indirizzo;
         this.descrizione = descrizione;
     }
 
@@ -32,19 +32,19 @@ public class Cantina {
         this.nome = nome;
     }
 
-    public Indirizzo getCantina_indirizzo() {
-        return cantina_indirizzo;
-    }
-
-    public void setCantina_indirizzo(Indirizzo cantina_indirizzo) {
-        this.cantina_indirizzo = cantina_indirizzo;
-    }
-
     public String getDescrizione() {
         return descrizione;
     }
 
     public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
+    }
+
+    public String getIndirizzo() {
+        return indirizzo;
+    }
+
+    public void setIndirizzo(String indirizzo) {
+        this.indirizzo = indirizzo;
     }
 }

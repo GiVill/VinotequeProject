@@ -16,13 +16,9 @@ public class Utente{
     String password;
     String numero_telefono;
     String ruolo;
+    String indirizzo;
 
-
-
-    long utente_indirizzo;
-    List<Promozione> utilizzati;
-
-    public Utente(Long id, String nome, String cognome, Date data_di_nascita, String email, String password, String numero_telefono, String ruolo, long utente_indirizzo) {
+    public Utente(Long id, String nome, String cognome, Date data_di_nascita, String email, String password, String numero_telefono, String ruolo, String indirizzo) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
@@ -31,18 +27,17 @@ public class Utente{
         this.password = password;
         this.numero_telefono = numero_telefono;
         this.ruolo = ruolo;
-        this.utente_indirizzo = utente_indirizzo;
+        this.indirizzo = indirizzo;
     }
 
     public Utente() {    }
 
-
-    public List<Promozione> getUtilizzati() {
-        return utilizzati;
+    public String getIndirizzo() {
+        return indirizzo;
     }
 
-    public void setUtilizzati(List<Promozione> utilizzati) {
-        this.utilizzati = utilizzati;
+    public void setIndirizzo(String indirizzo) {
+        this.indirizzo = indirizzo;
     }
 
     public Long getId() {
