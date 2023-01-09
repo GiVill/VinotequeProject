@@ -11,14 +11,14 @@ public class Utente{
     Long id;
     String nome;
     String cognome;
-    Date data_di_nascita;
+    String data_di_nascita;
     String email;
     String password;
     String numero_telefono;
     String ruolo;
     String indirizzo;
 
-    public Utente(Long id, String nome, String cognome, Date data_di_nascita, String email, String password, String numero_telefono, String ruolo, String indirizzo) {
+    public Utente(Long id, String nome, String cognome, String data_di_nascita, String email, String password, String numero_telefono, String indirizzo) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
@@ -26,7 +26,7 @@ public class Utente{
         this.email = email;
         this.password = password;
         this.numero_telefono = numero_telefono;
-        this.ruolo = ruolo;
+        this.ruolo = "utente";
         this.indirizzo = indirizzo;
     }
 
@@ -64,11 +64,11 @@ public class Utente{
         this.cognome = cognome;
     }
 
-    public Date getData_di_nascita() {
+    public String getData_di_nascita() {
         return data_di_nascita;
     }
 
-    public void setData_di_nascita(Date data_di_nascita) {
+    public void setData_di_nascita(String data_di_nascita) {
         this.data_di_nascita = data_di_nascita;
     }
 
