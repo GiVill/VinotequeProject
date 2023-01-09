@@ -86,7 +86,6 @@ public class Utente{
     }
 
     public String getPassword() {
-
         return password;
     }
 
