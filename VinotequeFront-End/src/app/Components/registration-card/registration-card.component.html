@@ -1,0 +1,45 @@
+
+<mat-card  class="loginCard">
+  <mat-label class="title">Nome</mat-label>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your name</mat-label>
+      <input matInput placeholder="Enter your name" required>
+    </mat-form-field>
+  <mat-label class="title">Cognome</mat-label>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your surname</mat-label>
+    <input matInput placeholder="Enter your surname" required>
+  </mat-form-field>
+  <mat-label class="title">Data di nascita</mat-label>
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker">
+    <mat-hint>MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-label class="title">Email</mat-label>
+  <mat-form-field appearance="fill">
+    <mat-label >Enter your email</mat-label>
+    <input matInput placeholder="pat@example.com" [formControl]="email" required>
+    <mat-icon matSuffix>mail</mat-icon>
+    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+  </mat-form-field>
+  <mat-label class="title" style="margin-top: 7px;">Password</mat-label>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  <mat-card-actions class="actions">
+    <button mat-raised-button class="loginButton">Login</button>
+  </mat-card-actions>
+  <mat-card-actions class="actions">
+    <button mat-raised-button class="loginButton">Accedi con Facebook</button>
+  </mat-card-actions>
+  <mat-card-actions class="actions">
+    <button mat-raised-button class="loginButton">Accedi con google</button>
+  </mat-card-actions>
+</mat-card>

@@ -26,7 +26,9 @@ import {MatMenuModule} from '@angular/material/menu';
 import { LoginCardComponent } from './Components/login-card/login-card.component';
 import { ShopPageComponent } from './Components/shop-page/shop-page.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
-
+import { RegistrationCardComponent } from './Components/registration-card/registration-card.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     ReviewCardComponent,
     LoginCardComponent,
     ShopPageComponent,
+    RegistrationCardComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -55,7 +58,9 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     MatCardModule,
     MatGridListModule,
     MatMenuModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
