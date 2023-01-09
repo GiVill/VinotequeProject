@@ -14,11 +14,14 @@ export class RegistrationCardComponent {
 
   constructor(){
     const currentYear = new Date().getFullYear();
-    const currentMonth = new Date().getMonth()
-    const currentDay = new Date().getDay()
-    this.minDate = new Date(currentYear - 150, 0, 1);
-    this.maxDate = new Date(currentYear, currentMonth, currentDay);
+    const currentMonth = new Date().getMonth();
+    const currentDay = new Date().getDay();
+    this.minDate = new Date(1900, 0, 1);
+    this.maxDate = new Date(currentYear - 18, currentMonth, currentDay + 8); //aggiustare il currentDay
+    //console.log(currentYear,currentMonth,currentDay)
   }
+
+  states : string[] = ['Italia', 'Germany','Spain']
 
   hide = true;
 
