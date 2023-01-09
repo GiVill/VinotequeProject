@@ -8,7 +8,7 @@ public class Ordine {
     Utente ordine_utente;
     Carrello ordine_carrello;
     Metodo_Pagamento ordine_metodo_pag;
-    Indirizzo ordine_indirizzo;
+    String indirizzo;
     BigDecimal totale;
     String status;
     Promozione ordine_promozione;
@@ -18,12 +18,12 @@ public class Ordine {
 
     }
 
-    public Ordine(Long id, Utente ordine_utente, Carrello ordine_carrello, Metodo_Pagamento ordine_metodo_pag, Indirizzo ordine_indirizzo, BigDecimal totale, String status, Promozione ordine_promozione, Date data) {
+    public Ordine(Long id, Utente ordine_utente, Carrello ordine_carrello, Metodo_Pagamento ordine_metodo_pag, String indirizzo, BigDecimal totale, String status, Promozione ordine_promozione, Date data) {
         this.id = id;
         this.ordine_utente = ordine_utente;
         this.ordine_carrello = ordine_carrello;
         this.ordine_metodo_pag = ordine_metodo_pag;
-        this.ordine_indirizzo = ordine_indirizzo;
+        this.indirizzo = indirizzo;
         this.totale = totale;
         this.status = status;
         this.ordine_promozione = ordine_promozione;
@@ -78,14 +78,6 @@ public class Ordine {
         this.ordine_metodo_pag = ordine_metodo_pag;
     }
 
-    public Indirizzo getOrdine_indirizzo() {
-        return ordine_indirizzo;
-    }
-
-    public void setOrdine_indirizzo(Indirizzo ordine_indirizzo) {
-        this.ordine_indirizzo = ordine_indirizzo;
-    }
-
     public BigDecimal getTotale() {
         return totale;
     }
@@ -100,5 +92,13 @@ public class Ordine {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getIndirizzo() {
+        return indirizzo;
+    }
+
+    public void setIndirizzo(String indirizzo) {
+        this.indirizzo = indirizzo;
     }
 }

@@ -11,6 +11,8 @@ public interface UtenteDao {
 
     public Utente findByPrimaryKey(long id) throws SQLException;
 
+    public Utente findByEmail(String id);
+
     public List<Promozione> findByPromotion();
 
     public void saveOrUpdate(Utente utente);
