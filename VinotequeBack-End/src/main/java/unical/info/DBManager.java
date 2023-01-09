@@ -2,6 +2,7 @@ package unical.info;
 
 import unical.info.dao.*;
 import unical.info.dao.postgres.*;
+import unical.info.model.Utente;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -26,7 +27,7 @@ public class DBManager {
     public Connection getConnection() {
         if (conn == null) {
             try {
-                conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/", "postgres", "postgres");
+                conn = DriverManager.getConnection("jdbc:postgres://localhost:5432/Vinoteque", "postgres", "postgres123");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -34,48 +35,24 @@ public class DBManager {
         return conn;
     }
 
-    public CantinaDao getCantinaDao() {
-        return new CantinaDaoPostgres(getConnection());
-    }
-
     public UtenteDao getUtenteDao() {
         return new UtenteDaoPostgres(getConnection());
     }
 
-    public CarrelloDao getCarrelloDao() {
-        return new CarrelloDaoPostgres(getConnection());
-    }
+    public VinoDao getVinoDao(){return new VinoDaoPostgres(getConnection());}
 
-    public CommentoDao getCommentoDao() {
-        return new CommentoDaoPostgres(getConnection());
-    }
+    public RecensioneDao getRecensioneDao(){return new RecensioneDaoPostgres(getConnection());}
 
-    public IndirizzoDao getIndirizzoDao() {
-        return new IndirizzoDaoPostgres(getConnection());
-    }
+    public PromozioneDao getPromozioneDao(){return new PromozioneDaoPostgres(getConnection());}
 
-    public Metodo_PagamentoDao getMetodo_PagamentoDao() {
-        return new Metodo_pagamentoDaoPostgres(getConnection());
-    }
+    public OrdineDao getOrdineDao(){return new OrdineDaoPostgres(getConnection());}
 
-    public OrdineDao getOrdineDao() {
-        return new OrdineDaoPostgres(getConnection());
-    }
+    public MiPiaceDao getMiPiace(){return new MiPiaceDaoPostgres(getConnection());}
 
-    public PromozioneDao getPromozioneDao() {
-        return new PromozioneDaoPostgres(getConnection());
-    }
+    public Metodo_PagamentoDao getMetodo_PagamentoDao(){return new Metodo_pagamentoDaoPostgres(getConnection());}
 
-    public RecensioneDao getRecensioneDao() {
-        return new RecensioneDaoPostgres(getConnection());
-    }
+    public CarrelloDao getCarrelloDao(){return new CarrelloDaoPostgres(getConnection());}
 
-    public Utente_IndirizzoDao getUtente_IndirizzoDao() {
-        return new Utente_IndirizzoDaoPostgres(getConnection());
-    }
-
-    public VinoDao getVinoeDao() {
-        return new VinoDaoPostgres(getConnection());
-    }
+    public CantinaDao getCantinaDao(){return new CantinaDaoPostgres(getConnection());}
 
 }
