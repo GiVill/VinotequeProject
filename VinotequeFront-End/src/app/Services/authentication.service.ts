@@ -13,7 +13,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient) { }
 
   register(body : {}): Observable<Boolean>{
-    return this.http.post<Boolean>(this.url + "/newUser", {body});
+    return this.http.post<Boolean>(this.url + "/addUser", {body});
   }
 
   checkLogin(jsessionid: string): Observable<Boolean>{

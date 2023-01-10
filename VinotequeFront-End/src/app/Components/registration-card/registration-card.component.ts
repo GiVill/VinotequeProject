@@ -1,18 +1,21 @@
-import { Component } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, NgForm, Validators } from '@angular/forms';
 import { MatDatepickerModule} from '@angular/material/datepicker';
+import { AuthenticationService } from 'src/app/Services/authentication.service';
+import { User } from 'src/app/User';
 
 @Component({
   selector: 'app-registration-card',
   templateUrl: './registration-card.component.html',
   styleUrls: ['./registration-card.component.css']
 })
-export class RegistrationCardComponent {
+export class RegistrationCardComponent{
 
   minDate : Date
   maxDate : Date
 
-  constructor(){
+  constructor(private service : AuthenticationService){
     const currentYear = new Date().getFullYear();
     const currentMonth = new Date().getMonth();
     const currentDay = new Date().getDay();
@@ -33,5 +36,17 @@ export class RegistrationCardComponent {
     }
 
     return this.email.hasError('email') ? 'Not a valid email' : '';
+  }
+
+  onSubmit(form : NgForm){
+    const newUser : User = {name: form.value.name, surname: form.value.surname,
+     bdate: form.value.data, email: "" , password: form.value.password, indirizzo: form.value.via}
+    this.service.register(newUser).subscribe(data=> {
+      console.log(data)
+    })
+
+    console.log(form.value);
+    console.log(this.email.value);
+
   }
 }
