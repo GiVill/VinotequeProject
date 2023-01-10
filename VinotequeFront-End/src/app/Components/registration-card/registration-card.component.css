@@ -12,6 +12,11 @@
   margin-bottom: 3px;
 }
 
+form{
+  display: flex;
+  flex-direction: column;
+}
+
 .actions{
   align-self: center;
   align-content: center;
@@ -29,4 +34,8 @@ mat-form-field{
   align-self: center;
   min-width: 440px;
   background-color: rgb(160,240,123);
+}
+
+input.ng-valid{
+  color: green !important;
 }
