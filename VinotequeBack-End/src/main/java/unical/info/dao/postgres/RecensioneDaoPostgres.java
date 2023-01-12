@@ -117,8 +117,24 @@ public class RecensioneDaoPostgres implements RecensioneDao {
     }
 
     @Override
-    public void saveOrUpdate(Recensione recensione) {
+    public void save(Recensione recensione) {
+        if (findByVino(recensione.getRecensione_vino()) == null && findBySommelier(recensione.getRecensione_sommelier())==null) {
+            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?)";
+            PreparedStatement st;
+            try {
+                st = conn.prepareStatement(insertStr);
 
+                st.setString(1,recensione.getDescrizione());
+                st.setFloat(2, recensione.getRecensione_sommelier());
+                st.setFloat(3, recensione.getRecensione_vino());
+                st.setDate(4, (Date) recensione.getData());
+
+                st.executeUpdate();
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     @Override

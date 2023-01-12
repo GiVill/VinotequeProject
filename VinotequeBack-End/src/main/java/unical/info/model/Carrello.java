@@ -1,14 +1,11 @@
 package unical.info.model;
 
+import java.util.HashMap;
 import java.util.List;
 
 public class Carrello {
     long id;
-
-    List<Vino> carrello_vino;
-
     long id_utente;
-
 
 
     public long getId() {
@@ -19,15 +16,6 @@ public class Carrello {
         this.id = id;
     }
 
-
-    public List<Vino> getCarrello_vino() {
-        return carrello_vino;
-    }
-
-    public void setCarrello_vino(List<Vino> carrello_vino) {
-        this.carrello_vino = carrello_vino;
-    }
-
     public long getId_utente() {
         return id_utente;
     }
@@ -35,47 +23,28 @@ public class Carrello {
     public void setId_utente(long id_utente) {
         this.id_utente = id_utente;
     }
+
+
+    private HashMap<Vino, Integer> vini;
+    private double totale;
+
+    public Carrello() {
+        this.vini = new HashMap<>();
+        this.totale = 0;
+    }
+
+    public void aggiungiProdotto(Vino vino, Integer quantita) {
+        vini.put(vino, quantita);
+        totale += vino.getPrezzo() * quantita;
+    }
+
+    public void rimuoviProdotto(Vino vino, int quantita) {
+        vini.remove(vino);
+        totale -= vino.getPrezzo() * quantita;
+    }
+
+    public double getTotale() {
+        return totale;
+    }
 }
 
-/*
-import java.util.ArrayList;
-import java.util.List;
-
-public class Carrello {
-  private Hashmap<Vino,Int> vini;
-  private double totale;
-  private double sconto;
-
-
-  public Carrello() {
-    this.prodotti = new Hashmap<>();
-    this.totale = 0;
-    this.sconto = 0;
-  }
-
-  public void aggiungiProdotto(Vino vino, Int quantita) {
-    vini.add(vino);
-    totale += vino.getPrezzo() * quantita;
-  }
-
-  public void rimuoviProdotto(Vino vino, int quantita) {
-    vini.remove(vino);
-    totale -= prodotto.getPrezzo() * quantita;
-  }
-
-  public void applicaSconto(double sconto) {
-    this.sconto = sconto;
-    calcolaTotale();
-  }
-
-  private void calcolaTotale() {
-    totale = totale - (totale * sconto);
-  }
-
-  public double getTotale() {
-    return totale;
-  }
-}
-
-
- */

@@ -1,13 +1,16 @@
 package unical.info.dao;
 
 import unical.info.model.Ordine;
+import unical.info.model.Utente;
+
+import java.util.List;
 
 public interface OrdineDao {
     //public List<Utente> findAll();
 
-    public Ordine findByPrimaryKey(String codiceOrdine);
+    public List<Ordine> findByUtente(Long utente);
 
-    public void saveOrUpdate(Ordine utente);
+    public void save(Ordine ordine);
 
     public void delete(Ordine utente);
 }

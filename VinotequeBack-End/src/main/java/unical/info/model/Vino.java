@@ -1,13 +1,13 @@
 package unical.info.model;
 
-import java.math.BigDecimal;
+
 import java.util.Date;
 
 public class Vino {
     Long id;
     String nome;
     int annata;
-    BigDecimal prezzo;
+    float prezzo;
     int gradazione_alcolica;
     Long vino_cantina;
     String tipologia;
@@ -15,7 +15,7 @@ public class Vino {
     byte foto;
     int mipiace=0;
 
-    public Vino(Long id, String nome, int annata, BigDecimal prezzo, int gradazione_alcolica, Long vino_cantina, String tipologia, String premi, byte foto) {
+    public Vino(Long id, String nome, int annata, float prezzo, int gradazione_alcolica, Long vino_cantina, String tipologia, String premi, byte foto) {
         this.id = id;
         this.nome = nome;
         this.annata = annata;
@@ -81,11 +81,11 @@ public class Vino {
 
 
 
-    public BigDecimal getPrezzo() {
+    public float getPrezzo() {
         return prezzo;
     }
 
-    public void setPrezzo(BigDecimal prezzo) {
+    public void setPrezzo(float prezzo) {
         this.prezzo = prezzo;
     }
 

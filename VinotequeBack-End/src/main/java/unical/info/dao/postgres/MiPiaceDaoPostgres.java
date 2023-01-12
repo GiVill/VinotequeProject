@@ -1,6 +1,7 @@
 package unical.info.dao.postgres;
 
 import unical.info.dao.MiPiaceDao;
+import unical.info.model.MiPiace;
 import unical.info.model.Utente;
 import unical.info.model.Vino;
 
@@ -30,7 +31,7 @@ public class MiPiaceDaoPostgres implements MiPiaceDao {
     }
 
     @Override
-    public void saveOrUpdate(Utente utente) {
+    public void save(MiPiace mipiace) {
 
     }
 

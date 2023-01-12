@@ -7,9 +7,9 @@ import java.util.List;
 public interface PromozioneDao {
     public List<Promozione> findAll();
 
-    public Promozione findByPrimaryKey(String codicePromo);
+    public Promozione findByDescrizione(String codicePromo);
 
-    public void saveOrUpdate(Promozione utente);
+    public void save(Promozione promo);
 
     public void delete(Promozione utente);
 

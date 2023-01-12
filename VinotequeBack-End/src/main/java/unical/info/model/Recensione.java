@@ -53,9 +53,6 @@ public class Recensione {
         this.descrizione = descrizione;
     }
 
-
-
-
     public Date getData() {
         return data;
     }

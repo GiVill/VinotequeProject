@@ -5,7 +5,7 @@ import unical.info.model.Vino;
 import java.util.List;
 
 public interface VinoDao {
-    public void saveOrUpdate(Vino vino);
+    public void save(Vino vino);
 
     public List<Vino> findAll();
 

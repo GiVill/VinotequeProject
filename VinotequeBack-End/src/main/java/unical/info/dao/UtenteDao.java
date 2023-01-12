@@ -13,9 +13,9 @@ public interface UtenteDao {
 
     public Utente findByEmail(String id);
 
-    public List<Promozione> findByPromotion();
-
-    public void saveOrUpdate(Utente utente);
+    public void NewUtente(Utente utente);
 
     public void delete(Utente utente);
+
+    public void PromuoviASommelier(Utente utente,int matricola);
 }

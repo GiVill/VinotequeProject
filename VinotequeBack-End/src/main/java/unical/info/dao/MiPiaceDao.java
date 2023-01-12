@@ -1,5 +1,6 @@
 package unical.info.dao;
 
+import unical.info.model.MiPiace;
 import unical.info.model.Promozione;
 import unical.info.model.Utente;
 import unical.info.model.Vino;
@@ -14,7 +15,7 @@ public interface MiPiaceDao {
 
     public int countByVino(long id) throws SQLException;
 
-    public void saveOrUpdate(Utente utente);
+    public void save(MiPiace mipiace);
 
     public void delete(Utente utente);
 }

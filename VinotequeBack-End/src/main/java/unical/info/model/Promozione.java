@@ -5,8 +5,17 @@ import java.math.BigDecimal;
 public class Promozione {
     Long id;
     String descrizione;
-    BigDecimal sconto_prezzo;
+    Float sconto_prezzo;
     Integer sconto_percentuale;
+
+    public Promozione(){}
+
+    public Promozione(Long id, String descrizione, Float sconto_prezzo, Integer sconto_percentuale) {
+        this.id = id;
+        this.descrizione = descrizione;
+        this.sconto_prezzo = sconto_prezzo;
+        this.sconto_percentuale = sconto_percentuale;
+    }
 
     public Long getId() {
         return id;
@@ -24,11 +33,11 @@ public class Promozione {
         this.descrizione = descrizione;
     }
 
-    public BigDecimal getSconto_prezzo() {
+    public Float getSconto_prezzo() {
         return sconto_prezzo;
     }
 
-    public void setSconto_prezzo(BigDecimal sconto_prezzo) {
+    public void setSconto_prezzo(Float sconto_prezzo) {
         this.sconto_prezzo = sconto_prezzo;
     }
 

@@ -13,7 +13,7 @@ public interface RecensioneDao {
 
     public List<Recensione> findBySommelier(long IDutente);
 
-    public void saveOrUpdate(Recensione recensione);
+    public void save(Recensione recensione);
 
     public void delete(Recensione recensione);
 }
