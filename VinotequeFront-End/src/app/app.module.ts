@@ -32,6 +32,8 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import { AuthenticationService } from './Services/authentication.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { AuthPageComponent } from './Components/auth-page/auth-page.component';
+import { ItemPageComponent } from './Components/item-page/item-page.component';
 
 
 @NgModule({
@@ -43,6 +45,8 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
     LoginCardComponent,
     ShopPageComponent,
     RegistrationCardComponent,
+    AuthPageComponent,
+    ItemPageComponent,
   ],
   imports: [
     ReactiveFormsModule,
