@@ -8,6 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Date;
+import java.util.concurrent.atomic.AtomicLong;
 
 import static java.lang.String.valueOf;
 
@@ -49,6 +50,9 @@ public class UtenteDaoPostgres implements UtenteDao {
         return utenti;
     }
 
+    long myLongVariable = 5L;
+    String numero  = "339612367253";
+
     @Override
     public void saveOrUpdate(Utente utente) {
         if (findByEmail(utente.getEmail())== null) {
@@ -56,7 +60,7 @@ public class UtenteDaoPostgres implements UtenteDao {
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
-                st.setLong(1, utente.getId());
+                st.setLong(1, myLongVariable);
                 st.setString(2, utente.getNome());
                 st.setString(3, utente.getCognome());
 
@@ -73,7 +77,7 @@ public class UtenteDaoPostgres implements UtenteDao {
 
                 st.setString(5, utente.getEmail());
                 st.setString(6, utente.getPassword());
-                st.setString(7, utente.getNumero_telefono());
+                st.setString(7, numero);
                 st.setString(8, utente.getIndirizzo());
 
                 st.executeUpdate();

@@ -12,8 +12,9 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
-  register(body : {}): Observable<Boolean>{
-    return this.http.post<Boolean>(this.url + "/addUser", {body});
+  register(newUser : User): Observable<Boolean>{
+    console.log(newUser); //EROE!!!!!!!!!!
+    return this.http.post<Boolean>(this.url + "/addUser",newUser);
   }
 
   checkLogin(jsessionid: string): Observable<Boolean>{

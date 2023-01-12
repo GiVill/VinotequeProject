@@ -1,8 +1,8 @@
 export interface User{
-  name : String;
-  surname : String;
-  bdate : String;
-  email : string;
-  password : string;
+  nome : String;
+  cognome : String;
+  data_di_nascita : String;
+  email : String;
+  password : String;
   indirizzo : String;
 }

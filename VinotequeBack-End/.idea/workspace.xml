@@ -4,112 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="01d0de63-fefc-47b9-a1f1-c06ab6e23ace" name="Changes" comment="">
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/controller/RegisterServletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/controller/RegisterServletController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/UtenteDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/UtenteDaoPostgres.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/model/Utente.java" afterDir="false" />
-=======
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-view/wine-view.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-view/wine-view.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-view/wine-view.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-view/wine-view.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.module.ts" afterDir="false" />
->>>>>>> 18b57cc0f7ba35103661da87344616ba326ae4b9
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/DBManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/DBManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/postgres/UtenteDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/dao/postgres/UtenteDaoPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Utente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/model/Utente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/unical/info/VinotequeApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/unical/info/VinotequeApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/registration-card/registration-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/registration-card/registration-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/registration-card/registration-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/registration-card/registration-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/authentication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/authentication.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/User.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2JVMxB8MQy82hl9bIQtDDWU8zWI" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-<<<<<<< HEAD
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/Users/win10/Desktop/VinotequeProject/VinotequeBack-End/src/test/java&quot;,
-=======
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
->>>>>>> 18b57cc0f7ba35103661da87344616ba326ae4b9
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b215950906bcc86de1d17652f91dd67c&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-  }
-}</component>
-<<<<<<< HEAD
-  <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="unical.info.model" />
-    </key>
-  </component>
-=======
->>>>>>> 18b57cc0f7ba35103661da87344616ba326ae4b9
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="01d0de63-fefc-47b9-a1f1-c06ab6e23ace" name="Changes" comment="" />
-      <created>1672159041139</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1672159041139</updated>
-      <workItem from="1672159042458" duration="27000" />
-      <workItem from="1672329482996" duration="7223000" />
-      <workItem from="1672415539854" duration="2439000" />
-      <workItem from="1672423088364" duration="1605000" />
-      <workItem from="1672425172396" duration="424000" />
-      <workItem from="1672672899967" duration="3207000" />
-      <workItem from="1672756403712" duration="744000" />
-<<<<<<< HEAD
-      <workItem from="1672850720443" duration="3914000" />
-      <workItem from="1672854872324" duration="3090000" />
-      <workItem from="1673275658454" duration="2048000" />
-      <workItem from="1673278347655" duration="17000" />
-=======
->>>>>>> 18b57cc0f7ba35103661da87344616ba326ae4b9
-    </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
