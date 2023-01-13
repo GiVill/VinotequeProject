@@ -65,7 +65,8 @@
       <input
         matInput
         placeholder="pat@example.com"
-        [formControl]="email"
+        name="email"
+        ngModel
         required/>
       <mat-icon matSuffix>mail</mat-icon>
       <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
