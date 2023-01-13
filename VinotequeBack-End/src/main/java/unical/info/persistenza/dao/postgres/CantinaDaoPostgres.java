@@ -1,7 +1,7 @@
-package unical.info.dao.postgres;
+package unical.info.persistenza.dao.postgres;
 
-import unical.info.dao.CantinaDao;
-import unical.info.model.Cantina;
+import unical.info.persistenza.dao.CantinaDao;
+import unical.info.persistenza.model.Cantina;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,7 +1,7 @@
-package unical.info.dao;
+package unical.info.persistenza.dao;
 
-import unical.info.model.Carrello;
-import unical.info.model.Utente;
+import unical.info.persistenza.model.Carrello;
+import unical.info.persistenza.model.Utente;
 
 import java.util.List;
 

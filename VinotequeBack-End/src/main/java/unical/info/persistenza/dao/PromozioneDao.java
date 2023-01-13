@@ -1,6 +1,6 @@
-package unical.info.dao;
+package unical.info.persistenza.dao;
 
-import unical.info.model.Promozione;
+import unical.info.persistenza.model.Promozione;
 
 import java.util.List;
 

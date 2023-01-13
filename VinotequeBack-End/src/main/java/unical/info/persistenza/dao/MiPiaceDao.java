@@ -1,9 +1,8 @@
-package unical.info.dao;
+package unical.info.persistenza.dao;
 
-import unical.info.model.MiPiace;
-import unical.info.model.Promozione;
-import unical.info.model.Utente;
-import unical.info.model.Vino;
+import unical.info.persistenza.model.MiPiace;
+import unical.info.persistenza.model.Utente;
+import unical.info.persistenza.model.Vino;
 
 import java.sql.SQLException;
 import java.util.List;

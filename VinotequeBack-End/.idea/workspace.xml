@@ -6,37 +6,74 @@
   <component name="ChangeListManager">
     <list default="true" id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/controller/RegisterServletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/controller/RegisterServletController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/Metodo_PagamentoDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/RecensioneDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/RecensioneDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/UtenteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/UtenteDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/Metodo_pagamentoDaoPostgres.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/UtenteDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/UtenteDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Carrello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/model/Carrello.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Metodo_Pagamento.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/model/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Vino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/model/Vino.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/RegisterServletController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/controller/RegisterServletController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/postgres/UtenteDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/dao/postgres/UtenteDaoPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/IDBroker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/IDBroker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/controller/LoginServletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/controller/LoginServletController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/controller/RegisterServletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/AuthenticationRESTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/CantinaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/CantinaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/CarrelloDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/CarrelloDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/MiPiaceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/MiPiaceDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/OrdineDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/OrdineDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/PromozioneDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/PromozioneDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/RecensioneDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/RecensioneDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/UtenteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/UtenteDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/VinoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/VinoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/CantinaDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/CarrelloDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CarrelloDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/MiPiaceDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/MiPiaceDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/OrdineDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/PromozioneDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/PromozioneDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/RecensioneDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/UtenteDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/VinoDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Cantina.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Cantina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Carrello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Carrello.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/MiPiace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/MiPiace.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Ordine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Ordine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Promozione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Promozione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Recensione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Recensione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Vino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Vino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/DBManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/LoginServletController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/controller/LoginServletController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/RegisterServletController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/CantinaDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/CarrelloDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/MiPiaceDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/OrdineDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/PromozioneDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/RecensioneDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/UtenteDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/VinoDao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/postgres/CantinaDaoPostgres.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/postgres/CarrelloDaoPostgres.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/postgres/MiPiaceDaoPostgres.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/postgres/OrdineDaoPostgres.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/postgres/PromozioneDaoPostgres.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/postgres/RecensioneDaoPostgres.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/postgres/UtenteDaoPostgres.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/postgres/VinoDaoPostgres.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Cantina.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Carrello.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/MiPiace.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Ordine.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Promozione.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Recensione.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Utente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Vino.class" beforeDir="false" />
     </list>
-    <list id="55045ca9-e81b-4908-8ad0-55ac07a65ffd" name="Changes by Utente" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/MiPiaceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/MiPiaceDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/OrdineDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/OrdineDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/PromozioneDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/PromozioneDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/VinoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/VinoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/MiPiaceDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/MiPiaceDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/OrdineDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/OrdineDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/PromozioneDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/PromozioneDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/RecensioneDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/RecensioneDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/VinoDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/dao/postgres/VinoDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Ordine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/model/Ordine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Promozione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/model/Promozione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Recensione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/model/Recensione.java" afterDir="false" />
-    </list>
+    <list id="55045ca9-e81b-4908-8ad0-55ac07a65ffd" name="Changes by Utente" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -51,6 +88,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
@@ -59,10 +100,30 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "b215950906bcc86de1d17652f91dd67c",
+    "spring.configuration.checksum": "908ccf32e87c5d63f942b0e357642bd8",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="VinotequeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="vinoteque" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="unical.info.VinotequeApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unical.info.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.VinotequeApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -72,10 +133,22 @@
       <option name="presentableId" value="Default" />
       <updated>1673536111339</updated>
       <workItem from="1673536116822" duration="7926000" />
+      <workItem from="1673556398554" duration="8019000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

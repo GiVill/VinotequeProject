@@ -1,4 +1,4 @@
-package unical.info.model;
+package unical.info.persistenza.model;
 
 public class Cantina {
     Long id;

@@ -1,15 +1,13 @@
-package unical.info.controller;
+package unical.info.RESTApi;
 
 import org.springframework.web.bind.annotation.*;
-import unical.info.DBManager;
-import unical.info.model.Utente;
-import javax.servlet.http.HttpServlet;
-import java.util.HashMap;
+import unical.info.persistenza.DBManager;
+import unical.info.persistenza.model.Utente;
 
 
 @RestController
 @CrossOrigin("http://localhost:4200")
-public class RegisterServletController extends HttpServlet {
+public class AuthenticationRESTController{
     @PostMapping ("/addUser")
     public Boolean register( @RequestBody Utente newUser){
         System.out.println(newUser.toString());

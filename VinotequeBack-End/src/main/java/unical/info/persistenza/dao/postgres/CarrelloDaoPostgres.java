@@ -1,8 +1,8 @@
-package unical.info.dao.postgres;
+package unical.info.persistenza.dao.postgres;
 
-import unical.info.dao.CarrelloDao;
-import unical.info.model.Carrello;
-import unical.info.model.Utente;
+import unical.info.persistenza.dao.CarrelloDao;
+import unical.info.persistenza.model.Carrello;
+import unical.info.persistenza.model.Utente;
 
 import java.sql.Connection;
 import java.util.List;

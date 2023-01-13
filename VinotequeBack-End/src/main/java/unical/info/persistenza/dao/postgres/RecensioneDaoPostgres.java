@@ -1,8 +1,7 @@
-package unical.info.dao.postgres;
+package unical.info.persistenza.dao.postgres;
 
-import unical.info.dao.RecensioneDao;
-import unical.info.model.Recensione;
-import unical.info.model.Utente;
+import unical.info.persistenza.dao.RecensioneDao;
+import unical.info.persistenza.model.Recensione;
 
 import java.sql.*;
 import java.util.ArrayList;

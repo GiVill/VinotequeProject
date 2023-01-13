@@ -1,4 +1,4 @@
-package unical.info;
+package unical.info.persistenza;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

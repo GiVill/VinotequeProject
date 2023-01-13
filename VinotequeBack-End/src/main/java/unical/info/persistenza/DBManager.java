@@ -1,8 +1,7 @@
-package unical.info;
+package unical.info.persistenza;
 
-import unical.info.dao.*;
-import unical.info.dao.postgres.*;
-import unical.info.model.Utente;
+import unical.info.persistenza.dao.*;
+import unical.info.persistenza.dao.postgres.*;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -48,8 +47,6 @@ public class DBManager {
     public OrdineDao getOrdineDao(){return new OrdineDaoPostgres(getConnection());}
 
     public MiPiaceDao getMiPiace(){return new MiPiaceDaoPostgres(getConnection());}
-
-    public Metodo_PagamentoDao getMetodo_PagamentoDao(){return new Metodo_pagamentoDaoPostgres(getConnection());}
 
     public CarrelloDao getCarrelloDao(){return new CarrelloDaoPostgres(getConnection());}
 

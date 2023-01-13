@@ -1,14 +1,11 @@
-package unical.info.dao.postgres;
+package unical.info.persistenza.dao.postgres;
 
-import unical.info.dao.UtenteDao;
-import unical.info.model.Promozione;
-import unical.info.model.Utente;
+import unical.info.persistenza.dao.UtenteDao;
+import unical.info.persistenza.model.Utente;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Date;
-import java.util.concurrent.atomic.AtomicLong;
 
 import static java.lang.String.copyValueOf;
 import static java.lang.String.valueOf;

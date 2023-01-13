@@ -1,9 +1,9 @@
 <mat-card class="example-card">
-  <img mat-card-image src="https://data.callmewine.com/imgprodotto/kik%C3%A8-cantine-fina-2021_41073.jpg" alt="Photo of a Shiba Inu">
+  <img mat-card-image src="{{'data:image/png;base64,' + wine.foto}}">
   <mat-card-content>
-    <mat-card-title>Nome Vino</mat-card-title>
-    <mat-card-subtitle>Nome Cantina</mat-card-subtitle>
-    <h3>99.99$</h3>
+    <mat-card-title>{{wine.nome}}</mat-card-title>
+    <mat-card-subtitle>ciao</mat-card-subtitle>
+    <h3>{{wine.prezzo}}$</h3>
   </mat-card-content>
   <mat-card-actions>
     <div class="listButton">

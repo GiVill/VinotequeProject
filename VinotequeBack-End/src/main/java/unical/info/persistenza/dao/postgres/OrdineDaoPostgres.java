@@ -1,9 +1,7 @@
-package unical.info.dao.postgres;
+package unical.info.persistenza.dao.postgres;
 
-import unical.info.dao.OrdineDao;
-import unical.info.model.Ordine;
-import unical.info.model.Promozione;
-import unical.info.model.Utente;
+import unical.info.persistenza.dao.OrdineDao;
+import unical.info.persistenza.model.Ordine;
 
 import java.sql.*;
 import java.util.ArrayList;

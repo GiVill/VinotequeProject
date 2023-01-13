@@ -1,7 +1,10 @@
-package unical.info.dao.postgres;
+package unical.info.persistenza.dao.postgres;
 
-import unical.info.dao.VinoDao;
-import unical.info.model.Vino;
+import unical.info.persistenza.DBManager;
+import unical.info.persistenza.dao.VinoDao;
+import unical.info.persistenza.model.Cantina;
+import unical.info.persistenza.model.Utente;
+import unical.info.persistenza.model.Vino;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -27,10 +30,10 @@ public class VinoDaoPostgres implements VinoDao{
 
                 st.setFloat(3, vino.getPrezzo());
                 st.setInt(4, vino.getGradazione_alcolica());
-                st.setLong(5, vino.getVino_cantina());
+                st.setLong(5, vino.getVino_cantina().getId()); //TODO:!!!!!! NEL MODEL LE CHIAVI ESTENRE SONO ALTRI MODEL
                 st.setString(6, vino.getTipologia());
                 st.setString(7, vino.getPremi());
-                st.setByte(8, vino.getFoto());
+                st.setBytes(8, vino.getFoto());
                 st.setInt(9, vino.getMipiace());
 
                 st.executeUpdate();
@@ -58,10 +61,13 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
-                vino.setFoto(rs.getByte("foto"));
-                //manca vino_cantina
-                //todo
+                vino.setFoto(rs.getBytes("foto"));
+                /* TODO: CANTINA FINDBYPRIMARYKEY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    poi il codice sott è giusto
+                Cantina cantina = DBManager.getInstance().
+                        getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
 
+                 */
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -93,7 +99,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
-                vino.setFoto(rs.getByte("foto"));
+                vino.setFoto(rs.getBytes("foto"));
                 //todo
                 //manca vino_cantina
 
@@ -122,7 +128,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
-                vino.setFoto(rs.getByte("foto"));
+                vino.setFoto(rs.getBytes("foto"));
                 //manca vino_cantina
                 //todo
                 vini.add(vino);
@@ -151,7 +157,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
-                vino.setFoto(rs.getByte("foto"));
+                vino.setFoto(rs.getBytes("foto"));
                 //manca vino_cantina
                 //todo
                 vini.add(vino);
@@ -181,7 +187,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
-                vino.setFoto(rs.getByte("foto"));
+                vino.setFoto(rs.getBytes("foto"));
                 //manca vino_cantina
                 //todo
                 vini.add(vino);
@@ -215,7 +221,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
-                vino.setFoto(rs.getByte("foto"));
+                vino.setFoto(rs.getBytes("foto"));
                 //manca vino_cantina
                 //todo
                 vini.add(vino);
@@ -244,7 +250,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
-                vino.setFoto(rs.getByte("foto"));
+                vino.setFoto(rs.getBytes("foto"));
                 //todo
                 //manca vino_cantina
 

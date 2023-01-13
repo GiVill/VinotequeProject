@@ -1,7 +1,6 @@
-package unical.info.model;
+package unical.info.persistenza.model;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class Carrello {
     long id;

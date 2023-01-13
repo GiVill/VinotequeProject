@@ -1,9 +1,9 @@
-package unical.info.dao.postgres;
+package unical.info.persistenza.dao.postgres;
 
-import unical.info.dao.MiPiaceDao;
-import unical.info.model.MiPiace;
-import unical.info.model.Utente;
-import unical.info.model.Vino;
+import unical.info.persistenza.dao.MiPiaceDao;
+import unical.info.persistenza.model.MiPiace;
+import unical.info.persistenza.model.Utente;
+import unical.info.persistenza.model.Vino;
 
 import java.sql.Connection;
 import java.sql.SQLException;

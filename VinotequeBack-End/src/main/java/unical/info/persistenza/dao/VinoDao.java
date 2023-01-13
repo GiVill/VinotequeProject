@@ -1,6 +1,6 @@
-package unical.info.dao;
+package unical.info.persistenza.dao;
 
-import unical.info.model.Vino;
+import unical.info.persistenza.model.Vino;
 
 import java.util.List;
 
