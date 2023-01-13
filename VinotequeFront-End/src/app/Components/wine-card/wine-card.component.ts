@@ -15,7 +15,7 @@ export class WineCardComponent implements OnInit {
   originally bred for hunting.`;
 
   ngOnInit(): void {
-    //
+
   }
 
 }
