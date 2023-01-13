@@ -17,8 +17,5 @@ public class VinoRESTController {
     @PostMapping("/Wine")
     public List<Vino> register(){
         List<Vino> vini = DBManager.getInstance().getVinoDao().findAll();
-        for (Vino vino:vini) {
-            System.out.println(vino.getFoto());
-        }
         return vini;
     }}
