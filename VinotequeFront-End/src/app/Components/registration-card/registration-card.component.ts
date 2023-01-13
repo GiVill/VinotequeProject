@@ -1,6 +1,6 @@
 import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, NgForm, Validators } from '@angular/forms';
+import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { Router, RouterLink } from '@angular/router';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
@@ -12,7 +12,6 @@ import { User } from 'src/app/User';
   styleUrls: ['./registration-card.component.css']
 })
 export class RegistrationCardComponent{
-
   minDate : Date
   maxDate : Date
 
@@ -44,11 +43,19 @@ export class RegistrationCardComponent{
 
   onSubmit(form : NgForm){
     const newUser : User = {nome: form.value.name, cognome: form.value.surname,
-      data_di_nascita: form.value.data, email: "caio@yahoo.it" , password: form.value.password, indirizzo: form.value.via}
+      data_di_nascita: form.value.data, email: form.value.email, password: form.value.password, indirizzo: form.value.via}
     this.service.register(newUser).subscribe(data=> {
       console.log(data)
+      if(data){
+        this.service.isLogged = true;
+        this.service.currentUser = newUser;
 
-      this.router.navigate(['/']);
+        console.log(this.service.currentUser.nome);
+
+        this.router.navigate(['/']);
+      } else {
+        console.log("Email gia presente")
+      }
     })
 
     console.log(form.value);
