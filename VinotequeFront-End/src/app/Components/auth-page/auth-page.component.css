@@ -1,0 +1,13 @@
+.container{
+  display: flex;
+  background-color: aqua;
+  border-color: blueviolet;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-grid-tile{
+  flex-direction: column;
+}

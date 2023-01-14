@@ -1,0 +1,28 @@
+section {
+  display: table;
+}
+
+.Filters{
+  display: flex;
+}
+
+.filterContainer{
+  display: table-cell;
+  font-size: 14px;
+  min-width: 120px;
+}
+
+.wineCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 150px;
+}
+
+mat-nav-list{
+  text-align: center;
+}
+
+.spacer {
+  flex: 1 1 auto;
+  margin-left: 150px;
+}
