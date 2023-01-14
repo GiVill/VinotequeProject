@@ -29,6 +29,7 @@ public class CantinaDaoPostgres implements CantinaDao {
                 cantina.setId(rs.getLong("id"));
                 cantina.setNome(rs.getString("nome"));
                 cantina.setDescrizione(rs.getString("descrizione"));
+                cantina.setIndirizzo(rs.getString("indirizzo"));
 
                 cantine.add(cantina);
             }
@@ -46,13 +47,14 @@ public class CantinaDaoPostgres implements CantinaDao {
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setLong(1,id);
-            ResultSet rs = st.executeQuery();
+            ResultSet rs = st.executeQuery(query);
 
             if (rs.next()){
                 cantina = new Cantina();
                 cantina.setId(rs.getLong("id"));
                 cantina.setNome(rs.getString("nome"));
                 cantina.setDescrizione(rs.getString("descrizione"));
+                cantina.setIndirizzo(rs.getString("indirizzo"));
             }
         return cantina;
     } catch (SQLException e) {
@@ -74,6 +76,7 @@ public class CantinaDaoPostgres implements CantinaDao {
                 cantina.setId(rs.getLong("id"));
                 cantina.setNome(rs.getString("nome"));
                 cantina.setDescrizione(rs.getString("descrizione"));
+                cantina.setIndirizzo(rs.getString("indirizzo"));
 
 
             }
@@ -91,13 +94,14 @@ public class CantinaDaoPostgres implements CantinaDao {
     @Override
     public void saveCantina(Cantina cantina) {
         if (findByName(cantina.getNome()) == null) {
-            String insertStr = "INSERT INTO cantina VALUES (DEFAULT,?,?,?)";
+            String insertStr = "INSERT INTO cantina VALUES (DEFAULT,?,?,?,?)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
                 st.setString(1, cantina.getNome());
                 st.setString(2, cantina.getIndirizzo());
                 st.setString(3,cantina.getDescrizione());
+                st.setString(4, cantina.getIndirizzo());
 
                 st.executeUpdate();
 

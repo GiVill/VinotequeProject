@@ -40,6 +40,28 @@ public class PromozioneDaoPostgres implements PromozioneDao {
     }
 
     @Override
+    public Promozione findByPrimaryKey(Long codicePromo) {
+        String query = "select * from promozione where id = ?";
+        Promozione promozione = new Promozione();
+        try {
+            //TODO
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1,codicePromo);
+            ResultSet rs = st.executeQuery();
+
+            while (rs.next()){
+                promozione.setId(Long.valueOf("id"));
+                promozione.setDescrizione("descrizione");
+                promozione.setSconto_percentuale(Integer.valueOf("sconto_percentuale"));
+                promozione.setSconto_prezzo(Float.valueOf("sconto_prezzo"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return promozione;
+    }
+
+    @Override
     public void save(Promozione promo) {
         if (findByDescrizione(promo.getDescrizione()) == null){
             String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?)";

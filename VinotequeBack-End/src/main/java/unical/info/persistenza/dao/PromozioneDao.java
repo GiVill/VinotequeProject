@@ -9,6 +9,8 @@ public interface PromozioneDao {
 
     public Promozione findByDescrizione(String codicePromo);
 
+    public Promozione findByPrimaryKey(Long codicePromo);
+
     public void save(Promozione promo);
 
     public void delete(Promozione utente);

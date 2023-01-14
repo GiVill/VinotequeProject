@@ -1,6 +1,8 @@
 package unical.info.persistenza.dao.postgres;
 
+import unical.info.persistenza.DBManager;
 import unical.info.persistenza.dao.MiPiaceDao;
+import unical.info.persistenza.model.Cantina;
 import unical.info.persistenza.model.MiPiace;
 import unical.info.persistenza.model.Utente;
 import unical.info.persistenza.model.Vino;
@@ -38,7 +40,10 @@ public class MiPiaceDaoPostgres implements MiPiaceDao {
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
-                vino.setVino_cantina(rs.getLong("vino_cantina"));
+
+                Cantina cant = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cant);
+
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -91,7 +96,7 @@ public class MiPiaceDaoPostgres implements MiPiaceDao {
                 st = conn.prepareStatement(insertStr);
 
                 st.setLong(1, Long.parseLong("mipiace_utente"));
-                st.setLong(1, Long.parseLong("mipiace_vino"));
+                st.setLong(2, Long.parseLong("mipiace_vino"));
 
                 st.executeUpdate();
 

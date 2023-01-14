@@ -1,10 +1,12 @@
 package unical.info.persistenza.dao.postgres;
 
 
+import unical.info.persistenza.DBManager;
 import unical.info.persistenza.dao.CarrelloDao;
 import unical.info.persistenza.model.Carrello;
 import unical.info.persistenza.model.Utente;
 
+import java.awt.image.DataBuffer;
 import java.sql.*;
 import java.util.List;
 
@@ -21,7 +23,7 @@ public class CarrelloDaoPostgres implements CarrelloDao {
     }
 
     @Override
-    public Carrello findByIdUtente(String IDutente) {
+    public Carrello findByIdUtente(Long IDutente) {
         String query = "select * from ordine where id_utente = ?";
         Carrello carrello = new Carrello();
         try {
@@ -30,7 +32,8 @@ public class CarrelloDaoPostgres implements CarrelloDao {
 
             while (rs.next()){
                 carrello.setId(Long.valueOf("id"));
-                carrello.setId_utente(Long.valueOf("id_utente"));
+                Utente utente = DBManager.getInstance().getUtenteDao().findByPrimaryKey(rs.getLong("id_utente"));
+                carrello.setId_utente(utente);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -40,7 +43,7 @@ public class CarrelloDaoPostgres implements CarrelloDao {
 
     @Override
     public void save(Carrello carrello) {
-        if (findByIdUtente(String.valueOf(carrello.getId_utente())) == null){
+        if (findByIdUtente(Long.valueOf(carrello.getId_utente().getId())) == null){
             String insertStr = "INSERT INTO utente VALUES (DEFAULT,?)";
             PreparedStatement st;
             try {

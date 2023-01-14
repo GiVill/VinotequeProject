@@ -9,7 +9,7 @@ public interface CarrelloDao {
 
     public List<Utente> findAll();
 
-    public Carrello findByIdUtente(String IDutente);
+    public Carrello findByIdUtente(Long IDutente);
 
     public void save(Carrello carrello);
 
