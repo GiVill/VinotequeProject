@@ -29,9 +29,7 @@ public class RecensioneDaoPostgres implements RecensioneDao {
                 recensione.setId(rs.getLong("id"));
                 recensione.setRecensione_sommelier(rs.getLong("Recensione_sommelier"));
                 recensione.setRecensione_vino(rs.getLong("recensione_vino"));
-
-                long secs = rs.getDate("data").getTime();
-                recensione.setData(new java.util.Date(secs));
+                recensione.setData(rs.getString("data"));
 
                 recensioni.add(recensione);
             }
@@ -56,8 +54,7 @@ public class RecensioneDaoPostgres implements RecensioneDao {
                 recensione.setRecensione_sommelier(rs.getLong("Recensione_sommelier"));
                 recensione.setRecensione_vino(rs.getLong("recensione_vino"));
 
-                long secs = rs.getDate("data").getTime();
-                recensione.setData(new java.util.Date(secs));
+                recensione.setData(rs.getString("data"));
 
             }
         } catch (SQLException e) {
@@ -80,8 +77,7 @@ public class RecensioneDaoPostgres implements RecensioneDao {
                 recensione.setRecensione_sommelier(rs.getLong("Recensione_sommelier"));
                 recensione.setRecensione_vino(rs.getLong("recensione_vino"));
 
-                long secs = rs.getDate("data").getTime();
-                recensione.setData(new java.util.Date(secs));
+                recensione.setData(rs.getString("data"));
 
                 recensioni.add(recensione);
             }
@@ -105,8 +101,7 @@ public class RecensioneDaoPostgres implements RecensioneDao {
                 recensione.setRecensione_sommelier(rs.getLong("Recensione_sommelier"));
                 recensione.setRecensione_vino(rs.getLong("recensione_vino"));
 
-                long secs = rs.getDate("data").getTime();
-                recensione.setData(new java.util.Date(secs));
+                recensione.setData(rs.getString("data"));
 
                 recensioni.add(recensione);
             }
@@ -125,9 +120,9 @@ public class RecensioneDaoPostgres implements RecensioneDao {
                 st = conn.prepareStatement(insertStr);
 
                 st.setString(1,recensione.getDescrizione());
-                st.setFloat(2, recensione.getRecensione_sommelier());
-                st.setFloat(3, recensione.getRecensione_vino());
-                st.setDate(4, (Date) recensione.getData());
+                st.setLong(2, recensione.getRecensione_sommelier());
+                st.setLong(3, recensione.getRecensione_vino());
+                st.setString(4, recensione.getData());
 
                 st.executeUpdate();
 

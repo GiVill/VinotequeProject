@@ -2,9 +2,10 @@ package unical.info.dao.postgres;
 
 import unical.info.dao.CarrelloDao;
 import unical.info.model.Carrello;
+import unical.info.model.Ordine;
 import unical.info.model.Utente;
 
-import java.sql.Connection;
+import java.sql.*;
 import java.util.List;
 
 public class CarrelloDaoPostgres implements CarrelloDao {
@@ -20,12 +21,39 @@ public class CarrelloDaoPostgres implements CarrelloDao {
     }
 
     @Override
-    public Carrello findByPrimaryKey(String IDutente) {
-        return null;
+    public Carrello findByIdUtente(String IDutente) {
+        String query = "select * from ordine where id_utente = ?";
+        Carrello carrello = new Carrello();
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            while (rs.next()){
+                carrello.setId(Long.valueOf("id"));
+                carrello.setId_utente(Long.valueOf("id_utente"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return carrello;
     }
 
     @Override
-    public void saveOrUpdate(Carrello carrello, String IDutente) {
+    public void save(Carrello carrello) {
+        if (findByIdUtente(String.valueOf(carrello.getId_utente())) == null){
+            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?)";
+            PreparedStatement st;
+            try {
+                st = conn.prepareStatement(insertStr);
+
+                st.setLong(1, Long.parseLong("id_utente"));
+
+                st.executeUpdate();
+
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
 
     }
 

@@ -1,13 +1,13 @@
 package unical.info.model;
 
-import java.util.Date;
-
 public class Recensione {
     Long id;
     String descrizione;
     Long recensione_sommelier;
+    Long recensione_vino;
+    String data;
 
-    public Recensione(Long id, String descrizione, Long recensione_sommelier, Long recensione_vino, Date data) {
+    public Recensione(Long id, String descrizione, Long recensione_sommelier, Long recensione_vino, String data) {
         this.id = id;
         this.descrizione = descrizione;
         this.recensione_sommelier = recensione_sommelier;
@@ -34,9 +34,6 @@ public class Recensione {
         this.recensione_vino = recensione_vino;
     }
 
-    Long recensione_vino;
-    Date data;
-
     public Long getId() {
         return id;
     }
@@ -53,11 +50,11 @@ public class Recensione {
         this.descrizione = descrizione;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 }
