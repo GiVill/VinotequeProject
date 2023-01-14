@@ -1,8 +1,8 @@
 package unical.info.controller;
 
-import unical.info.DBManager;
-import unical.info.dao.UtenteDao;
-import unical.info.model.Utente;
+import unical.info.persistenza.DBManager;
+import unical.info.persistenza.dao.UtenteDao;
+import unical.info.persistenza.model.Utente;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

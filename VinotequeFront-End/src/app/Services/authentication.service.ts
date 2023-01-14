@@ -10,6 +10,10 @@ export class AuthenticationService {
 
   private url : string = "http://localhost:8080";
 
+  public isLogged : Boolean = false;
+
+  public currentUser !: User;
+
   constructor(private http: HttpClient) { }
 
   register(newUser : User): Observable<Boolean>{
