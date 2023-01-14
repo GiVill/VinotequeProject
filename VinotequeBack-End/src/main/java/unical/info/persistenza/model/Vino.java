@@ -9,13 +9,13 @@ public class Vino {
     int annata;
     float prezzo;
     int gradazione_alcolica;
-    Cantina vino_cantina;
+    Long vino_cantina;
     String tipologia;
     String premi;
     byte[] foto;
     int mipiace=0;
 
-    public Vino(Long id, String nome, int annata, float prezzo, int gradazione_alcolica, Cantina vino_cantina, String tipologia, String premi, byte[] foto) {
+    public Vino(Long id, String nome, int annata, float prezzo, int gradazione_alcolica, Long vino_cantina, String tipologia, String premi, byte[] foto) {
         this.id = id;
         this.nome = nome;
         this.annata = annata;
@@ -90,12 +90,12 @@ public class Vino {
     }
 
 
-    public Cantina getVino_cantina() {
+    public Long getVino_cantina() {
         return vino_cantina;
     }
 
 
-    public void setVino_cantina(Cantina vino_cantina) {
+    public void setVino_cantina(Long vino_cantina) {
         this.vino_cantina = vino_cantina;
     }
 

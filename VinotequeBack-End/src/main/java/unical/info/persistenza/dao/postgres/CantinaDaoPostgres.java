@@ -27,8 +27,6 @@ public class CantinaDaoPostgres implements CantinaDao {
                 cantina.setId(rs.getLong("id"));
                 cantina.setNome(rs.getString("nome"));
                 cantina.setDescrizione(rs.getString("descrizione"));
-                //cantina.setCantina_indirizzo(rs.getLong("Canrina_indirizzo"));
-                //todo
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -50,8 +48,7 @@ public class CantinaDaoPostgres implements CantinaDao {
                 cantina.setId(rs.getLong("id"));
                 cantina.setNome(rs.getString("nome"));
                 cantina.setDescrizione(rs.getString("descrizione"));
-                //cantina.setCantina_indirizzo(rs.getLong("Canrina_indirizzo"));
-                //todo
+
 
             }
         } catch (SQLException e) {
@@ -79,7 +76,7 @@ public class CantinaDaoPostgres implements CantinaDao {
             st.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }//todo
+        }
     }
 }
 

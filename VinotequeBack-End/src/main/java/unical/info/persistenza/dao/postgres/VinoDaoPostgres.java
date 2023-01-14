@@ -30,7 +30,7 @@ public class VinoDaoPostgres implements VinoDao{
 
                 st.setFloat(3, vino.getPrezzo());
                 st.setInt(4, vino.getGradazione_alcolica());
-                st.setLong(5, vino.getVino_cantina().getId()); //TODO:!!!!!! NEL MODEL LE CHIAVI ESTENRE SONO ALTRI MODEL
+                st.setLong(5, vino.getVino_cantina());
                 st.setString(6, vino.getTipologia());
                 st.setString(7, vino.getPremi());
                 st.setBytes(8, vino.getFoto());
@@ -62,12 +62,15 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
+                vino.setVino_cantina(rs.getLong("vino_cantina"));
+
                 /* TODO: CANTINA FINDBYPRIMARYKEY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     poi il codice sott è giusto
                 Cantina cantina = DBManager.getInstance().
                         getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
 
                  */
+
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -100,8 +103,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
-                //todo
-                //manca vino_cantina
+                vino.setVino_cantina(rs.getLong("vino_cantina"));
 
             }
         } catch (SQLException e) {
@@ -129,8 +131,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
-                //manca vino_cantina
-                //todo
+                vino.setVino_cantina(rs.getLong("vino_cantina"));
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -158,8 +159,8 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
-                //manca vino_cantina
-                //todo
+                vino.setVino_cantina(rs.getLong("vino_cantina"));
+
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -188,8 +189,8 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
-                //manca vino_cantina
-                //todo
+                vino.setVino_cantina(rs.getLong("vino_cantina"));
+
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -222,8 +223,8 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
-                //manca vino_cantina
-                //todo
+                vino.setVino_cantina(rs.getLong("vino_cantina"));
+
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -251,8 +252,8 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
-                //todo
-                //manca vino_cantina
+                vino.setVino_cantina(rs.getLong("vino_cantina"));
+
 
             }
         } catch (SQLException e) {
@@ -325,7 +326,7 @@ public class VinoDaoPostgres implements VinoDao{
                         st.setString(2, utente.getNome());
                         st.setString(3, utente.getCognome());
 
-                        //TODO
+
                         //long secs = utente.getDataNascita().getTime();
                         //st.setDate(4, new java.sql.Date(secs));
                         st.setString(4, String.valueOf(utente.getData_di_nascita()));
@@ -337,7 +338,7 @@ public class VinoDaoPostgres implements VinoDao{
                         st.executeUpdate();
 
                         } catch (SQLException e) {
-                        // TODO Auto-generated catch block
+
                         e.printStackTrace();
                         }
 
