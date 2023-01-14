@@ -27,10 +27,12 @@ public class VinoDaoPostgres implements VinoDao{
 
                 st.setString(1, vino.getNome());
                 st.setInt(2, vino.getAnnata());
-
                 st.setFloat(3, vino.getPrezzo());
                 st.setInt(4, vino.getGradazione_alcolica());
-                st.setLong(5, vino.getVino_cantina());
+
+                //TODO controllare
+                st.setLong(5, vino.getVino_cantina().getId());
+
                 st.setString(6, vino.getTipologia());
                 st.setString(7, vino.getPremi());
                 st.setBytes(8, vino.getFoto());
@@ -62,14 +64,9 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
-                vino.setVino_cantina(rs.getLong("vino_cantina"));
 
-                /* TODO: CANTINA FINDBYPRIMARYKEY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    poi il codice sott è giusto
-                Cantina cantina = DBManager.getInstance().
-                        getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
-
-                 */
+                Cantina cant = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cant);
 
                 vini.add(vino);
             }
@@ -103,7 +100,9 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
-                vino.setVino_cantina(rs.getLong("vino_cantina"));
+
+                Cantina cant = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cant);
 
             }
         } catch (SQLException e) {
@@ -131,7 +130,10 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
-                vino.setVino_cantina(rs.getLong("vino_cantina"));
+
+                Cantina cant = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cant);
+
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -159,7 +161,9 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
-                vino.setVino_cantina(rs.getLong("vino_cantina"));
+
+                Cantina cant = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cant);
 
                 vini.add(vino);
             }
@@ -189,7 +193,9 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
-                vino.setVino_cantina(rs.getLong("vino_cantina"));
+
+                Cantina cant = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cant);
 
                 vini.add(vino);
             }
@@ -223,7 +229,9 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
-                vino.setVino_cantina(rs.getLong("vino_cantina"));
+
+                Cantina cant = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cant);
 
                 vini.add(vino);
             }
@@ -252,7 +260,9 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setTipologia(rs.getString("tipologia"));
                 vino.setPremi(rs.getString("premi"));
                 vino.setFoto(rs.getBytes("foto"));
-                vino.setVino_cantina(rs.getLong("vino_cantina"));
+
+                Cantina cant = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cant);
 
 
             }
