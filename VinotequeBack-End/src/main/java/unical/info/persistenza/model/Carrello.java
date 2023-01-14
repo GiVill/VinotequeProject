@@ -4,21 +4,8 @@ import java.util.HashMap;
 
 public class Carrello {
     long id;
-    Utente id_utente;
-    public HashMap<Vino, Integer> vini;
-    public double totale;
+    long id_utente;
 
-    public Carrello() {
-        this.vini = new HashMap<>();
-        this.totale = 0;
-    }
-
-    public Carrello(long id, Utente id_utente) {
-        this.id = id;
-        this.id_utente = id_utente;
-        this.vini = new HashMap<>();
-        this.totale = 0;
-    }
 
     public long getId() {
         return id;
@@ -28,24 +15,31 @@ public class Carrello {
         this.id = id;
     }
 
-    public Utente getId_utente() {
+    public long getId_utente() {
         return id_utente;
     }
 
-    public void setId_utente(Utente id_utente) {
+    public void setId_utente(long id_utente) {
         this.id_utente = id_utente;
     }
 
-    public HashMap<Vino, Integer> getVini() {
-        return vini;
+
+    private HashMap<Vino, Integer> vini;
+    private double totale;
+
+    public Carrello() {
+        this.vini = new HashMap<>();
+        this.totale = 0;
     }
 
-    public void setVini(HashMap<Vino, Integer> vini) {
-        this.vini = vini;
+    public void aggiungiProdotto(Vino vino, Integer quantita) {
+        vini.put(vino, quantita);
+        totale += vino.getPrezzo() * quantita;
     }
 
-    public void setTotale(double totale) {
-        this.totale = totale;
+    public void rimuoviProdotto(Vino vino, int quantita) {
+        vini.remove(vino);
+        totale -= vino.getPrezzo() * quantita;
     }
 
     public double getTotale() {

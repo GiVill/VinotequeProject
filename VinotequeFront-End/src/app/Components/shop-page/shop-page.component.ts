@@ -14,6 +14,7 @@ export class ShopPageComponent implements OnInit{
   ngOnInit(): void {
     this.wineService.getWines().subscribe(data=> {
       this.wines = data;
+      console.log(data)
     })
   }
 

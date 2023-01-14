@@ -1,6 +1,6 @@
 package unical.info.persistenza.model;
 
-
+import java.math.BigDecimal;
 
 public class Promozione {
     Long id;

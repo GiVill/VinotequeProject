@@ -7,7 +7,7 @@ export interface Wine {
   prezzo : Number;
   gradazione_alcolica : Number;
   tipologia : string;
-  cantina : Cantina;
+  vino_cantina : Cantina;
   premi : String;
   foto : Blob;
 

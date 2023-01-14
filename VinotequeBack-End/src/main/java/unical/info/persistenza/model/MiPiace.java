@@ -1,10 +1,10 @@
 package unical.info.persistenza.model;
 
 public class MiPiace {
-    Utente mipiace_utente;
-    Vino mipiace_vino;
+    Long mipiace_utente;
+    Long mipiace_vino;
 
-    public MiPiace(Utente mipiace_utente, Vino mipiace_vino) {
+    public MiPiace(Long mipiace_utente, Long mipiace_vino) {
         this.mipiace_utente = mipiace_utente;
         this.mipiace_vino = mipiace_vino;
     }
@@ -12,19 +12,19 @@ public class MiPiace {
     public MiPiace() {
     }
 
-    public Utente getMipiace_utente() {
+    public Long getMipiace_utente() {
         return mipiace_utente;
     }
 
-    public void setMipiace_utente(Utente mipiace_utente) {
+    public void setMipiace_utente(Long mipiace_utente) {
         this.mipiace_utente = mipiace_utente;
     }
 
-    public Vino getMipiace_vino() {
+    public Long getMipiace_vino() {
         return mipiace_vino;
     }
 
-    public void setMipiace_vino(Vino mipiace_vino) {
+    public void setMipiace_vino(Long mipiace_vino) {
         this.mipiace_vino = mipiace_vino;
     }
 }

@@ -2,9 +2,10 @@
   <img mat-card-image src="{{'data:image/png;base64,' + wine.foto}}">
   <mat-card-content>
     <mat-card-title>{{wine.nome}}</mat-card-title>
-    <mat-card-subtitle>ciao</mat-card-subtitle>
+    <mat-card-subtitle>{{wine.vino_cantina.nome}}</mat-card-subtitle>
     <h3>{{wine.prezzo}}$</h3>
   </mat-card-content>
+  {{wine.vino_cantina.descrizione}}
   <mat-card-actions>
     <div class="listButton">
       <button mat-icon-button class="cart">

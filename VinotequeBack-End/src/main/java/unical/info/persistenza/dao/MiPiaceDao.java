@@ -14,9 +14,7 @@ public interface MiPiaceDao {
 
     public int countByVino(long id) throws SQLException;
 
-    public boolean newMiPiace(long idUtente,long idVino)throws SQLException;
-
-    public void save(MiPiace mipiace,long idUtente,long idVino) throws SQLException;
+    public void save(MiPiace mipiace);
 
     public void delete(Utente utente);
 }

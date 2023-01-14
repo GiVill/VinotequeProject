@@ -1,6 +1,8 @@
 package unical.info.persistenza.model;
 
 
+import java.util.Date;
+
 public class Vino {
     Long id;
     String nome;
@@ -12,15 +14,14 @@ public class Vino {
     String premi;
     byte[] foto;
     int mipiace=0;
-    String descrizione;
 
-    public Vino(Long id, String nome, int annata, float prezzo, int gradazione_alcolica, Cantina vino_cantina, String tipologia, String premi, byte[] foto,String descrizione) {
+    public Vino(Long id, String nome, int annata, float prezzo, int gradazione_alcolica, Cantina vino_cantina, String tipologia, String premi, byte[] foto) {
         this.id = id;
         this.nome = nome;
         this.annata = annata;
         this.prezzo = prezzo;
         this.gradazione_alcolica = gradazione_alcolica;
-        this.vino_cantina = vino_cantina;
+        this.vino_cantina = vino_cantina; //TODO:!!!!!! NEL MODEL LE CHIAVI ESTENRE SONO ALTRI MODEL
         this.tipologia = tipologia;
         this.premi = premi;
         this.foto = foto;
@@ -37,13 +38,7 @@ public class Vino {
         this.mipiace = mipiace;
     }
 
-    public String getDescrizione() {
-        return descrizione;
-    }
 
-    public void setDescrizione(String descrizione) {
-        this.descrizione = descrizione;
-    }
 
     public String getTipologia() {
         return tipologia;

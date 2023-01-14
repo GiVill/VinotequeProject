@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/CantinaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/CantinaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CarrelloDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CarrelloDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AuthenticationRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AuthenticationRESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/dao/postgres/CarrelloDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/CarrelloDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/DBManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/DBManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/IDBroker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/IDBroker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/VinoDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/VinoDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Vino.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Vino.class" afterDir="false" />
-    </list>
+    <list default="true" id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="" />
     <list id="55045ca9-e81b-4908-8ad0-55ac07a65ffd" name="Changes by Utente" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +25,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2KEO62SJ2JJlNNHF9BWgOswHlxM" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -56,7 +44,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b215950906bcc86de1d17652f91dd67c&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;908ccf32e87c5d63f942b0e357642bd8&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -92,11 +80,7 @@
       <workItem from="1673556398554" duration="8666000" />
       <workItem from="1673569221827" duration="174000" />
       <workItem from="1673629716937" duration="366000" />
-      <workItem from="1673691289513" duration="1108000" />
-      <workItem from="1673692669957" duration="129000" />
-      <workItem from="1673692963418" duration="124000" />
-      <workItem from="1673697238252" duration="394000" />
-      <workItem from="1673704425956" duration="716000" />
+      <workItem from="1673732591929" duration="659000" />
     </task>
     <servers />
   </component>
@@ -113,20 +97,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.java</url>
-          <line>63</line>
-          <properties class="unical.info.persistenza.dao.postgres.CantinaDaoPostgres" method="findByName">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

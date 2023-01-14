@@ -128,7 +128,7 @@ public class UtenteDaoPostgres implements UtenteDao {
             st.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
+        }//todo
     }
 
     @Override
@@ -204,7 +204,7 @@ public class UtenteDaoPostgres implements UtenteDao {
                         st.setString(2, utente.getNome());
                         st.setString(3, utente.getCognome());
 
-
+                        //TODO
                         //long secs = utente.getDataNascita().getTime();
                         //st.setDate(4, new java.sql.Date(secs));
                         st.setString(4, String.valueOf(utente.getData_di_nascita()));
@@ -216,7 +216,7 @@ public class UtenteDaoPostgres implements UtenteDao {
                         st.executeUpdate();
 
                         } catch (SQLException e) {
-
+                        // TODO Auto-generated catch block
                         e.printStackTrace();
                         }
 

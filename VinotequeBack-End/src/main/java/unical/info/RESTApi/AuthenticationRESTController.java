@@ -11,6 +11,7 @@ public class AuthenticationRESTController{
     @PostMapping ("/addUser")
     public Boolean register( @RequestBody Utente newUser){
         System.out.println(newUser.toString());
+        //TODO: CONTROLLO EMAIL GIA PRESENTE NEL DB
        if(DBManager.getInstance().getUtenteDao().findByEmail(newUser.getEmail()) == null) {
            DBManager.getInstance().getUtenteDao().NewUtente(newUser);
            return true;

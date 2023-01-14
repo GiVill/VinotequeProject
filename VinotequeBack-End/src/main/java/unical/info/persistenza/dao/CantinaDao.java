@@ -8,13 +8,12 @@ public interface CantinaDao {
 
     public List<Cantina> findAll();
 
-    public Cantina findByPrimaryKey(long id);
-
     public Cantina findByName(String nome);
+    public Cantina findByPrimaryKey(long idCantina);
 
     public List<Cantina> findByNameVino(String vino);
 
-    public void saveCantina(Cantina cantina);
+    public void saveOrUpdate(Cantina cantina);
 
     public void delete(Cantina cantina);
 }

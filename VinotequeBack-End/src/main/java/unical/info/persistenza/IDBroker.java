@@ -20,6 +20,7 @@ public class IDBroker {
             result.next();
             id = result.getLong("id");
         } catch (SQLException e) {
+            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 

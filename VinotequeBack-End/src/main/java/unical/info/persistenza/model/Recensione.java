@@ -1,13 +1,13 @@
 package unical.info.persistenza.model;
 
+import java.util.Date;
+
 public class Recensione {
     Long id;
     String descrizione;
-    Utente recensione_sommelier;
-    Vino recensione_vino;
-    String data;
+    Long recensione_sommelier;
 
-    public Recensione(Long id, String descrizione, Utente recensione_sommelier, Vino recensione_vino, String data) {
+    public Recensione(Long id, String descrizione, Long recensione_sommelier, Long recensione_vino, Date data) {
         this.id = id;
         this.descrizione = descrizione;
         this.recensione_sommelier = recensione_sommelier;
@@ -18,21 +18,24 @@ public class Recensione {
     public Recensione() {
     }
 
-    public Utente getRecensione_sommelier() {
+    public Long getRecensione_sommelier() {
         return recensione_sommelier;
     }
 
-    public void setRecensione_sommelier(Utente recensione_sommelier) {
+    public void setRecensione_sommelier(Long recensione_sommelier) {
         this.recensione_sommelier = recensione_sommelier;
     }
 
-    public Vino getRecensione_vino() {
+    public Long getRecensione_vino() {
         return recensione_vino;
     }
 
-    public void setRecensione_vino(Vino recensione_vino) {
+    public void setRecensione_vino(Long recensione_vino) {
         this.recensione_vino = recensione_vino;
     }
+
+    Long recensione_vino;
+    Date data;
 
     public Long getId() {
         return id;
@@ -50,11 +53,11 @@ public class Recensione {
         this.descrizione = descrizione;
     }
 
-    public String getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(String data) {
+    public void setData(Date data) {
         this.data = data;
     }
 }
