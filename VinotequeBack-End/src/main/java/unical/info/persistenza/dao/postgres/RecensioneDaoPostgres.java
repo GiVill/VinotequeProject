@@ -1,7 +1,10 @@
 package unical.info.persistenza.dao.postgres;
 
+import unical.info.persistenza.DBManager;
 import unical.info.persistenza.dao.RecensioneDao;
 import unical.info.persistenza.model.Recensione;
+import unical.info.persistenza.model.Utente;
+import unical.info.persistenza.model.Vino;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -26,11 +29,11 @@ public class RecensioneDaoPostgres implements RecensioneDao {
             while (rs.next()){
                 Recensione recensione = new Recensione();
                 recensione.setId(rs.getLong("id"));
-                recensione.setRecensione_sommelier(rs.getLong("Recensione_sommelier"));
-                recensione.setRecensione_vino(rs.getLong("recensione_vino"));
+                Utente utente = DBManager.getInstance().getUtenteDao().findByPrimaryKey(rs.getLong("recensione_sommelier"));
+                recensione.setRecensione_sommelier(utente);
 
-                long secs = rs.getDate("data").getTime();
-                recensione.setData(new java.util.Date(secs));
+                Vino vino =  DBManager.getInstance().getVinoDao().findBYPrimaryKey(rs.getLong("recensione_vino"));
+                recensione.setRecensione_vino(vino);recensione.setData(rs.getString("data"));
 
                 recensioni.add(recensione);
             }
@@ -52,11 +55,12 @@ public class RecensioneDaoPostgres implements RecensioneDao {
             if (rs.next()){
                 recensione = new Recensione();
                 recensione.setId(rs.getLong("id"));
-                recensione.setRecensione_sommelier(rs.getLong("Recensione_sommelier"));
-                recensione.setRecensione_vino(rs.getLong("recensione_vino"));
+                Utente utente = DBManager.getInstance().getUtenteDao().findByPrimaryKey(rs.getLong("recensione_sommelier"));
+                recensione.setRecensione_sommelier(utente);
 
-                long secs = rs.getDate("data").getTime();
-                recensione.setData(new java.util.Date(secs));
+                Vino vino =  DBManager.getInstance().getVinoDao().findBYPrimaryKey(rs.getLong("recensione_vino"));
+                recensione.setRecensione_vino(vino);
+                recensione.setData(rs.getString("data"));
 
             }
         } catch (SQLException e) {
@@ -76,11 +80,12 @@ public class RecensioneDaoPostgres implements RecensioneDao {
             while (rs.next()){
                 Recensione recensione = new Recensione();
                 recensione.setId(rs.getLong("id"));
-                recensione.setRecensione_sommelier(rs.getLong("Recensione_sommelier"));
-                recensione.setRecensione_vino(rs.getLong("recensione_vino"));
+                Utente utente = DBManager.getInstance().getUtenteDao().findByPrimaryKey(rs.getLong("recensione_sommelier"));
+                recensione.setRecensione_sommelier(utente);
 
-                long secs = rs.getDate("data").getTime();
-                recensione.setData(new java.util.Date(secs));
+                Vino vino =  DBManager.getInstance().getVinoDao().findBYPrimaryKey(rs.getLong("recensione_vino"));
+                recensione.setRecensione_vino(vino);
+                recensione.setData(rs.getString("data"));
 
                 recensioni.add(recensione);
             }
@@ -101,11 +106,14 @@ public class RecensioneDaoPostgres implements RecensioneDao {
             while (rs.next()){
                 Recensione recensione = new Recensione();
                 recensione.setId(rs.getLong("id"));
-                recensione.setRecensione_sommelier(rs.getLong("Recensione_sommelier"));
-                recensione.setRecensione_vino(rs.getLong("recensione_vino"));
 
-                long secs = rs.getDate("data").getTime();
-                recensione.setData(new java.util.Date(secs));
+                Utente utente = DBManager.getInstance().getUtenteDao().findByPrimaryKey(rs.getLong("recensione_sommelier"));
+                recensione.setRecensione_sommelier(utente);
+
+                Vino vino =  DBManager.getInstance().getVinoDao().findBYPrimaryKey(rs.getLong("recensione_vino"));
+                recensione.setRecensione_vino(vino);
+
+                recensione.setData(rs.getString("data"));
 
                 recensioni.add(recensione);
             }
@@ -117,16 +125,18 @@ public class RecensioneDaoPostgres implements RecensioneDao {
 
     @Override
     public void save(Recensione recensione) {
-        if (findByVino(recensione.getRecensione_vino()) == null && findBySommelier(recensione.getRecensione_sommelier())==null) {
-            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?)";
+        if (findByVino(recensione.getRecensione_vino().getId()) == null && findBySommelier(recensione.getRecensione_sommelier().getId())==null) {
+            String insertStr = "INSERT INTO recensione VALUES (DEFAULT,?,?,?,?)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
 
                 st.setString(1,recensione.getDescrizione());
-                st.setFloat(2, recensione.getRecensione_sommelier());
-                st.setFloat(3, recensione.getRecensione_vino());
-                st.setDate(4, (Date) recensione.getData());
+
+                st.setLong(2, recensione.getRecensione_sommelier().getId());
+                st.setLong(3, recensione.getRecensione_vino().getId());
+
+                st.setString(4, recensione.getData());
 
                 st.executeUpdate();
 
