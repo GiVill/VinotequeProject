@@ -34,6 +34,9 @@ import { AuthenticationService } from './Services/authentication.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AuthPageComponent } from './Components/auth-page/auth-page.component';
 import { ItemPageComponent } from './Components/item-page/item-page.component';
+import { CartPageComponent } from './Components/cart-page/cart-page.component';
+import { ItemCartComponent } from './Components/item-cart/item-cart.component';
+import {MatRadioModule} from '@angular/material/radio';
 
 
 @NgModule({
@@ -47,6 +50,8 @@ import { ItemPageComponent } from './Components/item-page/item-page.component';
     RegistrationCardComponent,
     AuthPageComponent,
     ItemPageComponent,
+    CartPageComponent,
+    ItemCartComponent,
   ],
   imports: [
     ReactiveFormsModule,
@@ -70,7 +75,8 @@ import { ItemPageComponent } from './Components/item-page/item-page.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    MatRadioModule,
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]
