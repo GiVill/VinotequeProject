@@ -1,17 +1,22 @@
 .cart{
-  color: rgb(0, 92, 0);
   width: 60px;
   height: 60px;
 
 }
+.cart:hover{
+  color: rgb(0, 92, 0);
+}
+
 mat-icon{
   scale: 150%;
 }
 
 .favorite{
-  color: rgb(204, 204, 0);
   width: 60px;
   height: 60px;
+}
+.favorite:hover{
+  color: rgb(204, 204, 0);
 }
 
 mat-card-actions {
