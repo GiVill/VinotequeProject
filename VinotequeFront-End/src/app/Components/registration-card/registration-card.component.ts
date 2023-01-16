@@ -39,9 +39,8 @@ export class RegistrationCardComponent{
     return this.email.hasError('email') ? 'Not a valid email' : '';
   }
 
-
-
   onSubmit(form : NgForm){
+    /*
     const newUser : User = {nome: form.value.name, cognome: form.value.surname,
       data_di_nascita: form.value.data, email: form.value.email, password: form.value.password, indirizzo: form.value.via}
     this.service.register(newUser).subscribe(data=> {
@@ -60,6 +59,6 @@ export class RegistrationCardComponent{
 
     console.log(form.value);
     console.log(this.email.value);
-
+    */
   }
 }

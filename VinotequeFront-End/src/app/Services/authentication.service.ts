@@ -21,7 +21,7 @@ export class AuthenticationService {
     return this.http.post<Boolean>(this.url + "/addUser",newUser);
   }
 
-  checkLogin(jsessionid: string): Observable<Boolean>{
-    return this.http.get<Boolean>(this.url + "/checkAuth", {params: {jsessionid: jsessionid}});
+  checkLogin(jsessionid: string): Observable<User>{
+    return this.http.get<User>(this.url + "/checkAuth", {params: {jsessionid: jsessionid}});
   }
 }

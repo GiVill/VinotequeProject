@@ -7,8 +7,6 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import static java.lang.String.valueOf;
-
 public class CantinaDaoPostgres implements CantinaDao {
     Connection conn;
     public CantinaDaoPostgres(Connection connection) {
@@ -29,42 +27,14 @@ public class CantinaDaoPostgres implements CantinaDao {
                 cantina.setId(rs.getLong("id"));
                 cantina.setNome(rs.getString("nome"));
                 cantina.setDescrizione(rs.getString("descrizione"));
-                cantina.setIndirizzo(rs.getString("indirizzo"));
-
-                cantine.add(cantina);
+                //cantina.setCantina_indirizzo(rs.getLong("Canrina_indirizzo"));
+                //todo
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return cantine;
     }
-
-    @Override
-    public Cantina findByPrimaryKey(long id) {
-        Cantina cantina = null;
-        String query = "select * from cantina where id = ?";
-
-        try {
-            PreparedStatement st = conn.prepareStatement(query);
-            st.setLong(1,id);
-            ResultSet rs = st.executeQuery();
-
-            if (rs.next()){
-                cantina = new Cantina();
-                cantina.setId(rs.getLong("id"));
-                cantina.setNome(rs.getString("nome"));
-                cantina.setDescrizione(rs.getString("descrizione"));
-                cantina.setIndirizzo(rs.getString("indirizzo"));
-            }
-            else {
-                return null;
-            }
-            return cantina;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
 
     @Override
     public Cantina findByName(String nome) {
@@ -80,8 +50,8 @@ public class CantinaDaoPostgres implements CantinaDao {
                 cantina.setId(rs.getLong("id"));
                 cantina.setNome(rs.getString("nome"));
                 cantina.setDescrizione(rs.getString("descrizione"));
-                cantina.setIndirizzo(rs.getString("indirizzo"));
-
+                //cantina.setCantina_indirizzo(rs.getLong("Canrina_indirizzo"));
+                //todo
 
             }
         } catch (SQLException e) {
@@ -91,28 +61,37 @@ public class CantinaDaoPostgres implements CantinaDao {
     }
 
     @Override
+    public Cantina findByPrimaryKey(long id) {
+        Cantina cantina = null;
+        String query = "select * from cantina where id = ?";
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1,id);
+            ResultSet rs = st.executeQuery();
+
+            if (rs.next()){
+                cantina = new Cantina();
+                cantina.setId(rs.getLong("id"));
+                cantina.setNome(rs.getString("nome"));
+                cantina.setDescrizione(rs.getString("descrizione"));
+                cantina.setIndirizzo(rs.getString("indirizzo"));
+
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return cantina;
+    }
+
+
+    @Override
     public List<Cantina> findByNameVino(String vino) {
         return null;
     }
 
     @Override
-    public void saveCantina(Cantina cantina) {
-        if (findByName(cantina.getNome()) == null) {
-            String insertStr = "INSERT INTO cantina VALUES (DEFAULT,?,?,?,?)";
-            PreparedStatement st;
-            try {
-                st = conn.prepareStatement(insertStr);
-                st.setString(1, cantina.getNome());
-                st.setString(2, cantina.getIndirizzo());
-                st.setString(3,cantina.getDescrizione());
-                st.setString(4, cantina.getIndirizzo());
+    public void saveOrUpdate(Cantina cantina) {
 
-                st.executeUpdate();
-
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-        }
     }
 
     @Override
@@ -124,7 +103,7 @@ public class CantinaDaoPostgres implements CantinaDao {
             st.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }
+        }//todo
     }
 }
 

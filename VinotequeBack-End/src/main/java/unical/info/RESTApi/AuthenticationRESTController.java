@@ -1,8 +1,11 @@
 package unical.info.RESTApi;
 
+import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.web.bind.annotation.*;
 import unical.info.persistenza.DBManager;
 import unical.info.persistenza.model.Utente;
+
+import javax.servlet.http.HttpServletRequest;
 
 
 @RestController
@@ -20,7 +23,6 @@ public class AuthenticationRESTController{
            return false;
        }
     }
-
 
     @PostMapping ("/login")
     public String login( @RequestBody String email, String password){

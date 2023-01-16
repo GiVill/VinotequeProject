@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="" />
+    <list default="true" id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <list id="55045ca9-e81b-4908-8ad0-55ac07a65ffd" name="Changes by Utente" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -81,6 +84,9 @@
       <workItem from="1673569221827" duration="174000" />
       <workItem from="1673629716937" duration="366000" />
       <workItem from="1673732591929" duration="659000" />
+      <workItem from="1673798281283" duration="330000" />
+      <workItem from="1673808757335" duration="9230000" />
+      <workItem from="1673870044454" duration="1203000" />
     </task>
     <servers />
   </component>
