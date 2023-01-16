@@ -5,18 +5,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import unical.info.persistenza.DBManager;
-import unical.info.persistenza.model.Utente;
+import unical.info.persistenza.model.Recensione;
 import unical.info.persistenza.model.Vino;
 
 import java.util.List;
 
 @RestController
 @CrossOrigin("http://localhost:4200")
-public class VinoRESTController {
+public class RecensioniRESTController {
 
-    @PostMapping("/Wine")
-    public List<Vino> getWines(){
-        List<Vino> vini = DBManager.getInstance().getVinoDao().findAll();
-        return vini;
+
+    @PostMapping("/Review")
+    public List<Recensione> getReviews(@RequestBody long idVino){
+        List<Recensione> recensioni = DBManager.getInstance().getRecensioneDao().findByVino(idVino);
+        return recensioni;
     }
 }

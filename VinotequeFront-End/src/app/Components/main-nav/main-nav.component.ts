@@ -11,7 +11,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   templateUrl: './main-nav.component.html',
   styleUrls: ['./main-nav.component.css']
 })
-export class MainNavComponent implements OnInit,AfterViewChecked{
+export class MainNavComponent implements OnInit{
 
   logged : Boolean = false;
   sommelier : Boolean = false;

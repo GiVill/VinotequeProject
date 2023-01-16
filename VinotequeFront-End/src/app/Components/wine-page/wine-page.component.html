@@ -1,0 +1,132 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+<div class="winePage">
+  <img src="{{'data:image/png;base64,' + wine.foto}}">
+  <div class="details">
+    <mat-card-title>{{wine.nome}}</mat-card-title>
+    <mat-card-subtitle>NOME CANTINA</mat-card-subtitle>
+    <p>Descrizione</p>
+    <h1 class="price"><strong>99,99$</strong></h1>
+    <span class="disponibilita">disponibilità immediata</span>
+    <mat-card-actions>
+      <button mat-stroked-button class="cart">
+        Aggiungi al carrello!
+        <mat-icon class="material-symbols-outlined">add_shopping_cart</mat-icon>
+      </button>
+      <button mat-stroked-button class="favorite">
+        Aggiungi ai preferiti!
+        <mat-icon class="material-symbols-outlined">favorite</mat-icon>
+      </button>
+      <div class="spacer"></div>
+    </mat-card-actions>
+
+    <table>
+
+      <tbody><tr>
+        <td ><h3>Denominazione</h3></td>
+        <td class="tabNome">Primitivo di Manduria DOC</td>
+      </tr>
+
+        <tr>
+          <td><h3>Vitigni</h3></td>
+          <td class="tabVite">Primitivo 100%</td>
+        </tr>
+
+
+      <tr>
+        <td><h3>Tipologia</h3></td>
+        <td class="table__row__element--txt">
+        <a>Vini Rossi</a>
+        </td>
+      </tr>
+
+      <tr>
+        <td><h3>Regione</h3></td>
+        <td>
+          <a>Puglia</a>
+            (<a>Italia</a>)
+        </td>
+      </tr>
+
+
+      <tr>
+        <td ><h3>Gradazione alcolica</h3></td>
+        <td >14.5%</td>
+      </tr>
+
+      <tr>
+        <td ><h3>Formato</h3></td>
+        <td >Bottiglia 75 cl</td>
+      </tr>
+
+        <tr>
+          <td ><h3>Vigneti</h3></td>
+          <td>Viti di 20-50 anni di età coltivate ad alberello e spalliera</td>
+        </tr>
+        <tr>
+          <td ><h3>Vinificazione</h3></td>
+          <td>Fermentazione alcolica in acciaio</td>
+        </tr>
+
+        <tr>
+          <td ><h3>Affinamento</h3></td>
+          <td>9 mesi in botte grande di rovere</td>
+        </tr>
+
+
+      <tr>
+        <td ><h3>Note aggiuntive</h3></td>
+        <td>
+          Contiene solfiti      </td>
+      </tr>
+
+    </table>
+  </div>>
+
+</div>
+
+<mat-divider></mat-divider>
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Nome Sommelier</mat-card-title>
+    <mat-card-subtitle>boh</mat-card-subtitle>
+    <div class="spacer"></div>
+      <div class="menu">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_horiz</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>warning</mat-icon>
+            <span>Segnala</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>delete_forever</mat-icon>
+            <span>Elimina</span>
+          </button>
+        </mat-menu>
+      </div>
+  </mat-card-header>
+  <mat-card-content>
+    <form #reviewForm="ngForm" (ngSubmit)="onSubmit(reviewForm)">
+      <mat-form-field class="example-full-width">
+        <mat-label>Message</mat-label>
+        <input matInput #message maxlength="2000" placeholder="..." required (keyup)="showButton(message.value)">
+        <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      </mat-form-field>
+      <mat-card-actions>
+        <div class="spacer"></div>
+        <button mat-fab color="primary" class="send" type="submit" [disabled]="!reviewForm.valid" *ngIf="show">
+          <mat-icon>send</mat-icon>
+        </button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+  </mat-card-actions>
+</mat-card>
+
+

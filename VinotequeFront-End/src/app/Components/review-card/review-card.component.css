@@ -1,6 +1,8 @@
 .example-card {
+  margin-top: 50px;
   max-width: 1600px;
-  margin-left: 100px;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .example-header-image {
@@ -12,10 +14,18 @@ mat-card-actions{
   align-self:flex-end;
 }
 
+mat-card-header{
+  justify-content: flex-start;
+  display: flex;
+  display: 1 0;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
 .menu{
-  margin-left: 1345px;
   margin-bottom: 30px;
-  flex: auto;
   align-self: flex-end;
   align-content: flex-end;
 }

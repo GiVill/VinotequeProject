@@ -1,0 +1,121 @@
+.winePage{
+  display: flex;
+  justify-content:  space-between;
+  flex-wrap: wrap;
+}
+.winePage >*{
+  min-width: 300px;
+}
+
+.winePage > img{
+  max-width: 370px;
+}
+
+img{
+  margin-left: 150px;
+  object-fit: cover;
+  flex: 1 0;
+}
+
+section {
+  display: table;
+}
+
+button{
+  z-index: 0;
+}
+
+.details{
+  margin-top: 30px;
+  align-content: top;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 1 0;
+  margin-left: 20px;
+}
+
+.disponibilita{
+  color: green;
+
+}
+
+mat-icon{
+  scale: 160%;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 500,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.cart:hover{
+  border-color: green;
+  color: green;
+
+}
+
+.favorite:hover{
+  border-color: red;
+  color: red;
+}
+
+.cart{
+  height: 70px;
+  width: 400px;
+}
+
+.favorite{
+  height: 70px;
+  width: 400px;
+  margin-left: 5px;
+}
+
+.price{
+  margin-top: 20px;
+}
+
+
+
+
+.example-full-width {
+  width: 100%;
+}
+
+
+
+
+.example-card {
+  margin-top: 50px;
+  max-width: 1600px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+mat-card-header{
+  justify-content: flex-start;
+  display: flex;
+  display: 1 0;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.menu{
+  margin-bottom: 30px;
+  align-self: flex-end;
+  align-content: flex-end;
+}
+
+.send{
+  box-shadow: none;
+}

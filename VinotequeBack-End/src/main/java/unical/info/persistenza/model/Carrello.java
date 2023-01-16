@@ -7,6 +7,22 @@ public class Carrello {
     Utente id_utente;
 
 
+    /*
+     * Allor il carrello viene creato appena un utente clicca sul carrello
+     * vengo generate nel di tante righe quanti vini sono presenti nel carrello:
+     *
+     *
+     *   |id_cart|   |id_utente|   |id_vino1|
+     *   |id_cart|   |id_utente|   |id_vino2|
+     *   |id_cart|   |id_utente|   |id_vino2|
+     *
+     *
+     * Le righe nl db del carrello verrano svuotate una volta completato l'ordine
+     *
+     *
+     */
+
+
     public long getId() {
         return id;
     }

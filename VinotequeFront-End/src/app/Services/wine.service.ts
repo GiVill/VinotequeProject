@@ -9,6 +9,8 @@ import { Wine } from '../Wine';
 export class WineService {
   private url : string = "http://localhost:8080";
 
+  wines !: Wine[];
+
   constructor(private http: HttpClient) { }
 
   getWines(): Observable<Wine[]>{

@@ -33,12 +33,12 @@ import {MatSelectModule} from '@angular/material/select';
 import { AuthenticationService } from './Services/authentication.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AuthPageComponent } from './Components/auth-page/auth-page.component';
-import { ItemPageComponent } from './Components/item-page/item-page.component';
 import { CartPageComponent } from './Components/cart-page/cart-page.component';
 import { ItemCartComponent } from './Components/item-cart/item-cart.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { UserPageComponent } from './Components/user-page/user-page.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { WinePageComponent } from './Components/wine-page/wine-page.component';
 
 @NgModule({
   declarations: [
@@ -50,10 +50,10 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     ShopPageComponent,
     RegistrationCardComponent,
     AuthPageComponent,
-    ItemPageComponent,
     UserPageComponent,
     ItemCartComponent,
     CartPageComponent,
+    WinePageComponent,
   ],
   imports: [
     ReactiveFormsModule,

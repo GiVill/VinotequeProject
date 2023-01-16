@@ -12,10 +12,13 @@ export class ShopPageComponent implements OnInit{
   wines !: Wine[]
 
   ngOnInit(): void {
-    this.wineService.getWines().subscribe(data=> {
-      this.wines = data;
-      console.log(data)
-    })
+    if(!this.wineService.wines){
+      this.wineService.getWines().subscribe(data=> {
+        this.wines = data;
+        this.wineService.wines = data;
+        console.log(data)
+      })
+    }
   }
 
   @Input() isHandset: any;

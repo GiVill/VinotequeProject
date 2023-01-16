@@ -3,21 +3,24 @@
     <div mat-card-avatar class="example-header-image"></div>
     <mat-card-title>Nome Sommelier</mat-card-title>
     <mat-card-subtitle>boh</mat-card-subtitle>
-    <div class="menu">
-      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-        <mat-icon>more_horiz</mat-icon>
-      </button>
-      <mat-menu #menu="matMenu">
-        <button mat-menu-item>
-          <mat-icon>warning</mat-icon>
-          <span>Segnala</span>
+    <div class="spacer"></div>
+    <mat-card-actions>
+      <div class="menu">
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+          <mat-icon>more_horiz</mat-icon>
         </button>
-        <button mat-menu-item disabled>
-          <mat-icon>delete_forever</mat-icon>
-          <span>Elimina</span>
-        </button>
-      </mat-menu>
-    </div>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>
+            <mat-icon>warning</mat-icon>
+            <span>Segnala</span>
+          </button>
+          <button mat-menu-item disabled>
+            <mat-icon>delete_forever</mat-icon>
+            <span>Elimina</span>
+          </button>
+        </mat-menu>
+      </div>
+    </mat-card-actions>
   </mat-card-header>
   <mat-card-content>
       The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
