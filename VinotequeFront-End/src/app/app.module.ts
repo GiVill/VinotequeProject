@@ -33,12 +33,11 @@ import {MatSelectModule} from '@angular/material/select';
 import { AuthenticationService } from './Services/authentication.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AuthPageComponent } from './Components/auth-page/auth-page.component';
-import { ItemPageComponent } from './Components/item-page/item-page.component';
 import { CartPageComponent } from './Components/cart-page/cart-page.component';
 import { ItemCartComponent } from './Components/item-cart/item-cart.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { UserPageComponent } from './Components/user-page/user-page.component';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -50,7 +49,6 @@ import { UserPageComponent } from './Components/user-page/user-page.component';
     ShopPageComponent,
     RegistrationCardComponent,
     AuthPageComponent,
-    ItemPageComponent,
     UserPageComponent,
     ItemCartComponent,
     CartPageComponent,
@@ -79,6 +77,7 @@ import { UserPageComponent } from './Components/user-page/user-page.component';
     MatSelectModule,
     HttpClientModule,
     MatRadioModule,
+    MatSnackBarModule,
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

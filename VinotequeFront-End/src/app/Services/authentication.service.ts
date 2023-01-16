@@ -10,11 +10,23 @@ export class AuthenticationService {
 
   private url : string = "http://localhost:8080";
 
-  public isLogged : Boolean = false;
+  public logged : Boolean = false;
 
   public currentUser !: User;
 
   constructor(private http: HttpClient) { }
+
+  isLogged(){
+    return this.logged;
+  }
+
+  isAdmin(){
+    return (this.currentUser.ruolo == "ADMIN");
+  }
+
+  isSommelier(){
+    return(this.currentUser.ruolo == "SOMMELIER");
+  }
 
   register(newUser : User): Observable<Boolean>{
     console.log(newUser); //EROE!!!!!!!!!!
