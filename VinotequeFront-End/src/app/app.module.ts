@@ -34,6 +34,7 @@ import { AuthenticationService } from './Services/authentication.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { AuthPageComponent } from './Components/auth-page/auth-page.component';
 import { ItemPageComponent } from './Components/item-page/item-page.component';
+import { UserPageComponent } from './Components/user-page/user-page.component';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import { ItemPageComponent } from './Components/item-page/item-page.component';
     RegistrationCardComponent,
     AuthPageComponent,
     ItemPageComponent,
+    UserPageComponent,
   ],
   imports: [
     ReactiveFormsModule,

@@ -4,6 +4,7 @@ import { AuthPageComponent } from './Components/auth-page/auth-page.component';
 import { LoginCardComponent } from './Components/login-card/login-card.component';
 import { RegistrationCardComponent } from './Components/registration-card/registration-card.component';
 import { ShopPageComponent } from './Components/shop-page/shop-page.component';
+import { UserPageComponent } from './Components/user-page/user-page.component';
 
 const routes: Routes = [
   { path:'shop', component:ShopPageComponent},

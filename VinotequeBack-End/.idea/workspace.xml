@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="" />
+    <list default="true" id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/AuthenticationRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/AuthenticationRESTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/controller/Authentication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/controller/Authentication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/controller/LoginServletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/controller/LoginServletController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/css/login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AuthenticationRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AuthenticationRESTController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/Authentication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/controller/Authentication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/LoginServletController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/controller/LoginServletController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-card/wine-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-card/wine-card.component.html" afterDir="false" />
+    </list>
     <list id="55045ca9-e81b-4908-8ad0-55ac07a65ffd" name="Changes by Utente" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +28,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -82,6 +96,7 @@
       <workItem from="1673629716937" duration="366000" />
       <workItem from="1673732591929" duration="659000" />
       <workItem from="1673798281283" duration="330000" />
+      <workItem from="1673808757335" duration="8634000" />
     </task>
     <servers />
   </component>
