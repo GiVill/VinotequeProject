@@ -38,7 +38,7 @@ import { CartPageComponent } from './Components/cart-page/cart-page.component';
 import { ItemCartComponent } from './Components/item-cart/item-cart.component';
 import {MatRadioModule} from '@angular/material/radio';
 import { UserPageComponent } from './Components/user-page/user-page.component';
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -79,6 +79,7 @@ import { UserPageComponent } from './Components/user-page/user-page.component';
     MatSelectModule,
     HttpClientModule,
     MatRadioModule,
+    MatSnackBarModule,
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

@@ -46,16 +46,27 @@
           <mat-icon>account_circle</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item (click)="loginRedirect()">
-            <mat-icon>warning</mat-icon>
+
+          <button mat-menu-item (click)="loginRedirect()" *ngIf="!logged">
+            <mat-icon>login</mat-icon>
             <span>Accedi</span>
           </button>
-          <button mat-menu-item routerLink="Auth">
+          <button mat-menu-item routerLink="Auth" *ngIf="!logged">
             <mat-icon>delete_forever</mat-icon>
             <span>Registrati</span>
           </button>
+
+          <button mat-menu-item (click)="loginRedirect()" *ngIf="logged">
+            <!-- <mat-icon>warning</mat-icon> -->
+            <span>Il mio account</span>
+          </button>
+          <button mat-menu-item routerLink="Auth" *ngIf="logged">
+            <mat-icon>logout</mat-icon>
+            <span>Logout</span>
+          </button>
+
         </mat-menu>
-        <button mat-icon-button class="cart">
+        <button mat-icon-button class="cart" (click)="cartAction()">
           <mat-icon>shopping_cart</mat-icon>
         </button>
         </mat-toolbar-row>
