@@ -1,5 +1,6 @@
 package unical.info.persistenza.dao.postgres;
 
+import unical.info.controller.PasswordCrypt;
 import unical.info.persistenza.dao.UtenteDao;
 import unical.info.persistenza.model.Utente;
 
@@ -7,11 +8,13 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import static java.lang.String.copyValueOf;
 import static java.lang.String.valueOf;
 
 public class UtenteDaoPostgres implements UtenteDao {
     Connection conn;
+    PasswordCrypt p = new PasswordCrypt();
 
     public UtenteDaoPostgres(Connection connection) {
         this.conn = connection;
@@ -32,6 +35,7 @@ public class UtenteDaoPostgres implements UtenteDao {
                 utente.setCognome(rs.getString("cognome"));
                 utente.setData_di_nascita(rs.getString("data_di_nascita"));
                 utente.setEmail(rs.getString("email"));
+
                 utente.setPassword(rs.getString("password"));
                 utente.setRuolo(rs.getString("ruolo"));
                 utente.setIndirizzo(rs.getString("indirizzo"));
@@ -54,9 +58,13 @@ public class UtenteDaoPostgres implements UtenteDao {
                 st = conn.prepareStatement(insertStr);
                 st.setString(1, utente.getNome());
                 st.setString(2, utente.getCognome());
-                String data = valueOf(utente.getData_di_nascita());
+
                 st.setString(3, String.valueOf(utente.getData_di_nascita()));
                 st.setString(4, utente.getEmail());
+                String passC = utente.getPassword();
+
+                utente.setPassword(p.encode(passC));
+
                 st.setString(5, utente.getPassword());
 
                 st.executeUpdate();
