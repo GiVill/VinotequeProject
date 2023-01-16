@@ -51,6 +51,9 @@ import { UserPageComponent } from './Components/user-page/user-page.component';
     RegistrationCardComponent,
     AuthPageComponent,
     ItemPageComponent,
+    UserPageComponent,
+    ItemCartComponent,
+    CartPageComponent,
   ],
   imports: [
     ReactiveFormsModule,
