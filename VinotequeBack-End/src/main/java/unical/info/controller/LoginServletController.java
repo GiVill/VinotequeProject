@@ -1,5 +1,7 @@
 package unical.info.controller;
 
+
+import org.springframework.security.crypto.bcrypt.BCrypt;
 import unical.info.persistenza.DBManager;
 import unical.info.persistenza.dao.UtenteDao;
 import unical.info.persistenza.model.Utente;
@@ -11,34 +13,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.net.URI;
-import java.net.URL;
+
 
 @WebServlet("/doLogin")
 public class LoginServletController extends HttpServlet {
+    PasswordCrypt p = new PasswordCrypt();
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-        System.out.println(email+password);
+
 
         UtenteDao udao = DBManager.getInstance().getUtenteDao();
         Utente utente = udao.findByEmail(email);
+
         boolean logged;
         if (utente == null) {
             logged = false;
         }else {
-            if (password.equals(utente.getPassword())) {
+            if (p.matches(password,utente.getPassword())) {
                 logged = true;
                 System.out.println(password+email);
                 HttpSession session = req.getSession();
                 session.setAttribute("user", utente);
                 session.setAttribute("sessionId", session.getId());
-
-
                 req.getServletContext().setAttribute(session.getId(), session);
-                System.out.println(session.getId());
-                System.out.println(req.getSession());
+
 
             }else {
                 logged = false;

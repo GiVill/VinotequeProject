@@ -1,5 +1,8 @@
 package unical.info.persistenza.model;
 
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import unical.info.controller.PasswordCrypt;
+
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -13,6 +16,7 @@ public class Utente{
     String password;
     String ruolo;
     String indirizzo;
+    PasswordCrypt p = new PasswordCrypt();
 
     public Utente( String nome, String cognome, String data_di_nascita, String email, String password, String indirizzo) {
 
@@ -79,8 +83,10 @@ public class Utente{
     }
 
     public String getPassword() {
-        return password;
+        return this.password;
     }
+
+
 
     public void setPassword(String password) {
         this.password = password;
