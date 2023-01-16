@@ -1,7 +1,11 @@
 package unical.info.persistenza.dao.postgres;
 
+import unical.info.persistenza.DBManager;
 import unical.info.persistenza.dao.OrdineDao;
+import unical.info.persistenza.model.Carrello;
 import unical.info.persistenza.model.Ordine;
+import unical.info.persistenza.model.Promozione;
+import unical.info.persistenza.model.Utente;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -26,13 +30,21 @@ public class OrdineDaoPostgres implements OrdineDao {
 
             while (rs.next()){
                 Ordine ordine = new Ordine();
-                ordine.setOrdine_utente(Long.valueOf("ordine_utente"));
-                ordine.setOrdine_carrello(Long.valueOf("ordine_carrello"));
+
+                Utente u  = DBManager.getInstance().getUtenteDao().findByPrimaryKey(rs.getLong("recensione_sommelier"));
+                ordine.setOrdine_utente(u);
+
+                Carrello c = DBManager.getInstance().getCarrelloDao().findByIdUtente(rs.getLong("ordine_carrello"));
+                ordine.setOrdine_carrello(c);
+
                 ordine.setOrdine_metodo_pag("ordine_metodo_pag");
                 ordine.setIndirizzo("indirizzo");
                 ordine.setTotale(Float.valueOf("totale"));
                 ordine.setStatus("status");
-                ordine.setOrdine_promozione(Long.valueOf("ordine_promozione"));
+
+                Promozione p = DBManager.getInstance().getPromozioneDao().findByDescrizione(rs.getString("ordine_promozione"));
+                ordine.setOrdine_promozione(p);
+
                 ordine.setData("data");
                 ordini.add(ordine);
             }
@@ -45,7 +57,7 @@ public class OrdineDaoPostgres implements OrdineDao {
 
     @Override
     public void save(Ordine ordine) {
-        if (findByUtente(ordine.getOrdine_utente()) == null){
+        if (findByUtente(ordine.getOrdine_utente().getId()) == null){
             String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?,?,?,?,?)";
             PreparedStatement st;
             try {

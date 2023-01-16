@@ -5,9 +5,11 @@ import java.util.Date;
 public class Recensione {
     Long id;
     String descrizione;
-    Long recensione_sommelier;
+    Utente recensione_sommelier;
+    Vino recensione_vino;
+    String data;
 
-    public Recensione(Long id, String descrizione, Long recensione_sommelier, Long recensione_vino, Date data) {
+    public Recensione(Long id, String descrizione, Utente recensione_sommelier, Vino recensione_vino, String data) {
         this.id = id;
         this.descrizione = descrizione;
         this.recensione_sommelier = recensione_sommelier;
@@ -18,24 +20,23 @@ public class Recensione {
     public Recensione() {
     }
 
-    public Long getRecensione_sommelier() {
+    public Utente getRecensione_sommelier() {
         return recensione_sommelier;
     }
 
-    public void setRecensione_sommelier(Long recensione_sommelier) {
+    public void setRecensione_sommelier(Utente recensione_sommelier) {
         this.recensione_sommelier = recensione_sommelier;
     }
 
-    public Long getRecensione_vino() {
+    public Vino getRecensione_vino() {
         return recensione_vino;
     }
 
-    public void setRecensione_vino(Long recensione_vino) {
+    public void setRecensione_vino(Vino recensione_vino) {
         this.recensione_vino = recensione_vino;
     }
 
-    Long recensione_vino;
-    Date data;
+
 
     public Long getId() {
         return id;
@@ -53,11 +54,11 @@ public class Recensione {
         this.descrizione = descrizione;
     }
 
-    public Date getData() {
+    public String getData() {
         return data;
     }
 
-    public void setData(Date data) {
+    public void setData(String data) {
         this.data = data;
     }
 }

@@ -9,9 +9,9 @@ public interface CarrelloDao {
 
     public List<Utente> findAll();
 
-    public Carrello findByPrimaryKey(String IDutente);
+    Carrello findByIdUtente(Long IDutente);
 
-    public void saveOrUpdate(Carrello carrello,String IDutente);
+    void save(Carrello carrello);
 
-    public void delete(Carrello carrello,String IDutente);
+    public void delete(Carrello carrello, String IDutente);
 }

@@ -5,19 +5,19 @@ import java.lang.Float;
 
 public class Ordine {
     Long id;
-    Long ordine_utente;
-    Long ordine_carrello;
+    Utente ordine_utente;
+    Carrello ordine_carrello;
     String ordine_metodo_pag;
     String indirizzo;
     Float totale;
     String status;
-    Long ordine_promozione;
+    Promozione ordine_promozione;
     String data;
 
     public Ordine() {
     }
 
-    public Ordine(Long id, Long ordine_utente, Long ordine_carrello, String ordine_metodo_pag, String indirizzo, Float totale, String status, Long ordine_promozione, String data) {
+    public Ordine(Long id, Utente ordine_utente, Carrello ordine_carrello, String ordine_metodo_pag, String indirizzo, Float totale, String status, Promozione ordine_promozione, String data) {
         this.id = id;
         this.ordine_utente = ordine_utente;
         this.ordine_carrello = ordine_carrello;
@@ -37,11 +37,11 @@ public class Ordine {
         this.data = data;
     }
 
-    public Long getOrdine_promozione() {
+    public Promozione getOrdine_promozione() {
         return ordine_promozione;
     }
 
-    public void setOrdine_promozione(Long ordine_promozione) {
+    public void setOrdine_promozione(Promozione ordine_promozione) {
         this.ordine_promozione = ordine_promozione;
     }
 
@@ -53,19 +53,19 @@ public class Ordine {
         this.id = id;
     }
 
-    public Long getOrdine_utente() {
+    public Utente getOrdine_utente() {
         return ordine_utente;
     }
 
-    public void setOrdine_utente(Long ordine_utente) {
+    public void setOrdine_utente(Utente ordine_utente) {
         this.ordine_utente = ordine_utente;
     }
 
-    public Long getOrdine_carrello() {
+    public Carrello getOrdine_carrello() {
         return ordine_carrello;
     }
 
-    public void setOrdine_carrello(Long ordine_carrello) {
+    public void setOrdine_carrello(Carrello ordine_carrello) {
         this.ordine_carrello = ordine_carrello;
     }
 

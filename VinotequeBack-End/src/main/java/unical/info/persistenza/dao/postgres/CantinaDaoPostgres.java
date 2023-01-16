@@ -50,8 +50,8 @@ public class CantinaDaoPostgres implements CantinaDao {
                 cantina.setId(rs.getLong("id"));
                 cantina.setNome(rs.getString("nome"));
                 cantina.setDescrizione(rs.getString("descrizione"));
-                //cantina.setCantina_indirizzo(rs.getLong("Canrina_indirizzo"));
-                //todo
+                cantina.setIndirizzo(rs.getString("indirizzo"));
+
 
             }
         } catch (SQLException e) {
