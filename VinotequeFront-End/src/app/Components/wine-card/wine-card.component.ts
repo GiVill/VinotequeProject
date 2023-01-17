@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Wine } from 'src/app/Wine';
+import { Wine } from 'src/app/Model/Wine';
 
 @Component({
   selector: 'app-wine-card',

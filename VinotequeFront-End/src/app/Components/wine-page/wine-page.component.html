@@ -4,9 +4,9 @@
   <img src="{{'data:image/png;base64,' + wine.foto}}">
   <div class="details">
     <mat-card-title>{{wine.nome}}</mat-card-title>
-    <mat-card-subtitle>NOME CANTINA</mat-card-subtitle>
-    <p>Descrizione</p>
-    <h1 class="price"><strong>99,99$</strong></h1>
+    <mat-card-subtitle>{{wine.vino_cantina.nome}}</mat-card-subtitle>
+    <p>{{wine.vino_cantina.descrizione}}</p>
+    <h1 class="price"><strong>{{wine.prezzo}}$</strong></h1>
     <span class="disponibilita">disponibilità immediata</span>
     <mat-card-actions>
       <button mat-stroked-button class="cart">
@@ -24,7 +24,7 @@
 
       <tbody><tr>
         <td ><h3>Denominazione</h3></td>
-        <td class="tabNome">Primitivo di Manduria DOC</td>
+        <td class="tabNome">{{wine.nome}}</td>
       </tr>
 
         <tr>
@@ -35,8 +35,8 @@
 
       <tr>
         <td><h3>Tipologia</h3></td>
-        <td class="table__row__element--txt">
-        <a>Vini Rossi</a>
+        <td>
+        <a>{{wine.tipologia}}</a>
         </td>
       </tr>
 
@@ -51,7 +51,7 @@
 
       <tr>
         <td ><h3>Gradazione alcolica</h3></td>
-        <td >14.5%</td>
+        <td >{{wine.gradazione_alcolica}}%</td>
       </tr>
 
       <tr>
@@ -75,9 +75,10 @@
 
 
       <tr>
-        <td ><h3>Note aggiuntive</h3></td>
+        <td ><h3>Premi</h3></td>
         <td>
-          Contiene solfiti      </td>
+          {{wine.premi}}
+        </td>
       </tr>
 
     </table>
@@ -85,13 +86,16 @@
 
 </div>
 
-<mat-divider></mat-divider>
+<mat-divider
+style="margin-left: 150px;
+       margin-right: 150px;">
+</mat-divider>
 
-<mat-card class="example-card">
+<mat-card class="example-card" *ngIf="canAddReview">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Nome Sommelier</mat-card-title>
-    <mat-card-subtitle>boh</mat-card-subtitle>
+    <mat-card-title>{{user.nome}}</mat-card-title>
+    <mat-card-subtitle>{{user.ruolo}}</mat-card-subtitle>
     <div class="spacer"></div>
       <div class="menu">
         <button mat-icon-button [matMenuTriggerFor]="menu">
@@ -112,9 +116,9 @@
   <mat-card-content>
     <form #reviewForm="ngForm" (ngSubmit)="onSubmit(reviewForm)">
       <mat-form-field class="example-full-width">
-        <mat-label>Message</mat-label>
-        <input matInput #message maxlength="2000" placeholder="..." required (keyup)="showButton(message.value)">
-        <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+        <mat-label>Recensione</mat-label>
+        <input matInput #message maxlength="2000" placeholder="..." required (keyup)="sendReviewButton(message.value)">
+        <mat-hint align="start"><strong>Devi rispettare le linee guida!</strong> </mat-hint>
         <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
       </mat-form-field>
       <mat-card-actions>
@@ -128,5 +132,8 @@
   <mat-card-actions>
   </mat-card-actions>
 </mat-card>
+
+<app-review-card *ngFor="let review of reviews" [review]="review">
+</app-review-card>
 
 

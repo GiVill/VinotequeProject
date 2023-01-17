@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { WineService } from 'src/app/Services/wine.service';
-import { Wine } from 'src/app/Wine';
+import { Wine } from 'src/app/Model/Wine';
 
 @Component({
   selector: 'app-shop-page',
@@ -8,6 +8,7 @@ import { Wine } from 'src/app/Wine';
   styleUrls: ['./shop-page.component.css']
 })
 export class ShopPageComponent implements OnInit{
+
   constructor(private wineService:WineService){}
   wines !: Wine[]
 
@@ -16,7 +17,6 @@ export class ShopPageComponent implements OnInit{
       this.wineService.getWines().subscribe(data=> {
         this.wines = data;
         this.wineService.wines = data;
-        console.log(data)
       })
     }
   }

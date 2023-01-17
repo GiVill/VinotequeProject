@@ -1,20 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Wine } from '../Model/Wine';
+import { Review } from '../Model/Review';
 
 @Injectable({
   providedIn: 'root'
 })
-export class WineService {
+export class ReviewService {
+
   private url : string = "http://localhost:8080";
 
-  wines !: Wine[];
+  review !: Review[]
 
   constructor(private http: HttpClient) { }
 
-  getWines(): Observable<Wine[]>{
-    var wines : Observable<Wine[]> = this.http.post<Wine []>(this.url + "/Wine",{})
-    return wines;
+  getReviews(idVino : BigInt): Observable<Review[]>{
+    var reviews : Observable<Review[]> = this.http.post<Review []>(this.url + "/Review",idVino,{})
+    return reviews;
   }
 }

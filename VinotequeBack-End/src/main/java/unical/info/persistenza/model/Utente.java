@@ -16,7 +16,6 @@ public class Utente{
     String password;
     String ruolo;
     String indirizzo;
-    PasswordCrypt p = new PasswordCrypt();
 
     public Utente( String nome, String cognome, String data_di_nascita, String email, String password, String indirizzo) {
 

@@ -16,7 +16,8 @@ public class RecensioniRESTController {
 
 
     @PostMapping("/Review")
-    public List<Recensione> getReviews(@RequestBody long idVino){
+    public List<Recensione> getReviewsWine(@RequestBody long idVino){
+        System.out.println(idVino);
         List<Recensione> recensioni = DBManager.getInstance().getRecensioneDao().findByVino(idVino);
         return recensioni;
     }

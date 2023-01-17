@@ -76,14 +76,16 @@ public class RecensioneDaoPostgres implements RecensioneDao {
     @Override
     public List<Recensione> findByVino(long IDvino) {
         List<Recensione> recensioni= new ArrayList<Recensione>();
-        String query = "select * from recensioni where recensione_vino = ?";
+        String query = "select * from recensione where recensione_vino = ?";
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1,IDvino);
+            ResultSet rs = st.executeQuery();
 
-            while (rs.next()){
+            if (rs.next()){
                 Recensione recensione = new Recensione();
                 recensione.setId(rs.getLong("id"));
+                recensione.setDescrizione(rs.getString("descrizione"));
                 Utente sommelier  = DBManager.getInstance().getUtenteDao().findByPrimaryKey(rs.getLong("recensione_sommelier"));
                 recensione.setRecensione_sommelier(sommelier);
 

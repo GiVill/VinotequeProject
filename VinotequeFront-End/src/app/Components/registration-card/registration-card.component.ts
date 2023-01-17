@@ -4,7 +4,7 @@ import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { MatDatepickerModule} from '@angular/material/datepicker';
 import { Router, RouterLink } from '@angular/router';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
-import { User } from 'src/app/User';
+import { User } from 'src/app/Model/User';
 
 @Component({
   selector: 'app-registration-card',
