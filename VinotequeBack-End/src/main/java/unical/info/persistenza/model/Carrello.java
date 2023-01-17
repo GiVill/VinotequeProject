@@ -3,11 +3,102 @@ package unical.info.persistenza.model;
 import java.util.HashMap;
 
 public class Carrello {
-    long id;
+
+    private HashMap<Long, Integer> prodotti;
+
+    Utente carrello_utente;
+    Long id;
+
+    public Carrello(HashMap<Long, Integer> prodotti, Utente carrello_utente, Long id) {
+        this.prodotti = prodotti;
+        this.carrello_utente = carrello_utente;
+        this.id = id;
+    }
+
+    public Carrello(HashMap<Long, Integer> prodotti, Utente carrello_utente) {
+        this.prodotti = prodotti;
+        this.carrello_utente = carrello_utente;
+    }
+
+    public void aggiungiProdotto(Long item, int quantity) {
+        prodotti.put(item, quantity);
+    }
+
+    public void rimuoviProdotto(Long item) {
+        int quantita = prodotti.get(item);
+        if (quantita < 2)
+            prodotti.remove(item);
+        else {
+            prodotti.replace(item, quantita-1);
+        }
+    }
+
+    public HashMap<Long, Integer> getProdotto() {
+        return prodotti;
+    }
+
+    public Utente getCarrello_utente() {
+        return carrello_utente;
+    }
+
+    public void setCarrello_utente(Utente carrello_utente) {
+        this.carrello_utente = carrello_utente;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+    public void setProdotti(HashMap<Long, Integer> prodotti) {
+        this.prodotti = prodotti;
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+ long id;
     Utente id_utente;
 
 
-    /*
+
      * Allor il carrello viene creato appena un utente clicca sul carrello
      * vengo generate nel di tante righe quanti vini sono presenti nel carrello:
      *
@@ -20,7 +111,7 @@ public class Carrello {
      * Le righe nl db del carrello verrano svuotate una volta completato l'ordine
      *
      *
-     */
+
 
 
     public long getId() {
@@ -61,5 +152,4 @@ public class Carrello {
     public double getTotale() {
         return totale;
     }
-}
-
+ */

@@ -22,37 +22,40 @@ public class CarrelloDaoPostgres implements CarrelloDao {
 
     @Override
     public Carrello findByIdUtente(Long IDutente) {
+        return null;
+    }
+    /*
+    @Override
+    public Carrello findByIdUtente(Long IDutente) {
         String query = "select * from carrello where id_utente = ?";
-        Carrello carrello = new Carrello();
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
 
             while (rs.next()){
-                carrello.setId(Long.valueOf("id"));
+                Long id = rs.getLong("id");
                 Utente utente = DBManager.getInstance().getUtenteDao().findByPrimaryKey(rs.getLong("id_utente"));
-                carrello.setId_utente(utente);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
         return carrello;
     }
+    */
+
     @Override
-    public void save(Carrello carrello) {
-        if (findByIdUtente(Long.valueOf(carrello.getId_utente().getId())) == null){
-            String insertStr = "INSERT INTO carrello VALUES (DEFAULT,?)";
-            PreparedStatement st;
-            try {
-                st = conn.prepareStatement(insertStr);
-
-                st.setLong(1, Long.parseLong("id_utente"));
-
-                st.executeUpdate();
-
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
+    public void save(Carrello carrello) throws SQLException {
+        if (findByIdUtente(Long.valueOf(carrello.getCarrello_utente().getId())) == null){
+            String sql = "INSERT INTO carrello (id ,carrello_vino, quantita,carrello_utente) VALUES (DEFAULT,?, ?, ?)";
+            PreparedStatement stmt = conn.prepareStatement(sql);
+            for (Long vino : carrello.getProdotto().keySet()){
+                int quantita = carrello.getProdotto().get(vino);
+                stmt.setLong(1,vino);
+                stmt.setInt(2,quantita);
+                stmt.setLong(3,carrello.getCarrello_utente().getId());
+                stmt.addBatch();
             }
+            stmt.executeBatch();
         }
 
     }
