@@ -26,6 +26,7 @@ export class AppComponent implements OnInit, OnDestroy{
         if (userData){
           this.service.currentUser = userData;
           localStorage.setItem("user",JSON.stringify(userData));
+          localStorage.setItem("jsessionid",this.sessionId.toString())
           console.log(userData)
         }
       });

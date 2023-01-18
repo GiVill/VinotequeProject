@@ -36,4 +36,8 @@ export class AuthenticationService {
   checkLogin(jsessionid: string): Observable<User>{
     return this.http.get<User>(this.url + "/checkAuth", {params: {jsessionid: jsessionid}});
   }
+
+  logout(jsessionid: string): Observable<Boolean>{
+    return this.http.get<Boolean>(this.url + "/logout",{params:{jsessionid:jsessionid}});
+  }
 }

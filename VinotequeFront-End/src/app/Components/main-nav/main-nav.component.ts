@@ -46,4 +46,21 @@ export class MainNavComponent implements OnInit{
 
   }
 
+
+  doLogout(){
+    const jsessionid = localStorage.getItem("jsessionid");
+
+    this.service.logout(jsessionid!).subscribe(data =>{
+      if(data){
+        localStorage.clear();
+        window.location.href = "http://localhost:4200"
+        this._snackBar.open("Logout effettuato con successo!", "OK");
+      } else {
+        this._snackBar.open("ERRORE!\n Riprova più tardi!", "OK");
+      }
+    })
+
+
+  }
+
 }

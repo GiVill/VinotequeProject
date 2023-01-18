@@ -60,7 +60,7 @@
             <!-- <mat-icon>warning</mat-icon> -->
             <span>Il mio account</span>
           </button>
-          <button mat-menu-item routerLink="Auth" *ngIf="logged">
+          <button mat-menu-item (click)="doLogout()"*ngIf="logged">
             <mat-icon>logout</mat-icon>
             <span>Logout</span>
           </button>

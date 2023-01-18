@@ -1,11 +1,11 @@
-package unical.info.RESTApi;
+package unical.info.RESTapi;
 
-import org.springframework.boot.web.servlet.server.Session;
 import org.springframework.web.bind.annotation.*;
 import unical.info.persistenza.DBManager;
 import unical.info.persistenza.model.Utente;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 
 @RestController
@@ -24,10 +24,15 @@ public class AuthenticationRESTController{
        }
     }
 
-    @PostMapping ("/login")
-    public String login( @RequestBody String email, String password){
-        //TODO: CERCA CREDENZIALI NEL DB E RESTITUISCE L'ID come stringa o jsessionid
-        return  "ciao";
+    @GetMapping ("/logout")
+    public boolean logout(String jsessionid, HttpServletRequest req){
+        if(jsessionid != null){
+            HttpSession session = (HttpSession) req.getServletContext().getAttribute(jsessionid);
+            session.removeAttribute("user");
+            session.invalidate();
+            return true;
+        }
+        return false;
     }
 }
 /*
