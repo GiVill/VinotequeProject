@@ -9,6 +9,14 @@
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
+  scale: 160%;
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+mat-card-title{
+  font-size: 28px;
 }
 
 mat-card-actions{
@@ -16,9 +24,16 @@ mat-card-actions{
 }
 
 mat-card-header{
+  margin-top: 10px;
   justify-content: flex-start;
   display: flex;
   display: 1 0;
+}
+
+mat-card-content{
+  font-size: 22px;
+  margin-inline: 90px;
+  text-align: justify;
 }
 
 .spacer {
