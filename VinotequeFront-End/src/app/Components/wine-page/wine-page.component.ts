@@ -25,9 +25,7 @@ export class WinePageComponent implements OnInit{
   user !: User
   reviews !: Review[]
   canAddReview : boolean = false;
-  id : string | null | undefined;
-
-
+  index !: string | null ;
 
   ngOnInit(): void {
 
@@ -40,23 +38,17 @@ export class WinePageComponent implements OnInit{
       }
     }
 
-    this.id = this.route.snapshot.paramMap.get("id")
+    this.index = this.route.snapshot.paramMap.get("index")
 
-    if(!this.wineService.wines){
-      this.wineService.getWines().subscribe(data=> {
-        this.wineService.wines = data;
-        this.wine = this.wineService.wines[Number(this.id)-1];
-        this.reviewService.getReviews(this.wine.id).subscribe(data =>{
-          this.reviewService.review = data;
-          this.reviews = data;
-        })
-      })
+    if(this.wineService.wines != undefined || null){
+      this.wine = this.wineService.wines[Number(this.index)];
+      this.takeReviews();
 
     } else {
-      this.wine = this.wineService.wines[Number(this.id)-1];
-      this.reviewService.getReviews(this.wine.id).subscribe(data =>{
-        this.reviewService.review = data;
-        this.reviews = data;
+      this.wineService.getWines().subscribe(data =>{
+        this.wineService.wines = data
+        this.wine = this.wineService.wines[Number(this.index)];
+        this.takeReviews();
       })
     }
   }
@@ -69,6 +61,14 @@ export class WinePageComponent implements OnInit{
     } else {
       this.show = false;
     }
+  }
+
+
+  takeReviews(){
+    this.reviewService.getReviews(this.wine.id).subscribe(data =>{
+      this.reviewService.review = data;
+      this.reviews = data;
+    })
   }
 
   onSubmit(from:NgForm){

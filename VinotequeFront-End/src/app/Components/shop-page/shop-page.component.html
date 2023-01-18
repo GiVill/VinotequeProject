@@ -15,7 +15,7 @@
   </div>
   <span class="spacer" *ngIf="!(isHandset |async)"></span>
     <div class="wineCardContainer">
-      <app-wine-card *ngFor="let wine of wines" [wine]="wine">
+      <app-wine-card *ngFor="let wine of wines index as i" [wine]="wine" [index]="i">
       </app-wine-card>
     </div>
     <mat-paginator [length]="100"

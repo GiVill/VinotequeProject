@@ -82,13 +82,11 @@
       </tr>
 
     </table>
-  </div>>
+  </div>
 
 </div>
 
-<mat-divider
-style="margin-left: 150px;
-       margin-right: 150px;">
+<mat-divider class="central">
 </mat-divider>
 
 <mat-card class="example-card" *ngIf="canAddReview">
@@ -123,7 +121,10 @@ style="margin-left: 150px;
       </mat-form-field>
       <mat-card-actions>
         <div class="spacer"></div>
-        <button mat-fab color="primary" class="send" type="submit" [disabled]="!reviewForm.valid" *ngIf="show">
+        <button mat-icon-button class="send" [disabled]="reviewForm.valid && !show" (click)="message.value='' ">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button class="send" [disabled]="!reviewForm.valid" *ngIf="show">
           <mat-icon>send</mat-icon>
         </button>
       </mat-card-actions>

@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/review-card/review-card.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/review-card/review-card.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="55045ca9-e81b-4908-8ad0-55ac07a65ffd" name="Changes by Utente" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,18 +42,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b215950906bcc86de1d17652f91dd67c&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "908ccf32e87c5d63f942b0e357642bd8",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.VinotequeApplication">
+}]]></component>
+  <component name="RunManager" selected="Spring Boot.VinotequeApplication">
     <configuration name="VinotequeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="unical.info.VinotequeApplication" />
       <module name="VinotequeBack-End" />
@@ -83,6 +82,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.VinotequeApplication" />
         <item itemvalue="Application.VinotequeApplication" />
       </list>
     </recent_temporary>
@@ -104,6 +104,7 @@
       <workItem from="1673808757335" duration="9230000" />
       <workItem from="1673870044454" duration="1203000" />
       <workItem from="1673967237715" duration="9250000" />
+      <workItem from="1674076117513" duration="641000" />
     </task>
     <servers />
   </component>

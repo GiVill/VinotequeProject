@@ -1,9 +1,19 @@
 .example-card {
   margin-top: 50px;
   max-width: 1600px;
-  margin-left: 150px;
-  margin-right: 150px;
+  margin-left: 10px;
+  margin-right: 10px;
   margin-bottom: 50px;
+}
+
+@media(min-width:959px){
+  .example-card {
+    margin-top: 50px;
+    max-width: 1600px;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-bottom: 50px;
+  }
 }
 
 .example-header-image {
