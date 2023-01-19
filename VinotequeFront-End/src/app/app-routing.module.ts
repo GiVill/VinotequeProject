@@ -1,6 +1,7 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthPageComponent } from './Components/auth-page/auth-page.component';
+import { CartPageComponent } from './Components/cart-page/cart-page.component';
 import { LoginCardComponent } from './Components/login-card/login-card.component';
 import { RegistrationCardComponent } from './Components/registration-card/registration-card.component';
 import { ShopPageComponent } from './Components/shop-page/shop-page.component';
@@ -13,6 +14,8 @@ const routes: Routes = [
   { path: 'registration', component:RegistrationCardComponent},
   { path: 'Auth', component:AuthPageComponent},
   { path: 'shop/:index', component: WinePageComponent},
+  { path: 'cart', component: CartPageComponent},
+  { path: 'profile', component: UserPageComponent},
 ];
 
 @NgModule({
