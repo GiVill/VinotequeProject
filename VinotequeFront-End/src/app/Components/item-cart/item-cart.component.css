@@ -1,10 +1,12 @@
 .container{
   display: flex;
+  flex-direction: row;
+  width: 750px;
+  justify-content: space-between;
 }
 
 .spacer {
   flex: 1 1 auto;
-  margin-right: 150px;
 }
 
 .small{

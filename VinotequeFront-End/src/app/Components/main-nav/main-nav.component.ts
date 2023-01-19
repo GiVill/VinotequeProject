@@ -31,15 +31,13 @@ export class MainNavComponent implements OnInit{
     this.logged = this.service.isLogged();
   }
 
-  cartAction(){
-    if(this.logged){
-      console.log("ciao")
-    } else {
-      this._snackBar.open("Non sei loggato!", "OK");
-    }
-
-
-  }
+  // cartAction(){
+  //   if(this.logged){
+  //     console.log("ciao")
+  //   } else {
+  //     this._snackBar.open("Non sei loggato!", "OK");
+  //   }
+  // }
 
   loginRedirect(){
     window.location.href = 'http://localhost:8080/login.html';

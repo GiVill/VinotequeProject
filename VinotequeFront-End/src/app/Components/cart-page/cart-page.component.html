@@ -1,15 +1,16 @@
-<div style="display: flex;">
+<div class="container">
   <div>
     <div style="display: flex;">
-      <h1 style="margin-left: 130px;"><strong>Carrello</strong></h1>
+      <h1><strong>Carrello</strong></h1>
       <p style="margin-left: 20px; align-self: center;">(num articoli)</p>
     </div>
     <div style="display: flex;">
-      <p style="margin-left: 130px;">PRODOTTO</p>
+      <p>PRODOTTO</p>
       <p style="margin-left: 300px;">QUANTITA'</p>
       <p style="margin-left: 130px;">PREZZO</p>
     </div>
-    <div style="margin-left: 88px;">
+    <span class="spacer"></span>
+    <div class="item-container">
       <app-item-cart></app-item-cart>
       <app-item-cart></app-item-cart>
       <app-item-cart></app-item-cart>
@@ -21,7 +22,7 @@
       <h4 style="margin-left: 65px;"><strong>10,90€</strong></h4>
     </div>
   </div>
-  <mat-card style="margin-left: 136px; background-color: lightyellow; width: 400px;">
+  <mat-card style="margin-left: 136px; background-color: lightyellow; width: 400px; max-height: 450px;">
     <div style="display: flex;">
       <p style="margin-top: 10px; margin-left: 15px;"><strong>TOTALE PRODOTTI</strong></p>
       <span class="spacer"></span>
