@@ -4,7 +4,7 @@ import unical.info.persistenza.model.Recensione;
 
 import java.util.List;
 
-public interface RecensioneDao {
+public interface RecensioneDao {//finito
     public List<Recensione> findAll();
 
     public Recensione findByPrimaryKey(long id);

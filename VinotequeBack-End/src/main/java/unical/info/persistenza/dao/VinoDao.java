@@ -1,15 +1,16 @@
 package unical.info.persistenza.dao;
 
+import unical.info.persistenza.model.Cantina;
 import unical.info.persistenza.model.Vino;
 
 import java.util.List;
 
-public interface VinoDao {
+public interface VinoDao {//finito
     public void save(Vino vino);
 
     public List<Vino> findAll();
 
-    public List<Vino> findByCantina(String cantina);
+    public List<Vino> findByCantina(long cantina);
 
     public Vino findByNome(String vino);
 
@@ -20,8 +21,6 @@ public interface VinoDao {
     public List<Vino> findRangePrezzo(int prezzoMin,int prezzoMax);
 
     public List<Vino> findByGradazione(int gradazione);
-
-    public List<Vino> findPlusRecensioni();
 
     public List<Vino> findByTipologia(String tipologia);
 

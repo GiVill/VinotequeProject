@@ -73,8 +73,32 @@ public class VinoDaoPostgres implements VinoDao{
     }
 
     @Override
-    public List<Vino> findByCantina(String cantina) {
-        return null;
+    public List<Vino> findByCantina(long cantina) {
+        List<Vino> vini = new ArrayList<Vino>();
+        String query = "select * from vino where vino_cantina = ? ";
+
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            while (rs.next()){
+                Vino vino = new Vino();
+                vino.setId(rs.getLong("id"));
+                vino.setNome(rs.getString("nome"));
+                vino.setAnnata(rs.getInt("annata"));
+                vino.setPrezzo(rs.getFloat("prezzo"));
+                vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
+                vino.setTipologia(rs.getString("tipologia"));
+                vino.setPremi(rs.getString("premi"));
+                vino.setFoto(rs.getBytes("foto"));
+                Cantina canti = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(canti);
+                vini.add(vino);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return vini;
     }
 
     @Override
@@ -192,11 +216,6 @@ public class VinoDaoPostgres implements VinoDao{
             throw new RuntimeException(e);
         }
         return vini;
-    }
-
-    @Override
-    public List<Vino> findPlusRecensioni() {
-        return null;
     }
 
     @Override

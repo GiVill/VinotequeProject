@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CantinaDaoPostgres implements CantinaDao {
+public class CantinaDaoPostgres implements CantinaDao {//finito(vedi giu)
     Connection conn;
     public CantinaDaoPostgres(Connection connection) {
         this.conn =connection;
@@ -87,12 +87,24 @@ public class CantinaDaoPostgres implements CantinaDao {
     @Override
     public List<Cantina> findByNameVino(String vino) {
         return null;
-    }
+    }//forse da eliminare
 
     @Override
     public void saveOrUpdate(Cantina cantina) {
+            String insertStr = "INSERT INTO cantina VALUES (DEFAULT,?,?,?)";
+            PreparedStatement st;
+            try {
+                st = conn.prepareStatement(insertStr);
+                st.setString(1, cantina.getNome());
+                st.setString(2, cantina.getDescrizione());
+                st.setString(3, cantina.getIndirizzo());
+                st.executeUpdate();
 
-    }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
 
     @Override
     public void delete(Cantina cantina) {

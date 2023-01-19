@@ -58,15 +58,11 @@ public class UtenteDaoPostgres implements UtenteDao {
                 st = conn.prepareStatement(insertStr);
                 st.setString(1, utente.getNome());
                 st.setString(2, utente.getCognome());
-
                 st.setString(3, String.valueOf(utente.getData_di_nascita()));
                 st.setString(4, utente.getEmail());
                 String passC = utente.getPassword();
-
                 utente.setPassword(p.encode(passC));
-
                 st.setString(5, utente.getPassword());
-
                 st.executeUpdate();
 
             } catch (SQLException e) {

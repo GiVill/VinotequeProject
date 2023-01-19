@@ -6,49 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/VinotequeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/VinotequeApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/CarrelloDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/CarrelloDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CarrelloDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CarrelloDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Carrello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Carrello.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/css/login.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/js/loginValidate.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AuthenticationRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AuthenticationRESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/VinoRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/VinoRESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/ServletUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/ServletUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/VinotequeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/VinotequeApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/Authentication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/controller/Authentication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/LoginServletController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/controller/LoginServletController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/LogoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/controller/LogoutServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/PasswordCrypt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/controller/PasswordCrypt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/DBManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/DBManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/IDBroker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/IDBroker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/CantinaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/CantinaDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/CarrelloDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/CarrelloDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/MiPiaceDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/MiPiaceDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/OrdineDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/OrdineDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/PromozioneDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/PromozioneDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/RecensioneDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/RecensioneDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/UtenteDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/UtenteDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/VinoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/VinoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/CarrelloDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/CarrelloDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/MiPiaceDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/MiPiaceDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/PromozioneDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/PromozioneDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/VinoDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/VinoDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Cantina.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Cantina.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Carrello.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Carrello.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/MiPiace.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/MiPiace.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Ordine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Ordine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Promozione.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Promozione.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Recensione.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Recensione.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Utente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Utente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Vino.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Vino.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/unical/info/VinotequeApplicationTests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/RecensioneDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/RecensioneDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/UtenteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/UtenteDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/VinoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/VinoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" afterDir="false" />
     </list>
     <list id="55045ca9-e81b-4908-8ad0-55ac07a65ffd" name="Changes by Utente" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,17 +49,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "b215950906bcc86de1d17652f91dd67c",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b215950906bcc86de1d17652f91dd67c&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.VinotequeApplication">
     <configuration name="VinotequeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="unical.info.VinotequeApplication" />
@@ -146,6 +110,7 @@
       <workItem from="1673808757335" duration="9230000" />
       <workItem from="1673870044454" duration="1203000" />
       <workItem from="1673967237715" duration="9250000" />
+      <workItem from="1674122182231" duration="3138000" />
     </task>
     <servers />
   </component>
