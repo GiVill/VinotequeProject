@@ -33,7 +33,6 @@ public class LoginServletController extends HttpServlet {
         }else {
             if (p.matches(password,utente.getPassword())) {
                 logged = true;
-                System.out.println(password+email);
                 HttpSession session = req.getSession();
                 session.setAttribute("user", utente);
                 session.setAttribute("sessionId", session.getId());

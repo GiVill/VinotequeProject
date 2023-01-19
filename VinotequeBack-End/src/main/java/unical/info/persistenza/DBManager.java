@@ -26,7 +26,7 @@ public class DBManager {
     public Connection getConnection() {
         if (conn == null) {
             try {
-                conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/Vinoteque", "postgres", "postgres123");
+                conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/", "postgres", "postgres123");
             } catch (SQLException e) {
                 e.printStackTrace();
             }
@@ -46,9 +46,7 @@ public class DBManager {
 
     public OrdineDao getOrdineDao(){return new OrdineDaoPostgres(getConnection());}
 
-    public MiPiaceDao getMiPiace(){return new MiPiaceDaoPostgres(getConnection());}
-
-    public CarrelloDao getCarrelloDao(){return new CarrelloDaoPostgres(getConnection());}
+    public PreferitiDao getPreferiti(){return new PreferitiDaoPostgres(getConnection());}
 
     public CantinaDao getCantinaDao(){return new CantinaDaoPostgres(getConnection());}
 

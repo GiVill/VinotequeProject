@@ -1,30 +1,30 @@
 package unical.info.persistenza.model;
 
-public class MiPiace {
-    Utente mipiace_utente;
-    Vino mipiace_vino;
+public class Preferiti {
+    Utente preferiti_utente;
+    Vino preferiti_vino;
 
-    public MiPiace(Utente mipiace_utente, Vino mipiace_vino) {
-        this.mipiace_utente = mipiace_utente;
-        this.mipiace_vino = mipiace_vino;
+    public Preferiti(Utente mipiace_utente, Vino mipiace_vino) {
+        this.preferiti_utente = mipiace_utente;
+        this.preferiti_vino = mipiace_vino;
     }
 
-    public MiPiace() {
+    public Preferiti() {
     }
 
-    public Utente getMipiace_utente() {
-        return mipiace_utente;
+    public Utente getPreferiti_utente() {
+        return preferiti_utente;
     }
 
-    public void setMipiace_utente(Utente mipiace_utente) {
-        this.mipiace_utente = mipiace_utente;
+    public void setPreferiti_utente(Utente preferiti_utente) {
+        this.preferiti_utente = preferiti_utente;
     }
 
-    public Vino getMipiace_vino() {
-        return mipiace_vino;
+    public Vino getPreferiti_vino() {
+        return preferiti_vino;
     }
 
-    public void setMipiace_vino(Vino mipiace_vino) {
-        this.mipiace_vino = mipiace_vino;
+    public void setPreferiti_vino(Vino preferiti_vino) {
+        this.preferiti_vino = preferiti_vino;
     }
 }

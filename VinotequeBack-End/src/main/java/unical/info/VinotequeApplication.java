@@ -4,7 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import unical.info.persistenza.DBManager;
-import unical.info.persistenza.model.Carrello;
 import unical.info.persistenza.model.Utente;
 
 import java.sql.SQLException;

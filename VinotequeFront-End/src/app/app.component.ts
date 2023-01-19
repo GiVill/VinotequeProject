@@ -1,14 +1,14 @@
 import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { UrlSegment } from '@angular/router';
 import { AuthenticationService } from './Services/authentication.service';
-import { User } from './User';
+import { User } from './Model/User';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnDestroy{
 
   constructor(private service : AuthenticationService){}
 
@@ -25,10 +25,24 @@ export class AppComponent implements OnInit{
       this.service.checkLogin(sessionId).subscribe(userData => {
         if (userData){
           this.service.currentUser = userData;
-          localStorage.setItem(this.sessionId.toString(),JSON.stringify(userData));
+          localStorage.setItem("user",JSON.stringify(userData));
+          localStorage.setItem("jsessionid",this.sessionId.toString())
           console.log(userData)
         }
       });
+    } else {
+      if(localStorage.getItem("user")){
+        this.service.logged = true;
+        this.service.currentUser = JSON.parse(localStorage.getItem("user")!);
+      }
     }
   }
+
+
+  ngOnDestroy(): void {
+    if(localStorage.getItem("user")){
+      localStorage.clear();
+    }
+  }
+
 }

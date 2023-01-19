@@ -35,10 +35,10 @@ public class UtenteDaoPostgres implements UtenteDao {
                 utente.setCognome(rs.getString("cognome"));
                 utente.setData_di_nascita(rs.getString("data_di_nascita"));
                 utente.setEmail(rs.getString("email"));
-
                 utente.setPassword(rs.getString("password"));
                 utente.setRuolo(rs.getString("ruolo"));
                 utente.setIndirizzo(rs.getString("indirizzo"));
+                utente.setCarrello(rs.getString("carrello"));
 
                 utenti.add(utente);
             }
@@ -52,17 +52,19 @@ public class UtenteDaoPostgres implements UtenteDao {
     @Override
     public void NewUtente(Utente utente) {
         if (findByEmail(utente.getEmail()) == null) {
-            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?,?)";
+            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?,?,?,?)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
                 st.setString(1, utente.getNome());
                 st.setString(2, utente.getCognome());
-                st.setString(3, String.valueOf(utente.getData_di_nascita()));
+                st.setString(3, utente.getData_di_nascita());
                 st.setString(4, utente.getEmail());
                 String passC = utente.getPassword();
                 utente.setPassword(p.encode(passC));
                 st.setString(5, utente.getPassword());
+                st.setString(6,utente.getIndirizzo());
+                st.setString(7, utente.getCarrello());
                 st.executeUpdate();
 
             } catch (SQLException e) {
@@ -72,7 +74,7 @@ public class UtenteDaoPostgres implements UtenteDao {
     }
 
     @Override
-    public Utente findByPrimaryKey(long id) {//da controllare forse si puo cancellare
+    public Utente findByPrimaryKey(long id) {
         Utente utente = null;
         String query = "select * from utente where id = ?";
         try {
@@ -89,6 +91,8 @@ public class UtenteDaoPostgres implements UtenteDao {
                 utente.setEmail(rs.getString("email"));
                 utente.setPassword(rs.getString("password"));
                 utente.setRuolo(rs.getString("ruolo"));
+                utente.setIndirizzo(rs.getString("indirizzo"));
+                utente.setCarrello(rs.getString("carrello"));
 
             }
         } catch (SQLException e) {
@@ -111,10 +115,12 @@ public class UtenteDaoPostgres implements UtenteDao {
                 utente.setId(rs.getLong("id"));
                 utente.setNome(rs.getString("nome"));
                 utente.setCognome(rs.getString("cognome"));
+                utente.setData_di_nascita(rs.getString("data_di_nascita"));
                 utente.setEmail(rs.getString("email"));
                 utente.setPassword(rs.getString("password"));
                 utente.setRuolo(rs.getString("ruolo"));
-                utente.setData_di_nascita(rs.getString("data_di_nascita"));
+                utente.setIndirizzo(rs.getString("indirizzo"));
+                utente.setCarrello(rs.getString("carrello"));
 
             }
         } catch (SQLException e) {
@@ -132,7 +138,7 @@ public class UtenteDaoPostgres implements UtenteDao {
             st.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }//todo
+        }
     }
 
     @Override
@@ -153,6 +159,22 @@ public class UtenteDaoPostgres implements UtenteDao {
         }
     }
     int[] matricoleSommelier = {219922, 283130, 549172, 393784, 303154};
+
+    @Override
+    public void CambioPassword(Utente utente, String password) {
+        String passC = password;
+        String newPass = p.encode(passC);
+        Long idute = utente.getId();
+        String updateStr = "UPDATE utente set password = newPass where id = idute";
+        PreparedStatement st;
+        try {
+            st = conn.prepareStatement(updateStr);
+            st.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
 
 /*

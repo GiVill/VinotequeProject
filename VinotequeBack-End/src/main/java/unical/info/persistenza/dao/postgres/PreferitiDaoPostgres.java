@@ -1,9 +1,9 @@
 package unical.info.persistenza.dao.postgres;
 
 import unical.info.persistenza.DBManager;
-import unical.info.persistenza.dao.MiPiaceDao;
+import unical.info.persistenza.dao.PreferitiDao;
 import unical.info.persistenza.model.Cantina;
-import unical.info.persistenza.model.MiPiace;
+import unical.info.persistenza.model.Preferiti;
 import unical.info.persistenza.model.Utente;
 import unical.info.persistenza.model.Vino;
 
@@ -11,20 +11,15 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MiPiaceDaoPostgres implements MiPiaceDao {
+public class PreferitiDaoPostgres implements PreferitiDao {
 
     Connection conn;
-    public MiPiaceDaoPostgres(Connection connection) {
+    public PreferitiDaoPostgres(Connection connection) {
         this.conn =connection;
     }
     @Override
-    public List<Vino> findAll() {
-        return null;
-    }
-
-    @Override
-    public List<Vino> findByUtente(long id) throws SQLException {
-        String query = "select * from mipiace where mipiace_utente = ?";
+    public List<Vino> findByUtente(long id){
+        String query = "select * from preferiti where preferiti_utente = ?";
         List<Vino> vini = new ArrayList<Vino>();
         try {
             Statement st = conn.createStatement();
@@ -51,7 +46,7 @@ public class MiPiaceDaoPostgres implements MiPiaceDao {
         }
         return vini;
     }
-
+/*
     @Override
     public int countByVino(long id) throws SQLException {
         String query = "select * from mipiace where mipiace_vino = ?";
@@ -68,50 +63,37 @@ public class MiPiaceDaoPostgres implements MiPiaceDao {
         }
         return count;
     }
-
-
-
-    @Override
-    public boolean newMiPiace(long idUtente, long idVino) throws SQLException {
-        String query = "select * from mipiace where mipiace_utente = ? AND mipiace_vino = ?";
-        Boolean cond = false;
-        try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-
-            while (rs.next()){
-                cond=true;
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-
-        return cond;
-    }
+ */
 
     @Override
-    public void save(MiPiace mipiace,long idUtente,long idVino) throws SQLException {
-        if (newMiPiace(idUtente,idVino)==false){
-            String insertStr = "INSERT INTO mipiace VALUES (?,?)";
+    public void save(Preferiti preferiti) throws SQLException {
+
+            String insertStr = "INSERT INTO preferiti VALUES (?,?)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
 
-                st.setLong(1, Long.parseLong("mipiace_utente"));
-                st.setLong(2, Long.parseLong("mipiace_vino"));
+                st.setLong(1, preferiti.getPreferiti_utente().getId());
+                st.setLong(2, preferiti.getPreferiti_vino().getId());
 
                 st.executeUpdate();
-
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-        }
-
     }
 
 
     @Override
-    public void delete(Utente utente) {
+    public void delete(Preferiti preferiti) {
+        String query = "DELETE FROM preferiti WHERE preferiti_utente = ? AND preferiti_vino = ?";
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1, preferiti.getPreferiti_utente().getId());
+            st.setLong(2,preferiti.getPreferiti_vino().getId());
+            st.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }

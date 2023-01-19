@@ -4,128 +4,103 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="">
+    <list default="true" id="a0cfb71a-1649-4dcf-a54e-9f1df6c8de79" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/RecensioneDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/RecensioneDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/AuthenticationRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/AuthenticationRESTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/RecensioniRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/RecensioniRESTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/VinoRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/VinoRESTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/VinotequeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/VinotequeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/controller/LoginServletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/controller/LoginServletController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/controller/LogoutServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/CantinaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/CantinaDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/CarrelloDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/MiPiaceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/PreferitiDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/UtenteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/UtenteDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/VinoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/VinoDao.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CarrelloDaoPostgres.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/MiPiaceDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/PreferitiDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/PromozioneDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/PromozioneDaoPostgres.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Carrello.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/MiPiace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Preferiti.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Ordine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Ordine.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Promozione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Promozione.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Vino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Vino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AuthenticationRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AuthenticationRESTController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/RecensioniRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/RecensioniRESTController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/VinoRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/VinoRESTController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/VinotequeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/VinotequeApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/LoginServletController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/controller/LoginServletController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/LogoutServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/DBManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/DBManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Utente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Utente.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Cantina.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/registration-card/registration-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/registration-card/registration-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/review-card/review-card.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/review-card/review-card.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/review-card/review-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/review-card/review-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/review-card/review-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/review-card/review-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/shop-page/shop-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/shop-page/shop-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/shop-page/shop-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/shop-page/shop-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-card/wine-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-card/wine-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-card/wine-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-card/wine-card.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-page/wine-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-page/wine-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-page/wine-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-page/wine-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-page/wine-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-page/wine-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/authentication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/authentication.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/wine.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/wine.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/User.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Wine.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.component.ts" afterDir="false" />
     </list>
-    <list id="55045ca9-e81b-4908-8ad0-55ac07a65ffd" name="Changes by Utente" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="CodeStyleSettingsInfer">
-    <option name="done" value="true" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/unical/info/VinotequeApplication.java" root0="FORCE_HIGHLIGHTING" />
-  </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectCodeStyleSettingsMigration">
-    <option name="version" value="2" />
-  </component>
-  <component name="ProjectId" id="2KEO62SJ2JJlNNHF9BWgOswHlxM" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b215950906bcc86de1d17652f91dd67c&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "b215950906bcc86de1d17652f91dd67c",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.VinotequeApplication">
-    <configuration name="VinotequeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="unical.info.VinotequeApplication" />
-      <module name="VinotequeBack-End" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unical.info.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="VinotequeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="vinoteque" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="unical.info.VinotequeApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unical.info.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.VinotequeApplication" />
-      </list>
-    </recent_temporary>
-  </component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="" />
-      <created>1673536111339</created>
+      <changelist id="a0cfb71a-1649-4dcf-a54e-9f1df6c8de79" name="Changes" comment="" />
+      <created>1674144352101</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1673536111339</updated>
-      <workItem from="1673536116822" duration="7926000" />
-      <workItem from="1673556398554" duration="8666000" />
-      <workItem from="1673569221827" duration="174000" />
-      <workItem from="1673629716937" duration="366000" />
-      <workItem from="1673732591929" duration="659000" />
-      <workItem from="1673798281283" duration="330000" />
-      <workItem from="1673808757335" duration="9230000" />
-      <workItem from="1673870044454" duration="1203000" />
-      <workItem from="1673967237715" duration="9250000" />
-      <workItem from="1674122182231" duration="3138000" />
+      <updated>1674144352101</updated>
+      <workItem from="1674144359591" duration="6953000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>

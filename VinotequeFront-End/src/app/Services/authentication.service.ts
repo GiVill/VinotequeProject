@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { User } from '../User';
+import { User } from '../Model/User';
 
 @Injectable({
   providedIn: 'root'
@@ -25,7 +25,7 @@ export class AuthenticationService {
   }
 
   isSommelier(){
-    return(this.currentUser.ruolo == "SOMMELIER");
+    return(this.currentUser.ruolo =="SOMMELIER");
   }
 
   register(newUser : User): Observable<Boolean>{
@@ -35,5 +35,9 @@ export class AuthenticationService {
 
   checkLogin(jsessionid: string): Observable<User>{
     return this.http.get<User>(this.url + "/checkAuth", {params: {jsessionid: jsessionid}});
+  }
+
+  logout(jsessionid: string): Observable<Boolean>{
+    return this.http.get<Boolean>(this.url + "/logout",{params:{jsessionid:jsessionid}});
   }
 }

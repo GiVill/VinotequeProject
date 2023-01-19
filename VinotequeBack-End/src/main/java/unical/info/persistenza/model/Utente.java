@@ -16,9 +16,9 @@ public class Utente{
     String password;
     String ruolo;
     String indirizzo;
-    PasswordCrypt p = new PasswordCrypt();
+    String carrello;
 
-    public Utente( String nome, String cognome, String data_di_nascita, String email, String password, String indirizzo) {
+    public Utente( String nome, String cognome, String data_di_nascita, String email, String password, String indirizzo, String carrello) {
 
         this.nome = nome;
         this.cognome = cognome;
@@ -27,6 +27,7 @@ public class Utente{
         this.password = password;
         this.ruolo = "utente";
         this.indirizzo = indirizzo;
+        this.carrello = "";
     }
 
 
@@ -86,8 +87,6 @@ public class Utente{
         return this.password;
     }
 
-
-
     public void setPassword(String password) {
         this.password = password;
     }
@@ -97,6 +96,15 @@ public class Utente{
     }
     public void setRuolo(String ruolo) {
         this.ruolo = ruolo;
+    }
+
+
+    public String getCarrello() {
+        return carrello;
+    }
+
+    public void setCarrello(String carrello) {
+        this.carrello = carrello;
     }
 
     @Override
@@ -110,8 +118,7 @@ public class Utente{
                 ", password='" + password + '\'' +
                 ", ruolo='" + ruolo + '\'' +
                 ", indirizzo='" + indirizzo + '\'' +
+                ", carrello='" + carrello + '\'' +
                 '}';
     }
-
-
 }

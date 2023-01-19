@@ -2,8 +2,10 @@ package unical.info.persistenza.dao.postgres;
 
 import unical.info.persistenza.dao.PromozioneDao;
 import unical.info.persistenza.model.Promozione;
+import unical.info.persistenza.model.Utente;
 
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.List;
 
 public class PromozioneDaoPostgres implements PromozioneDao {
@@ -15,7 +17,24 @@ public class PromozioneDaoPostgres implements PromozioneDao {
 
     @Override
     public List<Promozione> findAll() {
-        return null;
+        List<Promozione> promozioni = new ArrayList<Promozione>();
+        String query = "select * from promozione";
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            while (rs.next()) {
+                Promozione promozione = new Promozione();
+                promozione.setId(rs.getLong("id"));
+                promozione.setDescrizione(rs.getString("descrizione"));
+                promozione.setSconto_prezzo(rs.getFloat("sconto_prezzo"));
+
+                promozioni.add(promozione);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return promozioni;
     }
 
     @Override
@@ -30,8 +49,7 @@ public class PromozioneDaoPostgres implements PromozioneDao {
 
                 promozione.setId(Long.valueOf("id"));
                 promozione.setDescrizione("descrizione");
-                promozione.setSconto_percentuale(Integer.valueOf("sconto_percentuale"));
-                promozione.setSconto_prezzo(Float.valueOf("sconto_prezzo"));
+                promozione.setSconto_prezzo(rs.getFloat("sconto_prezzo"));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -42,14 +60,13 @@ public class PromozioneDaoPostgres implements PromozioneDao {
     @Override
     public void save(Promozione promo) {
         if (findByDescrizione(promo.getDescrizione()) == null){
-            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?)";
+            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
 
                 st.setString(1,promo.getDescrizione());
                 st.setFloat(2, promo.getSconto_prezzo());
-                st.setInt(3, promo.getSconto_percentuale());
 
                 st.executeUpdate();
 
@@ -61,7 +78,14 @@ public class PromozioneDaoPostgres implements PromozioneDao {
     }
 
     @Override
-    public void delete(Promozione utente) {
-
+    public void delete(Promozione promozione) {
+        String query = "DELETE FROM promozione WHERE id = ?";
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1, promozione.getId());
+            st.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

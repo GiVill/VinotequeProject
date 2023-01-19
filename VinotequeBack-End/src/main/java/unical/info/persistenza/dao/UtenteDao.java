@@ -16,5 +16,7 @@ public interface UtenteDao {//finito
 
     public void delete(Utente utente);
 
+    public void CambioPassword(Utente utente, String password);
+
     public void PromuoviASommelier(Utente utente,int matricola);
 }

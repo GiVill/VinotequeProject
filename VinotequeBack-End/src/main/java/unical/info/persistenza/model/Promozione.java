@@ -6,15 +6,14 @@ public class Promozione {
     Long id;
     String descrizione;
     Float sconto_prezzo;
-    Integer sconto_percentuale;
+
 
     public Promozione(){}
 
-    public Promozione(Long id, String descrizione, Float sconto_prezzo, Integer sconto_percentuale) {
+    public Promozione(Long id, String descrizione, Float sconto_prezzo) {
         this.id = id;
         this.descrizione = descrizione;
         this.sconto_prezzo = sconto_prezzo;
-        this.sconto_percentuale = sconto_percentuale;
     }
 
     public Long getId() {
@@ -41,11 +40,5 @@ public class Promozione {
         this.sconto_prezzo = sconto_prezzo;
     }
 
-    public Integer getSconto_percentuale() {
-        return sconto_percentuale;
-    }
 
-    public void setSconto_percentuale(Integer sconto_percentuale) {
-        this.sconto_percentuale = sconto_percentuale;
-    }
 }

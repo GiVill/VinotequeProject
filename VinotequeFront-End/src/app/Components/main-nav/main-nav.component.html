@@ -60,7 +60,7 @@
             <!-- <mat-icon>warning</mat-icon> -->
             <span>Il mio account</span>
           </button>
-          <button mat-menu-item routerLink="Auth" *ngIf="logged">
+          <button mat-menu-item (click)="doLogout()"*ngIf="logged">
             <mat-icon>logout</mat-icon>
             <span>Logout</span>
           </button>
@@ -104,6 +104,7 @@
 
 
    <!-- SOLO PER PROVA!! DA SISTEAMRE-->
+   <mat-divider></mat-divider>
     <mat-grid-list cols="2" rowHeight="10:1">
       <mat-grid-tile >
         <h1><strong>Vinoteque</strong></h1>
