@@ -27,6 +27,7 @@ button{
 }
 
 .details{
+  line-height: 1.5;
   text-align: justify;
   font-size: 18px;
   margin-top: 30px;

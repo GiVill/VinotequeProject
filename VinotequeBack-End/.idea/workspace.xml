@@ -6,16 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/AuthenticationRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/AuthenticationRESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/RecensioniRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/RecensioniRESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/VinoRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/VinoRESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/controller/LogoutServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AuthenticationRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AuthenticationRESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/authentication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/authentication.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.component.ts" afterDir="false" />
     </list>
     <list id="55045ca9-e81b-4908-8ad0-55ac07a65ffd" name="Changes by Utente" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -52,21 +42,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "908ccf32e87c5d63f942b0e357642bd8",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;908ccf32e87c5d63f942b0e357642bd8&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.VinotequeApplication">
     <configuration name="VinotequeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="unical.info.VinotequeApplication" />
@@ -118,7 +108,8 @@
       <workItem from="1673808757335" duration="9230000" />
       <workItem from="1673870044454" duration="1203000" />
       <workItem from="1673967237715" duration="9250000" />
-      <workItem from="1674076117513" duration="3318000" />
+      <workItem from="1674076117513" duration="3936000" />
+      <workItem from="1674086308574" duration="552000" />
     </task>
     <servers />
   </component>
