@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/AuthenticationRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/AuthenticationRESTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.ts" afterDir="false" />
     </list>
     <list id="55045ca9-e81b-4908-8ad0-55ac07a65ffd" name="Changes by Utente" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -110,6 +112,8 @@
       <workItem from="1673967237715" duration="9250000" />
       <workItem from="1674076117513" duration="3936000" />
       <workItem from="1674086308574" duration="552000" />
+      <workItem from="1674086946358" duration="31000" />
+      <workItem from="1674147658367" duration="4529000" />
     </task>
     <servers />
   </component>

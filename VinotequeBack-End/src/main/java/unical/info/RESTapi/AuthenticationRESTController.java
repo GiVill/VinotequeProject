@@ -28,10 +28,14 @@ public class AuthenticationRESTController{
     public boolean logout(String jsessionid, HttpServletRequest req){
         if(jsessionid != null){
             HttpSession session = (HttpSession) req.getServletContext().getAttribute(jsessionid);
+            if(session == null){
+                return true;
+            }
             session.removeAttribute("user");
             session.invalidate();
             return true;
         }
+
         return false;
     }
 }

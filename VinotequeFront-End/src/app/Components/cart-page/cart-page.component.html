@@ -1,4 +1,82 @@
-<div class="container">
+<div class="cartPage">
+  <mat-card-title>Carrello</mat-card-title>
+  <mat-divider class="central">
+  </mat-divider>
+  <div class="content">
+    <div class="itemContainer">
+      <div class="details">
+        Nome:
+        <span class="spacer"></span>
+        Quantità:
+        <span class="spacer"></span>
+        Prezzo:
+        <span class="spacer"></span>
+      </div>
+      <app-item-cart></app-item-cart>
+      <app-item-cart></app-item-cart>
+      <app-item-cart></app-item-cart>
+      <app-item-cart></app-item-cart>
+      <app-item-cart></app-item-cart>
+    </div>
+    <div class="spacer"></div>
+    <mat-card class="actions">
+      <mat-card-title>Totale: 10,90€</mat-card-title>
+      <mat-card-content>
+        <p style="margin-left: 15px; color: green;"><mat-icon style="color: green;">local_shipping</mat-icon> CIAO SONO UN CAMIONCINO DELLE CONSEGNE</p>
+        <p style="margin-left: 15px;">METODO DI PAGAMENTO:</p>
+    <mat-radio-group style="margin-left: 15px; display: flex; flex-direction: column;">
+      <mat-radio-button>
+        Bestemmie
+      </mat-radio-button>
+      <mat-radio-button>
+        Finocchi
+      </mat-radio-button>
+      <mat-radio-button>
+        Sgnaffi sul gnulo
+      </mat-radio-button>
+    </mat-radio-group>
+    <div style="display: flex;">
+      <input type="text" placeholder="Codice sconto" style="margin-left: 15px;">
+      <button mat-flat-button style="margin-left: 5px; background-color: lightyellow;">Inserisci</button>
+    </div>
+    <div style="margin-left: 15px; display: flex;">
+      <h4><strong>TOTALE ORDINE</strong></h4>
+      <span class="spacer"></span>
+      <h4><strong>(totale)</strong></h4>
+    </div>
+    <span class="spacer"></span>
+    <button mat-raised-button style="background-color: lightgreen;">PAGA BASTARDO!</button>
+    <span class="spacer"></span>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container">
   <div>
     <div style="display: flex;">
       <h1><strong>Carrello</strong></h1>
@@ -55,4 +133,4 @@
     <button mat-raised-button style="background-color: lightgreen;">PAGA BASTARDO!</button>
     <span class="spacer"></span>
   </mat-card>
-</div>
+</div> -->
