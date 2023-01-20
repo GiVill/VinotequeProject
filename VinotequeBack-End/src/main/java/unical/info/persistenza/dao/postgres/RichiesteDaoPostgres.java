@@ -2,8 +2,8 @@ package unical.info.persistenza.dao.postgres;
 
 import unical.info.persistenza.DBManager;
 import unical.info.persistenza.dao.RichiesteDao;
-import unical.info.persistenza.model.Richieste;
-import unical.info.persistenza.model.Utente;
+import unical.info.model.Richieste;
+import unical.info.model.Utente;
 
 import java.sql.*;
 import java.util.ArrayList;

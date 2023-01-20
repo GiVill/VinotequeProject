@@ -1,4 +1,4 @@
-package unical.info.persistenza.model;
+package unical.info.model;
 
 public class Richieste {
     long id;

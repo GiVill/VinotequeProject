@@ -1,6 +1,6 @@
 package unical.info.persistenza.dao;
 
-import unical.info.persistenza.model.Utente;
+import unical.info.model.Utente;
 
 import java.sql.SQLException;
 import java.util.List;

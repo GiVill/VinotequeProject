@@ -1,4 +1,4 @@
-package unical.info.persistenza.model;
+package unical.info.model;
 
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import unical.info.controller.PasswordCrypt;
@@ -27,7 +27,7 @@ public class Utente{
         this.password = password;
         this.ruolo = "utente";
         this.indirizzo = indirizzo;
-        this.carrello = "";
+        this.carrello = carrello;
     }
 
 

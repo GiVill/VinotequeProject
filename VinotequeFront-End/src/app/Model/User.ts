@@ -7,4 +7,5 @@ export interface User{
   password : String;
   ruolo : String;
   indirizzo : String;
+  carrello : String;
 }

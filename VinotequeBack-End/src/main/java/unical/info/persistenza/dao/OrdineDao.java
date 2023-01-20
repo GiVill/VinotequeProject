@@ -1,6 +1,6 @@
 package unical.info.persistenza.dao;
 
-import unical.info.persistenza.model.Ordine;
+import unical.info.model.Ordine;
 
 import java.util.List;
 

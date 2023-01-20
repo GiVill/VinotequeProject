@@ -1,8 +1,7 @@
 package unical.info.persistenza.dao;
 
-import unical.info.persistenza.model.Preferiti;
-import unical.info.persistenza.model.Utente;
-import unical.info.persistenza.model.Vino;
+import unical.info.model.Preferiti;
+import unical.info.model.Vino;
 
 import java.sql.SQLException;
 import java.util.List;

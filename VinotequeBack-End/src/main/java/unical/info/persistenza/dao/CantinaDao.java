@@ -1,6 +1,6 @@
 package unical.info.persistenza.dao;
 
-import unical.info.persistenza.model.Cantina;
+import unical.info.model.Cantina;
 
 import java.util.List;
 

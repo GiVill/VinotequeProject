@@ -1,7 +1,5 @@
-package unical.info.persistenza.model;
+package unical.info.model;
 
-
-import java.util.Date;
 
 public class Vino {
     Long id;

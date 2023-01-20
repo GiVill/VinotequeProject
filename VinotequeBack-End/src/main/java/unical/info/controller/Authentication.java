@@ -3,7 +3,7 @@ package unical.info.controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import unical.info.persistenza.model.Utente;
+import unical.info.model.Utente;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

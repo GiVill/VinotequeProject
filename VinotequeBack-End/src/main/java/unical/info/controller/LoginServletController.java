@@ -1,10 +1,9 @@
 package unical.info.controller;
 
 
-import org.springframework.security.crypto.bcrypt.BCrypt;
 import unical.info.persistenza.DBManager;
 import unical.info.persistenza.dao.UtenteDao;
-import unical.info.persistenza.model.Utente;
+import unical.info.model.Utente;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -3,11 +3,9 @@ package unical.info;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
-import unical.info.persistenza.DBManager;
-import unical.info.persistenza.model.Utente;
+import unical.info.controller.PasswordCrypt;
 
 import java.sql.SQLException;
-import java.util.HashMap;
 
 @SpringBootApplication
 @ServletComponentScan
@@ -15,7 +13,6 @@ public class VinotequeApplication {
 
 	public static void main(String[] args) throws SQLException {
 		SpringApplication.run(VinotequeApplication.class, args);
-
 		//Utente u = new Utente("l","v","1","luigi@sss.c","ciaocome","via casa mia");
 
 		//HashMap<Long, Integer> items = new HashMap<>();

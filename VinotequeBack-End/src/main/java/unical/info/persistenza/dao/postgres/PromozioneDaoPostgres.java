@@ -1,8 +1,7 @@
 package unical.info.persistenza.dao.postgres;
 
 import unical.info.persistenza.dao.PromozioneDao;
-import unical.info.persistenza.model.Promozione;
-import unical.info.persistenza.model.Utente;
+import unical.info.model.Promozione;
 
 import java.sql.*;
 import java.util.ArrayList;

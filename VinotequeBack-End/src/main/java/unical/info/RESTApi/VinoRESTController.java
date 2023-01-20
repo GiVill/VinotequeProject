@@ -4,7 +4,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 import unical.info.persistenza.DBManager;
-import unical.info.persistenza.model.Vino;
+import unical.info.model.Vino;
 
 import java.util.List;
 

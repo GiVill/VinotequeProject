@@ -1,6 +1,6 @@
 package unical.info.persistenza.dao;
 
-import unical.info.persistenza.model.Recensione;
+import unical.info.model.Recensione;
 
 import java.util.List;
 

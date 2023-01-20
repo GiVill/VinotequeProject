@@ -1,6 +1,4 @@
-package unical.info.persistenza.model;
-
-import java.util.Date;
+package unical.info.model;
 
 public class Recensione {
     Long id;

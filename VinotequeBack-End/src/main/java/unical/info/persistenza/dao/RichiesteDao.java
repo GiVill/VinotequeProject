@@ -1,6 +1,6 @@
 package unical.info.persistenza.dao;
 
-import unical.info.persistenza.model.Richieste;
+import unical.info.model.Richieste;
 
 import java.util.List;
 

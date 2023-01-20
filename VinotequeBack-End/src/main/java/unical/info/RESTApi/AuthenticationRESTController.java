@@ -2,7 +2,7 @@ package unical.info.RESTapi;
 
 import org.springframework.web.bind.annotation.*;
 import unical.info.persistenza.DBManager;
-import unical.info.persistenza.model.Utente;
+import unical.info.model.Utente;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;

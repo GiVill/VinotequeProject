@@ -2,9 +2,9 @@ package unical.info.persistenza.dao.postgres;
 
 import unical.info.persistenza.DBManager;
 import unical.info.persistenza.dao.OrdineDao;
-import unical.info.persistenza.model.Ordine;
-import unical.info.persistenza.model.Promozione;
-import unical.info.persistenza.model.Utente;
+import unical.info.model.Ordine;
+import unical.info.model.Promozione;
+import unical.info.model.Utente;
 
 import java.sql.*;
 import java.util.ArrayList;

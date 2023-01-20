@@ -2,7 +2,7 @@ package unical.info.persistenza.dao.postgres;
 
 import unical.info.controller.PasswordCrypt;
 import unical.info.persistenza.dao.UtenteDao;
-import unical.info.persistenza.model.Utente;
+import unical.info.model.Utente;
 
 import java.sql.*;
 import java.util.ArrayList;

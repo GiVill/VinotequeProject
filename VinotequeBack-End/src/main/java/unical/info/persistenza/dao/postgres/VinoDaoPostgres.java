@@ -2,9 +2,8 @@ package unical.info.persistenza.dao.postgres;
 
 import unical.info.persistenza.DBManager;
 import unical.info.persistenza.dao.VinoDao;
-import unical.info.persistenza.model.Cantina;
-import unical.info.persistenza.model.Utente;
-import unical.info.persistenza.model.Vino;
+import unical.info.model.Cantina;
+import unical.info.model.Vino;
 
 import java.sql.*;
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package unical.info.persistenza.model;
+package unical.info.model;
 
 import java.lang.Float;
 
