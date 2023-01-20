@@ -6,8 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a0cfb71a-1649-4dcf-a54e-9f1df6c8de79" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/AuthenticationRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/AuthenticationRESTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.ts" afterDir="false" />
+>>>>>>> 4e28a36d541ae36688f7d059717f98db05ba363e
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,11 +62,26 @@
       <created>1674144352101</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< HEAD
       <updated>1674144352101</updated>
       <workItem from="1674144359591" duration="6953000" />
       <workItem from="1674152091059" duration="1965000" />
       <workItem from="1674227113144" duration="1364000" />
       <workItem from="1674232281797" duration="2997000" />
+=======
+      <updated>1673536111339</updated>
+      <workItem from="1673536116822" duration="7926000" />
+      <workItem from="1673556398554" duration="8666000" />
+      <workItem from="1673569221827" duration="174000" />
+      <workItem from="1673629716937" duration="366000" />
+      <workItem from="1673732591929" duration="659000" />
+      <workItem from="1673798281283" duration="330000" />
+      <workItem from="1673808757335" duration="9230000" />
+      <workItem from="1673870044454" duration="1203000" />
+      <workItem from="1673967237715" duration="9250000" />
+      <workItem from="1674076117513" duration="3936000" />
+      <workItem from="1674086308574" duration="552000" />
+>>>>>>> 4e28a36d541ae36688f7d059717f98db05ba363e
     </task>
     <servers />
   </component>
