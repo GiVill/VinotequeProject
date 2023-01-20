@@ -46,8 +46,10 @@ public class DBManager {
 
     public OrdineDao getOrdineDao(){return new OrdineDaoPostgres(getConnection());}
 
-    public PreferitiDao getPreferiti(){return new PreferitiDaoPostgres(getConnection());}
+    public PreferitiDao getPreferitiDao(){return new PreferitiDaoPostgres(getConnection());}
 
     public CantinaDao getCantinaDao(){return new CantinaDaoPostgres(getConnection());}
+
+    public RichiesteDao getRichiesteDao(){return new RichiesteDaoPostgres(getConnection());}
 
 }

@@ -6,88 +6,50 @@
   <component name="ChangeListManager">
     <list default="true" id="a0cfb71a-1649-4dcf-a54e-9f1df6c8de79" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/AuthenticationRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/AuthenticationRESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/RecensioniRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/RecensioniRESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/VinoRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTApi/VinoRESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/VinotequeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/VinotequeApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/controller/LoginServletController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/controller/LoginServletController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/controller/LogoutServlet.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/CantinaDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/CantinaDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/CarrelloDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/MiPiaceDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/PreferitiDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/UtenteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/UtenteDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CarrelloDaoPostgres.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/MiPiaceDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/PreferitiDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/PromozioneDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/PromozioneDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Carrello.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/MiPiace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Preferiti.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Ordine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Ordine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Promozione.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Promozione.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Utente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Vino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/model/Vino.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AuthenticationRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AuthenticationRESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/RecensioniRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/RecensioniRESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/VinoRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/VinoRESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/VinotequeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/VinotequeApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/LoginServletController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/controller/LoginServletController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/LogoutServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/DBManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/DBManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Utente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/model/Utente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Cantina.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/registration-card/registration-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/registration-card/registration-card.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/review-card/review-card.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/review-card/review-card.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/review-card/review-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/review-card/review-card.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/review-card/review-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/review-card/review-card.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/shop-page/shop-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/shop-page/shop-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/shop-page/shop-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/shop-page/shop-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-card/wine-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-card/wine-card.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-card/wine-card.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-card/wine-card.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-page/wine-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-page/wine-page.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-page/wine-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-page/wine-page.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-page/wine-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/wine-page/wine-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/authentication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/authentication.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/wine.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/wine.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/User.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Wine.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2KYWcKaBn0bJk8pyZw21fuy8tlY" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "b215950906bcc86de1d17652f91dd67c",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;b215950906bcc86de1d17652f91dd67c&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -97,6 +59,9 @@
       <option name="presentableId" value="Default" />
       <updated>1674144352101</updated>
       <workItem from="1674144359591" duration="6953000" />
+      <workItem from="1674152091059" duration="1965000" />
+      <workItem from="1674227113144" duration="1364000" />
+      <workItem from="1674232281797" duration="2997000" />
     </task>
     <servers />
   </component>
