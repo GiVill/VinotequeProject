@@ -152,6 +152,14 @@ public class RecensioneDaoPostgres implements RecensioneDao {
 
     @Override
     public void delete(Recensione recensione) {
+        String query = "DELETE FROM recensione WHERE id = ?";
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1, recensione.getId());
+            st.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 }

@@ -6,8 +6,8 @@ import java.lang.Float;
 public class Ordine {
     Long id;
     Utente ordine_utente;
-    Carrello ordine_carrello;
-    String ordine_metodo_pag;
+    String ordine_carrello;
+    String metodo_pag;
     String indirizzo;
     Float totale;
     String status;
@@ -17,11 +17,11 @@ public class Ordine {
     public Ordine() {
     }
 
-    public Ordine(Long id, Utente ordine_utente, Carrello ordine_carrello, String ordine_metodo_pag, String indirizzo, Float totale, String status, Promozione ordine_promozione, String data) {
+    public Ordine(Long id, Utente ordine_utente, String ordine_carrello, String metodo_pag, String indirizzo, Float totale, String status, Promozione ordine_promozione, String data) {
         this.id = id;
         this.ordine_utente = ordine_utente;
         this.ordine_carrello = ordine_carrello;
-        this.ordine_metodo_pag = ordine_metodo_pag;
+        this.metodo_pag = metodo_pag;
         this.indirizzo = indirizzo;
         this.totale = totale;
         this.status = status;
@@ -61,20 +61,20 @@ public class Ordine {
         this.ordine_utente = ordine_utente;
     }
 
-    public Carrello getOrdine_carrello() {
+    public String getOrdine_carrello() {
         return ordine_carrello;
     }
 
-    public void setOrdine_carrello(Carrello ordine_carrello) {
+    public void setOrdine_carrello(String ordine_carrello) {
         this.ordine_carrello = ordine_carrello;
     }
 
-    public String getOrdine_metodo_pag() {
-        return ordine_metodo_pag;
+    public String getMetodo_pag() {
+        return metodo_pag;
     }
 
-    public void setOrdine_metodo_pag(String ordine_metodo_pag) {
-        this.ordine_metodo_pag = ordine_metodo_pag;
+    public void setMetodo_pag(String metodo_pag) {
+        this.metodo_pag = metodo_pag;
     }
 
     public Float getTotale() {

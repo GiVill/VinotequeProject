@@ -2,7 +2,6 @@ package unical.info.persistenza.dao.postgres;
 
 import unical.info.persistenza.DBManager;
 import unical.info.persistenza.dao.OrdineDao;
-import unical.info.persistenza.model.Carrello;
 import unical.info.persistenza.model.Ordine;
 import unical.info.persistenza.model.Promozione;
 import unical.info.persistenza.model.Utente;
@@ -34,18 +33,16 @@ public class OrdineDaoPostgres implements OrdineDao {
                 Utente u  = DBManager.getInstance().getUtenteDao().findByPrimaryKey(rs.getLong("recensione_sommelier"));
                 ordine.setOrdine_utente(u);
 
-                Carrello c = DBManager.getInstance().getCarrelloDao().findByIdUtente(rs.getLong("ordine_carrello"));
-                ordine.setOrdine_carrello(c);
-
-                ordine.setOrdine_metodo_pag("ordine_metodo_pag");
-                ordine.setIndirizzo("indirizzo");
-                ordine.setTotale(Float.valueOf("totale"));
-                ordine.setStatus("status");
+                ordine.setOrdine_carrello(rs.getString("ordine_carrello"));
+                ordine.setMetodo_pag(rs.getString("metodo_pag"));
+                ordine.setIndirizzo(rs.getString("indirizzo"));
+                ordine.setData(rs.getString("data"));
+                ordine.setTotale(rs.getFloat("totale"));
+                ordine.setStatus(rs.getString("status"));
 
                 Promozione p = DBManager.getInstance().getPromozioneDao().findByDescrizione(rs.getString("ordine_promozione"));
                 ordine.setOrdine_promozione(p);
 
-                ordine.setData("data");
                 ordini.add(ordine);
             }
         } catch (SQLException e) {
@@ -57,20 +54,19 @@ public class OrdineDaoPostgres implements OrdineDao {
 
     @Override
     public void save(Ordine ordine) {
-        if (findByUtente(ordine.getOrdine_utente().getId()) == null){
-            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?,?,?,?,?)";
+            String insertStr = "INSERT INTO ordine VALUES (DEFAULT,?,?,?,?,?,?,?,?)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
 
-                st.setLong(1, Long.parseLong("ordine_utente"));
-                st.setLong(2, Long.parseLong("ordine_carrello"));
-                st.setString(3,"ordine_metodo_pag");
-                st.setString(4,"indirizzo");
-                st.setFloat(5, Float.parseFloat("totale"));
-                st.setString(6,"status");
-                st.setLong(7, Long.parseLong("ordine_promozione"));
-                st.setString(8,"data");
+                st.setLong(1,ordine.getOrdine_utente().getId());
+                st.setString(2,ordine.getOrdine_carrello());
+                st.setString(3, ordine.getMetodo_pag());
+                st.setString(4, ordine.getIndirizzo());
+                st.setString(5, ordine.getData());
+                st.setFloat(6, ordine.getTotale());
+                st.setString(7, ordine.getStatus());
+                st.setLong(8, ordine.getOrdine_promozione().getId());
                 st.executeUpdate();
 
             } catch (SQLException e) {
@@ -78,11 +74,15 @@ public class OrdineDaoPostgres implements OrdineDao {
             }
         }
 
-
-    }
-
     @Override
-    public void delete(Ordine utente) {
-
+    public void delete(Ordine ordine) {
+        String query = "DELETE FROM ordine WHERE id = ?";
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1, ordine.getId());
+            st.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CantinaDaoPostgres implements CantinaDao {
+public class CantinaDaoPostgres implements CantinaDao {//finito(vedi giu)
     Connection conn;
     public CantinaDaoPostgres(Connection connection) {
         this.conn =connection;
@@ -27,8 +27,9 @@ public class CantinaDaoPostgres implements CantinaDao {
                 cantina.setId(rs.getLong("id"));
                 cantina.setNome(rs.getString("nome"));
                 cantina.setDescrizione(rs.getString("descrizione"));
-                //cantina.setCantina_indirizzo(rs.getLong("Canrina_indirizzo"));
-                //todo
+                cantina.setIndirizzo(rs.getString("indirizzo"));
+
+                cantine.add(cantina);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -85,14 +86,40 @@ public class CantinaDaoPostgres implements CantinaDao {
 
 
     @Override
-    public List<Cantina> findByNameVino(String vino) {
-        return null;
+    public List<Cantina> findByNameVino(String vino) {//todo se nchiumba è colpa di questa query
+        List<Cantina> cantine = new ArrayList<Cantina>();
+        String query = "select vino_cantina from vino,cantina where vino.vino_cantina = cantina.id and vino.nome = ?";
+
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+
+            while (rs.next()){
+                Cantina cantina = findByPrimaryKey(rs.getLong(1));
+                cantine.add(cantina);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return cantine;
     }
 
     @Override
-    public void saveOrUpdate(Cantina cantina) {
+    public void save(Cantina cantina) {
+            String insertStr = "INSERT INTO cantina VALUES (DEFAULT,?,?,?)";
+            PreparedStatement st;
+            try {
+                st = conn.prepareStatement(insertStr);
+                st.setString(1, cantina.getNome());
+                st.setString(2, cantina.getDescrizione());
+                st.setString(3, cantina.getIndirizzo());
+                st.executeUpdate();
 
-    }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
 
     @Override
     public void delete(Cantina cantina) {
@@ -103,7 +130,7 @@ public class CantinaDaoPostgres implements CantinaDao {
             st.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        }//todo
+        }
     }
 }
 

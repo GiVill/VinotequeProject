@@ -13,7 +13,7 @@ public interface CantinaDao {
 
     public List<Cantina> findByNameVino(String vino);
 
-    public void saveOrUpdate(Cantina cantina);
+    public void save(Cantina cantina);
 
     public void delete(Cantina cantina);
 }
