@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./item-cart.component.css']
 })
 export class ItemCartComponent {
-
+  quantity = 1
 }

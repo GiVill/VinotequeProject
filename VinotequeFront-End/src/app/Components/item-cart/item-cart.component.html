@@ -1,19 +1,25 @@
-<div class="container">
-  <img src="https://data.callmewine.com/imgprodotto/kike-cantine-fina-2021_41073_ico.jpg" style="height: 100px; width:60px;">
-  <div class="textContainer">
-    <p>vino rosso</p>
-    <p style="color: lightgreen;">Disponibilità immediata</p>
-  </div>
-  <span class="spacer"></span>
-  <button mat-raised-button class="small">-</button>
-  <p style="align-self: center;">1</p>
-  <button mat-raised-button class="small" style="margin-right: 68px">+</button>
-  <span class="spacer"></span>
-  <p style="align-self: center;">10,90€</p>
-  <button mat-icon-button color="warn" style="align-self: center; margin-left: 5px;">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-icon-button style="align-self: center; margin-left: 5px;">
-    <mat-icon>close</mat-icon>
-  </button>
-</div>
+<mat-card class="item-card">
+  <mat-card-content>
+    <img src="https://data.callmewine.com/imgprodotto/kike-cantine-fina-2021_41073_ico.jpg" class="item-img">
+    <div class="textContainer">
+      <p>vino rosso</p>
+      <p style="color: green;">Disponibilità immediata</p>
+    </div>
+    <span class="spacer"></span>
+    <mat-form-field appearance="outline" class="quantity">
+      <mat-label>Quatnità</mat-label>
+      <input matInput [(ngModel)]="quantity" type="number" min="1" max="10">
+    </mat-form-field>
+    <span class="spacer"></span>
+    <div style="margin-top: 10px; font-size: 20px;">10,90€</div>
+    <span class="spacer"></span>
+    <mat-card-actions>
+      <button mat-icon-button class="favorite">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="delete">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card-content>
+</mat-card>

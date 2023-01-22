@@ -22,7 +22,6 @@ public class LoginServletController extends HttpServlet {
         String email = req.getParameter("email");
         String password = req.getParameter("password");
 
-
         UtenteDao udao = DBManager.getInstance().getUtenteDao();
         Utente utente = udao.findByEmail(email);
 
