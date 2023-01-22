@@ -29,6 +29,8 @@ export class WinePageComponent implements OnInit{
 
   ngOnInit(): void {
 
+    window.scrollY
+
     if(this.authService.isLogged()){
       this.user = this.authService.currentUser;
       if(this.authService.isSommelier()){
