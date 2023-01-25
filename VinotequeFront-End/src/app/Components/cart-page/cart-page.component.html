@@ -28,18 +28,16 @@
         <p style="margin-left: 15px;">METODO DI PAGAMENTO:</p>
     <mat-radio-group style="margin-left: 15px; display: flex; flex-direction: column;">
       <mat-radio-button>
-        Bestemmie
+        PayPal
       </mat-radio-button>
       <mat-radio-button>
-        Finocchi
-      </mat-radio-button>
-      <mat-radio-button>
-        Sgnaffi sul gnulo
+        Contrassegno
       </mat-radio-button>
     </mat-radio-group>
     <div style="display: flex;">
       <input type="text" placeholder="Codice sconto" style="margin-left: 15px;">
-      <button mat-flat-button style="margin-left: 5px; background-color: lightyellow;">Inserisci</button>
+      <button mat-flat-button style="margin-left: 5px; background-color: lightyellow;
+      z-index: 0;">Inserisci</button>
     </div>
     <div style="margin-left: 15px; display: flex;">
       <h4><strong>TOTALE ORDINE</strong></h4>
@@ -47,7 +45,8 @@
       <h4><strong>(totale)</strong></h4>
     </div>
     <span class="spacer"></span>
-    <button mat-raised-button style="background-color: lightgreen;">PAGA BASTARDO!</button>
+    <div class="paypal" id="paypal-button-container" #payPalRef></div>
+    <!-- <button mat-raised-button style="background-color: lightgreen;">PAGA BASTARDO!</button> -->
     <span class="spacer"></span>
       </mat-card-content>
     </mat-card>

@@ -55,3 +55,9 @@
     flex-direction: row;
   }
 }
+
+
+.paypal{
+  position: relative;
+  z-index: 0;
+}
