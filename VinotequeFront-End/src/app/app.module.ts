@@ -24,7 +24,7 @@ import { WineCardComponent } from './Components/wine-card/wine-card.component';
 import { ReviewCardComponent } from './Components/review-card/review-card.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { LoginCardComponent } from './Components/login-card/login-card.component';
-import { ShopPageComponent } from './Components/shop-page/shop-page.component';
+import { ShopPageComponent } from './Components/Shop/shop-page/shop-page.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { RegistrationCardComponent } from './Components/registration-card/registration-card.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -39,6 +39,7 @@ import {MatRadioModule} from '@angular/material/radio';
 import { UserPageComponent } from './Components/user-page/user-page.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { WinePageComponent } from './Components/wine-page/wine-page.component';
+import { RedPageComponent } from './Components/Shop/red-page/red-page.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { WinePageComponent } from './Components/wine-page/wine-page.component';
     ItemCartComponent,
     CartPageComponent,
     WinePageComponent,
+    RedPageComponent,
   ],
   imports: [
     ReactiveFormsModule,

@@ -44,7 +44,6 @@ export class MainNavComponent implements OnInit{
 
   }
 
-
   doLogout(){
     const jsessionid = localStorage.getItem("jsessionid");
 
