@@ -24,8 +24,9 @@ public class OrdineDaoPostgres implements OrdineDao {
         List<Ordine> ordini = new ArrayList<Ordine>();
 
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1,utente);
+            ResultSet rs = st.executeQuery();
 
             while (rs.next()){
                 Ordine ordine = new Ordine();

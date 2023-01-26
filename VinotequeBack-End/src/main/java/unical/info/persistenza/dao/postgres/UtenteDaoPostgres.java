@@ -147,7 +147,7 @@ public class UtenteDaoPostgres implements UtenteDao {
           //  if (matricola == matricoleSommelier[i]) {
               Long iddacamb = utente.getId();
                 //manda notifica all admin
-                String updateStr = "UPDATE utente set ruolo = sommelier where id = iddacamb ";
+                String updateStr = "UPDATE utente set ruolo = 'SOMMELIER' where id = iddacamb ";
                 PreparedStatement st;
                 try {
                     st = conn.prepareStatement(updateStr);

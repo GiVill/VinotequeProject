@@ -41,8 +41,9 @@ public class PromozioneDaoPostgres implements PromozioneDao {
         String query = "select * from promozione where descrizione = ?";
         Promozione promozione = new Promozione();
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setString(1,codicePromo);
+            ResultSet rs = st.executeQuery();
 
             while (rs.next()){
 
