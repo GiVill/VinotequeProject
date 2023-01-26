@@ -42,6 +42,7 @@ import { WinePageComponent } from './Components/wine-page/wine-page.component';
 import { RedPageComponent } from './Components/Shop/red-page/red-page.component';
 import { WhitePageComponent } from './Components/Shop/white-page/white-page.component';
 import { RosePageComponent } from './Components/Shop/rose-page/rose-page.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { RosePageComponent } from './Components/Shop/rose-page/rose-page.compone
     WinePageComponent,
     RedPageComponent,
     WhitePageComponent,
-    RosePageComponent
+    RosePageComponent,
+    HomePageComponent
   ],
   imports: [
     ReactiveFormsModule,
