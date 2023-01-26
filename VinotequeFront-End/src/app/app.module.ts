@@ -40,6 +40,8 @@ import { UserPageComponent } from './Components/user-page/user-page.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { WinePageComponent } from './Components/wine-page/wine-page.component';
 import { RedPageComponent } from './Components/Shop/red-page/red-page.component';
+import { WhitePageComponent } from './Components/Shop/white-page/white-page.component';
+import { RosePageComponent } from './Components/Shop/rose-page/rose-page.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,8 @@ import { RedPageComponent } from './Components/Shop/red-page/red-page.component'
     CartPageComponent,
     WinePageComponent,
     RedPageComponent,
+    WhitePageComponent,
+    RosePageComponent
   ],
   imports: [
     ReactiveFormsModule,

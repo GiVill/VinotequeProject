@@ -3,11 +3,11 @@ import { Wine } from 'src/app/Model/Wine';
 import { WineService } from 'src/app/Services/wine.service';
 
 @Component({
-  selector: 'app-red-page',
-  templateUrl: './red-page.component.html',
-  styleUrls: ['./red-page.component.css']
+  selector: 'app-white-page',
+  templateUrl: './white-page.component.html',
+  styleUrls: ['./white-page.component.css']
 })
-export class RedPageComponent {
+export class WhitePageComponent {
 
   constructor(private wineService:WineService){}
   wines !: Wine[]
@@ -18,11 +18,9 @@ export class RedPageComponent {
   }
 
   takeWines(){
-    this.wineService.getRedWines().subscribe(data=> {
+    this.wineService.getWhiteWines().subscribe(data=> {
       this.wines = data;
       this.wineService.wines = data;
     })
   }
-
 }
-
