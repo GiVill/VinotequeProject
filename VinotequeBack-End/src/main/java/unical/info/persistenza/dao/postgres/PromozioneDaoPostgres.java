@@ -59,7 +59,7 @@ public class PromozioneDaoPostgres implements PromozioneDao {
     @Override
     public void save(Promozione promo) {
         if (findByDescrizione(promo.getDescrizione()) == null){
-            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?)";
+            String insertStr = "INSERT INTO promozione VALUES (DEFAULT,?,?)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);

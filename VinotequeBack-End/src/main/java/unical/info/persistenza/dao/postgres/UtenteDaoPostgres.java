@@ -142,10 +142,10 @@ public class UtenteDaoPostgres implements UtenteDao {
     }
 
     @Override
-    public void PromuoviASommelier(Utente utente, int matricola) {
-        for (int i = 0; i < matricoleSommelier.length; i++) {
-            if (matricola == matricoleSommelier[i]) {
-                Long iddacamb = utente.getId();
+    public void PromuoviASommelier(Utente utente) {
+        //for (int i = 0; i < matricoleSommelier.length; i++) {
+          //  if (matricola == matricoleSommelier[i]) {
+              Long iddacamb = utente.getId();
                 //manda notifica all admin
                 String updateStr = "UPDATE utente set ruolo = sommelier where id = iddacamb ";
                 PreparedStatement st;
@@ -157,8 +157,8 @@ public class UtenteDaoPostgres implements UtenteDao {
                     throw new RuntimeException(e);
                 }
             }
-        }
-    }
+       // }
+    //}
     int[] matricoleSommelier = {219922, 283130, 549172, 393784, 303154};
 
     @Override

@@ -60,12 +60,30 @@ public class RichiesteDaoPostgres implements RichiesteDao {
 
     @Override
     public void save(Richieste richieste) {
+        if (findByUtente(richieste.getUtente().getId()) == null) {
+            String insertStr = "INSERT INTO richieste VALUES (DEFAULT,?)";
+            PreparedStatement st;
+            try {
+                st = conn.prepareStatement(insertStr);
+                st.setLong(1, richieste.getUtente().getId());
+                st.executeUpdate();
 
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     @Override
     public void delete(Richieste richieste) {
-
+        String query = "DELETE FROM richieste WHERE id = ?";
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1, richieste.getId());
+            st.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

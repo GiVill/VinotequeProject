@@ -105,7 +105,7 @@ public class RecensioneDaoPostgres implements RecensioneDao {
     @Override
     public List<Recensione> findBySommelier(long IDutente) {
         List<Recensione> recensioni= new ArrayList<Recensione>();
-        String query = "select * from recensioni where recensione_sommelier = ?";
+        String query = "select * from recensione where recensione_sommelier = ?";
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
@@ -132,7 +132,7 @@ public class RecensioneDaoPostgres implements RecensioneDao {
     @Override
     public void save(Recensione recensione) {
         if (findByVino(recensione.getRecensione_vino().getId()) == null && findBySommelier(recensione.getRecensione_sommelier().getId())==null) {
-            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?)";
+            String insertStr = "INSERT INTO recensione VALUES (DEFAULT,?,?,?,?)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);

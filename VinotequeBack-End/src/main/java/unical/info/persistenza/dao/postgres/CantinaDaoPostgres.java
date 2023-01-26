@@ -86,7 +86,7 @@ public class CantinaDaoPostgres implements CantinaDao {//finito(vedi giu)
 
 
     @Override
-    public List<Cantina> findByNameVino(String vino) {//todo se nchiumba è colpa di questa query
+    public List<Cantina> findByNameVino(String vino) {//todo se sballa è colpa di questa query
         List<Cantina> cantine = new ArrayList<Cantina>();
         String query = "select vino_cantina from vino,cantina where vino.vino_cantina = cantina.id and vino.nome = ?";
 
