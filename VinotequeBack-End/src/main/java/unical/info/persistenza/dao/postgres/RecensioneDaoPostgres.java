@@ -107,8 +107,9 @@ public class RecensioneDaoPostgres implements RecensioneDao {
         List<Recensione> recensioni= new ArrayList<Recensione>();
         String query = "select * from recensione where recensione_sommelier = ?";
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1,IDutente);
+            ResultSet rs = st.executeQuery();
 
             while (rs.next()){
                 Recensione recensione = new Recensione();

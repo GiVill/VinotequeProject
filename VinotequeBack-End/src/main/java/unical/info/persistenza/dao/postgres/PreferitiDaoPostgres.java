@@ -21,8 +21,9 @@ public class PreferitiDaoPostgres implements PreferitiDao {
         String query = "select * from preferiti where preferiti_utente = ?";
         List<Vino> vini = new ArrayList<Vino>();
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1,id);
+            ResultSet rs = st.executeQuery();
 
             while (rs.next()){
                 Vino vino = new Vino();

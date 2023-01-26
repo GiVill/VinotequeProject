@@ -77,8 +77,9 @@ public class VinoDaoPostgres implements VinoDao{
         String query = "select * from vino where vino_cantina = ? ";
 
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1,cantina);
+            ResultSet rs = st.executeQuery();
 
             while (rs.next()){
                 Vino vino = new Vino();
@@ -137,8 +138,9 @@ public class VinoDaoPostgres implements VinoDao{
         String query = "select * from vino where annata = ?";
 
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setInt(1,annata);
+            ResultSet rs = st.executeQuery();
 
             while (rs.next()){
                 Vino vino = new Vino();

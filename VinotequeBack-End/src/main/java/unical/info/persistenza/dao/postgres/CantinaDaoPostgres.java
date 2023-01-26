@@ -91,8 +91,9 @@ public class CantinaDaoPostgres implements CantinaDao {//finito(vedi giu)
         String query = "select vino_cantina from vino,cantina where vino.vino_cantina = cantina.id and vino.nome = ?";
 
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setString(1,vino);
+            ResultSet rs = st.executeQuery();
 
             while (rs.next()){
                 Cantina cantina = findByPrimaryKey(rs.getLong(1));
