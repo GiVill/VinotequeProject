@@ -82,7 +82,7 @@ public class RecensioneDaoPostgres implements RecensioneDao {
             st.setLong(1,IDvino);
             ResultSet rs = st.executeQuery();
 
-            if (rs.next()){
+            while (rs.next()){
                 Recensione recensione = new Recensione();
                 recensione.setId(rs.getLong("id"));
                 recensione.setDescrizione(rs.getString("descrizione"));

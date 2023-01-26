@@ -18,7 +18,7 @@ export class WineService {
     return wines;
   }
 
-  geRedtWines(): Observable<Wine[]>{
+  getRedWines(): Observable<Wine[]>{
     var wines : Observable<Wine[]> = this.http.post<Wine []>(this.url + "/redWine",{})
     return wines;
   }

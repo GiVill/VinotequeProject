@@ -14,22 +14,19 @@ export class RedPageComponent {
 
   ngOnInit(): void {
 
-    window.scrollY
+    window.scrollY;
+    this.takeWines()
 
-    if(!(this.wineService.wines != undefined || null)){
-      this.takeWines();
-    } else {
-      this.wines = this.wineService.wines
-    }
+  
   }
-
-
-
+  
   takeWines(){
-    this.wineService.geRedtWines().subscribe(data=> {
+    console.log("redwine")
+    this.wineService.getRedWines().subscribe(data=> {
       this.wines = data;
       this.wineService.wines = data;
     })
   }
 
 }
+

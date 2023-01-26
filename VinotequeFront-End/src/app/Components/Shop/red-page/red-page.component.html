@@ -1,11 +1,19 @@
-<div class="Filters">
+<div class="Filters" >
   <a mat-list-item >Gradazione</a>
   <a mat-list-item>Prezzo</a>
   <a mat-list-item>Cantina</a>
 </div>
 <section>
-  <span class="spacer"></span>
-  <span class="spacer"></span>
+  <span class="spacer" ></span>
+  <div class="filterContainer">
+    <mat-nav-list *ngIf="!(isHandset|async)">
+      <h2 style="text-align: center; margin-top: 20px;">Filtra:</h2>
+      <a mat-list-item >Gradazione</a>
+      <a mat-list-item>Prezzo</a>
+      <a mat-list-item>Cantina</a>
+    </mat-nav-list>
+  </div>
+  <span class="spacer" ></span>
     <div class="wineCardContainer">
       <app-wine-card *ngFor="let wine of wines index as i" [wine]="wine" [index]="i">
       </app-wine-card>

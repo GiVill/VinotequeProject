@@ -165,10 +165,10 @@ public class VinoDaoPostgres implements VinoDao{
     public List<Vino> findByTipologia(String tipologia) {
         List<Vino> vini = new ArrayList<Vino>();
         String query = "select * from vino where tipologia = ?";
-
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setString(1,tipologia);
+            ResultSet rs = st.executeQuery();
 
             while (rs.next()){
                 Vino vino = new Vino();
@@ -198,8 +198,9 @@ public class VinoDaoPostgres implements VinoDao{
         String query = "select * from vino where gradazione = ?";
 
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setInt(1,gradazione);
+            ResultSet rs = st.executeQuery();
 
             while (rs.next()){
                 Vino vino = new Vino();
@@ -228,8 +229,10 @@ public class VinoDaoPostgres implements VinoDao{
         String query = "select * from vino where prezzo => ? and prezzo <= ?";
 
         try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setInt(1,prezzoMin);
+            st.setInt(2,prezzoMax);
+            ResultSet rs = st.executeQuery();
 
             while (rs.next()){
                 Vino vino = new Vino();

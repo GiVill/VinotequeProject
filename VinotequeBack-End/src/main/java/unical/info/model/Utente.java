@@ -1,8 +1,5 @@
 package unical.info.model;
 
-import org.springframework.security.crypto.bcrypt.BCrypt;
-import unical.info.controller.PasswordCrypt;
-
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
