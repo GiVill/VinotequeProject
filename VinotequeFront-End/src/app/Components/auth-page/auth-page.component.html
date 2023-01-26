@@ -20,22 +20,22 @@
   </section>
 </section>-->
 <mat-grid-list cols="2" rowHeight="30px">
-  <mat-grid-tile rowspan="2" style="background-color: blue;">
+  <mat-grid-tile rowspan="2">
     <span class="spacer"></span>
     <h2>Ho già un account</h2>
     <span class="spacer"></span>
   </mat-grid-tile>
-  <mat-grid-tile rowspan="2" style="background-color: blueviolet;">
+  <mat-grid-tile rowspan="2">
     <span class="spacer"></span>
     <h2>Non sono ancora registrato</h2>
     <span class="spacer"></span>
   </mat-grid-tile>
-  <mat-grid-tile rowspan="25" style="background-color: cadetblue;">
+  <mat-grid-tile rowspan="25">
     <button mat-raised-button #bottone1 (click)="onClick()" *ngIf="!hideRegistration">Accedi</button>
     <app-login-card *ngIf="hideRegistration">
     </app-login-card>
   </mat-grid-tile>
-  <mat-grid-tile rowspan="25" style="background-color: forestgreen;">
+  <mat-grid-tile rowspan="25">
     <button mat-raised-button #bottone2 (click)="onClick()" *ngIf="hideRegistration">Registrati</button>
     <app-registration-card *ngIf="!hideRegistration">
     </app-registration-card>
