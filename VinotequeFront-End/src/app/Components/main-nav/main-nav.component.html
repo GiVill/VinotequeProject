@@ -16,8 +16,8 @@
     <mat-nav-list>
       <a mat-list-item routerLink="shop" >Shop</a>
       <a mat-list-item routerLink="redWine">Vini Rossi</a>
-      <a mat-list-item>Vini Bianchi</a>
-      <a mat-list-item>Vini Rosé</a>
+      <a mat-list-item routerLink="whiteWine">Vini Bianchi</a>
+      <a mat-list-item routerLink="roseWine">Vini Rosé</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -87,9 +87,9 @@
                 <button mat-raised-button type="button"
                 *ngIf="!(isHandset$ |async)" color="primary" routerLink="redWine">Vini Rossi</button>
                 <button mat-raised-button type="button"
-                *ngIf="!(isHandset$ |async)" color="primary">Vini Bianchi</button>
+                *ngIf="!(isHandset$ |async)" color="primary" routerLink="whiteWine">Vini Bianchi</button>
                 <button mat-raised-button type="button"
-                *ngIf="!(isHandset$ |async)" color="primary">Vini Rosé</button>
+                *ngIf="!(isHandset$ |async)" color="primary" routerLink="roseWine">Vini Rosé</button>
               </div>
             </mat-toolbar-row>
           </div>

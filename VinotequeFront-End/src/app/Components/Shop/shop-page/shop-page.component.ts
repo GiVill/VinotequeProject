@@ -15,12 +15,7 @@ export class ShopPageComponent implements OnInit{
   ngOnInit(): void {
 
     window.scrollY
-
-    if(!(this.wineService.wines != undefined || null)){
-      this.takeWines();
-    } else {
-      this.wines = this.wineService.wines
-    }
+    this.takeWines()
   }
 
 

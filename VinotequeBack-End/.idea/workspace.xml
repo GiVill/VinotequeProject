@@ -6,13 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="54c6546c-eb20-4ea0-a937-c05064d9b449" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/PreferitiDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/PreferitiDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/PromozioneDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/PromozioneDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/PreferitiDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/PreferitiDaoPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/PromozioneDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/PromozioneDaoPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/VinoDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/VinoDaoPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/Shop/red-page/red-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/Shop/red-page/red-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/Shop/rose-page/rose-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/Shop/rose-page/rose-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/Shop/shop-page/shop-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/Shop/shop-page/shop-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/Shop/white-page/white-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/Shop/white-page/white-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app-routing.module.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +61,20 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.VinotequeApplication (1)">
+    <configuration name="VinotequeApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="VinotequeBack-End" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="unical.info.VinotequeApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unical.info.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="VinotequeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="vinoteque" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="unical.info.VinotequeApplication" />
@@ -71,6 +90,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.VinotequeApplication (1)" />
         <item itemvalue="Spring Boot.VinotequeApplication" />
       </list>
     </recent_temporary>
@@ -87,6 +107,7 @@
       <workItem from="1674255955384" duration="4914000" />
       <workItem from="1674398486715" duration="2730000" />
       <workItem from="1674728349022" duration="914000" />
+      <workItem from="1674755376202" duration="933000" />
     </task>
     <servers />
   </component>

@@ -5,7 +5,9 @@ import { CartPageComponent } from './Components/cart-page/cart-page.component';
 import { LoginCardComponent } from './Components/login-card/login-card.component';
 import { RegistrationCardComponent } from './Components/registration-card/registration-card.component';
 import { RedPageComponent } from './Components/Shop/red-page/red-page.component';
+import { RosePageComponent } from './Components/Shop/rose-page/rose-page.component';
 import { ShopPageComponent } from './Components/Shop/shop-page/shop-page.component';
+import { WhitePageComponent } from './Components/Shop/white-page/white-page.component';
 import { UserPageComponent } from './Components/user-page/user-page.component';
 import { WinePageComponent } from './Components/wine-page/wine-page.component';
 
@@ -18,6 +20,9 @@ const routes: Routes = [
   { path: 'cart', component: CartPageComponent},
   { path: 'profile', component: UserPageComponent},
   { path: 'redWine', component: RedPageComponent},
+  { path: 'whiteWine', component: WhitePageComponent},
+  { path: 'roseWine', component: RosePageComponent},
+  
 ];
 
 @NgModule({
