@@ -61,3 +61,12 @@
   position: relative;
   z-index: 0;
 }
+
+.stepperNextButton{
+  background-color: lightgreen;
+}
+
+
+.stepperPreviousButton{
+  background-color: rgb(217, 109, 88);
+}
