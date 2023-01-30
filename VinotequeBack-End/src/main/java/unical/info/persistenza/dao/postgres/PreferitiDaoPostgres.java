@@ -26,19 +26,7 @@ public class PreferitiDaoPostgres implements PreferitiDao {
             ResultSet rs = st.executeQuery();
 
             while (rs.next()){
-                Vino vino = new Vino();
-                vino.setId(rs.getLong("id"));
-                vino.setNome(rs.getString("nome"));
-                vino.setAnnata(rs.getInt("annata"));
-                vino.setPrezzo(rs.getFloat("prezzo"));
-                vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
-                vino.setTipologia(rs.getString("tipologia"));
-                vino.setPremi(rs.getString("premi"));
-                vino.setFoto(rs.getBytes("foto"));
-
-                Cantina cant = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
-                vino.setVino_cantina(cant);
-
+                Vino vino = DBManager.getInstance().getVinoDao().findBYPrimaryKey(rs.getLong("preferiti_vino"));
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -46,24 +34,7 @@ public class PreferitiDaoPostgres implements PreferitiDao {
         }
         return vini;
     }
-/*
-    @Override
-    public int countByVino(long id) throws SQLException {
-        String query = "select * from mipiace where mipiace_vino = ?";
-        int count=0;
-        try {
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
 
-            while (rs.next()){
-                count+=1;
-            }
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return count;
-    }
- */
 
     @Override
     public void save(Preferiti preferiti) throws SQLException {

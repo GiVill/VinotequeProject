@@ -19,7 +19,7 @@ public class VinoDaoPostgres implements VinoDao{
     @Override
     public void save(Vino vino) {
         if (findByNome(vino.getNome())== null) {
-            String insertStr = "INSERT INTO vino VALUES (DEFAULT,?,?,?,?,?,?,?,?,?)";
+            String insertStr = "INSERT INTO vino VALUES (DEFAULT,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
@@ -33,6 +33,7 @@ public class VinoDaoPostgres implements VinoDao{
                 st.setString(7, vino.getPremi());
                 st.setBytes(8, vino.getFoto());
                 st.setString(9, vino.getDescrizione());
+                st.setString(10,vino.getVigneto());
 
                 st.executeUpdate();
 

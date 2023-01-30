@@ -38,7 +38,7 @@ public class VinoRESTController {
         return vini;
     }
 
-    @PostMapping("/GradiazioneWine")
+    @PostMapping("/GradazioneWine")
     public List<Vino> getWines(@RequestBody int gradazione){
         List<Vino> vini = DBManager.getInstance().getVinoDao().findByGradazione(gradazione);
         return vini;

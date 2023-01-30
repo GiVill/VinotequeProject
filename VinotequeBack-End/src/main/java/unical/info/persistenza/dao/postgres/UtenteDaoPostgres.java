@@ -159,7 +159,7 @@ public class UtenteDaoPostgres implements UtenteDao {
         String passC = password;
         String newPass = p.encode(passC);
         Long idute = utente.getId();
-        String updateStr = "UPDATE utente set password = newPass where id = idute";
+        String updateStr = "UPDATE utente set password = ? where id = ?";
         PreparedStatement st;
         try {
             st = conn.prepareStatement(updateStr);
