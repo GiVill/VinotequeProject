@@ -2,7 +2,7 @@ import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthPageComponent } from './Components/auth-page/auth-page.component';
 import { CartPageComponent } from './Components/cart-page/cart-page.component';
-import { HomePageComponent } from './home-page/home-page.component';
+import { HomePageComponent } from './Components/home-page/home-page.component';
 import { LoginCardComponent } from './Components/login-card/login-card.component';
 import { RegistrationCardComponent } from './Components/registration-card/registration-card.component';
 import { RedPageComponent } from './Components/Shop/red-page/red-page.component';
@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'whiteWine', component: WhitePageComponent},
   { path: 'roseWine', component: RosePageComponent},
   { path: '', component: HomePageComponent},
-  
+
 ];
 
 @NgModule({
