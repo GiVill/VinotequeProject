@@ -170,10 +170,7 @@ public class UtenteDaoPostgres implements UtenteDao {
         } catch (SQLException e) {
         throw new RuntimeException(e);
         }
-        }
-
-
-
+    }
 }
 
 

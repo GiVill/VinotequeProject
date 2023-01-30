@@ -1,4 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { RequestSommelier } from 'src/app/Model/ReuestSommelier';
+import { User } from 'src/app/Model/User';
+import { Wine } from 'src/app/Model/Wine';
+import { RequestService } from 'src/app/Services/request.service';
+import { WineService } from 'src/app/Services/wine.service';
 
 @Component({
   selector: 'app-user-page',
@@ -73,5 +78,4 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = false
     this.showRequest = true
   }
-
 }

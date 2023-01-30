@@ -1,6 +1,6 @@
 export interface Cart{
   vini : BigInt[],
-  quantity : Number[]
+  quantity : Number[],
 }
 
 
