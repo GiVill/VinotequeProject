@@ -1,6 +1,8 @@
 package unical.info.persistenza.dao.postgres;
 
 import unical.info.controller.PasswordCrypt;
+import unical.info.model.Richieste;
+import unical.info.persistenza.DBManager;
 import unical.info.persistenza.dao.UtenteDao;
 import unical.info.model.Utente;
 
@@ -37,8 +39,11 @@ public class UtenteDaoPostgres implements UtenteDao {
                 utente.setEmail(rs.getString("email"));
                 utente.setPassword(rs.getString("password"));
                 utente.setRuolo(rs.getString("ruolo"));
-                utente.setIndirizzo(rs.getString("indirizzo"));
                 utente.setCarrello(rs.getString("carrello"));
+                utente.setVia(rs.getString("via"));
+                utente.setCivico(rs.getString("civico"));
+                utente.setCap(rs.getString("cap"));
+                utente.setTelefono(rs.getString("telefono"));
 
                 utenti.add(utente);
             }
@@ -52,7 +57,7 @@ public class UtenteDaoPostgres implements UtenteDao {
     @Override
     public void NewUtente(Utente utente) {
         if (findByEmail(utente.getEmail()) == null) {
-            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?,?,?,?)";
+            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?,?,?)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
@@ -63,8 +68,8 @@ public class UtenteDaoPostgres implements UtenteDao {
                 String passC = utente.getPassword();
                 utente.setPassword(p.encode(passC));
                 st.setString(5, utente.getPassword());
-                st.setString(6,utente.getIndirizzo());
-                st.setString(7, utente.getCarrello());
+                st.setString(6, utente.getCarrello());
+
                 st.executeUpdate();
 
             } catch (SQLException e) {
@@ -91,8 +96,11 @@ public class UtenteDaoPostgres implements UtenteDao {
                 utente.setEmail(rs.getString("email"));
                 utente.setPassword(rs.getString("password"));
                 utente.setRuolo(rs.getString("ruolo"));
-                utente.setIndirizzo(rs.getString("indirizzo"));
                 utente.setCarrello(rs.getString("carrello"));
+                utente.setVia(rs.getString("via"));
+                utente.setCivico(rs.getString("civico"));
+                utente.setCap(rs.getString("cap"));
+                utente.setTelefono(rs.getString("telefono"));
 
             }
         } catch (SQLException e) {
@@ -119,8 +127,11 @@ public class UtenteDaoPostgres implements UtenteDao {
                 utente.setEmail(rs.getString("email"));
                 utente.setPassword(rs.getString("password"));
                 utente.setRuolo(rs.getString("ruolo"));
-                utente.setIndirizzo(rs.getString("indirizzo"));
                 utente.setCarrello(rs.getString("carrello"));
+                utente.setVia(rs.getString("via"));
+                utente.setCivico(rs.getString("civico"));
+                utente.setCap(rs.getString("cap"));
+                utente.setTelefono(rs.getString("telefono"));
 
             }
         } catch (SQLException e) {
@@ -141,29 +152,10 @@ public class UtenteDaoPostgres implements UtenteDao {
         }
     }
 
-    @Override
-    public void PromuoviASommelier(Utente utente) {
-        //for (int i = 0; i < matricoleSommelier.length; i++) {
-          //  if (matricola == matricoleSommelier[i]) {
-              Long iddacamb = utente.getId();
-                //manda notifica all admin
-                String updateStr = "UPDATE utente set ruolo = 'SOMMELIER' where id = ? ";
-                PreparedStatement st;
-                try {
-                    st = conn.prepareStatement(updateStr);
-                    st.setLong(1,iddacamb);
-                    st.executeUpdate();
 
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-       // }
-    //}
-    int[] matricoleSommelier = {219922, 283130, 549172, 393784, 303154};
 
     @Override
-    public void CambioPassword(Utente utente, String password) {
+    public void CambioPassword (Utente utente, String password){
         String passC = password;
         String newPass = p.encode(passC);
         Long idute = utente.getId();
@@ -171,85 +163,18 @@ public class UtenteDaoPostgres implements UtenteDao {
         PreparedStatement st;
         try {
             st = conn.prepareStatement(updateStr);
-            st.setString(1,newPass);
-            st.setLong(2,idute);
+            st.setString(1, newPass);
+            st.setLong(2, idute);
             st.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+        throw new RuntimeException(e);
         }
-    }
+        }
+
+
+
 }
 
-/*
-    @Override
-    public void saveOrUpdate(Utente utente) {
-        if (findByEmail(utente.getEmail())== null) {
-            String insertStr = "INSERT INTO utente VALUES (?,?,?,?,?,?,?,?)";
-            PreparedStatement st;
-            try {
-                st = conn.prepareStatement(insertStr);
-                st.setLong(1, myLongVariable);
-                st.setString(2, utente.getNome());
-                st.setString(3, utente.getCognome());
-
-                String data = valueOf(utente.getData_di_nascita());
-                /*if(data.equals("") || data==null)
-                {
-                    System.out.println("data sbagliata");
-
-                }else if(data.compareTo("31/12/2005")>0){
-                    //dovrebbe essere minorenne
-                    System.out.println("data sbagliata");
-                }
-                st.setString(4, String.valueOf(utente.getData_di_nascita()));
-
-                        st.setString(5, utente.getEmail());
-                        st.setString(6, utente.getPassword());
-                        st.setString(7, numero);
-                        st.setString(8, utente.getIndirizzo());
-
-                        st.executeUpdate();
-
-                        } catch (SQLException e) {
-                        throw new RuntimeException(e);
-                        }
-                        }else{
 
 
-                        String updateStr = "UPDATE utente set password = ? "
-                        + "nome = ? "
-                        + "cognome = ? "
-                        + "data_nascita = ? "
-                        + "ruolo = ? "
-                        + "numero_telefono = ? "
-                        + "indirizzo = ? "
-                        + " where email = ? ";
-
-                        PreparedStatement st;
-                        try {
-                        st = conn.prepareStatement(updateStr);
-
-                        st.setString(1, utente.getPassword());
-                        st.setString(2, utente.getNome());
-                        st.setString(3, utente.getCognome());
-
-                        //TODO
-                        //long secs = utente.getDataNascita().getTime();
-                        //st.setDate(4, new java.sql.Date(secs));
-                        st.setString(4, String.valueOf(utente.getData_di_nascita()));
-
-                        st.setString(5, utente.getRuolo());
-                        st.setString(6,utente.getNumero_telefono());
-                        st.setString(7, utente.getIndirizzo());
-
-                        st.executeUpdate();
-
-                        } catch (SQLException e) {
-                        // TODO Auto-generated catch block
-                        e.printStackTrace();
-                        }
-
-                        }
-                        }
- */

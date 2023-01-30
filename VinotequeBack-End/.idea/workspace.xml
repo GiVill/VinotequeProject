@@ -7,7 +7,13 @@
     <list default="true" id="54c6546c-eb20-4ea0-a937-c05064d9b449" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/VinoRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/VinoRESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Richieste.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/model/Richieste.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Utente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/model/Utente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/model/Vino.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/model/Vino.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/RichiesteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/RichiesteDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/UtenteDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/UtenteDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/VinoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/VinoDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/RichiesteDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/RichiesteDaoPostgres.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" afterDir="false" />
     </list>
@@ -20,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -101,6 +108,7 @@
       <workItem from="1674755376202" duration="933000" />
       <workItem from="1675071669645" duration="75000" />
       <workItem from="1675086224084" duration="4904000" />
+      <workItem from="1675095682022" duration="5934000" />
     </task>
     <servers />
   </component>
