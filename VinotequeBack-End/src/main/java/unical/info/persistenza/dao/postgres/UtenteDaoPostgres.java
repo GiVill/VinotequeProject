@@ -147,10 +147,11 @@ public class UtenteDaoPostgres implements UtenteDao {
           //  if (matricola == matricoleSommelier[i]) {
               Long iddacamb = utente.getId();
                 //manda notifica all admin
-                String updateStr = "UPDATE utente set ruolo = 'SOMMELIER' where id = iddacamb ";
+                String updateStr = "UPDATE utente set ruolo = 'SOMMELIER' where id = ? ";
                 PreparedStatement st;
                 try {
                     st = conn.prepareStatement(updateStr);
+                    st.setLong(1,iddacamb);
                     st.executeUpdate();
 
                 } catch (SQLException e) {
@@ -166,10 +167,12 @@ public class UtenteDaoPostgres implements UtenteDao {
         String passC = password;
         String newPass = p.encode(passC);
         Long idute = utente.getId();
-        String updateStr = "UPDATE utente set password = newPass where id = idute";
+        String updateStr = "UPDATE utente set password = ? where id = ?";
         PreparedStatement st;
         try {
             st = conn.prepareStatement(updateStr);
+            st.setString(1,newPass);
+            st.setLong(2,idute);
             st.executeUpdate();
 
         } catch (SQLException e) {
