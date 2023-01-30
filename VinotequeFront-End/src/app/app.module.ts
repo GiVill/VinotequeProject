@@ -43,6 +43,8 @@ import { RedPageComponent } from './Components/Shop/red-page/red-page.component'
 import { WhitePageComponent } from './Components/Shop/white-page/white-page.component';
 import { RosePageComponent } from './Components/Shop/rose-page/rose-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import {matStepperAnimations, MatStepperModule} from '@angular/material/stepper';
+
 
 @NgModule({
   declarations: [
@@ -88,6 +90,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     HttpClientModule,
     MatRadioModule,
     MatSnackBarModule,
+    MatStepperModule,
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

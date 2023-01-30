@@ -22,34 +22,117 @@
     </div>
     <div class="spacer"></div>
     <mat-card class="actions">
-      <mat-card-title>Totale: 10,90€</mat-card-title>
+      <mat-card-title style="margin-left: 10px;">Totale: getTotalPrice()</mat-card-title>
       <mat-card-content>
-        <p style="margin-left: 15px; color: green;"><mat-icon style="color: green;">local_shipping</mat-icon> CIAO SONO UN CAMIONCINO DELLE CONSEGNE</p>
-        <p style="margin-left: 15px;">METODO DI PAGAMENTO:</p>
-    <mat-radio-group style="margin-left: 15px; display: flex; flex-direction: column;">
-      <mat-radio-button>
-        PayPal
-      </mat-radio-button>
-      <mat-radio-button>
-        Contrassegno
-      </mat-radio-button>
-    </mat-radio-group>
-    <div style="display: flex;">
-      <input type="text" placeholder="Codice sconto" style="margin-left: 15px;">
-      <button mat-flat-button style="margin-left: 5px; background-color: lightyellow;
-      z-index: 0;">Inserisci</button>
-    </div>
-    <div style="margin-left: 15px; display: flex;">
-      <h4><strong>TOTALE ORDINE</strong></h4>
-      <span class="spacer"></span>
-      <h4><strong>(totale)</strong></h4>
-    </div>
     <span class="spacer"></span>
-    <div class="paypal" id="paypal-button-container" #payPalRef></div>
+
     <!-- <button mat-raised-button style="background-color: lightgreen;">PAGA BASTARDO!</button> -->
     <span class="spacer"></span>
-      </mat-card-content>
-    </mat-card>
+    </mat-card-content>
+
+
+
+    <mat-stepper orientation="vertical">
+      <mat-step>
+        <ng-template matStepLabel><strong>Indirizzo di spedizione</strong></ng-template>
+        <ng-template matStepContent>
+          <form>
+            <table cellspacing="0">
+              <tr>
+                <td>
+                  <mat-form-field>
+                    <mat-label>Via</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-label>N. Civico</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <mat-form-field>
+                    <mat-label>CAP</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field>
+                    <mat-label>Telefono</mat-label>
+                    <input matInput>
+                  </mat-form-field>
+                </td>
+              </tr>
+            </table>
+          </form>
+          <button mat-raised-button matStepperNext class="stepperNextButton">Successivo</button>
+        </ng-template>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel style="display: flex; flex-direction: row;"><strong>Metodo Spedizione</strong><mat-icon style="color: green;">local_shipping</mat-icon></ng-template>
+        <ng-template matStepContent>
+          <mat-radio-group style="display: flex; flex-direction: column;">
+            <mat-radio-button>
+              Spedizione standard (1 settimana)
+             </mat-radio-button>
+             <mat-radio-button>
+              Spedizione rapida (48h)
+             </mat-radio-button>
+           </mat-radio-group>
+           <div style="margin-top: 3px">
+            <button mat-button matStepperPrevious class="stepperPreviousButton">Precedente</button>
+            <button mat-button matStepperNext class="stepperNextButton">Successivo</button>
+           </div>
+        </ng-template>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel><strong>Metodo di pagamento</strong></ng-template>
+        <ng-template matStepContent>
+          <mat-radio-group style="display: flex; flex-direction: column;">
+            <mat-radio-button (click)="setNormal()">
+              Contrassegno
+             </mat-radio-button>
+             <mat-radio-button (click)="setPaypal()">
+              Paypal
+             </mat-radio-button>
+           </mat-radio-group>
+           <div style="margin-top: 3px">
+            <button mat-button matStepperPrevious class="stepperPreviousButton">Precedente</button>
+            <button mat-button matStepperNext class="stepperNextButton">Successivo</button>
+           </div>
+        </ng-template>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel><strong>Inserisci codice sconto<em>(facoltativo)</em></strong></ng-template>
+        <div style="display: flex;">
+          <input type="text" placeholder="Codice sconto">
+          <button mat-flat-button style="margin-left: 5px; background-color: lightyellow;
+          z-index: 0;">Inserisci</button>
+        </div>
+        <div style="margin-top: 3px">
+          <button mat-button matStepperPrevious class="stepperPreviousButton">Precedente</button>
+          <button mat-button matStepperNext class="stepperNextButton">Successivo</button>
+         </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel><strong>Conferma ordine</strong></ng-template>
+        <div style="display: flex; flex-direction: column;" *ngIf="!paypalMethod">
+          <span class="spacer"></span>
+          <button mat-fab extended style="background-color: lightgreen; color: black;">Procedi con l'acquisto</button>
+          <span class="spacer"></span>
+        </div>
+        <ng-container style="display: flex; flex-direction: column; position: relative;" *ngIf="paypalMethod">
+          <span class="spacer"></span>
+          <div class="paypal" id="paypal-button-container" #payPalRef></div>
+          <span class="spacer"></span>
+        </ng-container>
+      </mat-step>
+    </mat-stepper>
+  </mat-card>
+
   </div>
 </div>
 
