@@ -1,8 +1,8 @@
 <mat-card class="item-card">
   <mat-card-content>
-    <img src="https://data.callmewine.com/imgprodotto/kike-cantine-fina-2021_41073_ico.jpg" class="item-img">
+    <img src="{{'data:image/png;base64,' + wine.foto}}" class="item-img">
     <div class="textContainer">
-      <p>vino rosso</p>
+      <p>{{wine.nome}}</p>
       <p style="color: green;">Disponibilità immediata</p>
     </div>
     <span class="spacer"></span>
@@ -11,13 +11,13 @@
       <input matInput [(ngModel)]="quantity" type="number" min="1" max="10">
     </mat-form-field>
     <span class="spacer"></span>
-    <div style="margin-top: 10px; font-size: 20px;">10,90€</div>
+    <div style="margin-top: 10px; font-size: 20px;">{{(wine.prezzo.valueOf()*quantity).toFixed(2)}}</div>
     <span class="spacer"></span>
     <mat-card-actions>
       <button mat-icon-button class="favorite">
         <mat-icon>favorite</mat-icon>
       </button>
-      <button mat-icon-button class="delete">
+      <button mat-icon-button class="delete" (click)="removeItem()">
         <mat-icon>close</mat-icon>
       </button>
     </mat-card-actions>

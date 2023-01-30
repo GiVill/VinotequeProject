@@ -14,6 +14,11 @@ export class WineService {
 
   constructor(private http: HttpClient) { }
 
+  getWineById(id:BigInt): Observable<Wine>{
+    var wine : Observable<Wine> = this.http.post<Wine>(this.url + "/WineById",id)
+    return wine;
+  }
+
   getWines(): Observable<Wine[]>{
     var wines : Observable<Wine[]> = this.http.post<Wine []>(this.url + "/Wine",{})
     return wines;

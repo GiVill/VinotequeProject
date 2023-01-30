@@ -20,6 +20,12 @@ public class VinoRESTController {
         List<Vino> vini = DBManager.getInstance().getVinoDao().findAll();
         return vini;
     }
+
+    @PostMapping("/WineById")
+    public Vino getWine(@RequestBody long id){
+        Vino vino = DBManager.getInstance().getVinoDao().findBYPrimaryKey(id);
+        return vino;
+    }
     @PostMapping("/redWine")
     public List<Vino> getRedWines(){
         List<Vino> vini = DBManager.getInstance().getVinoDao().findByTipologia("rosso");

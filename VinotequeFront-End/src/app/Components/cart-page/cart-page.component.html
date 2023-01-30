@@ -14,12 +14,13 @@
         <span class="spacer"></span>
         <span style="width: 126px;"></span>
       </div>
-      <app-item-cart></app-item-cart>
+      <app-item-cart *ngFor="let wine of cart.vini index as i" [index]="i" [idWine]="wine" [cart]="cart">
+      </app-item-cart>
       <app-request-card></app-request-card>
     </div>
     <div class="spacer"></div>
     <mat-card class="actions">
-      <mat-card-title style="margin-left: 10px;">Totale: getTotalPrice()</mat-card-title>
+      <mat-card-title style="margin-left: 10px;">Totale:{{(cart.totale).toFixed(2)}}</mat-card-title>
       <mat-card-content>
     <span class="spacer"></span>
 

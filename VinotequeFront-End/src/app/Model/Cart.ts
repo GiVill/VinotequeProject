@@ -12,14 +12,17 @@ export function addWine(cart:Cart,wine:Wine,quantity:number){
   cart.vini.push(wine.id);
   cart.quantity.push(quantity);
   cart.totale += wine.prezzo.valueOf();
-  // cart.totale.toFixed(2);
 }
 
 export function removeWine(cart:Cart,wine:Wine){
   let index = cart.vini.indexOf(wine.id)
+  let quantita = cart.quantity[index]
   cart.vini.splice(index, 1);
   cart.quantity.splice(index, 1);
-  cart.totale -= wine.prezzo.valueOf();
+  cart.totale -= wine.prezzo.valueOf()*quantita;
+  if(cart.totale < 0){
+    cart.totale = 0
+  }
 }
 
 export function upload(cart:Cart,wine:Wine){
