@@ -27,6 +27,7 @@ export class AppComponent implements OnInit, OnDestroy{
           //sessionStorage.setItem("user",JSON.stringify(userData))
           localStorage.setItem("user",JSON.stringify(userData));
           localStorage.setItem("jsessionid",this.sessionId.toString())
+          sessionStorage.setItem("cart",JSON.stringify(userData.carrello))
           console.log(userData)
         }
       });
