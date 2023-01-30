@@ -3,37 +3,61 @@ package unical.info.model;
 import java.util.ArrayList;
 
 public class Carrello {
-    private ArrayList<Vino> vini;
-    private ArrayList<Integer> quantita;
 
-    public ArrayList<Vino> getVini() {
+    private long idUtente;
+    private ArrayList<Long> vini;
+    private ArrayList<Integer> quantity;
+    private int totale;
+
+    public long getIdUtente() {
+        return idUtente;
+    }
+
+    public void setIdUtente(long idUtente) {
+        this.idUtente = idUtente;
+    }
+
+    public ArrayList<Long> getVini() {
         return vini;
     }
 
-    public void setVini(ArrayList<Vino> vini) {
+    public void setVini(ArrayList<Long> vini) {
         this.vini = vini;
     }
 
-    public ArrayList<Integer> getQuantita() {
-        return quantita;
+    public ArrayList<Integer> getQuantity() {
+        return quantity;
     }
 
-    public void setQuantita(ArrayList<Integer> quantita) {
-        this.quantita = quantita;
+    public void setQuantity(ArrayList<Integer> quantity) {
+        this.quantity = quantity;
     }
 
-    public Carrello(ArrayList<Vino> vini, ArrayList<Integer> quantita) {
+    public int getTotale() {
+        return totale;
+    }
+
+    public void setTotale(int totale) {
+        this.totale = totale;
+    }
+
+    public Carrello() {
+    }
+
+    public Carrello(long idUtente, ArrayList<Long> vini, ArrayList<Integer> quantity, int totale) {
+        this.idUtente = idUtente;
         this.vini = vini;
-        this.quantita = quantita;
+        this.quantity = quantity;
+        this.totale = totale;
     }
-
-    public Carrello(){}
 
     @Override
     public String toString() {
         return "Carrello{" +
-                "vini=" + vini +
-                ", quantita=" + quantita +
+                "idUtente=" + idUtente +
+                ", vini=" + vini +
+                ", quantity=" + quantity +
+                ", totale=" + totale +
                 '}';
     }
 }

@@ -1,6 +1,10 @@
 package unical.info.RESTapi;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.*;
+import unical.info.model.Carrello;
 import unical.info.persistenza.DBManager;
 import unical.info.model.Utente;
 
@@ -22,6 +26,18 @@ public class AuthenticationRESTController{
        else {
            return false;
        }
+    }
+
+    @PostMapping ("/addCart")
+    public boolean addCart(@RequestBody Carrello carrello) throws JsonProcessingException {
+        JSONObject carrelloJson = new JSONObject(carrello);
+        String jsonString = carrelloJson.toString();
+        /*
+        ObjectMapper objectMapper = new ObjectMapper();
+        Carrello obj = objectMapper.readValue(jeson,Carrello.class);
+         */
+        DBManager.getInstance().getUtenteDao().CambioCarrello(carrello.getIdUtente(),jsonString);
+        return true;
     }
 
     @GetMapping ("/logout")

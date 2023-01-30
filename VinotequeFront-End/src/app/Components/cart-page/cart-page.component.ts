@@ -1,6 +1,7 @@
 import { Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 import { MatButton } from '@angular/material/button';
 import { reduce } from 'rxjs';
+import { AuthenticationService } from 'src/app/Services/authentication.service';
 
 @Component({
   selector: 'app-cart-page',
@@ -8,6 +9,8 @@ import { reduce } from 'rxjs';
   styleUrls: ['./cart-page.component.css']
 })
 export class CartPageComponent implements OnInit, OnChanges{
+
+  constructor(private service:AuthenticationService){}
 
   paga(){
 
@@ -35,6 +38,16 @@ export class CartPageComponent implements OnInit, OnChanges{
   }
 
   ngOnInit(): void {
+
+    let cart = JSON.parse(sessionStorage.getItem("cart")!);
+    this.service.addCart(cart).subscribe(data =>{
+      console.log(data)
+    })
+
+
+
+
+
     window.paypal.Buttons({
       style:{
         layout: 'horizontal'

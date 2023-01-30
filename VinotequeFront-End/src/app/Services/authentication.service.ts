@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Cart } from '../Model/Cart';
 import { User } from '../Model/User';
 
 @Injectable({
@@ -39,5 +40,10 @@ export class AuthenticationService {
 
   logout(jsessionid: string): Observable<Boolean>{
     return this.http.get<Boolean>(this.url + "/logout",{params:{jsessionid:jsessionid}});
+  }
+
+  addCart(cart : Cart): Observable<Boolean>{
+    console.log(cart); //EROE!!!!!!!!!!
+    return this.http.post<Boolean>(this.url + "/addCart",cart);
   }
 }

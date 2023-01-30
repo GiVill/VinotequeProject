@@ -12,11 +12,11 @@ public class Utente{
     String civico;
     String cap;
     String telefono;
-    String carrello;
+    Carrello carrello;
 
 
 
-    public Utente(Long id, String nome, String cognome, String data_di_nascita, String email, String password, String ruolo, String via, String civico, String cap, String telefono, String carrello) {
+    public Utente(Long id, String nome, String cognome, String data_di_nascita, String email, String password, String ruolo, String via, String civico, String cap, String telefono, Carrello carrello) {
         this.id = id;
         this.nome = nome;
         this.cognome = cognome;
@@ -123,11 +123,11 @@ public class Utente{
     }
 
 
-    public String getCarrello() {
+    public Carrello getCarrello() {
         return carrello;
     }
 
-    public void setCarrello(String carrello) {
+    public void setCarrello(Carrello carrello) {
         this.carrello = carrello;
     }
 
