@@ -1,9 +1,5 @@
 package unical.info.model;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-
 public class Utente{
     Long id;
     String nome;
@@ -12,32 +8,63 @@ public class Utente{
     String email;
     String password;
     String ruolo;
-    String indirizzo;
+    String via;
+    String civico;
+    String cap;
+    String telefono;
     String carrello;
 
-    public Utente( String nome, String cognome, String data_di_nascita, String email, String password, String indirizzo, String carrello) {
 
+
+    public Utente(Long id, String nome, String cognome, String data_di_nascita, String email, String password, String ruolo, String via, String civico, String cap, String telefono, String carrello) {
+        this.id = id;
         this.nome = nome;
         this.cognome = cognome;
         this.data_di_nascita = data_di_nascita;
         this.email = email;
         this.password = password;
-        this.ruolo = "utente";
-        this.indirizzo = indirizzo;
+        this.ruolo = ruolo;
+        this.via = via;
+        this.civico = civico;
+        this.cap = cap;
+        this.telefono = telefono;
         this.carrello = carrello;
     }
 
-
-
-
     public Utente() {    }
 
-    public String getIndirizzo() {
-        return indirizzo;
+
+
+    public String getVia() {
+        return via;
     }
 
-    public void setIndirizzo(String indirizzo) {
-        this.indirizzo = indirizzo;
+    public void setVia(String via) {
+        this.via = via;
+    }
+
+    public String getCivico() {
+        return civico;
+    }
+
+    public void setCivico(String civico) {
+        this.civico = civico;
+    }
+
+    public String getCap() {
+        return cap;
+    }
+
+    public void setCap(String cap) {
+        this.cap = cap;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
     public Long getId() {
@@ -114,7 +141,10 @@ public class Utente{
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", ruolo='" + ruolo + '\'' +
-                ", indirizzo='" + indirizzo + '\'' +
+                ", via='" + via + '\'' +
+                ", civico='" + civico + '\'' +
+                ", cap='" + cap + '\'' +
+                ", telefono='" + telefono + '\'' +
                 ", carrello='" + carrello + '\'' +
                 '}';
     }

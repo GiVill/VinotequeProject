@@ -1,9 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { RequestSommelier } from 'src/app/Model/RequestSommelier';
-import { User } from 'src/app/Model/User';
-import { Wine } from 'src/app/Model/Wine';
-import { RequestService } from 'src/app/Services/request.service';
-import { WineService } from 'src/app/Services/wine.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-user-page',
@@ -19,7 +14,7 @@ export class UserPageComponent implements OnInit{
     this.service.getFavorites(this.utente.id).subscribe(data =>{
       this.favorites = data;
     })
-    if (this.utente.ruolo=='SOMMELIER'){
+    if (this.utente.ruolo=='ADMIN'){
       this.serviceRequest.getRequests().subscribe(data =>{
         this.requestsSommelier = data;
       })

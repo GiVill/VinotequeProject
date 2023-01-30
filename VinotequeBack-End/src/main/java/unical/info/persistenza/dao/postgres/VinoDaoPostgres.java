@@ -19,7 +19,7 @@ public class VinoDaoPostgres implements VinoDao{
     @Override
     public void save(Vino vino) {
         if (findByNome(vino.getNome())== null) {
-            String insertStr = "INSERT INTO vino VALUES (DEFAULT,?,?,?,?,?,?,?,?,?)";
+            String insertStr = "INSERT INTO vino VALUES (DEFAULT,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
@@ -33,6 +33,7 @@ public class VinoDaoPostgres implements VinoDao{
                 st.setString(7, vino.getPremi());
                 st.setBytes(8, vino.getFoto());
                 st.setString(9, vino.getDescrizione());
+                st.setString(10,vino.getVigneto());
 
                 st.executeUpdate();
 
@@ -63,6 +64,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setDescrizione(rs.getString("descrizione"));
                 Cantina cantina = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
                 vino.setVino_cantina(cantina);
+                vino.setVigneto(rs.getString("vigneto"));
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -94,6 +96,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setDescrizione(rs.getString("descrizione"));
                 Cantina canti = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
                 vino.setVino_cantina(canti);
+                vino.setVigneto(rs.getString("vigneto"));
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -124,6 +127,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setDescrizione(rs.getString("descrizione"));
                 Cantina cantina = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
                 vino.setVino_cantina(cantina);
+                vino.setVigneto(rs.getString("vigneto"));
 
             }
         } catch (SQLException e) {
@@ -155,6 +159,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setDescrizione(rs.getString("descrizione"));
                 Cantina cantina = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
                 vino.setVino_cantina(cantina);
+                vino.setVigneto(rs.getString("vigneto"));
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -185,6 +190,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setDescrizione(rs.getString("descrizione"));
                 Cantina cantina = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
                 vino.setVino_cantina(cantina);
+                vino.setVigneto(rs.getString("vigneto"));
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -197,7 +203,7 @@ public class VinoDaoPostgres implements VinoDao{
     @Override
     public List<Vino> findByGradazione(int gradazione) {
         List<Vino> vini = new ArrayList<Vino>();
-        String query = "select * from vino where gradazione = ?";
+        String query = "select * from vino where gradazione > ?";
 
         try {
             PreparedStatement st = conn.prepareStatement(query);
@@ -217,6 +223,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setDescrizione(rs.getString("descrizione"));
                 Cantina cantina = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
                 vino.setVino_cantina(cantina);
+                vino.setVigneto(rs.getString("vigneto"));
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -249,6 +256,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setDescrizione(rs.getString("descrizione"));
                 Cantina cantina = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
                 vino.setVino_cantina(cantina);
+                vino.setVigneto(rs.getString("vigneto"));
                 vini.add(vino);
             }
         } catch (SQLException e) {
@@ -279,6 +287,7 @@ public class VinoDaoPostgres implements VinoDao{
                 vino.setDescrizione(rs.getString("descrizione"));
                 Cantina cantina = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
                 vino.setVino_cantina(cantina);
+                vino.setVigneto(rs.getString("vigneto"));
 
             }
         } catch (SQLException e) {
@@ -300,74 +309,3 @@ public class VinoDaoPostgres implements VinoDao{
 
     }
 }
-/*
-    @Override
-    public void saveOrUpdate(Utente utente) {
-        if (findByEmail(utente.getEmail())== null) {
-            String insertStr = "INSERT INTO utente VALUES (?,?,?,?,?,?,?,?)";
-            PreparedStatement st;
-            try {
-                st = conn.prepareStatement(insertStr);
-                st.setLong(1, myLongVariable);
-                st.setString(2, utente.getNome());
-                st.setString(3, utente.getCognome());
-
-                String data = valueOf(utente.getData_di_nascita());
-                if(data.equals("") || data==null)
-                {
-                    System.out.println("data sbagliata");
-
-                }else if(data.compareTo("31/12/2005")>0){
-                    //dovrebbe essere minorenne
-                    System.out.println("data sbagliata");
-                }
-                st.setString(4, String.valueOf(utente.getData_di_nascita()));
-
-                        st.setString(5, utente.getEmail());
-                        st.setString(6, utente.getPassword());
-                        st.setString(7, numero);
-                        st.setString(8, utente.getIndirizzo());
-
-                        st.executeUpdate();
-
-                        } catch (SQLException e) {
-                        throw new RuntimeException(e);
-                        }
-                        }else{
-                        String updateStr = "UPDATE utente set password = ? "
-                        + "nome = ? "
-                        + "cognome = ? "
-                        + "data_nascita = ? "
-                        + "ruolo = ? "
-                        + "numero_telefono = ? "
-                        + "indirizzo = ? "
-                        + " where email = ? ";
-
-                        PreparedStatement st;
-                        try {
-                        st = conn.prepareStatement(updateStr);
-
-                        st.setString(1, utente.getPassword());
-                        st.setString(2, utente.getNome());
-                        st.setString(3, utente.getCognome());
-
-
-                        //long secs = utente.getDataNascita().getTime();
-                        //st.setDate(4, new java.sql.Date(secs));
-                        st.setString(4, String.valueOf(utente.getData_di_nascita()));
-
-                        st.setString(5, utente.getRuolo());
-                        st.setString(6,utente.getNumero_telefono());
-                        st.setString(7, utente.getIndirizzo());
-
-                        st.executeUpdate();
-
-                        } catch (SQLException e) {
-
-                        e.printStackTrace();
-                        }
-
-                        }
-                        }
-
-*/
