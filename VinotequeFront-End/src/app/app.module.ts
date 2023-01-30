@@ -44,8 +44,6 @@ import { WhitePageComponent } from './Components/Shop/white-page/white-page.comp
 import { RosePageComponent } from './Components/Shop/rose-page/rose-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import {matStepperAnimations, MatStepperModule} from '@angular/material/stepper';
-import { RequestCardComponent } from './Components/request-card/request-card.component';
-
 
 
 @NgModule({
@@ -65,8 +63,7 @@ import { RequestCardComponent } from './Components/request-card/request-card.com
     RedPageComponent,
     WhitePageComponent,
     RosePageComponent,
-    HomePageComponent,
-    RequestCardComponent,
+    HomePageComponent
   ],
   imports: [
     ReactiveFormsModule,

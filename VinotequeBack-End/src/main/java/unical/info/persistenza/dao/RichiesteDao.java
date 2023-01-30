@@ -1,6 +1,7 @@
 package unical.info.persistenza.dao;
 
 import unical.info.model.Richieste;
+import unical.info.model.Utente;
 
 import java.util.List;
 
@@ -9,7 +10,8 @@ public interface RichiesteDao {
 
     public Richieste findByUtente(Long idUtente);
 
-    public void save(Richieste richieste);
+    public boolean save(Richieste richieste);
 
     public void delete(Richieste richieste);
+    public void PromuoviASommelier(Richieste richieste);
 }

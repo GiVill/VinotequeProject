@@ -27,6 +27,7 @@ public class RichiesteDaoPostgres implements RichiesteDao {
                 richiesta.setId(rs.getLong("id"));
                 Utente utente  = DBManager.getInstance().getUtenteDao().findByPrimaryKey(rs.getLong("richieste_utente"));
                 richiesta.setUtente(utente);
+                richiesta.setMatricola(rs.getString("matricola"));
 
                 richieste.add(richiesta);
             }
@@ -44,6 +45,7 @@ public class RichiesteDaoPostgres implements RichiesteDao {
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setLong(1, idUtente);
+
             ResultSet rs = st.executeQuery();
 
             if (rs.next()) {
@@ -51,6 +53,7 @@ public class RichiesteDaoPostgres implements RichiesteDao {
                 richieste.setId(rs.getLong("id"));
                 Utente utente  = DBManager.getInstance().getUtenteDao().findByPrimaryKey(rs.getLong("richieste_utente"));
                 richieste.setUtente(utente);
+                richieste.setMatricola(rs.getString("matricola"));
 
             }
         } catch (SQLException e) {
@@ -59,21 +62,23 @@ public class RichiesteDaoPostgres implements RichiesteDao {
         return richieste;    }
 
     @Override
-    public void save(Richieste richieste) {
+    public boolean save(Richieste richieste) {
         if (findByUtente(richieste.getUtente().getId()) == null) {
-            String insertStr = "INSERT INTO richieste VALUES (DEFAULT,?)";
+            String insertStr = "INSERT INTO richieste VALUES (DEFAULT,?,?)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
                 st.setLong(1, richieste.getUtente().getId());
+                st.setString(2,richieste.getMatricola());
                 st.executeUpdate();
 
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+            return true;
         }
+        return false;
     }
-
     @Override
     public void delete(Richieste richieste) {
         String query = "DELETE FROM richieste WHERE id = ?";
@@ -85,6 +90,24 @@ public class RichiesteDaoPostgres implements RichiesteDao {
             throw new RuntimeException(e);
         }
     }
+    @Override
+    public void PromuoviASommelier(Richieste richieste) {
+        Long iddacamb = richieste.getUtente().getId();
+        String updateStr = "UPDATE utente set ruolo = 'SOMMELIER' where id = ? ";
+        PreparedStatement st;
+        try {
+            st = conn.prepareStatement(updateStr);
+            st.setLong(1, iddacamb);
+            st.executeUpdate();
+
+
+        }
+        catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        DBManager.getInstance().getRichiesteDao().delete(richieste);
+    }
+
 
 
 }

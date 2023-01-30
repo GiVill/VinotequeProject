@@ -18,5 +18,4 @@ public interface UtenteDao {//finito
 
     public void CambioPassword(Utente utente, String password);
 
-    public void PromuoviASommelier(Utente utente);
 }
