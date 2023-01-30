@@ -26,7 +26,19 @@ public class PreferitiDaoPostgres implements PreferitiDao {
             ResultSet rs = st.executeQuery();
 
             while (rs.next()){
-                 Vino vino = DBManager.getInstance().getVinoDao().findBYPrimaryKey(rs.getLong("preferiti_vini"));
+                Vino vino = new Vino();
+                vino.setId(rs.getLong("id"));
+                vino.setNome(rs.getString("nome"));
+                vino.setAnnata(rs.getInt("annata"));
+                vino.setPrezzo(rs.getFloat("prezzo"));
+                vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
+                vino.setTipologia(rs.getString("tipologia"));
+                vino.setPremi(rs.getString("premi"));
+                vino.setFoto(rs.getBytes("foto"));
+
+                Cantina cant = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cant);
+
                 vini.add(vino);
             }
         } catch (SQLException e) {

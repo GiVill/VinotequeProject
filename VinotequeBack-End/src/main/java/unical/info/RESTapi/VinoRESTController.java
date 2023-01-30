@@ -8,6 +8,7 @@ import unical.info.persistenza.DBManager;
 import unical.info.model.Vino;
 
 import java.sql.SQLException;
+import java.sql.SQLException;
 import java.util.List;
 
 @RestController
@@ -37,7 +38,7 @@ public class VinoRESTController {
         return vini;
     }
 
-    @PostMapping("/GradazioneWine")
+    @PostMapping("/GradiazioneWine")
     public List<Vino> getWines(@RequestBody int gradazione){
         List<Vino> vini = DBManager.getInstance().getVinoDao().findByGradazione(gradazione);
         return vini;
