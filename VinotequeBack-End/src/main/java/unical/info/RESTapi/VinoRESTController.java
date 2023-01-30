@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 import unical.info.persistenza.DBManager;
 import unical.info.model.Vino;
 
+import java.sql.SQLException;
 import java.util.List;
 
 @RestController
@@ -47,5 +48,10 @@ public class VinoRESTController {
         return vini;
     }
 
+    @PostMapping("/favorites")
+    public List<Vino> getFavorites(@RequestBody long id) throws SQLException {
+        List<Vino> vini_preferiti = DBManager.getInstance().getPreferitiDao().findByUtente(id);
+        return vini_preferiti;
+    }
 
 }

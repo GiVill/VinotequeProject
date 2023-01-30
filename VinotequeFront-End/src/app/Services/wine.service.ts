@@ -33,4 +33,9 @@ export class WineService {
     return wines;
   }
 
+  getFavorites(id:BigInt): Observable<Wine[]>{
+    var favorites : Observable<Wine[]> = this.http.post<Wine []>(this.url + "/favorites",id,{})
+    return favorites;
+  }
+
 }

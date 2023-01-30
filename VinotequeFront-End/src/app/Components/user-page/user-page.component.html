@@ -1,41 +1,89 @@
-<div style="display: flex;">
-  <div style="max-width: fit-content;">
-    <p>IL MIO ACCOUNT</p>
+<div class="mainContainer">
+
+  <span class="fill"></span>
+
+  <div class="leftContainer">
+    <p style="margin-left: 15px; background-color: lightyellow">IL MIO ACCOUNT</p>
     <mat-nav-list>
-      <a mat-list-item>DATI PROFILO</a>
-      <a mat-list-item>ORDINI</a>
-      <a mat-list-item>PREFERITI</a>
+      <a mat-list-item (click)="clickUser()">DATI PROFILO</a>
+      <a mat-list-item (click)="clickOrders()">ORDINI</a>
+      <a mat-list-item (click)="clickFavorites()">PREFERITI</a>
+      <a mat-list-item *ngIf="utente.ruolo=='SOMMELIER'" (click)="clickBecomeSommelier()">DIVENTA SOMMELIER</a>
+      <a mat-list-item *ngIf="utente.ruolo=='UTENTE'" (click)="clickViewRequest()">VISUALIZZA RICHIESTE SOMMELIER</a>
     </mat-nav-list>
   </div>
-  <div style="margin-left: 50px;">
+
+
+  <span class="fill"></span>
+
+
+  <div class="rightContainer" *ngIf="showUserPage">
     <p><strong>DATI DI ACCESSO</strong></p>
-    <div style="display: flex; width: 400px; margin-top: 20px;">
+    <div id="userDataDiv" style="margin-top: 20px;">
       <p>EMAIL</p>
-      <span style="flex: 1 1 auto;"></span>
+      <span class="spacer"></span>
       <p>PASSWORD</p>
     </div>
-    <div style="display: flex; width: 400px;">
-      <p>getEmail</p>
-      <span style="flex: 1 1 auto;"></span>
+    <div id="userDataDiv">
+      <p>{{utente.email}}</p>
+      <span class="spacer"></span>
       <div style="display: flex;">
-        <p>getPassword</p>
+        <p>**********</p>
         <mat-icon style="scale: 60%">edit</mat-icon>
       </div>
     </div>
     <p><strong>DATI PERSONALI</strong></p>
-    <div style="display: flex; width: 400px;">
+    <div id="userDataDiv">
       <p>NOME</p>
-      <span style="flex: 1 1 auto;"></span>
+      <span class="spacer"></span>
       <p>COGNOME</p>
-      <span style="flex: 1 1 auto;"></span>
+      <span class="spacer"></span>
       <p>INDIRIZZO</p>
     </div>
-    <div style="display: flex; width: 400px;">
-      <p>getNome</p>
-      <span style="flex: 1 1 auto;"></span>
-      <p>getCognome</p>
-      <span style="flex: 1 1 auto;"></span>
-      <p>getIndirizzo</p>
+    <div id="userDataDiv">
+      <p>{{utente.nome}}</p>
+      <span class="spacer"></span>
+      <p>{{utente.cognome}}</p>
+      <span class="spacer"></span>
+      <p>{{utente.indirizzo}}</p>
     </div>
   </div>
+
+
+  <div class="rightContainer" *ngIf="showOrdersPage">
+    <h1><strong><em>ORDINI EFFETTUATI</em></strong></h1>
+  </div>
+
+
+  <div class="rightContainer" *ngIf="showFavoritesPage">
+    <div>
+      <h1><strong><em>VINI PREFERITI</em></strong></h1>
+    </div>
+    <div>
+      <app-wine-card *ngFor="let wine of favorites index as i" [wine]="wine" [index]="i">
+      </app-wine-card>
+    </div>
+  </div>
+
+
+  <div class="rightContainer" id="requestContainer" *ngIf="showBecomeSommelier">
+    <p>Inserisci matricola</p>
+    <mat-form-field>
+      <mat-label>ES. 213962</mat-label>
+      <input matInput>
+    </mat-form-field>
+    <button mat-fab extended id="confirmRequest">Invia richiesta</button>
+  </div>
+
+
+  <div class="rightContainer" *ngIf="showRequest">
+    <h1>RICHIESTE</h1>
+    <div>
+      <app-request-card *ngFor="let request of requestsSommelier" [request]="request">
+      </app-request-card>
+    </div>
+  </div>
+
+
+  <span class="fill"></span>
 </div>

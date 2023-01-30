@@ -24,7 +24,6 @@ const routes: Routes = [
   { path: 'whiteWine', component: WhitePageComponent},
   { path: 'roseWine', component: RosePageComponent},
   { path: '', component: HomePageComponent},
-  
 ];
 
 @NgModule({
