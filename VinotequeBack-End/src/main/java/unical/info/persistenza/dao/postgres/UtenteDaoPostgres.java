@@ -234,8 +234,18 @@ public class UtenteDaoPostgres implements UtenteDao {
 
     @Override
     public void aggiornaUtente(Utente utente) {
-        String update = "UPDATE utente set";
-
+        String update = "UPDATE utente set via = ? set civico = ? set cap = ? set telefono = ? where id = ?";
+        PreparedStatement st;
+        try {
+            st = conn.prepareStatement(update);
+            st.setString(1,utente.getVia());
+            st.setString(2,utente.getCivico());
+            st.setString(3,utente.getCap());
+            st.setString(4,utente.getTelefono());
+            st.setLong(5,utente.getId());
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }
 

@@ -20,6 +20,10 @@ public class UtenteRESTController {
         ordini = DBManager.getInstance().getOrdineDao().findByUtente(utente.getId());
         return ordini;
     }
+    @PostMapping("/aggiornaUtente")
+    public void aggiornaUtente(@RequestBody Utente utente){
+        DBManager.getInstance().getUtenteDao().aggiornaUtente(utente);
+    }
 
 
 }
