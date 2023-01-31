@@ -20,7 +20,7 @@ export function removeWine(cart:Cart,wine:Wine){
   cart.vini.splice(index, 1);
   cart.quantity.splice(index, 1);
   cart.totale -= wine.prezzo.valueOf()*quantita;
-  if(cart.totale < 0){
+  if(cart.totale < 0 || cart.vini.length == 0){
     cart.totale = 0
   }
 }
