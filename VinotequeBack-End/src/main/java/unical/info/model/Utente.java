@@ -31,6 +31,14 @@ public class Utente{
         this.carrello = carrello;
     }
 
+    public Utente(String nome, String cognome, String data_di_nascita, String email, String password) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.data_di_nascita = data_di_nascita;
+        this.email = email;
+        this.password = password;
+    }
+
     public Utente() {    }
 
 

@@ -20,4 +20,6 @@ public class UtenteRESTController {
         ordini = DBManager.getInstance().getOrdineDao().findByUtente(utente.getId());
         return ordini;
     }
+
+
 }

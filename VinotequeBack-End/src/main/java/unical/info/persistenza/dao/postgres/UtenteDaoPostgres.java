@@ -3,6 +3,7 @@ package unical.info.persistenza.dao.postgres;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.json.JSONObject;
 import unical.info.controller.PasswordCrypt;
 import unical.info.model.Carrello;
 import unical.info.model.Richieste;
@@ -44,9 +45,14 @@ public class UtenteDaoPostgres implements UtenteDao {
                 utente.setPassword(rs.getString("password"));
                 utente.setRuolo(rs.getString("ruolo"));
 
-                ObjectMapper objectMapper = new ObjectMapper();
-                Carrello carrello = objectMapper.readValue(rs.getString("carrello"),Carrello.class);
-                utente.setCarrello(carrello);
+                if(rs.getString("carrello").equals(" "))
+                {
+                    utente.setCarrello(new Carrello(rs.getLong("id"),new ArrayList<>(),new ArrayList<>(),0));}
+                else {
+                    ObjectMapper objectMapper = new ObjectMapper();
+                    Carrello carrello = objectMapper.readValue(rs.getString("carrello"),Carrello.class);
+                    utente.setCarrello(carrello);
+                }
 
                 utente.setVia(rs.getString("via"));
                 utente.setCivico(rs.getString("civico"));
@@ -68,8 +74,10 @@ public class UtenteDaoPostgres implements UtenteDao {
 
     @Override
     public void NewUtente(Utente utente) {
-        if (findByEmail(utente.getEmail()) == null) {
-            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?,?)";
+            Carrello carrello = new Carrello();
+            JSONObject carrelloJson = new JSONObject(carrello);
+            String jsonString = carrelloJson.toString();
+            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?,?,DEFAULT,?)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
@@ -80,6 +88,8 @@ public class UtenteDaoPostgres implements UtenteDao {
                 String passC = utente.getPassword();
                 utente.setPassword(p.encode(passC));
                 st.setString(5, utente.getPassword());
+                st.setString(6,jsonString);
+
 
                 st.executeUpdate();
 
@@ -87,7 +97,7 @@ public class UtenteDaoPostgres implements UtenteDao {
                 throw new RuntimeException(e);
             }
         }
-    }
+
 
     @Override
     public Utente findByPrimaryKey(long id) {
@@ -108,9 +118,14 @@ public class UtenteDaoPostgres implements UtenteDao {
                 utente.setPassword(rs.getString("password"));
                 utente.setRuolo(rs.getString("ruolo"));
 
-                ObjectMapper objectMapper = new ObjectMapper();
-                Carrello carrello = objectMapper.readValue(rs.getString("carrello"),Carrello.class);
-                utente.setCarrello(carrello);
+                if(rs.getString("carrello").equals(" "))
+                {
+                    utente.setCarrello(new Carrello(rs.getLong("id"),new ArrayList<>(),new ArrayList<>(),0));}
+                else {
+                    ObjectMapper objectMapper = new ObjectMapper();
+                    Carrello carrello = objectMapper.readValue(rs.getString("carrello"),Carrello.class);
+                    utente.setCarrello(carrello);
+                }
 
                 utente.setVia(rs.getString("via"));
                 utente.setCivico(rs.getString("civico"));
@@ -147,9 +162,14 @@ public class UtenteDaoPostgres implements UtenteDao {
                 utente.setPassword(rs.getString("password"));
                 utente.setRuolo(rs.getString("ruolo"));
 
-                ObjectMapper objectMapper = new ObjectMapper();
-                Carrello carrello = objectMapper.readValue(rs.getString("carrello"),Carrello.class);
-                utente.setCarrello(carrello);
+                if(rs.getString("carrello").equals(" "))
+                {
+                    utente.setCarrello(new Carrello(rs.getLong("id"),new ArrayList<>(),new ArrayList<>(),0));}
+                else {
+                    ObjectMapper objectMapper = new ObjectMapper();
+                    Carrello carrello = objectMapper.readValue(rs.getString("carrello"),Carrello.class);
+                    utente.setCarrello(carrello);
+                }
 
                 utente.setVia(rs.getString("via"));
                 utente.setCivico(rs.getString("civico"));
@@ -178,9 +198,6 @@ public class UtenteDaoPostgres implements UtenteDao {
             throw new RuntimeException(e);
         }
     }
-
-
-
     @Override
     public void CambioPassword (Utente utente, String password){
         String passC = password;
@@ -213,6 +230,12 @@ public class UtenteDaoPostgres implements UtenteDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void aggiornaUtente(Utente utente) {
+        String update = "UPDATE utente set";
+
     }
 }
 
