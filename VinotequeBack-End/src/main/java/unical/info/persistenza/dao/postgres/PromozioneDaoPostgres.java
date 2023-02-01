@@ -26,7 +26,7 @@ public class PromozioneDaoPostgres implements PromozioneDao {
                 Promozione promozione = new Promozione();
                 promozione.setId(rs.getLong("id"));
                 promozione.setDescrizione(rs.getString("descrizione"));
-                promozione.setSconto_prezzo(rs.getFloat("sconto_prezzo"));
+                promozione.setSconto_prezzo(rs.getInt("sconto_prezzo"));
 
                 promozioni.add(promozione);
             }
@@ -49,7 +49,7 @@ public class PromozioneDaoPostgres implements PromozioneDao {
 
                 promozione.setId(Long.valueOf("id"));
                 promozione.setDescrizione("descrizione");
-                promozione.setSconto_prezzo(rs.getFloat("sconto_prezzo"));
+                promozione.setSconto_prezzo(rs.getInt("sconto_prezzo"));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

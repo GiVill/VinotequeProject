@@ -5,12 +5,12 @@ import java.math.BigDecimal;
 public class Promozione {
     Long id;
     String descrizione;
-    Float sconto_prezzo;
+    int sconto_prezzo;
 
 
     public Promozione(){}
 
-    public Promozione(Long id, String descrizione, Float sconto_prezzo) {
+    public Promozione(Long id, String descrizione, int sconto_prezzo) {
         this.id = id;
         this.descrizione = descrizione;
         this.sconto_prezzo = sconto_prezzo;
@@ -32,11 +32,11 @@ public class Promozione {
         this.descrizione = descrizione;
     }
 
-    public Float getSconto_prezzo() {
+    public int getSconto_prezzo() {
         return sconto_prezzo;
     }
 
-    public void setSconto_prezzo(Float sconto_prezzo) {
+    public void setSconto_prezzo(int sconto_prezzo) {
         this.sconto_prezzo = sconto_prezzo;
     }
 
