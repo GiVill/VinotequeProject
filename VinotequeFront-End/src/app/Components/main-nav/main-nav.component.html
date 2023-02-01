@@ -1,11 +1,3 @@
-<!--
-  Navbar abbastaza responsive generata al 70% dal comandi da terminale
-  e al 30% da prove varie... grosso modo questa espessione: *ngIf="isHandset$ | async"
-  è un if che dipende dal fatto che il sito sia o meno in modaltià "mobile"
-  usa una fuzione nel typescript già implementata in angula.
-  Comando per generare una navbar resposive base: ng generate @angular/material:material-nav
--->
-
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"

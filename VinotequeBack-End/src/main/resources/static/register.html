@@ -1,0 +1,73 @@
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/register.css" type="text/css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="signup-container">
+    <form action="doLogin" method="post">
+
+        <div class="inline">
+
+            <div class="form-floating mb-3" style="margin-right: 10px">
+                <input type="text" class="form-control rounded-3" id="nome" placeholder="your name" name="nome">
+                <label for="email">Nome</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control rounded-3" id="cognome" placeholder="your surname" name="cognome">
+                <label for="cognome">Cognome</label>
+            </div>
+
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="email" class="form-control rounded-3" id="email" placeholder="name@example.com" name="email">
+            <label for="email">Email</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control rounded-3" id="via" placeholder="via verdi n.0" name="via">
+            <label for="via">Via</label>
+        </div>
+
+        <div class="inline">
+
+            <div class="form-floating mb-3" style="margin-right: 10px">
+                <input type="number" class="form-control rounded-3" id="cap" placeholder="CAP" name="cap">
+                <label for="cap">CAP</label>
+            </div>
+
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control rounded-3" id="città" placeholder="Città" name="città">
+                <label for="città">Città</label>
+            </div>
+
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control rounded-3" id="password" placeholder="Password" name="password">
+            <label for="password">Password</label>
+        </div>
+
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control rounded-3" id="Cpassword" placeholder="ConfermaPassword" name="Cpassword">
+            <label for="Cpassword">Conferma password</label>
+        </div>
+
+        <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Registrati!</button>
+        <div style="margin-top: 5px">
+            <p>Hai già un account? <a href="#!">Accedi!</a></p>
+        </div>
+    </form>
+</div>
+</body>
+</html>

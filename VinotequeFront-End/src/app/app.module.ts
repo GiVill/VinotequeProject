@@ -45,6 +45,7 @@ import { RosePageComponent } from './Components/Shop/rose-page/rose-page.compone
 import { HomePageComponent } from './Components/home-page/home-page.component';
 import {matStepperAnimations, MatStepperModule} from '@angular/material/stepper';
 import { RequestCardComponent } from './Components/request-card/request-card.component';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 
 @NgModule({
@@ -93,6 +94,7 @@ import { RequestCardComponent } from './Components/request-card/request-card.com
     MatRadioModule,
     MatSnackBarModule,
     MatStepperModule,
+    MatAutocompleteModule,
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

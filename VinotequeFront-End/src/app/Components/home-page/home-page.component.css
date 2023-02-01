@@ -1,0 +1,48 @@
+.vetrina{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.wineCard{
+  text-align: center;
+}
+.vetrina > button{
+  align-self: center;
+}
+
+.vetrina > div{
+  align-self: center;
+}
+
+.reviewCard{
+  max-width: 250px;
+}
+
+.wineCard > img{
+  max-height: 250px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+  scale: 160%;
+  margin-left: 20px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+
+@media(min-width: 959px){
+  .vetrina{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+}
+
+
