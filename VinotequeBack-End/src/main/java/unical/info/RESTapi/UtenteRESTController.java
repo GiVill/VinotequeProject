@@ -24,6 +24,11 @@ public class UtenteRESTController {
     public void aggiornaUtente(@RequestBody Utente utente){
         DBManager.getInstance().getUtenteDao().aggiornaUtente(utente);
     }
+    @PostMapping("/cambioPassword")
+    public void cambioPassword(@RequestBody Utente utente, String password){
+        DBManager.getInstance().getUtenteDao().CambioPassword(utente, password);
+    }
+
 
 
 }
