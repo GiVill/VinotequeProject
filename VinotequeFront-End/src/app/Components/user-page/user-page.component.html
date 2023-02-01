@@ -9,7 +9,7 @@
       <a mat-list-item (click)="clickOrders()">ORDINI</a>
       <a mat-list-item (click)="clickFavorites()">PREFERITI</a>
       <a mat-list-item *ngIf="utente.ruolo=='UTENTE'" (click)="clickBecomeSommelier()">DIVENTA SOMMELIER</a>
-      <a mat-list-item *ngIf="utente.ruolo=='SOMMELIER'" (click)="clickViewRequest()">VISUALIZZA RICHIESTE SOMMELIER</a>
+      <a mat-list-item *ngIf="utente.ruolo=='UTENTE'" (click)="clickViewRequest()">VISUALIZZA RICHIESTE SOMMELIER</a>
     </mat-nav-list>
   </div>
 
@@ -59,7 +59,7 @@
     <div>
       <h1><strong><em>VINI PREFERITI</em></strong></h1>
     </div>
-    <div>
+    <div style="display: flex;">
       <app-wine-card *ngFor="let wine of favorites index as i" [wine]="wine" [index]="i">
       </app-wine-card>
     </div>

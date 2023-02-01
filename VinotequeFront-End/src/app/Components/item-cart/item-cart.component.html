@@ -14,7 +14,7 @@
     <div style="margin-top: 10px; font-size: 20px;">{{(wine.prezzo.valueOf()*quantity).toFixed(2)}}</div>
     <span class="spacer"></span>
     <mat-card-actions>
-      <button mat-icon-button class="favorite">
+      <button mat-icon-button class="favorite" (click)="createFavorite()">
         <mat-icon>favorite</mat-icon>
       </button>
       <button mat-icon-button class="delete" (click)="removeItem()">

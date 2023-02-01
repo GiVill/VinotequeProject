@@ -5,9 +5,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import unical.info.model.Ordine;
+import unical.info.model.Preferiti;
 import unical.info.model.Utente;
 import unical.info.persistenza.DBManager;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 @RestController
@@ -29,6 +31,8 @@ public class UtenteRESTController {
         DBManager.getInstance().getUtenteDao().CambioPassword(utente, password);
     }
 
-
-
+    @PostMapping("/addFavorite")
+    public void aggiungiPreferito(@RequestBody Preferiti preferito) throws SQLException {
+        DBManager.getInstance().getPreferitiDao().save(preferito);
+    }
 }

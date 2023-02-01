@@ -1,6 +1,7 @@
 import { ResourceLoader } from '@angular/compiler';
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { Cart, removeWine } from 'src/app/Model/Cart';
+import { Favorite } from 'src/app/Model/Favorite';
 import { Wine } from 'src/app/Model/Wine';
 import { WineService } from 'src/app/Services/wine.service';
 
@@ -11,7 +12,8 @@ import { WineService } from 'src/app/Services/wine.service';
 })
 export class ItemCartComponent implements OnInit{
 
-  constructor(private service:WineService){}
+  constructor(private service:WineService,
+              private cdr: ChangeDetectorRef){}
 
   wine !: Wine
 
@@ -30,6 +32,20 @@ export class ItemCartComponent implements OnInit{
     sessionStorage.setItem("cart",JSON.stringify(this.cart)!)
     console.log(this.cart)
   }
+
+  createFavorite(){
+    const favorite : Favorite = {
+      preferiti_utente : JSON.parse(localStorage.getItem("user")!),
+      preferiti_vino : this.wine
+    }
+
+    this.service.addFavorite(favorite).subscribe(data =>{
+      if (data){
+        this.cdr.detectChanges();
+      }
+    })
+  }
+
 
   @Input() idWine !: BigInt ;
 

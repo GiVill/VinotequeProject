@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Favorite } from '../Model/Favorite';
 import { Wine } from '../Model/Wine';
 
 @Injectable({
@@ -42,6 +43,10 @@ export class WineService {
   getFavorites(id:BigInt): Observable<Wine[]>{
     var favorites : Observable<Wine[]> = this.http.post<Wine []>(this.url + "/favorites",id,{})
     return favorites;
+  }
+
+  addFavorite(favorite : Favorite): Observable<Boolean>{
+    return this.http.post<Boolean>(this.url + "/addFavorite",favorite);
   }
 
 }

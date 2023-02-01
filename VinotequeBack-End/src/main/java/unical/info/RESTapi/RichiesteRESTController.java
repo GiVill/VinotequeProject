@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 import unical.info.model.Richieste;
 import unical.info.persistenza.DBManager;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin("http://localhost:4200")
 public class RichiesteRESTController {
@@ -29,4 +31,11 @@ public class RichiesteRESTController {
             return false;
         }
     }
+
+    @PostMapping("/request")
+    public List<Richieste> getRichieste(){
+        List<Richieste> richieste = DBManager.getInstance().getRichiesteDao().findAll();
+        return richieste;
+    }
+
 }

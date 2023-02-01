@@ -19,7 +19,7 @@ export class UserPageComponent implements OnInit{
     this.service.getFavorites(this.utente.id).subscribe(data =>{
       this.favorites = data;
     })
-    if (this.utente.ruolo=='ADMIN'){
+    if (this.utente.ruolo=='UTENTE'){
       this.serviceRequest.getRequests().subscribe(data =>{
         this.requestsSommelier = data;
       })
