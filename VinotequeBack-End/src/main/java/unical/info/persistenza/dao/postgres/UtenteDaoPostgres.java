@@ -74,10 +74,7 @@ public class UtenteDaoPostgres implements UtenteDao {
 
     @Override
     public void NewUtente(Utente utente) {
-            Carrello carrello = new Carrello();
-            JSONObject carrelloJson = new JSONObject(carrello);
-            String jsonString = carrelloJson.toString();
-            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?,?,DEFAULT,?)";
+            String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?,?,DEFAULT,DEFAULT)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
@@ -88,8 +85,6 @@ public class UtenteDaoPostgres implements UtenteDao {
                 String passC = utente.getPassword();
                 utente.setPassword(p.encode(passC));
                 st.setString(5, utente.getPassword());
-                st.setString(6,jsonString);
-
 
                 st.executeUpdate();
 
