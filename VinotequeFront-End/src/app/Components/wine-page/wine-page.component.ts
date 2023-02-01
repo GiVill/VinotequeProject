@@ -1,5 +1,5 @@
 import { NgFor } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
@@ -19,7 +19,8 @@ export class WinePageComponent implements OnInit{
   constructor(private route : ActivatedRoute,
               private wineService : WineService,
               private authService : AuthenticationService,
-              private reviewService: ReviewService){}
+              private reviewService: ReviewService,
+              private cdr: ChangeDetectorRef){}
 
   wine !: Wine
   user !: User
@@ -32,7 +33,8 @@ export class WinePageComponent implements OnInit{
     window.scrollY
 
     if(this.authService.isLogged()){
-      this.user = this.authService.currentUser;
+      if(this.authService.currentUser != null)
+        this.user = this.authService.currentUser;
       if(this.authService.isSommelier()){
         this.canAddReview = true;
       } else{
@@ -73,7 +75,25 @@ export class WinePageComponent implements OnInit{
     })
   }
 
-  onSubmit(from:NgForm){
+  onSubmit(form:NgForm){
 
+    let descrizione = "caiodasd djasbvdasvd asdvasjhd a sd"
+    console.log(descrizione)
+    let data = new Date().toLocaleDateString();
+    let id = 10
+
+    const recensione : Review = {
+      id : 10,
+      descrizione : descrizione,
+      recensione_sommelier : JSON.parse(localStorage.getItem("user")!),
+      recensione_vino : this.wine,
+      data : data,
+    }
+
+    this.reviewService.postReview(recensione).subscribe(data =>{
+      if(data){
+        this.cdr.detectChanges();
+      }
+    })
   }
 }

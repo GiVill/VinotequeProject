@@ -13,7 +13,7 @@ export class AuthenticationService {
 
   public logged : Boolean = false;
 
-  public currentUser !: User;
+  public currentUser !: User | null ;
 
   constructor(private http: HttpClient) { }
 
@@ -22,11 +22,19 @@ export class AuthenticationService {
   }
 
   isAdmin(){
-    return (this.currentUser.ruolo == "ADMIN");
+    if(this.currentUser == null){
+      return false;
+    } else {
+      return (this.currentUser.ruolo == "ADMIN");
+    }
   }
 
   isSommelier(){
-    return(this.currentUser.ruolo =="SOMMELIER");
+    if(this.currentUser == null){
+      return false;
+    } else {
+      return(this.currentUser.ruolo =="SOMMELIER");
+    }
   }
 
   register(newUser : User): Observable<Boolean>{

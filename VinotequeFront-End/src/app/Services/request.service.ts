@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RequestSommelier } from '../Model/ReuestSommelier';
+import { RequestSommelier } from '../Model/RequestSommelier';
 
 @Injectable({
   providedIn: 'root'

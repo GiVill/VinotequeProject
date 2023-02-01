@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { RequestSommelier } from 'src/app/Model/ReuestSommelier';
+import { RequestSommelier } from 'src/app/Model/RequestSommelier';
 
 @Component({
   selector: 'app-request-card',

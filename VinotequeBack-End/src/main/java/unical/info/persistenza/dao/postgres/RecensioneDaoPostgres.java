@@ -132,7 +132,7 @@ public class RecensioneDaoPostgres implements RecensioneDao {
 
     @Override
     public void save(Recensione recensione) {
-        if (findByVino(recensione.getRecensione_vino().getId()) == null && findBySommelier(recensione.getRecensione_sommelier().getId())==null) {
+
             String insertStr = "INSERT INTO recensione VALUES (DEFAULT,?,?,?,?)";
             PreparedStatement st;
             try {
@@ -149,7 +149,7 @@ public class RecensioneDaoPostgres implements RecensioneDao {
                 throw new RuntimeException(e);
             }
         }
-    }
+    
 
     @Override
     public void delete(Recensione recensione) {

@@ -25,6 +25,7 @@ export class AppComponent implements OnInit, OnDestroy{
       this.service.checkLogin(sessionId).subscribe(userData => {
         if (userData){
           //sessionStorage.setItem("user",JSON.stringify(userData))
+          this.service.currentUser = userData;
           localStorage.setItem("user",JSON.stringify(userData));
           localStorage.setItem("jsessionid",this.sessionId.toString())
           sessionStorage.setItem("cart",JSON.stringify(userData.carrello))

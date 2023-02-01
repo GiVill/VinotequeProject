@@ -50,6 +50,7 @@ export class MainNavComponent implements OnInit{
     this.service.logout(jsessionid!).subscribe(data =>{
       if(data){
         this.service.logged = false
+        this.service.currentUser = null
         localStorage.clear();
         sessionStorage.clear();
         window.location.href = "http://localhost:4200"

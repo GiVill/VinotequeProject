@@ -115,16 +115,16 @@
     <form #reviewForm="ngForm" (ngSubmit)="onSubmit(reviewForm)">
       <mat-form-field class="example-full-width">
         <mat-label>Recensione</mat-label>
-        <input matInput #message maxlength="2000" placeholder="..." required (keyup)="sendReviewButton(message.value)">
+        <input matInput #message maxlength="2000" placeholder="..." required (keyup)="sendReviewButton(message.value)" name="descrizione">
         <mat-hint align="start"><strong>Devi rispettare le linee guida!</strong> </mat-hint>
         <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
       </mat-form-field>
       <mat-card-actions>
         <div class="spacer"></div>
-        <button mat-icon-button class="send" [disabled]="reviewForm.valid && !show" (click)="message.value='' ">
+        <button mat-icon-button class="send" [disabled]="reviewForm.valid && !show || message.value == ''" (click)="message.value =''">
           <mat-icon>delete</mat-icon>
         </button>
-        <button mat-icon-button class="send" [disabled]="!reviewForm.valid" *ngIf="show">
+        <button mat-icon-button class="send" [disabled]="!reviewForm.valid" *ngIf="show" type="submit">
           <mat-icon>send</mat-icon>
         </button>
       </mat-card-actions>
