@@ -55,7 +55,7 @@ public class OrdineDaoPostgres implements OrdineDao {
 
     @Override
     public void save(Ordine ordine) {
-            String insertStr = "INSERT INTO ordine VALUES (DEFAULT,?,?,?,?,?,?,?,?)";
+            String insertStr = "INSERT INTO ordine VALUES (DEFAULT,?,?,?,?,?,?,DEFAULT,?)";
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
@@ -66,8 +66,7 @@ public class OrdineDaoPostgres implements OrdineDao {
                 st.setString(4, ordine.getIndirizzo());
                 st.setString(5, ordine.getData());
                 st.setFloat(6, ordine.getTotale());
-                st.setString(7, ordine.getStatus());
-                st.setLong(8, ordine.getOrdine_promozione().getId());
+                st.setLong(7, ordine.getOrdine_promozione().getId());
                 st.executeUpdate();
 
             } catch (SQLException e) {
