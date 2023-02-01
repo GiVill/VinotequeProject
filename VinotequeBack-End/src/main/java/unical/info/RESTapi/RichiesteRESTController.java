@@ -16,6 +16,7 @@ public class RichiesteRESTController {
     @PostMapping("/Accetta")
     public void promuovi(@RequestBody Richieste richieste){
         DBManager.getInstance().getRichiesteDao().PromuoviASommelier(richieste);
+
     }
 
     @PostMapping("/Rifiuta")
@@ -31,7 +32,6 @@ public class RichiesteRESTController {
             return false;
         }
     }
-
     @PostMapping("/request")
     public List<Richieste> getRichieste(){
         List<Richieste> richieste = DBManager.getInstance().getRichiesteDao().findAll();
