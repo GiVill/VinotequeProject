@@ -149,7 +149,32 @@ public class RecensioneDaoPostgres implements RecensioneDao {
                 throw new RuntimeException(e);
             }
         }
-    
+
+    @Override
+    public Recensione findReviewHome(Long idVino) {
+        Recensione recensione = null;
+        String query = "select * from recensione where recensione_vino = ? order by RANDOM() LIMIT 1";
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1,idVino);
+            ResultSet rs = st.executeQuery();
+
+            if(rs.next()){
+                recensione = new Recensione();
+                recensione.setId(rs.getLong("id"));
+                recensione.setDescrizione(rs.getString("descrizione"));
+                Utente sommelier  = DBManager.getInstance().getUtenteDao().findByPrimaryKey(rs.getLong("recensione_sommelier"));
+                recensione.setRecensione_sommelier(sommelier);
+                Vino vino = DBManager.getInstance().getVinoDao().findBYPrimaryKey(rs.getLong("recensione_vino"));
+                recensione.setRecensione_vino(vino);
+                recensione.setData(rs.getString("data"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return recensione;
+    }
+
 
     @Override
     public void delete(Recensione recensione) {

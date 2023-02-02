@@ -1,9 +1,6 @@
 package unical.info.RESTapi;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import unical.info.persistenza.DBManager;
 import unical.info.model.Recensione;
 
@@ -22,5 +19,11 @@ public class RecensioniRESTController {
     @PostMapping("/saveReview")
     public void saveReview(@RequestBody Recensione recensione){
         DBManager.getInstance().getRecensioneDao().save(recensione);
+    }
+
+    @GetMapping("/randomReview")
+    public Recensione randomReview(@RequestBody long idVino){
+        Recensione recensione = DBManager.getInstance().getRecensioneDao().findReviewHome(idVino);
+        return recensione;
     }
 }

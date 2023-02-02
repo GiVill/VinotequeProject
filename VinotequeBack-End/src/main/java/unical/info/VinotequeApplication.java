@@ -4,9 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import unical.info.model.Utente;
+import unical.info.model.Vino;
 import unical.info.persistenza.DBManager;
 
 import java.sql.SQLException;
+import java.util.List;
 
 @SpringBootApplication
 @ServletComponentScan
@@ -16,6 +18,7 @@ public class VinotequeApplication {
 		SpringApplication.run(VinotequeApplication.class, args);
 		//Utente u = new Utente("qw","fdsf","32","qwpoi@sss.c","ciaocome");
 		//DBManager.getInstance().getUtenteDao().NewUtente(u);
+
 	}
 
 }

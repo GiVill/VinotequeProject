@@ -23,5 +23,7 @@ public interface VinoDao {
 
     public List<Vino> findByTipologia(String tipologia);
 
+    public List<Vino> findRandomWine();
+
     public void delete(Vino vino);
 }

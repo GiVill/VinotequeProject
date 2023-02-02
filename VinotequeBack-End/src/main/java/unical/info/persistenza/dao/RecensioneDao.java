@@ -15,5 +15,7 @@ public interface RecensioneDao {//finito
 
     public void save(Recensione recensione);
 
+    public Recensione findReviewHome(Long idVino);
+
     public void delete(Recensione recensione);
 }

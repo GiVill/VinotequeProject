@@ -1,9 +1,6 @@
 package unical.info.RESTapi;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import unical.info.persistenza.DBManager;
 import unical.info.model.Vino;
 
@@ -62,6 +59,12 @@ public class VinoRESTController {
         List<Vino> vini_preferiti = DBManager.getInstance().getPreferitiDao().findByUtente(id);
         System.out.println(vini_preferiti);
         return vini_preferiti;
+    }
+
+    @GetMapping("/randomWine")
+    public List<Vino> getRandomWine(){
+        List<Vino> vini = DBManager.getInstance().getVinoDao().findRandomWine();
+        return vini;
     }
 
 }
