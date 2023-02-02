@@ -17,13 +17,15 @@ public class RecensioniRESTController {
         return recensioni;
     }
     @PostMapping("/saveReview")
-    public void saveReview(@RequestBody Recensione recensione){
-        DBManager.getInstance().getRecensioneDao().save(recensione);
+    public boolean saveReview(@RequestBody Recensione recensione){
+        return DBManager.getInstance().getRecensioneDao().save(recensione);
     }
 
-    @GetMapping("/randomReview")
+    @PostMapping("/randomReview")
     public Recensione randomReview(@RequestBody long idVino){
         Recensione recensione = DBManager.getInstance().getRecensioneDao().findReviewHome(idVino);
+        System.out.println(recensione);
+        System.out.println(idVino);
         return recensione;
     }
 }

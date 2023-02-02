@@ -37,25 +37,32 @@ public class PreferitiDaoPostgres implements PreferitiDao {
 
 
     @Override
-    public void save(Preferiti preferiti) throws SQLException {
+    public boolean save(Preferiti preferiti) throws SQLException {
 
-            String insertStr = "INSERT INTO preferiti VALUES (?,?)";
-            PreparedStatement st;
-            try {
-                st = conn.prepareStatement(insertStr);
+        boolean status = true;
 
-                st.setLong(1, preferiti.getPreferiti_utente().getId());
-                st.setLong(2, preferiti.getPreferiti_vino().getId());
+        String insertStr = "INSERT INTO preferiti VALUES (?,?)";
+        PreparedStatement st;
+        try {
+            st = conn.prepareStatement(insertStr);
 
-                st.executeUpdate();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+            st.setLong(1, preferiti.getPreferiti_utente().getId());
+            st.setLong(2, preferiti.getPreferiti_vino().getId());
+
+            st.executeUpdate();
+            status = true;
+        } catch (SQLException e) {
+           status = false;
+        }
+        return status;
     }
 
 
     @Override
-    public void delete(Preferiti preferiti) {
+    public boolean delete(Preferiti preferiti) {
+
+        boolean status = true;
+
         String query = "DELETE FROM preferiti WHERE preferiti_utente = ? AND preferiti_vino = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
@@ -63,8 +70,8 @@ public class PreferitiDaoPostgres implements PreferitiDao {
             st.setLong(2,preferiti.getPreferiti_vino().getId());
             st.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            status = false;
         }
-
+        return status;
     }
 }

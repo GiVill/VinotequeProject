@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { RequestSommelier } from 'src/app/Model/RequestSommelier';
 import { User } from 'src/app/Model/User';
 import { Wine } from 'src/app/Model/Wine';
@@ -12,7 +12,19 @@ import { WineService } from 'src/app/Services/wine.service';
 })
 export class UserPageComponent implements OnInit{
 
-  constructor(private service: WineService, private serviceRequest: RequestService){}
+  constructor(private service: WineService,
+              private serviceRequest: RequestService){}
+
+
+
+  reload(newMessage: string) {
+    if(newMessage == "preferiti"){
+      this.service.getFavorites(this.utente.id).subscribe(data =>{
+        this.favorites = data;
+        console.log(this.favorites)
+      })
+    }
+  }
 
   ngOnInit(): void {
 

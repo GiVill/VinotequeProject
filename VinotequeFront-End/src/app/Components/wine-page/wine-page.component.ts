@@ -25,8 +25,7 @@ export class WinePageComponent implements OnInit{
               private wineService : WineService,
               private authService : AuthenticationService,
               private reviewService: ReviewService,
-              private _snackBar: MatSnackBar,
-              private cdr: ChangeDetectorRef){}
+              private _snackBar: MatSnackBar){}
 
   wine !: Wine
   user !: User
@@ -100,7 +99,7 @@ export class WinePageComponent implements OnInit{
 
     this.wineService.addFavorite(favorite).subscribe(data =>{
       if (data){
-        this.cdr.detectChanges();
+        this._snackBar.open("Prodotto aggiunto ai preferiti!");
       }
     })
   }
@@ -122,7 +121,15 @@ export class WinePageComponent implements OnInit{
 
     this.reviewService.postReview(recensione).subscribe(data =>{
       if(data){
-        this.cdr.detectChanges();
+
+        this.message.nativeElement.value = ""
+
+        this.index = BigInt(this.route.snapshot.paramMap.get("index")!)
+
+        this.wineService.getWineById(this.index).subscribe(data =>{
+          this.wine = data;
+          this.takeReviews()
+        })
       }
     })
   }

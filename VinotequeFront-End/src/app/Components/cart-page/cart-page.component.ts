@@ -12,7 +12,7 @@ import { AuthenticationService } from 'src/app/Services/authentication.service';
 export class CartPageComponent implements OnInit, OnChanges{
 
   constructor(private service:AuthenticationService,
-    private cdr: ChangeDetectorRef){}
+              private cdr: ChangeDetectorRef){}
 
   cart !: Cart
 

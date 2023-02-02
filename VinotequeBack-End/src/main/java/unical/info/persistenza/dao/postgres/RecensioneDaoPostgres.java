@@ -131,24 +131,24 @@ public class RecensioneDaoPostgres implements RecensioneDao {
     }
 
     @Override
-    public void save(Recensione recensione) {
+    public boolean save(Recensione recensione) {
+        String insertStr = "INSERT INTO recensione VALUES (DEFAULT,?,?,?,?)";
+        PreparedStatement st;
+        try {
+            st = conn.prepareStatement(insertStr);
 
-            String insertStr = "INSERT INTO recensione VALUES (DEFAULT,?,?,?,?)";
-            PreparedStatement st;
-            try {
-                st = conn.prepareStatement(insertStr);
+            st.setString(1,recensione.getDescrizione());
+            st.setFloat(2, recensione.getRecensione_sommelier().getId());
+            st.setFloat(3, recensione.getRecensione_vino().getId());
+            st.setString(4, recensione.getData());
 
-                st.setString(1,recensione.getDescrizione());
-                st.setFloat(2, recensione.getRecensione_sommelier().getId());
-                st.setFloat(3, recensione.getRecensione_vino().getId());
-                st.setString(4, recensione.getData());
+            st.executeUpdate();
 
-                st.executeUpdate();
-
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+        } catch (SQLException e) {
+            return false;
         }
+        return true;
+    }
 
     @Override
     public Recensione findReviewHome(Long idVino) {
@@ -177,15 +177,15 @@ public class RecensioneDaoPostgres implements RecensioneDao {
 
 
     @Override
-    public void delete(Recensione recensione) {
+    public boolean delete(Recensione recensione) {
         String query = "DELETE FROM recensione WHERE id = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setLong(1, recensione.getId());
             st.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            return false;
         }
-
+        return true;
     }
 }

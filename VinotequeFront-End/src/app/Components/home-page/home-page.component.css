@@ -5,6 +5,15 @@
   margin-bottom: 20px;
 }
 
+
+.wineCard:hover{
+  cursor: pointer;
+}
+
+.spacer{
+  flex: 1 1 auto;
+}
+
 .wineCard{
   text-align: center;
 }
@@ -25,7 +34,7 @@
 }
 
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url("/assets/avatar.jpg");
   background-size: cover;
   scale: 160%;
   margin-left: 20px;

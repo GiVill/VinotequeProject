@@ -33,8 +33,14 @@ public class UtenteRESTController {
     }
 
     @PostMapping("/addFavorite")
-    public void aggiungiPreferito(@RequestBody Preferiti preferito) throws SQLException {
-        DBManager.getInstance().getPreferitiDao().save(preferito);
+    public boolean aggiungiPreferito(@RequestBody Preferiti preferito) throws SQLException {
+       return  DBManager.getInstance().getPreferitiDao().save(preferito);
+    }
+
+
+    @PostMapping("/delFavorite")
+    public boolean rimuoviPreferito(@RequestBody Preferiti preferito) throws SQLException {
+        return DBManager.getInstance().getPreferitiDao().delete(preferito);
     }
     @PostMapping("/aggiornaCarrello")
     public void aggiornaCarrello(@RequestBody Utente utente, String carrello){

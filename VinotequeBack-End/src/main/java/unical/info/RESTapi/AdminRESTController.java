@@ -28,8 +28,8 @@ public class AdminRESTController {
         DBManager.getInstance().getUtenteDao().delete(utente);
     }
     @PostMapping("/deleteRecensione")
-    public void deleteRecensione(@RequestBody Recensione recensione) {
-        DBManager.getInstance().getRecensioneDao().delete(recensione);
+    public boolean deleteRecensione(@RequestBody Recensione recensione) {
+        return DBManager.getInstance().getRecensioneDao().delete(recensione);
     }
     @PostMapping("/deleteVino")
     public void deleteVino(@RequestBody Vino vino){
