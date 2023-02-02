@@ -13,9 +13,9 @@ public interface RecensioneDao {//finito
 
     public List<Recensione> findBySommelier(long IDutente);
 
-    public void save(Recensione recensione);
+    public boolean save(Recensione recensione);
 
     public Recensione findReviewHome(Long idVino);
 
-    public void delete(Recensione recensione);
+    public boolean delete(Recensione recensione);
 }

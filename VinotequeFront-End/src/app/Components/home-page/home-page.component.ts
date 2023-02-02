@@ -14,35 +14,45 @@ export class HomePageComponent implements OnInit {
   constructor(private service:WineService,
               private reviewService:ReviewService){}
 
-  wines !: Wine[]
-  reviews !: Review[]
+  wines !: Wine[];
+  review !: Review;
 
   index : number = 0
 
+  wineID !: BigInt
+
   ngOnInit(): void {
 
-    this.service.getWines().subscribe(data =>{
+    this.service.getRandomWine().subscribe(data =>{
       this.wines = data
-      this.wines.forEach(wine => {
-        this.takeReviews(wine)
-      });
+      this.takeReviews(this.wines[0])
+      this.wineID = this.wines[0].id
     })
 
   }
 
   takeReviews(wine:Wine){
-    this.reviewService.getReviews(wine.id).subscribe(data =>{
-      this.reviewService.review = data;
-      this.reviews = data;
+    this.reviewService.getRandomReviews(wine.id).subscribe(data =>{
+      this.review = data
     })
   }
 
   back(){
+
+    if(this.index == 0){
+      this.index = 3
+    }
     this.index -= 1
-    console.log(this.index)
+    this.takeReviews(this.wines[this.index])
+    this.wineID = this.wines[this.index].id
   }
 
   next(){
+    if(this.index == 2){
+      this.index = -1
+    }
     this.index += 1
+    this.takeReviews(this.wines[this.index])
+    this.wineID = this.wines[this.index].id
   }
 }

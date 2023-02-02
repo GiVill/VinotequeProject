@@ -9,6 +9,6 @@ import java.util.List;
 public interface PreferitiDao {
 
     public List<Vino> findByUtente(long id) throws SQLException;
-    public void save(Preferiti preferiti) throws SQLException;
-    public void delete(Preferiti preferiti);
+    public boolean save(Preferiti preferiti) throws SQLException;
+    public boolean delete(Preferiti preferiti);
 }

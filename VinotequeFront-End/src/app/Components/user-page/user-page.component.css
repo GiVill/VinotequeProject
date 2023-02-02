@@ -34,6 +34,12 @@
   flex: 1 1 auto;
 }
 
+.wineCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 150px;
+}
+
 @media (max-width: 750px){
   .mainContainer{
     display: flex;

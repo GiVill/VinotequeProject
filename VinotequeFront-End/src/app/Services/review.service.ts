@@ -19,6 +19,11 @@ export class ReviewService {
     return reviews;
   }
 
+  getRandomReviews(idVino : BigInt): Observable<Review>{
+    var review : Observable<Review> = this.http.post<Review>(this.url + "/randomReview",idVino,{})
+    return review;
+  }
+
   postReview(recensione : Review): Observable<Boolean>{
     return this.http.post<Boolean>(this.url + "/saveReview",recensione);
   }

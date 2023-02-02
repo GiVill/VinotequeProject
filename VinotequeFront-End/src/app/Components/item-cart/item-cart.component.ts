@@ -1,5 +1,6 @@
 import { ResourceLoader } from '@angular/compiler';
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Cart, removeWine } from 'src/app/Model/Cart';
 import { Favorite } from 'src/app/Model/Favorite';
 import { Wine } from 'src/app/Model/Wine';
@@ -13,7 +14,7 @@ import { WineService } from 'src/app/Services/wine.service';
 export class ItemCartComponent implements OnInit{
 
   constructor(private service:WineService,
-              private cdr: ChangeDetectorRef){}
+              private _snackBar: MatSnackBar){}
 
   wine !: Wine
 
@@ -30,7 +31,6 @@ export class ItemCartComponent implements OnInit{
   removeItem(){
     removeWine(this.cart,this.wine)
     sessionStorage.setItem("cart",JSON.stringify(this.cart)!)
-    console.log(this.cart)
   }
 
   createFavorite(){
@@ -41,7 +41,7 @@ export class ItemCartComponent implements OnInit{
 
     this.service.addFavorite(favorite).subscribe(data =>{
       if (data){
-        this.cdr.detectChanges();
+        this._snackBar.open("Prodotto aggiunto ai preferiti!");
       }
     })
   }
