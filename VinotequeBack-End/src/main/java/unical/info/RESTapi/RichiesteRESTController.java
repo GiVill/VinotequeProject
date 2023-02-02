@@ -14,23 +14,19 @@ import java.util.List;
 @CrossOrigin("http://localhost:4200")
 public class RichiesteRESTController {
     @PostMapping("/Accetta")
-    public void promuovi(@RequestBody Richieste richieste){
-        DBManager.getInstance().getRichiesteDao().PromuoviASommelier(richieste);
+    public boolean promuovi(@RequestBody Richieste richieste){
+        return DBManager.getInstance().getRichiesteDao().PromuoviASommelier(richieste);
 
     }
 
     @PostMapping("/Rifiuta")
-    public void rifiuta(@RequestBody Richieste richieste){
-        DBManager.getInstance().getRichiesteDao().delete(richieste);
+    public boolean rifiuta(@RequestBody Richieste richieste){
+        return DBManager.getInstance().getRichiesteDao().delete(richieste);
     }
 
     @PostMapping("/newRichiesta")
     public boolean newRichiesta(@RequestBody Richieste richieste){
-        if (DBManager.getInstance().getRichiesteDao().save(richieste))
-            return true;
-        else{
-            return false;
-        }
+        return  DBManager.getInstance().getRichiesteDao().save(richieste);
     }
     @PostMapping("/request")
     public List<Richieste> getRichieste(){

@@ -15,13 +15,12 @@ import java.util.List;
 @CrossOrigin("http://localhost:4200")
 public class OrdineRESTController {
     @PostMapping("/newOrdine")
-    public void newOrdine (@RequestBody Ordine ordine){
-        DBManager.getInstance().getOrdineDao().save(ordine);
+    public boolean newOrdine (@RequestBody Ordine ordine){
+         return DBManager.getInstance().getOrdineDao().save(ordine);
     }
     @PostMapping("/findPromo")
-    public Promozione findPromo(@RequestBody String descrizone){
-        //int promozione = DBManager.getInstance().getPromozioneDao().findByDescrizione(descrizone).getSconto_prezzo();
-        Promozione promozione = DBManager.getInstance().getPromozioneDao().findByDescrizione(descrizone);
+    public int findPromo(@RequestBody String descrizone){
+        int promozione = DBManager.getInstance().getPromozioneDao().findByDescrizione(descrizone).getSconto_prezzo();
         return promozione;
     }
 

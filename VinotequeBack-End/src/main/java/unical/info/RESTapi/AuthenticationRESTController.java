@@ -18,7 +18,6 @@ public class AuthenticationRESTController{
     @PostMapping ("/addUser")
     public Boolean register( @RequestBody Utente newUser){
         System.out.println(newUser.toString());
-        //TODO: CONTROLLO EMAIL GIA PRESENTE NEL DB
        if(DBManager.getInstance().getUtenteDao().findByEmail(newUser.getEmail()) == null) {
            DBManager.getInstance().getUtenteDao().NewUtente(newUser);
            return true;
@@ -32,10 +31,6 @@ public class AuthenticationRESTController{
     public boolean addCart(@RequestBody Carrello carrello) throws JsonProcessingException {
         JSONObject carrelloJson = new JSONObject(carrello);
         String jsonString = carrelloJson.toString();
-        /*
-        ObjectMapper objectMapper = new ObjectMapper();
-        Carrello obj = objectMapper.readValue(jeson,Carrello.class);
-         */
         DBManager.getInstance().getUtenteDao().CambioCarrello(carrello.getIdUtente(),jsonString);
         return true;
     }
@@ -51,7 +46,6 @@ public class AuthenticationRESTController{
             session.invalidate();
             return true;
         }
-
         return false;
     }
 }

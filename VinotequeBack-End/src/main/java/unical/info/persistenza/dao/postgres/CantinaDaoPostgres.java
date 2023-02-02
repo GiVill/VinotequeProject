@@ -86,7 +86,7 @@ public class CantinaDaoPostgres implements CantinaDao {//finito(vedi giu)
 
 
     @Override
-    public List<Cantina> findByNameVino(String vino) {//todo se sballa è colpa di questa query
+    public List<Cantina> findByNameVino(String vino) {
         List<Cantina> cantine = new ArrayList<Cantina>();
         String query = "select vino_cantina from vino,cantina where vino.vino_cantina = cantina.id and vino.nome = ?";
 
@@ -106,7 +106,7 @@ public class CantinaDaoPostgres implements CantinaDao {//finito(vedi giu)
     }
 
     @Override
-    public void save(Cantina cantina) {
+    public boolean save(Cantina cantina) {
             String insertStr = "INSERT INTO cantina VALUES (DEFAULT,?,?,?)";
             PreparedStatement st;
             try {
@@ -117,21 +117,21 @@ public class CantinaDaoPostgres implements CantinaDao {//finito(vedi giu)
                 st.executeUpdate();
 
             } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+                return  false;
+            }return  true;
         }
 
 
     @Override
-    public void delete(Cantina cantina) {
+    public boolean delete(Cantina cantina) {
         String query = "DELETE FROM cantina WHERE id = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setLong(1,cantina.getId());
             st.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+            return  false;
+        }return  true;
     }
 }
 

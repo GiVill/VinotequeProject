@@ -24,12 +24,12 @@ public class UtenteRESTController {
         return ordini;
     }
     @PostMapping("/aggiornaUtente")
-    public void aggiornaUtente(@RequestBody Utente utente){
-        DBManager.getInstance().getUtenteDao().aggiornaUtente(utente);
+    public boolean aggiornaUtente(@RequestBody Utente utente){
+       return DBManager.getInstance().getUtenteDao().aggiornaUtente(utente);
     }
     @PostMapping("/cambioPassword")
-    public void cambioPassword(@RequestBody Utente utente, String password){
-        DBManager.getInstance().getUtenteDao().CambioPassword(utente, password);
+    public boolean cambioPassword(@RequestBody Utente utente, String password){
+       return DBManager.getInstance().getUtenteDao().CambioPassword(utente, password);
     }
 
     @PostMapping("/addFavorite")
@@ -43,7 +43,7 @@ public class UtenteRESTController {
         return DBManager.getInstance().getPreferitiDao().delete(preferito);
     }
     @PostMapping("/aggiornaCarrello")
-    public void aggiornaCarrello(@RequestBody Utente utente, String carrello){
-        DBManager.getInstance().getUtenteDao().CambioCarrello(utente.getId(), carrello);
+    public boolean aggiornaCarrello(@RequestBody Utente utente, String carrello){
+       return DBManager.getInstance().getUtenteDao().CambioCarrello(utente.getId(), carrello);
     }
 }
