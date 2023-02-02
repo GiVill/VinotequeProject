@@ -46,6 +46,8 @@ import { HomePageComponent } from './Components/home-page/home-page.component';
 import {matStepperAnimations, MatStepperModule} from '@angular/material/stepper';
 import { RequestCardComponent } from './Components/request-card/request-card.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import {MatSliderModule} from '@angular/material/slider';
+
 
 
 @NgModule({
@@ -95,6 +97,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     MatSnackBarModule,
     MatStepperModule,
     MatAutocompleteModule,
+    MatSliderModule,
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

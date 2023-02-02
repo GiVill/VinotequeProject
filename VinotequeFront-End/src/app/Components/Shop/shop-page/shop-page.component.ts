@@ -10,15 +10,20 @@ import { Wine } from 'src/app/Model/Wine';
 export class ShopPageComponent implements OnInit{
 
   constructor(private wineService:WineService){}
+
   wines !: Wine[]
+
+  filterPrice : Boolean = false;
+  filterGradation : Boolean = false;
+
+  minValue = 0;
+  maxValue = 500;
 
   ngOnInit(): void {
 
     window.scrollY
     this.takeWines()
   }
-
-
 
   takeWines(){
     this.wineService.getWines().subscribe(data=> {
@@ -27,5 +32,16 @@ export class ShopPageComponent implements OnInit{
     })
   }
 
-  @Input() isHandset: any;
+  openRangePrezzo(){
+    this.filterPrice = true;
+    this.filterGradation = false;
+    console.log("Filtro prezzo")
+  }
+
+  openRangeGradation(){
+    this.filterPrice = false;
+    this.filterGradation = true;
+    console.log("Filtro gradazione")
+  }
+
 }
