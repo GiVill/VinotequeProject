@@ -17,7 +17,7 @@ export class WineCardComponent implements OnInit {
 
   @Input() wine !: Wine ;
 
-  @Input() index!: Number;
+  @Input() index!: BigInt;
 
   ngOnInit(): void {
 

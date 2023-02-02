@@ -18,7 +18,7 @@ public class PreferitiDaoPostgres implements PreferitiDao {
     }
     @Override
     public List<Vino> findByUtente(long id){
-        String query = "select * from preferiti where preferiti_utente = ?";
+        String query = "select * from preferiti where preferiti_utente = ? order by preferiti_vino";
         List<Vino> vini = new ArrayList<Vino>();
         try {
             PreparedStatement st = conn.prepareStatement(query);

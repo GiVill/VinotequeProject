@@ -8,6 +8,9 @@ import { User } from 'src/app/Model/User';
 import { Wine } from 'src/app/Model/Wine';
 import { ReviewService } from 'src/app/Services/review.service';
 import { Review } from 'src/app/Model/Review';
+import { Favorite } from 'src/app/Model/Favorite';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { getWineQuantity, upload } from 'src/app/Model/Cart';
 
 @Component({
   selector: 'app-wine-page',
@@ -16,17 +19,20 @@ import { Review } from 'src/app/Model/Review';
 })
 export class WinePageComponent implements OnInit{
 
+  @ViewChild('message') message!: ElementRef
+
   constructor(private route : ActivatedRoute,
               private wineService : WineService,
               private authService : AuthenticationService,
               private reviewService: ReviewService,
+              private _snackBar: MatSnackBar,
               private cdr: ChangeDetectorRef){}
 
   wine !: Wine
   user !: User
   reviews !: Review[]
   canAddReview : boolean = false;
-  index !: string | null ;
+  index !: BigInt | null ;
 
   ngOnInit(): void {
 
@@ -42,19 +48,12 @@ export class WinePageComponent implements OnInit{
       }
     }
 
-    this.index = this.route.snapshot.paramMap.get("index")
+    this.index = BigInt(this.route.snapshot.paramMap.get("index")!)
 
-    if(this.wineService.wines != undefined || null){
-      this.wine = this.wineService.wines[Number(this.index)];
-      this.takeReviews();
-
-    } else {
-      this.wineService.getWines().subscribe(data =>{
-        this.wineService.wines = data
-        this.wine = this.wineService.wines[Number(this.index)];
-        this.takeReviews();
-      })
-    }
+    this.wineService.getWineById(this.index).subscribe(data =>{
+      this.wine = data;
+      this.takeReviews()
+    })
   }
 
   show = false;
@@ -72,12 +71,43 @@ export class WinePageComponent implements OnInit{
     this.reviewService.getReviews(this.wine.id).subscribe(data =>{
       this.reviewService.review = data;
       this.reviews = data;
+      console.log(this.reviews)
+    })
+  }
+
+  addCart(){
+    if(!this.authService.isLogged()){
+      this._snackBar.open("Non sei loggato!", "OK");
+    } else {
+      let cart = JSON.parse(sessionStorage.getItem("cart")!);
+      if(getWineQuantity(cart,this.wine) == 10){
+        this._snackBar.open("Hai già la quantità massima nel carrello!");
+      } else {
+        upload(cart,this.wine)
+        sessionStorage.setItem("cart",JSON.stringify(cart))
+        this._snackBar.open("Prodotto aggiunto al carrello!");
+      }
+    }
+  }
+
+
+
+  createFavorite(){
+    const favorite : Favorite = {
+      preferiti_utente : JSON.parse(localStorage.getItem("user")!),
+      preferiti_vino : this.wine
+    }
+
+    this.wineService.addFavorite(favorite).subscribe(data =>{
+      if (data){
+        this.cdr.detectChanges();
+      }
     })
   }
 
   onSubmit(form:NgForm){
 
-    let descrizione = "caiodasd djasbvdasvd asdvasjhd a sd"
+    let descrizione = this.message.nativeElement.value
     console.log(descrizione)
     let data = new Date().toLocaleDateString();
     let id = 10

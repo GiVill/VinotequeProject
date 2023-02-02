@@ -17,6 +17,8 @@ export class HomePageComponent implements OnInit {
   wines !: Wine[]
   reviews !: Review[]
 
+  index : number = 0
+
   ngOnInit(): void {
 
     this.service.getWines().subscribe(data =>{
@@ -35,4 +37,12 @@ export class HomePageComponent implements OnInit {
     })
   }
 
+  back(){
+    this.index -= 1
+    console.log(this.index)
+  }
+
+  next(){
+    this.index += 1
+  }
 }

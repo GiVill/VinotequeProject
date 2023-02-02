@@ -15,10 +15,14 @@ export class UserPageComponent implements OnInit{
   constructor(private service: WineService, private serviceRequest: RequestService){}
 
   ngOnInit(): void {
+
     this.utente = JSON.parse(localStorage.getItem("user")!);
+
     this.service.getFavorites(this.utente.id).subscribe(data =>{
       this.favorites = data;
+      console.log(this.favorites)
     })
+
     if (this.utente.ruolo=='UTENTE'){
       this.serviceRequest.getRequests().subscribe(data =>{
         this.requestsSommelier = data;

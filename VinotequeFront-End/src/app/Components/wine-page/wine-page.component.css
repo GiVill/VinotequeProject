@@ -68,11 +68,13 @@ mat-icon{
 }
 
 .cart{
+  color: green;
   height: 70px;
   width: 400px;
 }
 
 .favorite{
+  color: red;
   height: 70px;
   width: 400px;
   margin-left: 5px;
@@ -100,7 +102,7 @@ mat-icon{
 }
 
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url("/assets/avatar.jpg");
   background-size: cover;
 }
 

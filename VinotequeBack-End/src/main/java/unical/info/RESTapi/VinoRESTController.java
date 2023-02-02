@@ -22,8 +22,10 @@ public class VinoRESTController {
     }
 
     @PostMapping("/WineById")
-    public Vino getWine(@RequestBody long id){
-        Vino vino = DBManager.getInstance().getVinoDao().findBYPrimaryKey(id);
+    public Vino getWine(@RequestBody String id){
+        long ID = Long.parseLong(id);
+        System.out.println(id+"\n"+ID);
+        Vino vino = DBManager.getInstance().getVinoDao().findBYPrimaryKey(ID);
         return vino;
     }
     @PostMapping("/redWine")
@@ -58,6 +60,7 @@ public class VinoRESTController {
     public List<Vino> getFavorites(@RequestBody long id) throws SQLException
     {
         List<Vino> vini_preferiti = DBManager.getInstance().getPreferitiDao().findByUtente(id);
+        System.out.println(vini_preferiti);
         return vini_preferiti;
     }
 

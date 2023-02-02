@@ -9,11 +9,11 @@
     <h1 class="price"><strong>{{wine.prezzo}}$</strong></h1>
     <span class="disponibilita">disponibilità immediata</span>
     <mat-card-actions>
-      <button mat-stroked-button class="cart">
+      <button mat-stroked-button class="cart" (click)="addCart()">
         Aggiungi al carrello!
         <mat-icon class="material-symbols-outlined">add_shopping_cart</mat-icon>
       </button>
-      <button mat-stroked-button class="favorite">
+      <button mat-stroked-button class="favorite" (click)="createFavorite()">
         Aggiungi ai preferiti!
         <mat-icon class="material-symbols-outlined">favorite</mat-icon>
       </button>
@@ -63,16 +63,6 @@
           <td ><h3>Vigneti</h3></td>
           <td>Viti di 20-50 anni di età coltivate ad alberello e spalliera</td>
         </tr>
-        <tr>
-          <td ><h3>Vinificazione</h3></td>
-          <td>Fermentazione alcolica in acciaio</td>
-        </tr>
-
-        <tr>
-          <td ><h3>Affinamento</h3></td>
-          <td>9 mesi in botte grande di rovere</td>
-        </tr>
-
 
       <tr>
         <td ><h3>Premi</h3></td>
@@ -115,7 +105,7 @@
     <form #reviewForm="ngForm" (ngSubmit)="onSubmit(reviewForm)">
       <mat-form-field class="example-full-width">
         <mat-label>Recensione</mat-label>
-        <input matInput #message maxlength="2000" placeholder="..." required (keyup)="sendReviewButton(message.value)" name="descrizione">
+        <input #message matInput maxlength="2000" placeholder="..." required (keyup)="sendReviewButton(message.value)" name="descrizione">
         <mat-hint align="start"><strong>Devi rispettare le linee guida!</strong> </mat-hint>
         <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
       </mat-form-field>

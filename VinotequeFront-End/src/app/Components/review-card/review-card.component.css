@@ -7,7 +7,7 @@
 }
 
 @media(min-width:959px){
-  .example-card {
+  .card {
     margin-top: 50px;
     max-width: 1600px;
     margin-left: 150px;
@@ -24,7 +24,7 @@
 }
 
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url("/assets/avatar.jpg");
   background-size: cover;
   scale: 160%;
   margin-left: 20px;
