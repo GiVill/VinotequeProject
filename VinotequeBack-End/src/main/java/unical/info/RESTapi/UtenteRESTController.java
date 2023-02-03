@@ -24,8 +24,9 @@ public class UtenteRESTController {
         return ordini;
     }
     @PostMapping("/aggiornaUtente")
-    public void aggiornaUtente(@RequestBody Utente utente){
-        DBManager.getInstance().getUtenteDao().aggiornaUtente(utente);
+    public boolean aggiornaUtente(@RequestBody Utente utente){
+        System.out.println(utente);
+       return DBManager.getInstance().getUtenteDao().aggiornaUtente(utente);
     }
     @PostMapping("/cambioPassword")
     public void cambioPassword(@RequestBody Utente utente, String password){

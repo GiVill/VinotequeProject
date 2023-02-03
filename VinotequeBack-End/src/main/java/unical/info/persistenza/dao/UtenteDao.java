@@ -20,7 +20,7 @@ public interface UtenteDao {//finito
 
     public void CambioCarrello (long idUtente, String carrello);
 
-    public void aggiornaUtente (Utente utente);
+    public boolean aggiornaUtente (Utente utente);
 
 
 

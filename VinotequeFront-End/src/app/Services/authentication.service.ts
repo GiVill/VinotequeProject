@@ -54,4 +54,8 @@ export class AuthenticationService {
     console.log(cart); //EROE!!!!!!!!!!
     return this.http.post<Boolean>(this.url + "/addCart",cart);
   }
+
+  updateUser(user : User): Observable<Boolean>{
+    return this.http.post<Boolean>(this.url + "/aggiornaUtente",user);
+  }
 }
