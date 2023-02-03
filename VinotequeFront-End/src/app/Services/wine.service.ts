@@ -68,4 +68,34 @@ export class WineService {
     return wines;
   }
 
+  getPriceWinesRed(max:number): Observable<Wine[]>{
+    var wines : Observable<Wine[]> = this.http.post<Wine []>(this.url + "/priceRosso",max,{})
+    return wines;
+  }
+
+  getGradationRed(max:number): Observable<Wine[]>{
+    var wines : Observable<Wine[]> = this.http.post<Wine []>(this.url + "/GradazioneWineRosso",max,{})
+    return wines;
+  }
+
+  getPriceWinesWhite(max:number): Observable<Wine[]>{
+    var wines : Observable<Wine[]> = this.http.post<Wine []>(this.url + "/priceBianco",max,{})
+    return wines;
+  }
+
+  getGradationWhite(max:number): Observable<Wine[]>{
+    var wines : Observable<Wine[]> = this.http.post<Wine []>(this.url + "/GradazioneWineBianco",max,{})
+    return wines;
+  }
+
+  getPriceWinesRose(max:number): Observable<Wine[]>{
+    var wines : Observable<Wine[]> = this.http.post<Wine []>(this.url + "/priceRosè",max,{})
+    return wines;
+  }
+
+  getGradationRose(max:number): Observable<Wine[]>{
+    var wines : Observable<Wine[]> = this.http.post<Wine []>(this.url + "/GradazioneWineRosè",max,{})
+    return wines;
+  }
+
 }
