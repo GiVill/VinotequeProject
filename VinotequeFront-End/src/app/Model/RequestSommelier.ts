@@ -1,6 +1,7 @@
 import { User } from "./User"
 
 export interface RequestSommelier{
-  id : BigInt;
+  id : Number;
   utente : User;
+  matricola : String;
 }

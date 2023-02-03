@@ -19,4 +19,9 @@ export class RequestService {
     return requestsSommelier;
   }
 
+  sendRequest(richiesta: RequestSommelier): Observable<Boolean>{
+    var requestsSommelier : Observable<Boolean> = this.http.post<Boolean>(this.url + "/newRichiesta",richiesta)
+    return requestsSommelier;
+  }
+
 }

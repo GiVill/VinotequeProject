@@ -41,7 +41,7 @@ public class RichiesteDaoPostgres implements RichiesteDao {
     @Override
     public Richieste findByUtente(Long idUtente) {
         Richieste richieste = null;
-        String query = "select * from richieste where id = ?";
+        String query = "select * from richieste where richieste_utente = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setLong(1, idUtente);

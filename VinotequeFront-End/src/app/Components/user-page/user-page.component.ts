@@ -1,4 +1,5 @@
 import { ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { RequestSommelier } from 'src/app/Model/RequestSommelier';
 import { User } from 'src/app/Model/User';
 import { Wine } from 'src/app/Model/Wine';
@@ -13,7 +14,8 @@ import { WineService } from 'src/app/Services/wine.service';
 export class UserPageComponent implements OnInit{
 
   constructor(private service: WineService,
-              private serviceRequest: RequestService){}
+              private serviceRequest: RequestService,
+              private _snackBar: MatSnackBar){}
 
 
 
@@ -34,7 +36,7 @@ export class UserPageComponent implements OnInit{
       console.log(this.favorites)
     })
 
-    if (this.utente.ruolo=='UTENTE'){
+    if (this.utente.ruolo=='SOMMELIER'){
       this.serviceRequest.getRequests().subscribe(data =>{
         this.requestsSommelier = data;
       })
@@ -93,4 +95,23 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = false
     this.showRequest = true
   }
+
+  createSommelierRequest(_matricola:String){
+    const richiesta : RequestSommelier = {
+      id : 14,
+      utente : this.utente,
+      matricola : _matricola
+    }
+
+    this.serviceRequest.sendRequest(richiesta).subscribe( data =>{
+      if (data){
+        this._snackBar.open("Richiesta inviata!","OK");
+      }
+      else{
+        this._snackBar.open("Attendi che la tua richiesta venga elaborata!", "OK");
+      }
+    })
+
+  }
+
 }
