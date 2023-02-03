@@ -222,7 +222,8 @@ public class UtenteDaoPostgres implements UtenteDao {
 
     @Override
     public boolean aggiornaUtente(Utente utente) {
-        String update = "UPDATE utente set via = ? set civico = ? set cap = ? set telefono = ? where id = ?";
+
+        String update = "UPDATE utente set via = ?, civico = ?, cap = ?, telefono = ? where id = ?";
         PreparedStatement st;
         try {
             st = conn.prepareStatement(update);
@@ -231,6 +232,7 @@ public class UtenteDaoPostgres implements UtenteDao {
             st.setString(3,utente.getCap());
             st.setString(4,utente.getTelefono());
             st.setLong(5,utente.getId());
+            st.executeUpdate();
         } catch (SQLException e) {
             return false;
         }
