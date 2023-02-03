@@ -24,4 +24,14 @@ export class RequestService {
     return requestsSommelier;
   }
 
+  accept(richiesta: RequestSommelier): Observable<Boolean>{
+    var requestsSommelier : Observable<Boolean> = this.http.post<Boolean>(this.url + "/Accetta", richiesta)
+    return requestsSommelier;
+  }
+
+  refuse(richiesta: RequestSommelier): Observable<Boolean>{
+    var requestsSommelier : Observable<Boolean> = this.http.post<Boolean>(this.url + "/Rifiuta", richiesta)
+    return requestsSommelier;
+  }
+
 }
