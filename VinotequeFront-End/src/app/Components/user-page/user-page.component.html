@@ -60,7 +60,7 @@
       <h1><strong><em>VINI PREFERITI</em></strong></h1>
     </div>
     <div class="wineCardContainer">
-      <app-wine-card (valueChanged)="reload($event)" *ngFor="let wine of favorites index as i" [wine]="wine" [index]="wine.id" [preferito]="1">
+      <app-wine-card (valueChanged)="reload($event)" *ngFor="let wine of favorites index as i" [wine]="wine" [index]="wine.id">
       </app-wine-card>
 
     </div>

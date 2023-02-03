@@ -15,6 +15,8 @@ export class AuthenticationService {
 
   public currentUser !: User | null ;
 
+  public favourites !: Number[]
+
   constructor(private http: HttpClient) { }
 
   isLogged(){
@@ -35,6 +37,16 @@ export class AuthenticationService {
     } else {
       return(this.currentUser.ruolo =="SOMMELIER");
     }
+  }
+
+  isInFavorites(id : Number):boolean{
+    let isIn = false
+    this.favourites.forEach(element => {
+      if(element == id){
+        isIn = true
+      }
+    });
+    return isIn
   }
 
   register(newUser : User): Observable<Boolean>{

@@ -14,7 +14,7 @@
         <span class="spacer"></span>
         <span style="width: 126px;"></span>
       </div>
-      <app-item-cart *ngFor="let wine of cart.vini index as i" [index]="i" [idWine]="wine" [cart]="cart">
+      <app-item-cart (valueChanged)="reload($event)" *ngFor="let wine of cart.vini index as i" [index]="i" [idWine]="wine" [cart]="cart">
       </app-item-cart>
     </div>
     <div class="spacer"></div>

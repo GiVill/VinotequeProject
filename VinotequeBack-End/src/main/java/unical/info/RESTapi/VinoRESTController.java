@@ -55,10 +55,14 @@ public class VinoRESTController {
         return vini;
     }
     @PostMapping("/favorites")
-    public List<Vino> getFavorites(@RequestBody long id) throws SQLException
-    {
+    public List<Vino> getFavorites(@RequestBody long id) throws SQLException {
         List<Vino> vini_preferiti = DBManager.getInstance().getPreferitiDao().findByUtente(id);
-        System.out.println(vini_preferiti);
+        return vini_preferiti;
+    }
+
+    @PostMapping("/favoritesID")
+    public List<Integer> getFavoritesID(@RequestBody long id) throws SQLException {
+        List<Integer> vini_preferiti = DBManager.getInstance().getPreferitiDao().findByUtenteLong(id);
         return vini_preferiti;
     }
 

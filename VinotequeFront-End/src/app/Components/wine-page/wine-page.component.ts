@@ -8,7 +8,7 @@ import { User } from 'src/app/Model/User';
 import { Wine } from 'src/app/Model/Wine';
 import { ReviewService } from 'src/app/Services/review.service';
 import { Review } from 'src/app/Model/Review';
-import { Favorite } from 'src/app/Model/Favorite';
+import { Favorite, removeFromArray } from 'src/app/Model/Favorite';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { getWineQuantity, upload } from 'src/app/Model/Cart';
 
@@ -33,6 +33,8 @@ export class WinePageComponent implements OnInit{
   canAddReview : boolean = false;
   index !: BigInt | null ;
 
+  isPreferito : Boolean = false;
+
   ngOnInit(): void {
 
     window.scrollY
@@ -49,10 +51,15 @@ export class WinePageComponent implements OnInit{
 
     this.index = BigInt(this.route.snapshot.paramMap.get("index")!)
 
+    if( this.authService.isLogged()){
+      this.isPreferito = this.authService.isInFavorites(Number(this.index))
+    }
+
     this.wineService.getWineById(this.index).subscribe(data =>{
       this.wine = data;
       this.takeReviews()
     })
+
   }
 
   show = false;
@@ -70,7 +77,6 @@ export class WinePageComponent implements OnInit{
     this.reviewService.getReviews(this.wine.id).subscribe(data =>{
       this.reviewService.review = data;
       this.reviews = data;
-      console.log(this.reviews)
     })
   }
 
@@ -90,24 +96,49 @@ export class WinePageComponent implements OnInit{
   }
 
 
+  favorite(){
 
-  createFavorite(){
-    const favorite : Favorite = {
-      preferiti_utente : JSON.parse(localStorage.getItem("user")!),
-      preferiti_vino : this.wine
-    }
+    if(this.authService.isLogged()){
 
-    this.wineService.addFavorite(favorite).subscribe(data =>{
-      if (data){
-        this._snackBar.open("Prodotto aggiunto ai preferiti!");
+      if(this.isPreferito){
+        this.isPreferito = false
+        const favorite : Favorite = {
+          preferiti_utente : this.user,
+          preferiti_vino : this.wine
+        }
+
+        this.authService.favourites = removeFromArray(this.authService.favourites,Number(this.index))
+
+        this.wineService.delFavorite(favorite).subscribe(data =>{
+          if(data){
+            this._snackBar.open("Prodotto rimosso dai preferit!","OK");
+          }
+        })
+
+      } else {
+        this.isPreferito = true
+
+        const favorite : Favorite = {
+        preferiti_utente : this.user,
+        preferiti_vino : this.wine
+        }
+
+        this.authService.favourites.push(Number(this.index!))
+        this.wineService.addFavorite(favorite).subscribe(data =>{
+          if(data){
+            this._snackBar.open("Prodotto aggiunto ai preferiti!","OK");
+          }
+        })
       }
-    })
+
+    } else {
+      this._snackBar.open("Non sei loggato!","OK");
+    }
   }
 
   onSubmit(form:NgForm){
 
     let descrizione = this.message.nativeElement.value
-    console.log(descrizione)
     let data = new Date().toLocaleDateString();
     let id = 10
 

@@ -2,6 +2,7 @@ import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, OnChanges
 import { UrlSegment } from '@angular/router';
 import { AuthenticationService } from './Services/authentication.service';
 import { User } from './Model/User';
+import { WineService } from './Services/wine.service';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,8 @@ import { User } from './Model/User';
 })
 export class AppComponent implements OnInit, OnDestroy{
 
-  constructor(private service : AuthenticationService){}
+  constructor(private service : AuthenticationService,
+              private wineService : WineService){}
 
   sessionId : String = "";
 
@@ -29,15 +31,22 @@ export class AppComponent implements OnInit, OnDestroy{
           localStorage.setItem("user",JSON.stringify(userData));
           localStorage.setItem("jsessionid",this.sessionId.toString())
           sessionStorage.setItem("cart",JSON.stringify(userData.carrello))
-          console.log(userData)
+          this.saveFavorites(userData)
         }
       });
     } else {
       if(localStorage.getItem("user")){
         this.service.logged = true;
         this.service.currentUser = JSON.parse(localStorage.getItem("user")!);
+        this.saveFavorites(this.service.currentUser!)
       }
     }
+  }
+
+  saveFavorites(user : User){
+    this.wineService.getFavoritesID(user.id).subscribe(data =>{
+      this.service.favourites = data
+    })
   }
 
 
