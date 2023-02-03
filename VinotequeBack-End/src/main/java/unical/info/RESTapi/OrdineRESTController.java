@@ -20,9 +20,15 @@ public class OrdineRESTController {
     }
     @PostMapping("/findPromo")
     public int findPromo(@RequestBody String descrizone){
-        int promozione = DBManager.getInstance().getPromozioneDao().findByDescrizione(descrizone).getSconto_prezzo();
+        int promozione = DBManager.getInstance().getPromozioneDao().findByDescrizionePrezzo(descrizone);
         return promozione;
     }
+    @PostMapping("/findPromoReturn")
+    public Promozione findPromoOggetto(@RequestBody String descrizone){
+        Promozione promozione = DBManager.getInstance().getPromozioneDao().findByDescrizione(descrizone);
+        return promozione;
+    }
+
 
 
 }

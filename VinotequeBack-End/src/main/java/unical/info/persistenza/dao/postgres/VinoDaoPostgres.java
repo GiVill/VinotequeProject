@@ -136,6 +136,7 @@ public class VinoDaoPostgres implements VinoDao{
         return vino;
     }
 
+
     @Override
     public List<Vino> findBYAnnata(int annata) {
         List<Vino> vini = new ArrayList<Vino>();
@@ -264,13 +265,212 @@ public class VinoDaoPostgres implements VinoDao{
     }
 
     @Override
-    public List<Vino> findRangePrezzo(int prezzoMax) {
+    public List<Vino> findMaxPrezzo(int prezzoMax) {
         List<Vino> vini = new ArrayList<Vino>();
         String query = "select * from vino where prezzo <= ?";
 
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setInt(1,prezzoMax);
+            ResultSet rs = st.executeQuery();
+
+            while (rs.next()){
+                Vino vino = new Vino();
+                vino.setId(rs.getLong("id"));
+                vino.setNome(rs.getString("nome"));
+                vino.setAnnata(rs.getInt("annata"));
+                vino.setPrezzo(rs.getFloat("prezzo"));
+                vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
+                vino.setTipologia(rs.getString("tipologia"));
+                vino.setPremi(rs.getString("premi"));
+                vino.setFoto(rs.getBytes("foto"));
+                vino.setDescrizione(rs.getString("descrizione"));
+                Cantina cantina = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cantina);
+                vino.setVigneto(rs.getString("vigneto"));
+                vini.add(vino);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return vini;
+    }
+
+
+    @Override
+    public List<Vino> findMaxPrezzoRosso(int prezzoMax) {
+        List<Vino> vini = new ArrayList<Vino>();
+        String query = "select * from vino where prezzo <= ? and tipologia = ?";
+
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setInt(1,prezzoMax);
+            st.setString(2,"rosso");
+            ResultSet rs = st.executeQuery();
+
+            while (rs.next()){
+                Vino vino = new Vino();
+                vino.setId(rs.getLong("id"));
+                vino.setNome(rs.getString("nome"));
+                vino.setAnnata(rs.getInt("annata"));
+                vino.setPrezzo(rs.getFloat("prezzo"));
+                vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
+                vino.setTipologia(rs.getString("tipologia"));
+                vino.setPremi(rs.getString("premi"));
+                vino.setFoto(rs.getBytes("foto"));
+                vino.setDescrizione(rs.getString("descrizione"));
+                Cantina cantina = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cantina);
+                vino.setVigneto(rs.getString("vigneto"));
+                vini.add(vino);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return vini;
+    }
+
+    @Override
+    public List<Vino> findByGradazioneRosso(int gradazione) {
+        List<Vino> vini = new ArrayList<Vino>();
+        String query = "select * from vino where gradazione_alcolica >= ? and tipologia = ?";
+
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setInt(1,gradazione);
+            st.setString(2,"rosso");
+            ResultSet rs = st.executeQuery();
+
+            while (rs.next()){
+                Vino vino = new Vino();
+                vino.setId(rs.getLong("id"));
+                vino.setNome(rs.getString("nome"));
+                vino.setAnnata(rs.getInt("annata"));
+                vino.setPrezzo(rs.getFloat("prezzo"));
+                vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
+                vino.setTipologia(rs.getString("tipologia"));
+                vino.setPremi(rs.getString("premi"));
+                vino.setFoto(rs.getBytes("foto"));
+                vino.setDescrizione(rs.getString("descrizione"));
+                Cantina cantina = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cantina);
+                vino.setVigneto(rs.getString("vigneto"));
+                vini.add(vino);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return vini;
+    }
+
+    @Override
+    public List<Vino> findMaxPrezzoBianco(int prezzoMax) {
+        List<Vino> vini = new ArrayList<Vino>();
+        String query = "select * from vino where prezzo <= ? and tipologia = ?";
+
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setInt(1,prezzoMax);
+            st.setString(2,"bianco");
+            ResultSet rs = st.executeQuery();
+
+            while (rs.next()){
+                Vino vino = new Vino();
+                vino.setId(rs.getLong("id"));
+                vino.setNome(rs.getString("nome"));
+                vino.setAnnata(rs.getInt("annata"));
+                vino.setPrezzo(rs.getFloat("prezzo"));
+                vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
+                vino.setTipologia(rs.getString("tipologia"));
+                vino.setPremi(rs.getString("premi"));
+                vino.setFoto(rs.getBytes("foto"));
+                vino.setDescrizione(rs.getString("descrizione"));
+                Cantina cantina = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cantina);
+                vino.setVigneto(rs.getString("vigneto"));
+                vini.add(vino);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return vini;
+    }
+
+    @Override
+    public List<Vino> findByGradazioneBianco(int gradazione) {
+        List<Vino> vini = new ArrayList<Vino>();
+        String query = "select * from vino where gradazione_alcolica >= ? and tipologia = ?";
+
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setInt(1,gradazione);
+            st.setString(2,"bianco");
+            ResultSet rs = st.executeQuery();
+
+            while (rs.next()){
+                Vino vino = new Vino();
+                vino.setId(rs.getLong("id"));
+                vino.setNome(rs.getString("nome"));
+                vino.setAnnata(rs.getInt("annata"));
+                vino.setPrezzo(rs.getFloat("prezzo"));
+                vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
+                vino.setTipologia(rs.getString("tipologia"));
+                vino.setPremi(rs.getString("premi"));
+                vino.setFoto(rs.getBytes("foto"));
+                vino.setDescrizione(rs.getString("descrizione"));
+                Cantina cantina = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cantina);
+                vino.setVigneto(rs.getString("vigneto"));
+                vini.add(vino);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return vini;
+    }
+
+    @Override
+    public List<Vino> findMaxPrezzoRose(int prezzoMax) {
+        List<Vino> vini = new ArrayList<Vino>();
+        String query = "select * from vino where prezzo <= ? and tipologia = ?";
+
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setInt(1,prezzoMax);
+            st.setString(2,"rosè");
+            ResultSet rs = st.executeQuery();
+
+            while (rs.next()){
+                Vino vino = new Vino();
+                vino.setId(rs.getLong("id"));
+                vino.setNome(rs.getString("nome"));
+                vino.setAnnata(rs.getInt("annata"));
+                vino.setPrezzo(rs.getFloat("prezzo"));
+                vino.setGradazione_alcolica(rs.getInt("gradazione_alcolica"));
+                vino.setTipologia(rs.getString("tipologia"));
+                vino.setPremi(rs.getString("premi"));
+                vino.setFoto(rs.getBytes("foto"));
+                vino.setDescrizione(rs.getString("descrizione"));
+                Cantina cantina = DBManager.getInstance().getCantinaDao().findByPrimaryKey(rs.getLong("vino_cantina"));
+                vino.setVino_cantina(cantina);
+                vino.setVigneto(rs.getString("vigneto"));
+                vini.add(vino);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return vini;
+    }
+
+    @Override
+    public List<Vino> findByGradazioneRose(int gradazione) {
+        List<Vino> vini = new ArrayList<Vino>();
+        String query = "select * from vino where gradazione_alcolica >= ? and tipologia = ?";
+
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setInt(1,gradazione);
+            st.setString(2,"rosè");
             ResultSet rs = st.executeQuery();
 
             while (rs.next()){
