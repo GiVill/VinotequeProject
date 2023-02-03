@@ -22,8 +22,6 @@
       <mat-card-title style="margin-left: 10px;">Totale:{{(cart.totale).toFixed(2)}}</mat-card-title>
       <mat-card-content>
     <span class="spacer"></span>
-
-    <!-- <button mat-raised-button style="background-color: lightgreen;">PAGA BASTARDO!</button> -->
     <span class="spacer"></span>
     </mat-card-content>
 
@@ -33,19 +31,19 @@
       <mat-step>
         <ng-template matStepLabel><strong>Indirizzo di spedizione</strong></ng-template>
         <ng-template matStepContent>
-          <form>
+          <form #indirizzoForm="ngForm" (ngSubmit)="checkAddress(indirizzoForm)">
             <table cellspacing="0">
               <tr>
                 <td>
                   <mat-form-field>
                     <mat-label>Via</mat-label>
-                    <input matInput>
+                    <input matInput  [(ngModel)]="user.via" name="via"ngModel required>
                   </mat-form-field>
                 </td>
                 <td>
                   <mat-form-field>
                     <mat-label>N. Civico</mat-label>
-                    <input matInput>
+                    <input matInput  [(ngModel)]="user.civico" name="civico" ngModel required>
                   </mat-form-field>
                 </td>
               </tr>
@@ -53,19 +51,21 @@
                 <td>
                   <mat-form-field>
                     <mat-label>CAP</mat-label>
-                    <input matInput>
+                    <input matInput  [(ngModel)]="user.cap" name="cap" ngModel required>
                   </mat-form-field>
                 </td>
                 <td>
                   <mat-form-field>
                     <mat-label>Telefono</mat-label>
-                    <input matInput>
+                    <input matInput  [(ngModel)]="user.telefono" name="telefono" ngModel required>
                   </mat-form-field>
                 </td>
               </tr>
             </table>
+            <button mat-raised-button matStepperNext class="stepperNextButton" type="submit">
+              Successivo
+            </button>
           </form>
-          <button mat-raised-button matStepperNext class="stepperNextButton">Successivo</button>
         </ng-template>
       </mat-step>
       <mat-step>
@@ -105,13 +105,13 @@
       <mat-step>
         <ng-template matStepLabel><strong>Inserisci codice sconto<em>(facoltativo)</em></strong></ng-template>
         <div style="display: flex;">
-          <input type="text" placeholder="Codice sconto">
+          <input #promoInput type="text" #codiceSconto placeholder="Codice sconto">
           <button mat-flat-button style="margin-left: 5px; background-color: lightyellow;
-          z-index: 0;">Verifica</button>
+          z-index: 0;" (click)="checkPromo(promoInput)">Verifica</button>
         </div>
         <div style="margin-top: 3px">
           <button mat-button matStepperPrevious class="stepperPreviousButton">Precedente</button>
-          <button mat-button matStepperNext class="stepperNextButton">Successivo</button>
+          <button mat-button matStepperNext class="stepperNextButton" (click)="newOrder()">Successivo</button>
          </div>
       </mat-step>
       <mat-step>
