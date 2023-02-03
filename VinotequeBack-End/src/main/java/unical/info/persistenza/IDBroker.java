@@ -6,8 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class IDBroker {
-    //Standard SQL (queste stringhe andrebbero scritte in un file di configurazione
-    //private static final String query="SELECT NEXT VALUE FOR SEQUENZA_ID AS id";
+
 
     private static final String query = "SELECT nextval('db_sequence') AS id";//postgresql
 

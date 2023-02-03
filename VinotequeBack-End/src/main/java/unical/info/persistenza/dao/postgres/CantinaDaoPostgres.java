@@ -7,7 +7,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CantinaDaoPostgres implements CantinaDao {//finito(vedi giu)
+public class CantinaDaoPostgres implements CantinaDao {
     Connection conn;
     public CantinaDaoPostgres(Connection connection) {
         this.conn =connection;

@@ -74,7 +74,7 @@ public class VinoDaoPostgres implements VinoDao{
     }
 
     @Override
-    public List<Vino> findByCantina(long cantina) {//todo
+    public List<Vino> findByCantina(long cantina) {
         List<Vino> vini = new ArrayList<Vino>();
         String query = "select * from vino where vino_cantina = ? ";
 

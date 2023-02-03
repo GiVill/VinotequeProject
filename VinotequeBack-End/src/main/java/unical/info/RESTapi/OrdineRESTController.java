@@ -16,7 +16,6 @@ import java.util.List;
 public class OrdineRESTController {
     @PostMapping("/newOrdine")
     public boolean newOrdine (@RequestBody Ordine ordine){
-        System.out.println(ordine);
          return DBManager.getInstance().getOrdineDao().save(ordine);
     }
     @PostMapping("/findPromo")

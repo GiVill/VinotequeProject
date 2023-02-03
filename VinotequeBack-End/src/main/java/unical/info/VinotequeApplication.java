@@ -16,9 +16,6 @@ public class VinotequeApplication {
 
 	public static void main(String[] args) throws SQLException {
 		SpringApplication.run(VinotequeApplication.class, args);
-		//Utente u = new Utente("qw","fdsf","32","qwpoi@sss.c","ciaocome");
-		//DBManager.getInstance().getUtenteDao().NewUtente(u);
-
 	}
 
 }

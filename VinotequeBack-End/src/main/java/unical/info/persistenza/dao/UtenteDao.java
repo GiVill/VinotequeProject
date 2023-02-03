@@ -5,7 +5,7 @@ import unical.info.model.Utente;
 import java.sql.SQLException;
 import java.util.List;
 
-public interface UtenteDao {//finito
+public interface UtenteDao {
     public List<Utente> findAll();
 
     public Utente findByPrimaryKey(long id) throws SQLException;
