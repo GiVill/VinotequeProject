@@ -23,16 +23,13 @@ import { MatListModule } from '@angular/material/list';
 import { WineCardComponent } from './Components/wine-card/wine-card.component';
 import { ReviewCardComponent } from './Components/review-card/review-card.component';
 import {MatMenuModule} from '@angular/material/menu';
-import { LoginCardComponent } from './Components/login-card/login-card.component';
 import { ShopPageComponent } from './Components/Shop/shop-page/shop-page.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { RegistrationCardComponent } from './Components/registration-card/registration-card.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import {MatSelectModule} from '@angular/material/select';
 import { AuthenticationService } from './Services/authentication.service';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-import { AuthPageComponent } from './Components/auth-page/auth-page.component';
 import { CartPageComponent } from './Components/cart-page/cart-page.component';
 import { ItemCartComponent } from './Components/item-cart/item-cart.component';
 import {MatRadioModule} from '@angular/material/radio';
@@ -47,6 +44,7 @@ import {matStepperAnimations, MatStepperModule} from '@angular/material/stepper'
 import { RequestCardComponent } from './Components/request-card/request-card.component';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSliderModule} from '@angular/material/slider';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 
 
@@ -56,10 +54,7 @@ import {MatSliderModule} from '@angular/material/slider';
     MainNavComponent,
     WineCardComponent,
     ReviewCardComponent,
-    LoginCardComponent,
     ShopPageComponent,
-    RegistrationCardComponent,
-    AuthPageComponent,
     UserPageComponent,
     ItemCartComponent,
     CartPageComponent,
@@ -98,6 +93,7 @@ import {MatSliderModule} from '@angular/material/slider';
     MatStepperModule,
     MatAutocompleteModule,
     MatSliderModule,
+    NgxPayPalModule,
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

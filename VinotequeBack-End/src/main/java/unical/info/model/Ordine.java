@@ -101,4 +101,18 @@ public class Ordine {
         this.indirizzo = indirizzo;
     }
 
+    @Override
+    public String toString() {
+        return "Ordine{" +
+                "id=" + id +
+                ", ordine_utente=" + ordine_utente +
+                ", ordine_carrello='" + ordine_carrello + '\'' +
+                ", metodo_pag='" + metodo_pag + '\'' +
+                ", indirizzo='" + indirizzo + '\'' +
+                ", totale=" + totale +
+                ", status='" + status + '\'' +
+                ", ordine_promozione=" + ordine_promozione +
+                ", data='" + data + '\'' +
+                '}';
+    }
 }

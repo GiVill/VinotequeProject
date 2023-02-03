@@ -1,5 +1,5 @@
 export interface Promotion{
-  id : BigInt;
+  id : Number;
   descrizione : String;
   sconto_prezzo : Number;
 }
