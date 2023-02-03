@@ -5,24 +5,23 @@
       <h2 style="text-align: center; margin-top: 20px;">Filtra:</h2>
       <a mat-list-item (click)="openRangeGradation()">Gradazione</a>
       <div *ngIf="filterGradation">
-        <div style="display: flex; width: 150px;">
-          <label>{{minValue}}</label>
-          <span style="width: 220px;"></span>
-          <label>{{maxValue}}</label>
+        <div>
+          <label style="margin-left: 15px;">Gradazione min.</label>
         </div>
-        <mat-slider min="200" max="500">
-          <input value="300" matSliderStartThumb>
-          <input value="400" matSliderEndThumb>
-        </mat-slider>
+        <input type="number" id="valueGradation"><button mat-fab style="background-color: lightblue;" (click)="searchGradation()">Cerca</button>
       </div>
       <a mat-list-item (click)="openRangePrezzo()">Prezzo</a>
       <div *ngIf="filterPrice">
-        <mat-slider min="200" max="500">
-          <input value="300" matSliderStartThumb>
-          <input value="400" matSliderEndThumb>
+        <div style="display: flex;">
+          <span class="spacer"></span>
+          <label>max : {{maxValue}}</label>
+          <span class="spacer"></span>
+        </div>
+        <mat-slider>
+          <input matSliderThumb [(ngModel)]="maxValue">
         </mat-slider>
+        <button mat-fab style="background-color: lightblue;" (click)="searchPrice(maxValue)">Cerca</button>
       </div>
-      <a mat-list-item>Cantina</a>
     </mat-nav-list>
   </div>
   <span class="spacer"></span>

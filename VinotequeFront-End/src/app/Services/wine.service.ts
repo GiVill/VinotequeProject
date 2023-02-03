@@ -58,5 +58,14 @@ export class WineService {
     return this.http.post<Boolean>(this.url + "/delFavorite",favorite);
   }
 
+  getPriceWines(max:number): Observable<Wine[]>{
+    var wines : Observable<Wine[]> = this.http.post<Wine []>(this.url + "/price",max,{})
+    return wines;
+  }
+
+  getGradation(max:number): Observable<Wine[]>{
+    var wines : Observable<Wine[]> = this.http.post<Wine []>(this.url + "/GradazioneWine",max,{})
+    return wines;
+  }
 
 }

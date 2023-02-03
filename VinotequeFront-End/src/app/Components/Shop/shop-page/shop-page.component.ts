@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { WineService } from 'src/app/Services/wine.service';
 import { Wine } from 'src/app/Model/Wine';
+import { Event } from '@angular/router';
 
 @Component({
   selector: 'app-shop-page',
@@ -16,8 +17,7 @@ export class ShopPageComponent implements OnInit{
   filterPrice : Boolean = false;
   filterGradation : Boolean = false;
 
-  minValue = 0;
-  maxValue = 500;
+  maxValue = 100;
 
   ngOnInit(): void {
 
@@ -35,13 +35,25 @@ export class ShopPageComponent implements OnInit{
   openRangePrezzo(){
     this.filterPrice = true;
     this.filterGradation = false;
-    console.log("Filtro prezzo")
   }
 
   openRangeGradation(){
     this.filterPrice = false;
     this.filterGradation = true;
-    console.log("Filtro gradazione")
+  }
+
+  searchGradation(){
+    const input = document.getElementById('valueGradation') as HTMLInputElement | null;
+    const max = input?.value;
+    this.wineService.getGradation(Number(max)).subscribe(data => {
+      this.wines = data;
+    })
+  }
+
+  searchPrice(max:number){
+    this.wineService.getPriceWines(max).subscribe(data => {
+      this.wines = data;
+    })
   }
 
 }

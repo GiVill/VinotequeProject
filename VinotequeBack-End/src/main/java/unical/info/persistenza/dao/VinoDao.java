@@ -17,7 +17,7 @@ public interface VinoDao {
 
     public Vino findBYPrimaryKey(long id);
 
-    public List<Vino> findRangePrezzo(int prezzoMin,int prezzoMax);
+    public List<Vino> findRangePrezzo(int prezzoMax);
 
     public List<Vino> findByGradazione(int gradazione);
 

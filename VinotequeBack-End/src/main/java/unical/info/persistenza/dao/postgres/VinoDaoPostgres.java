@@ -234,7 +234,7 @@ public class VinoDaoPostgres implements VinoDao{
     @Override
     public List<Vino> findByGradazione(int gradazione) {
         List<Vino> vini = new ArrayList<Vino>();
-        String query = "select * from vino where gradazione > ?";
+        String query = "select * from vino where gradazione_alcolica >= ?";
 
         try {
             PreparedStatement st = conn.prepareStatement(query);
@@ -264,14 +264,13 @@ public class VinoDaoPostgres implements VinoDao{
     }
 
     @Override
-    public List<Vino> findRangePrezzo(int prezzoMin, int prezzoMax) {
+    public List<Vino> findRangePrezzo(int prezzoMax) {
         List<Vino> vini = new ArrayList<Vino>();
-        String query = "select * from vino where prezzo => ? and prezzo <= ?";
+        String query = "select * from vino where prezzo <= ?";
 
         try {
             PreparedStatement st = conn.prepareStatement(query);
-            st.setInt(1,prezzoMin);
-            st.setInt(2,prezzoMax);
+            st.setInt(1,prezzoMax);
             ResultSet rs = st.executeQuery();
 
             while (rs.next()){

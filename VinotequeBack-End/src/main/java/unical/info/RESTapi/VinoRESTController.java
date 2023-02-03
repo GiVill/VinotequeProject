@@ -6,6 +6,7 @@ import unical.info.model.Vino;
 
 import java.sql.SQLException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -49,8 +50,8 @@ public class VinoRESTController {
         return vini;
     }
     @PostMapping("/price")
-    public List<Vino> getPriceWines(@RequestBody int min, @RequestBody int max ){
-        List<Vino> vini = DBManager.getInstance().getVinoDao().findRangePrezzo(min, max);
+    public List<Vino> getPriceWines(@RequestBody int max ){
+        List<Vino> vini = DBManager.getInstance().getVinoDao().findRangePrezzo(max);
         return vini;
     }
     @PostMapping("/favorites")
