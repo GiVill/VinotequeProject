@@ -9,7 +9,7 @@ public interface OrdineDao {
 
     public List<Ordine> findByUtente(Long utente);
 
-    public void save(Ordine ordine);
+    public boolean save(Ordine ordine);
 
-    public void delete(Ordine utente);
+    public boolean delete(Ordine utente);
 }

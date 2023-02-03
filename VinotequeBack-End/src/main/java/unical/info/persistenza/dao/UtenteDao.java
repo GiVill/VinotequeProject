@@ -12,13 +12,13 @@ public interface UtenteDao {//finito
 
     public Utente findByEmail(String id);
 
-    public void NewUtente(Utente utente);
+    public boolean NewUtente(Utente utente);
 
-    public void delete(Utente utente);
+    public boolean delete(Utente utente);
 
-    public void CambioPassword(Utente utente, String password);
+    public boolean CambioPassword(Utente utente, String password);
 
-    public void CambioCarrello (long idUtente, String carrello);
+    public boolean CambioCarrello (long idUtente, String carrello);
 
     public boolean aggiornaUtente (Utente utente);
 

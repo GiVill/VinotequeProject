@@ -54,7 +54,7 @@ public class OrdineDaoPostgres implements OrdineDao {
     }
 
     @Override
-    public void save(Ordine ordine) {
+    public boolean save(Ordine ordine) {
             String insertStr = "INSERT INTO ordine VALUES (DEFAULT,?,?,?,?,?,?,DEFAULT,?)";
             PreparedStatement st;
             try {
@@ -70,19 +70,19 @@ public class OrdineDaoPostgres implements OrdineDao {
                 st.executeUpdate();
 
             } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+                return  false;
+            }return  true;
         }
 
     @Override
-    public void delete(Ordine ordine) {
+    public boolean delete(Ordine ordine) {
         String query = "DELETE FROM ordine WHERE id = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setLong(1, ordine.getId());
             st.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+            return  false;
+        }return  true;
     }
 }

@@ -16,23 +16,23 @@ import unical.info.persistenza.DBManager;
 @CrossOrigin("http://localhost:4200")
 public class AdminRESTController {
     @PostMapping("/newPromo")
-    public void newPromo (@RequestBody Promozione promozione){
-        DBManager.getInstance().getPromozioneDao().save(promozione);
+    public boolean newPromo (@RequestBody Promozione promozione){
+       return DBManager.getInstance().getPromozioneDao().save(promozione);
     }
     @PostMapping("/newVino")
-    public void newVino (@RequestBody Vino vino){
-        DBManager.getInstance().getVinoDao().save(vino);
+    public boolean newVino (@RequestBody Vino vino){
+       return DBManager.getInstance().getVinoDao().save(vino);
     }
     @PostMapping("/deleteUtente")
-    public void deleteUtente(@RequestBody Utente utente){
-        DBManager.getInstance().getUtenteDao().delete(utente);
+    public boolean deleteUtente(@RequestBody Utente utente){
+      return   DBManager.getInstance().getUtenteDao().delete(utente);
     }
     @PostMapping("/deleteRecensione")
     public boolean deleteRecensione(@RequestBody Recensione recensione) {
         return DBManager.getInstance().getRecensioneDao().delete(recensione);
     }
     @PostMapping("/deleteVino")
-    public void deleteVino(@RequestBody Vino vino){
-        DBManager.getInstance().getVinoDao().delete(vino);
+    public boolean deleteVino(@RequestBody Vino vino){
+      return  DBManager.getInstance().getVinoDao().delete(vino);
     }
 }

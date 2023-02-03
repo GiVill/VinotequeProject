@@ -24,8 +24,6 @@ public class RecensioniRESTController {
     @PostMapping("/randomReview")
     public Recensione randomReview(@RequestBody long idVino){
         Recensione recensione = DBManager.getInstance().getRecensioneDao().findReviewHome(idVino);
-        System.out.println(recensione);
-        System.out.println(idVino);
         return recensione;
     }
 }
