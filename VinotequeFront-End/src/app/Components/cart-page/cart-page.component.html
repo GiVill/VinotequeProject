@@ -123,9 +123,7 @@
         </div>
       </mat-step>
     </mat-stepper>
-    <ng-container style="position: relative; z-index: 0;">
-      <div [ngStyle]="{'display': paypalMethod ? '' : 'none'}" class="paypal" id="paypal-button-container" #payPalRef></div>
-    </ng-container>
+    <ngx-paypal [ngStyle]="{'display': paypalMethod ? '' : 'none'}" [config]="payPalConfig"></ngx-paypal>
   </mat-card>
   </div>
 </div>

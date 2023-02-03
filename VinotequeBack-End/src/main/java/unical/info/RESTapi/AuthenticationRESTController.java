@@ -22,6 +22,17 @@ public class AuthenticationRESTController{
         DBManager.getInstance().getUtenteDao().CambioCarrello(carrello.getIdUtente(),jsonString);
     }
 
+    @GetMapping("/checkAuth")
+    public Utente isAuth(HttpServletRequest req, String jsessionid) {
+        System.out.println(jsessionid);
+        HttpSession session = (HttpSession) req.getServletContext().getAttribute(jsessionid);
+        Utente currentUser = (Utente) session.getAttribute("user");
+        if (session != null) {
+            return currentUser;
+        }else {
+            return null;
+        }
+    }
     @GetMapping ("/logout")
     public boolean logout(String jsessionid, HttpServletRequest req){
         if(jsessionid != null){

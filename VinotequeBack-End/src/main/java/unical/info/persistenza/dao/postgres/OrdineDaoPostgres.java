@@ -59,7 +59,6 @@ public class OrdineDaoPostgres implements OrdineDao {
             PreparedStatement st;
             try {
                 st = conn.prepareStatement(insertStr);
-
                 st.setLong(1,ordine.getOrdine_utente().getId());
                 st.setString(2,ordine.getOrdine_carrello());
                 st.setString(3, ordine.getMetodo_pag());
@@ -67,9 +66,9 @@ public class OrdineDaoPostgres implements OrdineDao {
                 st.setString(5, ordine.getData());
                 st.setFloat(6, ordine.getTotale());
                 st.setLong(7, ordine.getOrdine_promozione().getId());
-                st.executeUpdate();
-
+                st.execute();
             } catch (SQLException e) {
+                e.printStackTrace();
                 return  false;
             }return  true;
         }
