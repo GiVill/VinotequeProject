@@ -6,6 +6,10 @@ export interface User{
   email : String;
   password : String;
   ruolo : String;
+  via : String;
+  civico : String;
+  cap : String;
+  telefono : String;
   indirizzo : String;
   carrello : String;
 }

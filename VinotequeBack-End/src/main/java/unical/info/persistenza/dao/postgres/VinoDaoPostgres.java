@@ -17,7 +17,7 @@ public class VinoDaoPostgres implements VinoDao{
     }
 
     @Override
-    public void save(Vino vino) {
+    public boolean save(Vino vino) {
         if (findByNome(vino.getNome())== null) {
             String insertStr = "INSERT INTO vino VALUES (DEFAULT,?,?,?,?,?,?,?,?,?,?)";
             PreparedStatement st;
@@ -38,9 +38,9 @@ public class VinoDaoPostgres implements VinoDao{
                 st.executeUpdate();
 
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                return false;
             }
-        }
+        }return  true;
     }
 
     @Override
@@ -327,15 +327,15 @@ public class VinoDaoPostgres implements VinoDao{
     }
 
     @Override
-    public void delete(Vino vino) {
+    public boolean delete(Vino vino) {
         String query = "DELETE FROM vino WHERE id = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setLong(1,vino.getId());
             st.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            return  false;
         }
-
+        return  true;
     }
 }

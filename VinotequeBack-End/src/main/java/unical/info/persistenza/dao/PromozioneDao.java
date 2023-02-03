@@ -9,8 +9,10 @@ public interface PromozioneDao {
 
     public Promozione findByDescrizione(String codicePromo);
 
-    public void save(Promozione promo);
+    public int findByDescrizionePrezzo(String codicePromo);
 
-    public void delete(Promozione utente);
+    public boolean save(Promozione promo);
+
+    public boolean delete(Promozione utente);
 
 }

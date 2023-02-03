@@ -5,7 +5,7 @@ import unical.info.model.Vino;
 import java.util.List;
 
 public interface VinoDao {
-    public void save(Vino vino);
+    public boolean save(Vino vino);
 
     public List<Vino> findAll();
 
@@ -25,5 +25,5 @@ public interface VinoDao {
 
     public List<Vino> findRandomWine();
 
-    public void delete(Vino vino);
+    public boolean delete(Vino vino);
 }

@@ -15,43 +15,24 @@ import javax.servlet.http.HttpSession;
 @RestController
 @CrossOrigin("http://localhost:4200")
 public class AuthenticationRESTController{
-    @PostMapping ("/addUser")
-    public Boolean register( @RequestBody Utente newUser){
-        System.out.println(newUser.toString());
-        //TODO: CONTROLLO EMAIL GIA PRESENTE NEL DB
-       if(DBManager.getInstance().getUtenteDao().findByEmail(newUser.getEmail()) == null) {
-           DBManager.getInstance().getUtenteDao().NewUtente(newUser);
-           return true;
-       }
-       else {
-           return false;
-       }
-    }
-
     @PostMapping ("/addCart")
-    public boolean addCart(@RequestBody Carrello carrello) throws JsonProcessingException {
+    public void addCart(@RequestBody Carrello carrello) throws JsonProcessingException {
         JSONObject carrelloJson = new JSONObject(carrello);
         String jsonString = carrelloJson.toString();
-        /*
-        ObjectMapper objectMapper = new ObjectMapper();
-        Carrello obj = objectMapper.readValue(jeson,Carrello.class);
-         */
         DBManager.getInstance().getUtenteDao().CambioCarrello(carrello.getIdUtente(),jsonString);
-        return true;
     }
 
     @GetMapping ("/logout")
     public boolean logout(String jsessionid, HttpServletRequest req){
         if(jsessionid != null){
             HttpSession session = (HttpSession) req.getServletContext().getAttribute(jsessionid);
-            if(session == null){
+            if(session == null || session.getAttribute("user") == null){
                 return true;
             }
             session.removeAttribute("user");
             session.invalidate();
             return true;
         }
-
         return false;
     }
 }

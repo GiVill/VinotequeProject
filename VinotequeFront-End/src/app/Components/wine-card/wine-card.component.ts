@@ -16,8 +16,7 @@ export class WineCardComponent implements OnInit {
 
   constructor(private service:AuthenticationService,
               private wineService:WineService,
-              private _snackBar: MatSnackBar,
-              private cdr: ChangeDetectorRef){}
+              private _snackBar: MatSnackBar){}
 
   @Input() wine !: Wine ;
 

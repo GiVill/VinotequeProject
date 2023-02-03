@@ -12,6 +12,6 @@ public interface RichiesteDao {
 
     public boolean save(Richieste richieste);
 
-    public void delete(Richieste richieste);
-    public void PromuoviASommelier(Richieste richieste);
+    public boolean delete(Richieste richieste);
+    public boolean PromuoviASommelier(Richieste richieste);
 }

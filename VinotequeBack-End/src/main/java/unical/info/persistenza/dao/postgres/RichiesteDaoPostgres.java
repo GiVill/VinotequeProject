@@ -80,18 +80,18 @@ public class RichiesteDaoPostgres implements RichiesteDao {
         return false;
     }
     @Override
-    public void delete(Richieste richieste) {
+    public boolean delete(Richieste richieste) {
         String query = "DELETE FROM richieste WHERE id = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setLong(1, richieste.getId());
             st.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+            return false  ;
+        }return  true;
     }
     @Override
-    public void PromuoviASommelier(Richieste richieste) {
+    public boolean PromuoviASommelier(Richieste richieste) {
         Long iddacamb = richieste.getUtente().getId();
         String updateStr = "UPDATE utente set ruolo = 'SOMMELIER' where id = ? ";
         PreparedStatement st;
@@ -100,12 +100,12 @@ public class RichiesteDaoPostgres implements RichiesteDao {
             st.setLong(1, iddacamb);
             st.executeUpdate();
 
-
         }
         catch (SQLException e) {
-            throw new RuntimeException(e);
+            return  false;
         }
         DBManager.getInstance().getRichiesteDao().delete(richieste);
+        return true;
     }
 
 

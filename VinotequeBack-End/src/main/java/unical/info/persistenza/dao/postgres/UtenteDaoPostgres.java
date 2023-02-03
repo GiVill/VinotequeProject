@@ -3,21 +3,13 @@ package unical.info.persistenza.dao.postgres;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.json.JSONObject;
 import unical.info.controller.PasswordCrypt;
 import unical.info.model.Carrello;
-import unical.info.model.Richieste;
-import unical.info.persistenza.DBManager;
 import unical.info.persistenza.dao.UtenteDao;
 import unical.info.model.Utente;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-
-import static java.lang.String.copyValueOf;
-import static java.lang.String.valueOf;
 
 public class UtenteDaoPostgres implements UtenteDao {
     Connection conn;
@@ -73,7 +65,7 @@ public class UtenteDaoPostgres implements UtenteDao {
     }
 
     @Override
-    public void NewUtente(Utente utente) {
+    public boolean NewUtente(Utente utente) {
             String insertStr = "INSERT INTO utente VALUES (DEFAULT,?,?,?,?,?,DEFAULT,DEFAULT)";
             PreparedStatement st;
             try {
@@ -89,8 +81,9 @@ public class UtenteDaoPostgres implements UtenteDao {
                 st.executeUpdate();
 
             } catch (SQLException e) {
-                throw new RuntimeException(e);
+                return  false;
             }
+        return  true;
         }
 
 
@@ -183,18 +176,18 @@ public class UtenteDaoPostgres implements UtenteDao {
     }
 
     @Override
-    public void delete(Utente utente) {
+    public boolean delete(Utente utente) {
         String query = "DELETE FROM utente WHERE id = ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setLong(1, utente.getId());
             st.executeUpdate();
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+            return  false;
+        }return  true;
     }
     @Override
-    public void CambioPassword (Utente utente, String password){
+    public boolean CambioPassword (Utente utente, String password){
         String passC = password;
         String newPass = p.encode(passC);
         Long idute = utente.getId();
@@ -207,12 +200,12 @@ public class UtenteDaoPostgres implements UtenteDao {
             st.executeUpdate();
 
         } catch (SQLException e) {
-        throw new RuntimeException(e);
-        }
+            return  false;
+        }return  true;
     }
 
 
-    public void CambioCarrello (long idUtente, String carrello){
+    public boolean CambioCarrello (long idUtente, String carrello){
 
         String updateStr = "UPDATE utente set carrello = ? where id = ?";
         PreparedStatement st;
@@ -223,12 +216,12 @@ public class UtenteDaoPostgres implements UtenteDao {
             st.executeUpdate();
 
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+            return  false;
+        }return  true;
     }
 
     @Override
-    public void aggiornaUtente(Utente utente) {
+    public boolean aggiornaUtente(Utente utente) {
         String update = "UPDATE utente set via = ? set civico = ? set cap = ? set telefono = ? where id = ?";
         PreparedStatement st;
         try {
@@ -239,8 +232,9 @@ public class UtenteDaoPostgres implements UtenteDao {
             st.setString(4,utente.getTelefono());
             st.setLong(5,utente.getId());
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            return false;
         }
+        return true;
     }
 }
 
