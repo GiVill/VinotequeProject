@@ -16,7 +16,6 @@ public class RegistrationServletController extends HttpServlet  {
 
         @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-            System.out.println("dgdgdfg");
 
             String nome = req.getParameter("nome");
             String cognome = req.getParameter("cognome");
@@ -25,11 +24,8 @@ public class RegistrationServletController extends HttpServlet  {
             String password = req.getParameter("password");
 
             Utente utente = new Utente(nome,cognome,data,email,password);
-            System.out.println("baanabna");
             if(DBManager.getInstance().getUtenteDao().findByEmail(utente.getEmail()) == null) {
-                System.out.println("fdfdf");
                 DBManager.getInstance().getUtenteDao().NewUtente(utente);
-                resp.sendError(0,"Registrazione avvenuta con successo");
                 resp.sendRedirect("/login.html");
             }
             else {
