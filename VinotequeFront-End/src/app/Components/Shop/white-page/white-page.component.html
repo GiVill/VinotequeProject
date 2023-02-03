@@ -1,22 +1,33 @@
-
 <section>
-  <span class="spacer" ></span>
+  <span class="spacer"></span>
   <div class="filterContainer">
     <mat-nav-list>
       <h2 style="text-align: center; margin-top: 20px;">Filtra:</h2>
-      <a mat-list-item >Gradazione</a>
-      <a mat-list-item>Prezzo</a>
-      <a mat-list-item>Cantina</a>
+      <a mat-list-item (click)="openRangeGradation()">Gradazione</a>
+      <div *ngIf="filterGradation">
+        <div>
+          <label style="margin-left: 15px;">Gradazione min.</label>
+        </div>
+        <input type="number" id="valueGradation"><button mat-fab style="background-color: lightblue;" (click)="searchGradation()">Cerca</button>
+      </div>
+      <a mat-list-item (click)="openRangePrezzo()">Prezzo</a>
+      <div *ngIf="filterPrice">
+        <div style="display: flex;">
+          <span class="spacer"></span>
+          <label>max : {{maxValue}}</label>
+          <span class="spacer"></span>
+        </div>
+        <mat-slider>
+          <input matSliderThumb [(ngModel)]="maxValue">
+        </mat-slider>
+        <button mat-fab style="background-color: lightblue;" (click)="searchPrice(maxValue)">Cerca</button>
+      </div>
     </mat-nav-list>
   </div>
-  <span class="spacer" ></span>
+  <span class="spacer"></span>
     <div class="wineCardContainer">
       <app-wine-card *ngFor="let wine of wines index as i" [wine]="wine" [index]="wine.id">
       </app-wine-card>
     </div>
-    <mat-paginator [length]="100"
-              [pageSize]="10"
-              aria-label="Select page">
-    </mat-paginator>
 </section>
 

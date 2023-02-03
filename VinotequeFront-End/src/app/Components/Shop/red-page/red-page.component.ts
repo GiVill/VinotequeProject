@@ -42,13 +42,13 @@ export class RedPageComponent {
   searchGradation(){
     const input = document.getElementById('valueGradation') as HTMLInputElement | null;
     const max = input?.value;
-    this.wineService.getGradation(Number(max)).subscribe(data => {
+    this.wineService.getGradationRed(Number(max)).subscribe(data => {
       this.wines = data;
     })
   }
 
   searchPrice(max:number){
-    this.wineService.getPriceWines(max).subscribe(data => {
+    this.wineService.getPriceWinesRed(max).subscribe(data => {
       this.wines = data;
     })
   }
