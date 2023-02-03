@@ -1,7 +1,7 @@
 import { ResourceLoader } from '@angular/compiler';
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Cart, removeWine } from 'src/app/Model/Cart';
+import { Cart, removeWine, setWineQuantity } from 'src/app/Model/Cart';
 import { Favorite, removeFromArray } from 'src/app/Model/Favorite';
 import { Wine } from 'src/app/Model/Wine';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
@@ -14,9 +14,12 @@ import { WineService } from 'src/app/Services/wine.service';
 })
 export class ItemCartComponent implements OnInit{
 
+  @Output() valueChanged = new EventEmitter<string>();
+
   constructor(private service:WineService,
               private authService:AuthenticationService,
               private _snackBar: MatSnackBar){}
+
 
   wine !: Wine
   isPreferito : Boolean = false
@@ -24,11 +27,17 @@ export class ItemCartComponent implements OnInit{
   ngOnInit(): void {
 
     this.service.getWineById(this.idWine).subscribe(data =>{
-      console.log(data)
       this.wine = data
       this.isPreferito = this.authService.isInFavorites(Number(this.wine.id))
       this.quantity = this.cart.quantity[this.index.valueOf()]
     })
+  }
+
+
+  onNumberChange(event: any) {
+    setWineQuantity(this.cart,this.wine,event)
+    sessionStorage.setItem("cart",JSON.stringify(this.cart)!)
+    this.valueChanged.emit('cart');
   }
 
 

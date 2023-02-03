@@ -8,6 +8,16 @@ export interface Cart{
 }
 
 
+export function setWineQuantity(cart:Cart,wine:Wine,quantita:number){
+  let index = cart.vini.indexOf(wine.id)
+  let last = cart.quantity[index]
+  cart.totale -= last * wine.prezzo.valueOf()
+
+  cart.quantity[index] = quantita
+  cart.totale += wine.prezzo.valueOf() * quantita
+}
+
+
 export function getWineQuantity(cart:Cart,wine:Wine):number{
   let index = cart.vini.indexOf(wine.id)
   if(index == -1){

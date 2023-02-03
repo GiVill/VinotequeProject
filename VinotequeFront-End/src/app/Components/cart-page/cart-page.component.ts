@@ -68,6 +68,12 @@ export class CartPageComponent implements OnInit, OnChanges{
     }).render(this.payPalRef.nativeElement);
   }
 
+  reload(newMessage: string) {
+    if(newMessage == "cart"){
+      this.cart = JSON.parse(sessionStorage.getItem("cart")!);
+    }
+  }
+
 
   checkAddress(form : NgForm){
     //     MODIFICA I DATI DELL'UTENTE SALVATI NEL DB SE L'UTETE LI CAMBIA IN FASE DI ACQUISTO     //
