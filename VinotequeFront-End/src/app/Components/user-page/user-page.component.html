@@ -8,8 +8,8 @@
       <a mat-list-item (click)="clickUser()">DATI PROFILO</a>
       <a mat-list-item (click)="clickOrders()">ORDINI</a>
       <a mat-list-item (click)="clickFavorites()">PREFERITI</a>
-      <a mat-list-item *ngIf="utente.ruolo=='SOMMELIER'" (click)="clickBecomeSommelier()">DIVENTA SOMMELIER</a>
-      <a mat-list-item *ngIf="utente.ruolo=='SOMMELIER'" (click)="clickViewRequest()">VISUALIZZA RICHIESTE SOMMELIER</a>
+      <a mat-list-item *ngIf="utente.ruolo=='UTENTE'" (click)="clickBecomeSommelier()">DIVENTA SOMMELIER</a>
+      <a mat-list-item *ngIf="utente.ruolo=='ADMIN'" (click)="clickViewRequest()">VISUALIZZA RICHIESTE SOMMELIER</a>
     </mat-nav-list>
   </div>
 
