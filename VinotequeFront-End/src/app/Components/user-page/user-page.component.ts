@@ -21,7 +21,6 @@ export class UserPageComponent implements OnInit{
     if(newMessage == "preferiti"){
       this.service.getFavorites(this.utente.id).subscribe(data =>{
         this.favorites = data;
-        console.log(this.favorites)
       })
     }
   }

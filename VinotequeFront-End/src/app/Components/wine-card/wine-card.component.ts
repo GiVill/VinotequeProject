@@ -1,7 +1,8 @@
-import { ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { addWine, Cart, getWineQuantity, upload } from 'src/app/Model/Cart';
-import { Favorite } from 'src/app/Model/Favorite';
+import { Favorite, removeFromArray } from 'src/app/Model/Favorite';
+import { User } from 'src/app/Model/User';
 import { Wine } from 'src/app/Model/Wine';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { WineService } from 'src/app/Services/wine.service';
@@ -12,82 +13,71 @@ import { WineService } from 'src/app/Services/wine.service';
   styleUrls: ['./wine-card.component.css']
 })
 
-export class WineCardComponent implements OnInit {
+export class WineCardComponent implements OnInit{
 
   constructor(private service:AuthenticationService,
               private wineService:WineService,
               private _snackBar: MatSnackBar){}
 
+
   @Input() wine !: Wine ;
 
   @Input() index!: BigInt;
 
-  @Input() preferito !:  number;
-
   @Output() valueChanged = new EventEmitter<string>();
 
-  isPreferito !: Boolean;
+  isPreferito : Boolean = false
+
+  user !: User
+  favorites !: BigInt[]
 
 
   ngOnInit(): void {
 
-    if(this.preferito == -1){
-      this.isPreferito = false;
-
-    } else if( this.preferito == 1 ){
-      this.isPreferito = true
+    if(this.service.isLogged()){
+      this.user = JSON.parse(localStorage.getItem("user")!)
+      this.isPreferito = this.service.isInFavorites(Number(this.index))
     }
   }
 
-  createFavorite(){
+  favorite(){
 
-    if (this.preferito == 0){
-      this.isPreferito = true
+    if(this.service.isLogged()){
 
-      const favorite : Favorite = {
-        preferiti_utente : JSON.parse(localStorage.getItem("user")!),
-        preferiti_vino : this.wine
-      }
-
-      this._snackBar.open("Prodotto aggiunto ai preferiti!","OK");
-
-      this.wineService.addFavorite(favorite).subscribe(data =>{
-      })
-
-    } else if(this.preferito == -1) {
-
-      this.isPreferito = true
-
-      const favorite : Favorite = {
-        preferiti_utente : JSON.parse(localStorage.getItem("user")!),
-        preferiti_vino : this.wine
-      }
-
-      this.wineService.addFavorite(favorite).subscribe(data =>{
-        if(data){
-          this._snackBar.open("Prodotto aggiunto ai preferiti!","OK");
-        } else {
-          this._snackBar.open("Prodotto già presente nei preferiti!","OK");
+      if(this.isPreferito){
+        this.isPreferito = false
+        const favorite : Favorite = {
+          preferiti_utente : this.user,
+          preferiti_vino : this.wine
         }
-      })
+
+        this.service.favourites = removeFromArray(this.service.favourites,Number(this.index))
+        this.wineService.delFavorite(favorite).subscribe(data =>{
+          if(data){
+            this.valueChanged.emit('preferiti');
+            this._snackBar.open("Prodotto rimosso dai preferit!","OK");
+          }
+        })
+
+      } else {
+        this.isPreferito = true
+
+        const favorite : Favorite = {
+        preferiti_utente : JSON.parse(localStorage.getItem("user")!),
+        preferiti_vino : this.wine
+        }
+
+        this.service.favourites.push(Number(this.index))
+        this.wineService.addFavorite(favorite).subscribe(data =>{
+          if(data){
+            this._snackBar.open("Prodotto aggiunto ai preferiti!","OK");
+          }
+        })
+      }
 
     } else {
-
-      this.isPreferito = false
-
-      const favorite : Favorite = {
-        preferiti_utente : JSON.parse(localStorage.getItem("user")!),
-        preferiti_vino : this.wine
-      }
-
-      this.wineService.delFavorite(favorite).subscribe(data =>{
-        if(data){
-          this.valueChanged.emit('preferiti');
-        }
-      })
-
+      this._snackBar.open("Non sei loggato!","OK");
     }
-
   }
 
   addCart(){

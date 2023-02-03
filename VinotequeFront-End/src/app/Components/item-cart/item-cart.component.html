@@ -14,8 +14,8 @@
     <div style="margin-top: 10px; font-size: 20px;">{{(wine.prezzo.valueOf()*quantity).toFixed(2)}}</div>
     <span class="spacer"></span>
     <mat-card-actions>
-      <button mat-icon-button class="favorite" (click)="createFavorite()">
-        <mat-icon>favorite</mat-icon>
+      <button mat-icon-button class="favorite" (click)="favorite()">
+        <mat-icon [ngStyle]="{'color': isPreferito ? 'red' : 'black'}">favorite</mat-icon>
       </button>
       <button mat-icon-button class="delete" (click)="removeItem()">
         <mat-icon>close</mat-icon>

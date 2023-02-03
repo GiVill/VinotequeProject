@@ -35,6 +35,25 @@ public class PreferitiDaoPostgres implements PreferitiDao {
         return vini;
     }
 
+    @Override
+    public List<Integer> findByUtenteLong(long id) throws SQLException {
+        String query = "select * from preferiti where preferiti_utente = ? order by preferiti_vino";
+        List<Integer> vini = new ArrayList<Integer>();
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            st.setLong(1,id);
+            ResultSet rs = st.executeQuery();
+
+            while (rs.next()){
+                long preferitoId = rs.getLong("preferiti_vino");
+                vini.add((int) preferitoId);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return vini;
+    }
+
 
     @Override
     public boolean save(Preferiti preferiti) throws SQLException {

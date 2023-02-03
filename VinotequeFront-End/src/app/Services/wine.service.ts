@@ -50,6 +50,12 @@ export class WineService {
     return favorites;
   }
 
+  getFavoritesID(id:BigInt): Observable<Number[]>{
+    var favorites : Observable<Number[]> = this.http.post<Number[]>(this.url + "/favoritesID",id,{})
+    return favorites;
+  }
+
+
   addFavorite(favorite : Favorite): Observable<Boolean>{
     return this.http.post<Boolean>(this.url + "/addFavorite",favorite);
   }

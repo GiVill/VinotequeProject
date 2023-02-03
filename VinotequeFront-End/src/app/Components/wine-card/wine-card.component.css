@@ -15,8 +15,9 @@ mat-icon{
   width: 60px;
   height: 60px;
 }
+
 .favorite:hover{
-  color: rgb(204, 204, 0);
+  border-color: red;
 }
 
 mat-card-actions {

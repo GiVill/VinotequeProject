@@ -13,7 +13,7 @@
         Aggiungi al carrello!
         <mat-icon class="material-symbols-outlined">add_shopping_cart</mat-icon>
       </button>
-      <button mat-stroked-button class="favorite" (click)="createFavorite()">
+      <button mat-stroked-button class="favorite" (click)="favorite()" [ngStyle]="{'color': isPreferito ? 'red' : 'black'}">
         Aggiungi ai preferiti!
         <mat-icon class="material-symbols-outlined">favorite</mat-icon>
       </button>
