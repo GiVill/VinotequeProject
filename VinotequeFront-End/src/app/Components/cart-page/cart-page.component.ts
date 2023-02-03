@@ -107,12 +107,15 @@ export class CartPageComponent implements OnInit, OnChanges{
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.cdr.detectChanges();
+    if(this.paypalMethod){
+      this.cdr.detectChanges();
     window.paypal.Buttons({
       style:{
-        layout: 'horizontal'
+        layout: 'horizontal',
+        visibility : 'visible'
       }
     }).render(this.payPalRef.nativeElement);
+    }
   }
 
 }
