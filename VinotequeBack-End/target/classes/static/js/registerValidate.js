@@ -1,19 +1,10 @@
-//da pulire
-window.addEventListener("load", function(){
-        var elForm = document.getElementsByTagName("form")[0];
-        elForm.addEventListener("submit", function(event){
-            var nome = document.getElementById("nome").value;
-            var cognome = document.getElementById("cognome").value;
-            var data_di_nascita = document.getElementById("data").value;
-            var email = document.getElementById("email").value;
-            var password = document.getElementById("password").value;
-            var Cpassword = document.getElementById("Cpassword").value;
-            validate(nome,cognome,data_di_nascita,email,password,Cpassword, event);
-        });
-
-});
-
-function validate(nome,cognome,data_di_nascita,email,password,Cpassword, event){
+function validate(){
+    var nome = document.getElementById("nome").value;
+    var cognome = document.getElementById("cognome").value;
+    var data_di_nascita = document.getElementById("data").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var Cpassword = document.getElementById("Cpassword").value;
 
     if (nome == "") {
         alert("Campo nome mancante");
@@ -53,8 +44,8 @@ function validate(nome,cognome,data_di_nascita,email,password,Cpassword, event){
         return false;
     }
 
-    if (password == "" || password.length < 6) {
-        alert("Campo password mancante deve avere una lunghezza di almeno 6 caratteri");
+    if (password == "") {
+        alert("Campo password mancante ");
         return false;
     }
 
@@ -73,37 +64,10 @@ function validate(nome,cognome,data_di_nascita,email,password,Cpassword, event){
         alert("Password e Conferma Password non coincidono ");
         return false;
     }
-
-
-    var canSubmit = true;
-    if (canSubmit) {
-        let textEmail = email.value.trim();
-        event.preventDefault();
-        $.ajax({
-            url: "/checkEmail",
-            data: {"email": textEmail},
-            type: "post",
-            success: function (risposta) {
-                if (risposta.trim() === 'true') {
-                    console.log("entratoin true")
-                    console.log(risposta)
-                    alert("Mi dispiace questa email appartiene ad un account esistente");
-                } else {
-                    console.log("entratoin else")
-                    let form = document.querySelector("form");
-                    form.submit();
-                }
-            }
-        });
-
-    }
-
-
         function validateEmail(email) {
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(String(email).toLowerCase());
         }
-
     }
 
 

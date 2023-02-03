@@ -15,7 +15,7 @@
 </head>
 <body>
     <div class="login-container">
-        <form action="doLogin" method="post">
+        <form onsubmit="return validate()" action="doLogin" method="post">
             <div class="form-floating mb-3">
                 <input type="email" class="form-control rounded-3" id="email" placeholder="nome@esempio.xx" name="email">
                 <label for="email">Email</label>
@@ -26,7 +26,7 @@
             </div>
             <button class="w-100 mb-2 btn btn-lg rounded-3 btn-primary" type="submit">Login</button>
             <div style="margin-top: 5px">
-                <p>Non hai un account? <a href="#!">Registrati!</a></p>
+                <p>Non hai un account? <a href="register.html">Registrati!</a></p>
             </div>
         </form>
     </div>
