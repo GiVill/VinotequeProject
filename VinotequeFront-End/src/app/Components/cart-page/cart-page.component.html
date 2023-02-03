@@ -121,15 +121,12 @@
           <button mat-fab extended style="background-color: lightgreen; color: black;">Procedi con l'acquisto</button>
           <span class="spacer"></span>
         </div>
-        <ng-container style="display: flex; flex-direction: column; position: relative;" *ngIf="paypalMethod">
-          <span class="spacer"></span>
-          <div class="paypal" id="paypal-button-container" #payPalRef></div>
-          <span class="spacer"></span>
-        </ng-container>
       </mat-step>
     </mat-stepper>
+    <ng-container style="position: relative; z-index: 0;">
+      <div [ngStyle]="{'display': paypalMethod ? '' : 'none'}" class="paypal" id="paypal-button-container" #payPalRef></div>
+    </ng-container>
   </mat-card>
-
   </div>
 </div>
 
