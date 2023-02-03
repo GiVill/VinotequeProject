@@ -1,4 +1,4 @@
-package unical.info.controller;
+package unical.info.util;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 public class PasswordCrypt {

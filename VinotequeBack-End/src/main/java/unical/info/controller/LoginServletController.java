@@ -4,6 +4,7 @@ package unical.info.controller;
 import unical.info.persistenza.DBManager;
 import unical.info.persistenza.dao.UtenteDao;
 import unical.info.model.Utente;
+import unical.info.util.PasswordCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

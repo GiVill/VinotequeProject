@@ -3,7 +3,7 @@ package unical.info.persistenza.dao.postgres;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import unical.info.controller.PasswordCrypt;
+import unical.info.util.PasswordCrypt;
 import unical.info.model.Carrello;
 import unical.info.persistenza.dao.UtenteDao;
 import unical.info.model.Utente;
