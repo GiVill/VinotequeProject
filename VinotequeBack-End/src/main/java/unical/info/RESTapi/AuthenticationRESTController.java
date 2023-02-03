@@ -15,18 +15,6 @@ import javax.servlet.http.HttpSession;
 @RestController
 @CrossOrigin("http://localhost:4200")
 public class AuthenticationRESTController{
-    @PostMapping ("/addUser")
-    public Boolean register( @RequestBody Utente newUser){
-        System.out.println(newUser.toString());
-       if(DBManager.getInstance().getUtenteDao().findByEmail(newUser.getEmail()) == null) {
-           DBManager.getInstance().getUtenteDao().NewUtente(newUser);
-           return true;
-       }
-       else {
-           return false;
-       }
-    }
-
     @PostMapping ("/addCart")
     public boolean addCart(@RequestBody Carrello carrello) throws JsonProcessingException {
         JSONObject carrelloJson = new JSONObject(carrello);
