@@ -55,7 +55,7 @@ export class ItemCartComponent implements OnInit{
         preferiti_vino : this.wine
       }
 
-      this.authService.favourites = removeFromArray(this.authService.favourites,Number(this.index))
+      this.authService.favourites = removeFromArray(this.authService.favourites,Number(this.idWine))
 
       this.service.delFavorite(favorite).subscribe(data =>{
         if(data){
@@ -71,7 +71,7 @@ export class ItemCartComponent implements OnInit{
       preferiti_vino : this.wine
       }
 
-      this.authService.favourites.push(Number(this.index!))
+      this.authService.favourites.push(Number(this.idWine!))
       this.service.addFavorite(favorite).subscribe(data =>{
         if(data){
           this._snackBar.open("Prodotto aggiunto ai preferiti!","OK");
