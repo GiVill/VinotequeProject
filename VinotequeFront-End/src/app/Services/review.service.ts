@@ -27,4 +27,8 @@ export class ReviewService {
   postReview(recensione : Review): Observable<Boolean>{
     return this.http.post<Boolean>(this.url + "/saveReview",recensione);
   }
+
+  delReview(recensione : Review): Observable<Boolean>{
+    return this.http.post<Boolean>(this.url + "/cancelReview",recensione);
+  }
 }

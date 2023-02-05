@@ -6,15 +6,11 @@
     <div class="spacer"></div>
     <mat-card-actions>
       <div class="menu">
-        <button mat-icon-button [matMenuTriggerFor]="menu">
+        <button mat-icon-button [matMenuTriggerFor]="menu" *ngIf="canDel">
           <mat-icon>more_horiz</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button mat-menu-item>
-            <mat-icon>warning</mat-icon>
-            <span>Segnala</span>
-          </button>
-          <button mat-menu-item disabled>
+          <button mat-menu-item (click)="delReview()">
             <mat-icon>delete_forever</mat-icon>
             <span>Elimina</span>
           </button>

@@ -150,6 +150,12 @@ export class WinePageComponent implements OnInit{
     }
   }
 
+  reload(newMessage: string) {
+    if(newMessage == "recensione"){
+      this.takeReviews()
+    }
+  }
+
   onSubmit(form:NgForm){
 
     let descrizione = this.message.nativeElement.value

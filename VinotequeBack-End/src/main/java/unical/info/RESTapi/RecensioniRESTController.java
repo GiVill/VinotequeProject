@@ -21,6 +21,11 @@ public class RecensioniRESTController {
         return DBManager.getInstance().getRecensioneDao().save(recensione);
     }
 
+    @PostMapping("/cancelReview")
+    public boolean cancelReview(@RequestBody Recensione recensione){
+        return DBManager.getInstance().getRecensioneDao().delete(recensione);
+    }
+
     @PostMapping("/randomReview")
     public Recensione randomReview(@RequestBody long idVino){
         Recensione recensione = DBManager.getInstance().getRecensioneDao().findReviewHome(idVino);

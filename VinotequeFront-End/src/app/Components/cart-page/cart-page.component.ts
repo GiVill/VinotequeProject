@@ -67,6 +67,10 @@ export class CartPageComponent implements OnInit, OnChanges{
 
   }
 
+  ngOnChanges(changes: SimpleChanges): void {
+    this.cart = JSON.parse(sessionStorage.getItem("cart")!);
+  }
+
 
   confirmOrder() {
     this.showSpinner = true;
@@ -182,11 +186,6 @@ export class CartPageComponent implements OnInit, OnChanges{
       data : new Date().toLocaleDateString()
     }
   }
-
-  ngOnChanges(changes: SimpleChanges): void {
-    this.cart = JSON.parse(sessionStorage.getItem("cart")!);
-  }
-
 
   private initConfig(): void {
     this.payPalConfig = {
