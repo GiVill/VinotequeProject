@@ -16,7 +16,7 @@
   margin-bottom: 20px;
   margin-right: 20px;
   display: flex;
-  height:700px;
+  max-height:1700px;
 }
 
 .content{
@@ -58,6 +58,11 @@
 
 
 .paypal{
+  position: relative;
+  z-index: 0;
+}
+
+.paypal > *{
   position: relative;
   z-index: 0;
 }
