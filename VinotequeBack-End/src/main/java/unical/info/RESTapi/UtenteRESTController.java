@@ -1,5 +1,7 @@
 package unical.info.RESTapi;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import org.json.JSONObject;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -42,8 +44,15 @@ public class UtenteRESTController {
     public boolean rimuoviPreferito(@RequestBody Preferiti preferito) throws SQLException {
         return DBManager.getInstance().getPreferitiDao().delete(preferito);
     }
-    @PostMapping("/aggiornaCarrello")
-    public boolean aggiornaCarrello(@RequestBody Utente utente, String carrello){
-       return DBManager.getInstance().getUtenteDao().CambioCarrello(utente.getId(), carrello);
+    @PostMapping ("/addCart")
+    public boolean addCart(@RequestBody Carrello carrello){
+        JSONObject carrelloJson = new JSONObject(carrello);
+        String jsonString = carrelloJson.toString();
+        /*
+        ObjectMapper objectMapper = new ObjectMapper();
+        Carrello obj = objectMapper.readValue(jeson,Carrello.class);
+         */
+        DBManager.getInstance().getUtenteDao().CambioCarrello(carrello.getIdUtente(),jsonString);
+        return true;
     }
 }

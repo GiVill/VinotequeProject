@@ -69,7 +69,7 @@ export class AuthenticationService {
   }
 
   addCart(cart : Cart): Observable<Boolean>{
-    console.log(cart); //EROE!!!!!!!!!!
+    console.log(cart);
     return this.http.post<Boolean>(this.url + "/addCart",cart);
   }
 

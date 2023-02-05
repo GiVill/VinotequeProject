@@ -15,12 +15,6 @@ import javax.servlet.http.HttpSession;
 @RestController
 @CrossOrigin("http://localhost:4200")
 public class AuthenticationRESTController{
-    @PostMapping ("/addCart")
-    public void addCart(@RequestBody Carrello carrello) throws JsonProcessingException {
-        JSONObject carrelloJson = new JSONObject(carrello);
-        String jsonString = carrelloJson.toString();
-        DBManager.getInstance().getUtenteDao().CambioCarrello(carrello.getIdUtente(),jsonString);
-    }
 
     @GetMapping("/checkAuth")
     public Utente isAuth(HttpServletRequest req, String jsessionid) {
@@ -37,7 +31,7 @@ public class AuthenticationRESTController{
     public boolean logout(String jsessionid, HttpServletRequest req){
         if(jsessionid != null){
             HttpSession session = (HttpSession) req.getServletContext().getAttribute(jsessionid);
-            if(session == null || session.getAttribute("user") == null){
+            if(session == null){
                 return true;
             }
             session.removeAttribute("user");

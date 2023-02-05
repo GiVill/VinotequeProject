@@ -4,7 +4,7 @@ import { MatButton } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal';
 import { reduce } from 'rxjs';
-import { Cart } from 'src/app/Model/Cart';
+import { Cart, removeAllWine } from 'src/app/Model/Cart';
 import { Order } from 'src/app/Model/Order';
 import { Promotion } from 'src/app/Model/Promotion';
 import { User } from 'src/app/Model/User';
@@ -20,7 +20,6 @@ import { OrderService } from 'src/app/Services/order.service';
 export class CartPageComponent implements OnInit, OnChanges{
 
   constructor(private service:AuthenticationService,
-              private cdr: ChangeDetectorRef,
               private _snackBar: MatSnackBar,
               private orderService: OrderService,
               private _formBuilder: FormBuilder){}
@@ -52,6 +51,23 @@ export class CartPageComponent implements OnInit, OnChanges{
   });
 
 
+  ngOnInit(): void {
+
+    //      INIZIALIZZA PAYPAL    //
+    this.initConfig();
+
+    //     AGGIORNA CARRELLO SALVANDONE LO STATO NEL DB     //
+    this.cart = JSON.parse(sessionStorage.getItem("cart")!);
+
+    if(this.service.currentUser?.carrello != JSON.stringify(sessionStorage.getItem("cart"))){
+      this.service.addCart(this.cart).subscribe()
+    }
+
+    this.user = JSON.parse(localStorage.getItem("user")!)
+
+  }
+
+
   confirmOrder() {
     this.showSpinner = true;
     setTimeout(() => {
@@ -65,6 +81,9 @@ export class CartPageComponent implements OnInit, OnChanges{
         this.orderService.postOrder(this.order).subscribe(data =>{
           if(data){
             this._snackBar.open("Ordine completato!","OK");
+            removeAllWine(this.cart)
+            sessionStorage.setItem("cart",JSON.stringify(this.cart)!)
+            this.service.addCart(this.cart).subscribe()
             // sessionStorage.removeItem("cart")
           }
         })
@@ -72,10 +91,6 @@ export class CartPageComponent implements OnInit, OnChanges{
         this.message = "Il tuo ordine è stato preso in carico!"
       }
     }, 2500); // Show the component for 2500 milliseconds (2.5 seconds)
-  }
-
-  paga(){
-
   }
 
   /*
@@ -98,22 +113,6 @@ export class CartPageComponent implements OnInit, OnChanges{
     this.paypalMethod = false;
   }
 
-
-  ngOnInit(): void {
-
-    this.initConfig();
-
-    //     AGGIORNA CARRELLO SALVANDONE LO STATO NEL DB     //
-    this.cart = JSON.parse(sessionStorage.getItem("cart")!);
-
-    if(this.service.currentUser?.carrello != sessionStorage.getItem("cart")){
-      this.service.addCart(this.cart)
-    }
-
-    this.user = JSON.parse(localStorage.getItem("user")!)
-
-    //     MOSTRA PAYPAL BUTTON?     //
-  }
 
   reload(newMessage: string) {
     if(newMessage == "cart"){
@@ -174,7 +173,7 @@ export class CartPageComponent implements OnInit, OnChanges{
     this.order = {
       id: 10,
       ordine_utente : this.user,
-      ordine_carrello : JSON.stringify(sessionStorage.getItem("cart")),
+      ordine_carrello : sessionStorage.getItem("cart")!,
       metodo_pag : metodoPag,
       indirizzo : indirizzo,
       totale : this.cart.totale,
@@ -214,25 +213,21 @@ export class CartPageComponent implements OnInit, OnChanges{
       label: 'paypal',
       layout: 'vertical'
     },
-    onApprove: (data, actions) => {
-      console.log('onApprove - transaction was approved, but not authorized', data, actions);
-      actions.order.get().then((details: any) => {
-        console.log('onApprove - you can get full order details inside onApprove: ', details);
-      });
-    },
     onClientAuthorization: (data) => {
       this.orderService.postOrder(this.order).subscribe(data =>{
         if(data){
           this._snackBar.open("Ordine completato!","OK");
-          // sessionStorage.removeItem("cart")
+          removeAllWine(this.cart)
+          sessionStorage.setItem("cart",JSON.stringify(this.cart)!)
+          this.service.addCart(this.cart)
         }
       })
     },
     onCancel: (data, actions) => {
-      console.log('OnCancel', data, actions);
+      this._snackBar.open("Pagamento rifiutato!","OK");
     },
     onError: err => {
-      console.log('OnError', err);
+      this._snackBar.open("ERRORE! Riprova più tardi","OK");
     },
   };
   }

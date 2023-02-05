@@ -11,7 +11,7 @@
       <input matInput [(ngModel)]="quantity" type="number" min="1" max="10" (ngModelChange)="onNumberChange($event)">
     </mat-form-field>
     <span class="spacer"></span>
-    <div style="margin-top: 10px; font-size: 20px;">{{(wine.prezzo.valueOf()*quantity).toFixed(2)}}</div>
+    <div style="margin-top: 10px; font-size: 20px; width: 63px;">{{(wine.prezzo.valueOf()*quantity).toFixed(2)}}</div>
     <span class="spacer"></span>
     <mat-card-actions>
       <button mat-icon-button class="favorite" (click)="favorite()">

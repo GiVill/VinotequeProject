@@ -44,6 +44,16 @@ export function removeWine(cart:Cart,wine:Wine){
   }
 }
 
+export function removeAllWine(cart:Cart){
+  while(cart.vini.length != 0){
+    console.log(cart.vini.length)
+    let index = cart.vini.indexOf(cart.vini[0])
+    cart.vini.splice(index, 1);
+    cart.quantity.splice(index, 1);
+    cart.totale = 0
+  }
+}
+
 export function upload(cart:Cart,wine:Wine){
   if(cart.vini.indexOf(wine.id) == -1){
     addWine(cart,wine,1)

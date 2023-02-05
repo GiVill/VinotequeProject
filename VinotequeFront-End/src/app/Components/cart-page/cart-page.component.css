@@ -14,9 +14,8 @@
   margin-top: 20px;
   margin-left: 20px;
   margin-bottom: 20px;
-  margin-right: 20px;
   display: flex;
-  max-height:1700px;
+  max-height:2400px;
 }
 
 .content{
@@ -27,7 +26,6 @@
 .spacer {
   flex: 1 1 auto;
 }
-
 
 .itemContainer{
   display: flex;
@@ -54,15 +52,19 @@
     display: flex;
     flex-direction: row;
   }
+
+  .actions{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    display: flex;
+    max-height:2400px;
+  }
 }
 
 
 .paypal{
-  position: relative;
-  z-index: 0;
-}
-
-.paypal > *{
   position: relative;
   z-index: 0;
 }

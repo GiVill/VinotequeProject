@@ -21,115 +21,113 @@
     <mat-card class="actions">
       <mat-card-title style="margin-left: 10px;">Totale:{{(cart.totale).toFixed(2)}}</mat-card-title>
       <mat-card-content>
-    <span class="spacer"></span>
-    <span class="spacer"></span>
-    </mat-card-content>
+      <span class="spacer"></span>
+      <span class="spacer"></span>
+      </mat-card-content>
 
-
-
-    <mat-stepper orientation="vertical" [linear]="true">
-      <mat-step [stepControl]="firstFormGroup">
-        <ng-template matStepLabel><strong>Indirizzo di spedizione</strong></ng-template>
-        <ng-template matStepContent>
-          <form  [formGroup]="firstFormGroup" #indirizzoForm="ngForm" (submit)="checkAddress()">
-            <table cellspacing="0">
-              <tr>
-                <td>
-                  <mat-form-field>
-                    <mat-label>Via</mat-label>
-                    <input matInput [(ngModel)]="user.via" name="via" required formControlName="firstCtrl" formControlName="via">
-                  </mat-form-field>
-                </td>
-                <td>
-                  <mat-form-field>
-                    <mat-label>N. Civico</mat-label>
-                    <input matInput [(ngModel)]="user.civico" name="civico" required formControlName="firstCtrl" formControlName="civico">
-                  </mat-form-field>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <mat-form-field>
-                    <mat-label>CAP</mat-label>
-                    <input matInput [(ngModel)]="user.cap" name="cap" required formControlName="firstCtrl" formControlName="cap">
-                  </mat-form-field>
-                </td>
-                <td>
-                  <mat-form-field>
-                    <mat-label>Telefono</mat-label>
-                    <input matInput [(ngModel)]="user.telefono" name="telefono" required formControlName="firstCtrl" formControlName="telefono">
-                  </mat-form-field>
-                </td>
-              </tr>
-            </table>
-            <button mat-raised-button matStepperNext  type="submit" class="stepperNextButton"> <!--  (click)="checkAddress(indirizzoForm)" -->
-              Successivo
-            </button>
-          </form>
-        </ng-template>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel style="display: flex; flex-direction: row;"><strong>Metodo Spedizione</strong><mat-icon style="color: green;">local_shipping</mat-icon></ng-template>
-        <ng-template matStepContent>
-          <mat-radio-group style="display: flex; flex-direction: column;">
-            <mat-radio-button>
-              Spedizione standard (1 settimana)
-             </mat-radio-button>
-             <mat-radio-button>
-              Spedizione rapida (48h)
-             </mat-radio-button>
-           </mat-radio-group>
-           <div style="margin-top: 3px">
-            <button mat-button matStepperPrevious class="stepperPreviousButton">Precedente</button>
-            <button mat-button matStepperNext class="stepperNextButton">Successivo</button>
-           </div>
-        </ng-template>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel><strong>Metodo di pagamento</strong></ng-template>
-        <ng-template matStepContent>
-          <mat-radio-group style="display: flex; flex-direction: column;">
-            <mat-radio-button (click)="setNormal()">
-              Contrassegno
-             </mat-radio-button>
-             <mat-radio-button (click)="setPaypal()">
-              Paypal
-             </mat-radio-button>
-           </mat-radio-group>
-           <div style="margin-top: 3px">
-            <button mat-button matStepperPrevious class="stepperPreviousButton">Precedente</button>
-            <button mat-button matStepperNext class="stepperNextButton">Successivo</button>
-           </div>
-        </ng-template>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel><strong>Inserisci codice sconto<em>(facoltativo)</em></strong></ng-template>
-        <div style="display: flex;">
-          <input #promoInput type="text" #codiceSconto placeholder="Codice sconto">
-          <button mat-flat-button style="margin-left: 5px; background-color: lightyellow;
-          z-index: 0;" (click)="checkPromo(promoInput)">Verifica</button>
-        </div>
-        <div style="margin-top: 3px">
-          <button mat-button matStepperPrevious class="stepperPreviousButton">Precedente</button>
-          <button mat-button matStepperNext class="stepperNextButton" (click)="newOrder()">Successivo</button>
-         </div>
-      </mat-step>
-      <mat-step>
-        <ng-template matStepLabel><strong>Conferma ordine</strong></ng-template>
-        <div style="display: flex; flex-direction: column;" *ngIf="!paypalMethod">
-          <span class="spacer"></span>
-          <button mat-fab extended style="color: black;" (click)="confirmOrder()">Procedi con l'acquisto</button>
-          <span class="spacer"></span>
-          <div style="margin: auto auto; margin-top: 15px;" *ngIf="showSpinner">
-            <mat-spinner></mat-spinner>
+      <mat-stepper orientation="vertical" [linear]="true">
+        <mat-step [stepControl]="firstFormGroup" >
+          <ng-template matStepLabel><strong>Indirizzo di spedizione</strong></ng-template>
+          <ng-template matStepContent>
+            <form [formGroup]="firstFormGroup" #indirizzoForm="ngForm" (submit)="checkAddress()">
+              <table cellspacing="0">
+                <tr>
+                  <td>
+                    <mat-form-field>
+                      <mat-label>Via</mat-label>
+                      <input matInput [(ngModel)]="user.via" name="via" required formControlName="firstCtrl" formControlName="via">
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field>
+                      <mat-label>N. Civico</mat-label>
+                      <input matInput [(ngModel)]="user.civico" name="civico" required formControlName="firstCtrl" formControlName="civico">
+                    </mat-form-field>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <mat-form-field>
+                      <mat-label>CAP</mat-label>
+                      <input matInput [(ngModel)]="user.cap" name="cap" required formControlName="firstCtrl" formControlName="cap">
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field>
+                      <mat-label>Telefono</mat-label>
+                      <input matInput [(ngModel)]="user.telefono" name="telefono" required formControlName="firstCtrl" formControlName="telefono">
+                    </mat-form-field>
+                  </td>
+                </tr>
+              </table>
+              <button style="z-index: 0;" mat-raised-button matStepperNext  type="submit" class="stepperNextButton">
+                Successivo
+              </button>
+            </form>
+          </ng-template>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel style="display: flex; flex-direction: row;"><strong>Metodo Spedizione</strong><mat-icon style="color: green;">local_shipping</mat-icon></ng-template>
+          <ng-template matStepContent>
+            <mat-radio-group style="display: flex; flex-direction: column;">
+              <mat-radio-button>
+                Spedizione standard (1 settimana)
+              </mat-radio-button>
+              <mat-radio-button>
+                Spedizione rapida (48h)
+              </mat-radio-button>
+            </mat-radio-group>
+            <div style="margin-top: 3px">
+              <button style="z-index: 0;" mat-button matStepperPrevious class="stepperPreviousButton">Precedente</button>
+              <button style="z-index: 0;" mat-button matStepperNext class="stepperNextButton">Successivo</button>
+            </div>
+          </ng-template>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel><strong>Metodo di pagamento</strong></ng-template>
+          <ng-template matStepContent>
+            <mat-radio-group style="display: flex; flex-direction: column;">
+              <mat-radio-button (click)="setNormal()">
+                Contrassegno
+              </mat-radio-button>
+              <mat-radio-button (click)="setPaypal()">
+                Paypal
+              </mat-radio-button>
+            </mat-radio-group>
+            <div style="margin-top: 3px">
+              <button style="z-index: 0;" mat-button matStepperPrevious class="stepperPreviousButton">Precedente</button>
+              <button style="z-index: 0;" mat-button matStepperNext class="stepperNextButton">Successivo</button>
+            </div>
+          </ng-template>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel><strong>Inserisci codice sconto<em>(facoltativo)</em></strong></ng-template>
+          <div style="display: flex;">
+            <input #promoInput type="text" #codiceSconto placeholder="Codice sconto">
+            <button mat-flat-button style="margin-left: 5px; background-color: lightyellow;
+            z-index: 0;" (click)="checkPromo(promoInput)">Verifica</button>
           </div>
-          <div style="margin: auto auto; margin-top: 15px" *ngIf="showEndMessage">
-            <h2><strong>{{message}}</strong></h2>
+          <div style="margin-top: 3px">
+            <button style="z-index: 0;" mat-button matStepperPrevious class="stepperPreviousButton">Precedente</button>
+            <button style="z-index: 0;" mat-button matStepperNext class="stepperNextButton" (click)="newOrder()">Successivo</button>
           </div>
-        </div>
-      </mat-step>
-    </mat-stepper>
-    <ngx-paypal class="paypal" [ngStyle]="{'display': paypalMethod ? '' : 'none'}" [config]="payPalConfig"></ngx-paypal>
-  </mat-card>
+        </mat-step>
+        <mat-step>
+          <ng-template matStepLabel><strong>Conferma ordine</strong></ng-template>
+          <div style="display: flex; flex-direction: column;" *ngIf="!paypalMethod">
+            <span class="spacer"></span>
+            <button style="z-index: 0;" mat-fab extended style="color: black;" (click)="confirmOrder()">Procedi con l'acquisto</button>
+            <span class="spacer"></span>
+            <div style="margin: auto auto; margin-top: 15px;" *ngIf="showSpinner">
+              <mat-spinner></mat-spinner>
+            </div>
+            <div style="margin: auto auto; margin-top: 15px" *ngIf="showEndMessage">
+              <h2><strong>{{message}}</strong></h2>
+            </div>
+          </div>
+        </mat-step>
+      </mat-stepper>
+      <ngx-paypal class="paypal" [ngStyle]="{'display': paypalMethod ? '' : 'none'}" [config]="payPalConfig"></ngx-paypal>
+    </mat-card>
+    </div>
   </div>
-</div>
