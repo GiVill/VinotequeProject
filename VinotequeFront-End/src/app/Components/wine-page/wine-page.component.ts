@@ -51,7 +51,7 @@ export class WinePageComponent implements OnInit{
 
     this.index = BigInt(this.route.snapshot.paramMap.get("index")!)
 
-    if( this.authService.isLogged()){
+    if(this.authService.isLogged()){
       this.isPreferito = this.authService.isInFavorites(Number(this.index))
     }
 

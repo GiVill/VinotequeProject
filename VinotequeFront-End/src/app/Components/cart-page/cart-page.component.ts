@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
-import { FormBuilder, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal';
@@ -9,7 +9,7 @@ import { Order } from 'src/app/Model/Order';
 import { Promotion } from 'src/app/Model/Promotion';
 import { User } from 'src/app/Model/User';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
-import { OrederService } from 'src/app/Services/oreder.service';
+import { OrderService } from 'src/app/Services/order.service';
 
 
 @Component({
@@ -22,7 +22,8 @@ export class CartPageComponent implements OnInit, OnChanges{
   constructor(private service:AuthenticationService,
               private cdr: ChangeDetectorRef,
               private _snackBar: MatSnackBar,
-              private orderService: OrederService,){}
+              private orderService: OrderService,
+              private _formBuilder: FormBuilder){}
 
 
   public payPalConfig?: IPayPalConfig;
@@ -40,6 +41,16 @@ export class CartPageComponent implements OnInit, OnChanges{
   showEndMessage : boolean = false
 
   message !: String;
+
+
+  firstFormGroup = this._formBuilder.group({
+    firstCtrl: ['via', Validators.required,],
+    via : new FormControl("via"),
+    civico : new FormControl("civico"),
+    cap : new FormControl("cap"),
+    telefono : new FormControl("telefono")
+  });
+
 
   confirmOrder() {
     this.showSpinner = true;
@@ -104,14 +115,14 @@ export class CartPageComponent implements OnInit, OnChanges{
   }
 
 
-  checkAddress(form : NgForm){
+  checkAddress(){
     //     MODIFICA I DATI DELL'UTENTE SALVATI NEL DB SE L'UTETE LI CAMBIA IN FASE DI ACQUISTO     //
-    if(form.dirty){
+    if(this.firstFormGroup.dirty && this.firstFormGroup.valid){
 
-      this.user.via = form.value.via
-      this.user.civico = form.value.civico
-      this.user.cap = form.value.cap
-      this.user.telefono = form.value.telefono
+      this.user.via != this.firstFormGroup.value.via
+      this.user.civico != this.firstFormGroup.value.civico
+      this.user.cap != this.firstFormGroup.value.cap
+      this.user.telefono != this.firstFormGroup.value.telefono
 
       this.service.updateUser(this.user).subscribe(data =>{
         if(data){
@@ -137,6 +148,14 @@ export class CartPageComponent implements OnInit, OnChanges{
 
   newOrder(){
     let metodoPag : String
+    if(this.promo == null){
+      this.promo = {
+        id : 1,
+        descrizione: "default",
+        sconto_prezzo : 0
+      }
+    }
+
     if(this.paypalMethod){
       metodoPag = "PayPal"
     } else {

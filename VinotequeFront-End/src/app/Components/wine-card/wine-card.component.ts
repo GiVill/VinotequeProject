@@ -86,11 +86,11 @@ export class WineCardComponent implements OnInit{
     } else {
       let cart = JSON.parse(sessionStorage.getItem("cart")!);
       if(getWineQuantity(cart,this.wine) == 10){
-        this._snackBar.open("Hai già la quantità massima nel carrello!");
+        this._snackBar.open("Hai già la quantità massima nel carrello!","OK");
       } else {
         upload(cart,this.wine)
         sessionStorage.setItem("cart",JSON.stringify(cart))
-        this._snackBar.open("Prodotto aggiunto al carrello!");
+        this._snackBar.open("Prodotto aggiunto al carrello!","OK");
       }
     }
   }

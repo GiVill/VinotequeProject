@@ -7,7 +7,7 @@ import { User } from '../Model/User';
 @Injectable({
   providedIn: 'root'
 })
-export class OrederService {
+export class OrderService {
   private url : string = "http://localhost:8080";
 
   public logged : Boolean = false;

@@ -27,23 +27,23 @@
 
 
 
-    <mat-stepper orientation="vertical">
-      <mat-step>
+    <mat-stepper orientation="vertical" [linear]="true">
+      <mat-step [stepControl]="firstFormGroup">
         <ng-template matStepLabel><strong>Indirizzo di spedizione</strong></ng-template>
         <ng-template matStepContent>
-          <form #indirizzoForm="ngForm" (ngSubmit)="checkAddress(indirizzoForm)">
+          <form  [formGroup]="firstFormGroup" #indirizzoForm="ngForm" (submit)="checkAddress()">
             <table cellspacing="0">
               <tr>
                 <td>
                   <mat-form-field>
                     <mat-label>Via</mat-label>
-                    <input matInput [(ngModel)]="user.via" name="via" required>
+                    <input matInput [(ngModel)]="user.via" name="via" required formControlName="firstCtrl" formControlName="via">
                   </mat-form-field>
                 </td>
                 <td>
                   <mat-form-field>
                     <mat-label>N. Civico</mat-label>
-                    <input matInput [(ngModel)]="user.civico" name="civico" required>
+                    <input matInput [(ngModel)]="user.civico" name="civico" required formControlName="firstCtrl" formControlName="civico">
                   </mat-form-field>
                 </td>
               </tr>
@@ -51,18 +51,18 @@
                 <td>
                   <mat-form-field>
                     <mat-label>CAP</mat-label>
-                    <input matInput [(ngModel)]="user.cap" name="cap" required>
+                    <input matInput [(ngModel)]="user.cap" name="cap" required formControlName="firstCtrl" formControlName="cap">
                   </mat-form-field>
                 </td>
                 <td>
                   <mat-form-field>
                     <mat-label>Telefono</mat-label>
-                    <input matInput [(ngModel)]="user.telefono" name="telefono" required>
+                    <input matInput [(ngModel)]="user.telefono" name="telefono" required formControlName="firstCtrl" formControlName="telefono">
                   </mat-form-field>
                 </td>
               </tr>
             </table>
-            <button mat-raised-button matStepperNext class="stepperNextButton" type="submit">
+            <button mat-raised-button matStepperNext  type="submit" class="stepperNextButton"> <!--  (click)="checkAddress(indirizzoForm)" -->
               Successivo
             </button>
           </form>

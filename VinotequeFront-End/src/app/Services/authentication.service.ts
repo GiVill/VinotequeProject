@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Cart } from '../Model/Cart';
 import { User } from '../Model/User';
+import { WineService } from './wine.service';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class AuthenticationService {
 
   public favourites !: Number[]
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private wineService : WineService) { }
 
   isLogged(){
     return this.logged;
@@ -41,11 +43,15 @@ export class AuthenticationService {
 
   isInFavorites(id : Number):boolean{
     let isIn = false
-    this.favourites.forEach(element => {
-      if(element == id){
-        isIn = true
-      }
-    });
+    if(this.isLogged()){
+     if(this.favourites != undefined){
+      this.favourites.forEach(element => {
+        if(element == id){
+          isIn = true
+        }
+      });
+     }
+    }
     return isIn
   }
 
