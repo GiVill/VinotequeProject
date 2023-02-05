@@ -61,6 +61,13 @@ export class CartPageComponent implements OnInit, OnChanges{
         this.message = "Il carrello è vuoto";
       }
       else{
+        this.newOrder()
+        this.orderService.postOrder(this.order).subscribe(data =>{
+          if(data){
+            this._snackBar.open("Ordine completato!","OK");
+            // sessionStorage.removeItem("cart")
+          }
+        })
         this.showEndMessage = true;
         this.message = "Il tuo ordine è stato preso in carico!"
       }
