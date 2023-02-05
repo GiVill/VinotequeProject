@@ -39,9 +39,28 @@ export class WinePageComponent implements OnInit{
 
     window.scrollY
 
+    this.index = BigInt(this.route.snapshot.paramMap.get("index")!)
+
+    this.wineService.getWineById(this.index).subscribe(data =>{
+      this.wine = data;
+      this.takeReviews()
+    })
+
     if(this.authService.isLogged()){
-      if(this.authService.currentUser != null)
+
+      if(this.authService.currentUser != null){
         this.user = this.authService.currentUser;
+      } else if(localStorage.getItem("user") != null){
+        this.user = this.authService.currentUser!;
+      }
+
+      if(this.authService.favourites == undefined){
+        this.wineService.getFavoritesID(this.user.id).subscribe(data =>{
+          this.authService.favourites = data
+          this.isPreferito = this.authService.isInFavorites(Number(this.index))
+        })
+      }
+
       if(this.authService.isSommelier()){
         this.canAddReview = true;
       } else{
@@ -49,16 +68,11 @@ export class WinePageComponent implements OnInit{
       }
     }
 
-    this.index = BigInt(this.route.snapshot.paramMap.get("index")!)
-
     if(this.authService.isLogged()){
       this.isPreferito = this.authService.isInFavorites(Number(this.index))
+      console.log(this.isPreferito)
+      console.log( this.authService.isInFavorites(Number(this.index)))
     }
-
-    this.wineService.getWineById(this.index).subscribe(data =>{
-      this.wine = data;
-      this.takeReviews()
-    })
 
   }
 
