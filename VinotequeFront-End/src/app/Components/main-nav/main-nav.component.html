@@ -43,8 +43,8 @@
             <mat-icon>login</mat-icon>
             <span>Accedi</span>
           </button>
-          <button mat-menu-item routerLink="Auth" *ngIf="!logged">
-            <mat-icon>delete_forever</mat-icon>
+          <button mat-menu-item routerLink="Auth" (click)="registerRedirect()" *ngIf="!logged">
+            <mat-icon>person_add</mat-icon>
             <span>Registrati</span>
           </button>
 

@@ -44,6 +44,11 @@ export class MainNavComponent implements OnInit{
 
   }
 
+  registerRedirect(){
+    window.location.href = 'http://localhost:8080/register.html';
+
+  }
+
   doLogout(){
     const jsessionid = localStorage.getItem("jsessionid");
 
