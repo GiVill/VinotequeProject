@@ -45,6 +45,8 @@ import { RequestCardComponent } from './Components/request-card/request-card.com
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSliderModule} from '@angular/material/slider';
 import { NgxPayPalModule } from 'ngx-paypal';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 
 
@@ -94,6 +96,7 @@ import { NgxPayPalModule } from 'ngx-paypal';
     MatAutocompleteModule,
     MatSliderModule,
     NgxPayPalModule,
+    MatProgressSpinnerModule,
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]

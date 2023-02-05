@@ -1,5 +1,5 @@
 import { ChangeDetectorRef, Component, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { FormBuilder, NgForm, Validators } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal';
@@ -22,7 +22,8 @@ export class CartPageComponent implements OnInit, OnChanges{
   constructor(private service:AuthenticationService,
               private cdr: ChangeDetectorRef,
               private _snackBar: MatSnackBar,
-              private orderService: OrederService){}
+              private orderService: OrederService,){}
+
 
   public payPalConfig?: IPayPalConfig;
 
@@ -33,6 +34,27 @@ export class CartPageComponent implements OnInit, OnChanges{
   order !: Order
 
   promo !: Promotion
+
+  showSpinner : boolean = false
+
+  showEndMessage : boolean = false
+
+  message !: String;
+
+  confirmOrder() {
+    this.showSpinner = true;
+    setTimeout(() => {
+      this.showSpinner = false;
+      if (this.cart.totale==0){
+        this.showEndMessage = true;
+        this.message = "Il carrello è vuoto";
+      }
+      else{
+        this.showEndMessage = true;
+        this.message = "Il tuo ordine è stato preso in carico!"
+      }
+    }, 2500); // Show the component for 2500 milliseconds (2.5 seconds)
+  }
 
   paga(){
 

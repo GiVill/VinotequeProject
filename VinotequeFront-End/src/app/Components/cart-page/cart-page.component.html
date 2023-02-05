@@ -37,13 +37,13 @@
                 <td>
                   <mat-form-field>
                     <mat-label>Via</mat-label>
-                    <input matInput  [(ngModel)]="user.via" name="via"ngModel required>
+                    <input matInput [(ngModel)]="user.via" name="via" required>
                   </mat-form-field>
                 </td>
                 <td>
                   <mat-form-field>
                     <mat-label>N. Civico</mat-label>
-                    <input matInput  [(ngModel)]="user.civico" name="civico" ngModel required>
+                    <input matInput [(ngModel)]="user.civico" name="civico" required>
                   </mat-form-field>
                 </td>
               </tr>
@@ -51,13 +51,13 @@
                 <td>
                   <mat-form-field>
                     <mat-label>CAP</mat-label>
-                    <input matInput  [(ngModel)]="user.cap" name="cap" ngModel required>
+                    <input matInput [(ngModel)]="user.cap" name="cap" required>
                   </mat-form-field>
                 </td>
                 <td>
                   <mat-form-field>
                     <mat-label>Telefono</mat-label>
-                    <input matInput  [(ngModel)]="user.telefono" name="telefono" ngModel required>
+                    <input matInput [(ngModel)]="user.telefono" name="telefono" required>
                   </mat-form-field>
                 </td>
               </tr>
@@ -118,8 +118,14 @@
         <ng-template matStepLabel><strong>Conferma ordine</strong></ng-template>
         <div style="display: flex; flex-direction: column;" *ngIf="!paypalMethod">
           <span class="spacer"></span>
-          <button mat-fab extended style="background-color: lightgreen; color: black;">Procedi con l'acquisto</button>
+          <button mat-fab extended style="color: black;" (click)="confirmOrder()">Procedi con l'acquisto</button>
           <span class="spacer"></span>
+          <div style="margin: auto auto; margin-top: 15px;" *ngIf="showSpinner">
+            <mat-spinner></mat-spinner>
+          </div>
+          <div style="margin: auto auto; margin-top: 15px" *ngIf="showEndMessage">
+            <h2><strong>{{message}}</strong></h2>
+          </div>
         </div>
       </mat-step>
     </mat-stepper>
