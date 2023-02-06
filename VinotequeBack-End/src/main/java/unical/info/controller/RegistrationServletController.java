@@ -24,14 +24,9 @@ public class RegistrationServletController extends HttpServlet  {
             String password = req.getParameter("password");
 
             Utente utente = new Utente(nome,cognome,data,email,password);
-            if(DBManager.getInstance().getUtenteDao().findByEmail(utente.getEmail()) == null) {
-                DBManager.getInstance().getUtenteDao().NewUtente(utente);
-                resp.sendRedirect("/login.html");
-            }
-            else {
-                resp.sendError(0,"email già in uso");
-            }
+            DBManager.getInstance().getUtenteDao().NewUtente(utente);
+            resp.sendRedirect("/login.html");
         }
-    }
+}
 
 
