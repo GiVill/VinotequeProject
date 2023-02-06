@@ -2,10 +2,7 @@ package unical.info.RESTapi;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.json.JSONObject;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import unical.info.model.Carrello;
 import unical.info.model.Ordine;
 import unical.info.model.Preferiti;
@@ -15,6 +12,10 @@ import unical.info.persistenza.DBManager;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 @RestController
 @CrossOrigin("http://localhost:4200")
 public class UtenteRESTController {
@@ -30,8 +31,16 @@ public class UtenteRESTController {
        return DBManager.getInstance().getUtenteDao().aggiornaUtente(utente);
     }
     @PostMapping("/cambioPassword")
-    public boolean cambioPassword(@RequestBody Utente utente, String password){
-       return DBManager.getInstance().getUtenteDao().CambioPassword(utente, password);
+    public boolean cambioPassword(@RequestBody String data){
+        String pattern = "(\\d+)\\s\\/\\s(.+)";
+        Pattern regex = Pattern.compile(pattern);
+        Matcher matcher = regex.matcher(data);
+        if (matcher.find()) {
+            Long id = Long.valueOf(matcher.group(1));
+            String pass = matcher.group(2);
+            return DBManager.getInstance().getUtenteDao().CambioPassword(id, pass);
+        }
+        return false;
     }
 
     @PostMapping("/addFavorite")

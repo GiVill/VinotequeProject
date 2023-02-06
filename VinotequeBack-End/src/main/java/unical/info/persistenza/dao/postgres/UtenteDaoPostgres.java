@@ -187,16 +187,14 @@ public class UtenteDaoPostgres implements UtenteDao {
         }return  true;
     }
     @Override
-    public boolean CambioPassword (Utente utente, String password){
-        String passC = password;
-        String newPass = p.encode(passC);
-        Long idute = utente.getId();
+    public boolean CambioPassword (Long utente, String password){
+        String newPass = p.encode(password);
         String updateStr = "UPDATE utente set password = ? where id = ?";
         PreparedStatement st;
         try {
             st = conn.prepareStatement(updateStr);
             st.setString(1, newPass);
-            st.setLong(2, idute);
+            st.setLong(2, utente);
             st.executeUpdate();
 
         } catch (SQLException e) {

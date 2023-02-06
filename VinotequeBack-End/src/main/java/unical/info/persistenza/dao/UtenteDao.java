@@ -16,7 +16,7 @@ public interface UtenteDao {
 
     public boolean delete(Utente utente);
 
-    public boolean CambioPassword(Utente utente, String password);
+    public boolean CambioPassword(Long utente, String password);
 
     public boolean CambioCarrello (long idUtente, String carrello);
 
