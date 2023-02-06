@@ -27,9 +27,11 @@
     <div id="userDataDiv">
       <p>{{utente.email}}</p>
       <span class="spacer"></span>
-      <div style="display: flex;">
-        <p>**********</p>
-        <mat-icon style="scale: 60%">edit</mat-icon>
+      <div style="display: flex; height: 25px;">
+        <p>**********<button mat-icon-button style="scale: 70%;" (click)="clickChangePassword()">
+          <mat-icon>edit</mat-icon>
+          </button>
+        </p>
       </div>
     </div>
     <p><strong>DATI PERSONALI</strong></p>
@@ -43,12 +45,26 @@
     <div id="userDataDiv">
       <p>{{utente.nome}}</p>
       <span class="spacer"></span>
-      <p>{{utente.cognome}}</p>
+      <p style="margin-left: 20px;">{{utente.cognome}}</p>
       <span class="spacer"></span>
-      <p>{{utente.indirizzo}}</p>
+      <p>{{indirizzo}}</p>
     </div>
   </div>
 
+  <div class="rightContainer" *ngIf="showChangePassword">
+    <div style="display: flex; flex-direction: column;">
+      <mat-form-field>
+        <mat-label>Inserisci nuova password</mat-label>
+        <input matInput #buttonPass placeholder="Inserisci nuova password">
+      </mat-form-field>
+        <span class="spacer"></span>
+      <mat-form-field>
+        <mat-label>Conferma password</mat-label>
+        <input matInput #buttonPass2 placeholder="Conferma password">
+      </mat-form-field>
+      <button mat-fab extended style="background-color: rgb(61, 10, 213);" (click)="changePassword(utente,buttonPass.value, buttonPass2.value)">Cambia password</button>
+    </div>
+  </div>
 
   <div class="rightContainer" *ngIf="showOrdersPage">
     <h1><strong><em>ORDINI EFFETTUATI</em></strong></h1>

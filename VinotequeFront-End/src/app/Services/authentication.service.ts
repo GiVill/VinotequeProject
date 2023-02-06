@@ -69,11 +69,16 @@ export class AuthenticationService {
   }
 
   addCart(cart : Cart): Observable<Boolean>{
-    console.log(cart);
     return this.http.post<Boolean>(this.url + "/addCart",cart);
   }
 
   updateUser(user : User): Observable<Boolean>{
     return this.http.post<Boolean>(this.url + "/aggiornaUtente",user);
   }
+
+  changePassword(user:User, pass:String): Observable<Boolean>{
+    const data = `${user.id} ${"/"} ${pass}`
+    return this.http.post<Boolean>(this.url + "/cambioPassword",data);
+  }
+
 }
