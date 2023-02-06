@@ -1,0 +1,19 @@
+.item-card{
+  margin-top: 5px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.riga{
+  display: flex;
+  flex-direction: row;
+}
+
+.colonna{
+  display: flex;
+  flex-direction: column;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

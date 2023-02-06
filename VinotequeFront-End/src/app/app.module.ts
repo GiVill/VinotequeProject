@@ -47,6 +47,7 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatSliderModule} from '@angular/material/slider';
 import { NgxPayPalModule } from 'ngx-paypal';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { OrderCardComponent } from './Components/order-card/order-card.component';
 
 
 
@@ -66,7 +67,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     WhitePageComponent,
     RosePageComponent,
     HomePageComponent,
-    RequestCardComponent
+    RequestCardComponent,
+    OrderCardComponent,
   ],
   imports: [
     ReactiveFormsModule,

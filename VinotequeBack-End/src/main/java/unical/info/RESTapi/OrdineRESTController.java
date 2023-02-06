@@ -1,9 +1,6 @@
 package unical.info.RESTapi;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import unical.info.model.Ordine;
 import unical.info.model.Promozione;
 import unical.info.model.Utente;
@@ -28,7 +25,5 @@ public class OrdineRESTController {
         Promozione promozione = DBManager.getInstance().getPromozioneDao().findByDescrizione(descrizone);
         return promozione;
     }
-
-
 
 }

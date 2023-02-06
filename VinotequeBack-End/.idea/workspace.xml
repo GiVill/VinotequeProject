@@ -4,15 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="54c6546c-eb20-4ea0-a937-c05064d9b449" name="Changes" comment="">
+    <list default="true" id="ff9fa043-7eaf-47dd-88e6-85bb685d65d8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/VinoRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/VinoRESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/VinoDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/VinoDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/wine.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/wine.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/OrdineRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/OrdineRESTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/UtenteRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/UtenteRESTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/RegistrationServletController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/controller/RegistrationServletController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/DBManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/DBManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/UtenteDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/UtenteDao.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/user-page/user-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/user-page/user-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/app.module.ts" afterDir="false" />
     </list>
+    <list id="55045ca9-e81b-4908-8ad0-55ac07a65ffd" name="Changes by Utente" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,26 +38,27 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2Kbv8stC9JzFHMMofW5U8WJSI7N" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "WebServerToolWindowFactoryState": "false",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "spring.configuration.checksum": "908ccf32e87c5d63f942b0e357642bd8",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;908ccf32e87c5d63f942b0e357642bd8&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Spring Boot.VinotequeApplication">
+}</component>
+  <component name="RunManager" selected="Spring Boot.VinotequeApplication (1)">
     <configuration name="VinotequeApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="VinotequeBack-End" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="unical.info.VinotequeApplication" />
@@ -81,6 +87,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.VinotequeApplication (1)" />
         <item itemvalue="Spring Boot.VinotequeApplication" />
       </list>
     </recent_temporary>

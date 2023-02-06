@@ -19,7 +19,11 @@ export class OrderService {
   constructor(private http: HttpClient) { }
 
   postOrder(order : Order): Observable<Boolean>{
-    console.log(order)
     return this.http.post<Boolean>(this.url + "/newOrdine",order);
+  }
+
+  getOrders(userId : BigInt): Observable<Order[]>{
+    var wine : Observable<Order[]> = this.http.post<Order[]>(this.url + "/ordineUtente",userId)
+    return wine;
   }
 }

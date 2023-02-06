@@ -31,7 +31,9 @@ public class OrdineDaoPostgres implements OrdineDao {
             while (rs.next()){
                 Ordine ordine = new Ordine();
 
-                Utente u  = DBManager.getInstance().getUtenteDao().findByPrimaryKey(rs.getLong("recensione_sommelier"));
+                ordine.setId(rs.getLong("id"));
+
+                Utente u  = DBManager.getInstance().getUtenteDao().findByPrimaryKey(rs.getLong("ordine_utente"));
                 ordine.setOrdine_utente(u);
 
                 ordine.setOrdine_carrello(rs.getString("ordine_carrello"));
