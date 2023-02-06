@@ -1,9 +1,11 @@
 import { ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Order } from 'src/app/Model/Order';
 import { RequestSommelier } from 'src/app/Model/RequestSommelier';
 import { User } from 'src/app/Model/User';
 import { Wine } from 'src/app/Model/Wine';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
+import { OrderService } from 'src/app/Services/order.service';
 import { RequestService } from 'src/app/Services/request.service';
 import { WineService } from 'src/app/Services/wine.service';
 
@@ -17,7 +19,8 @@ export class UserPageComponent implements OnInit{
   constructor(private service: WineService,
               private serviceRequest: RequestService,
               private authService: AuthenticationService,
-              private _snackBar: MatSnackBar){}
+              private _snackBar: MatSnackBar,
+              private orderService: OrderService){}
 
   reload(newMessage: string) {
     if(newMessage == "preferiti"){
@@ -32,9 +35,12 @@ export class UserPageComponent implements OnInit{
     this.utente = JSON.parse(localStorage.getItem("user")!);
     this.indirizzo = (`${this.utente.via} ${this.utente.civico} ${this.utente.cap}`)
 
+    this.orderService.getOrders(this.utente.id).subscribe(data =>{
+      this.orders = data;
+    })
+
     this.service.getFavorites(this.utente.id).subscribe(data =>{
       this.favorites = data;
-      console.log(this.favorites)
     })
 
     if (this.utente.ruolo=='ADMIN'){
@@ -54,6 +60,8 @@ export class UserPageComponent implements OnInit{
   indirizzo !: String
 
   utente !: User
+
+  orders !: Order[]
 
   favorites !: Wine[]
 

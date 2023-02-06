@@ -21,9 +21,9 @@ import java.util.regex.Pattern;
 public class UtenteRESTController {
 
     @PostMapping("/ordineUtente")
-    public List<Ordine> ordiniUtente(@RequestBody Utente utente){
+    public List<Ordine> ordiniUtente(@RequestBody Long idUtente){
         List<Ordine> ordini = new ArrayList<>();
-        ordini = DBManager.getInstance().getOrdineDao().findByUtente(utente.getId());
+        ordini = DBManager.getInstance().getOrdineDao().findByUtente(idUtente);
         return ordini;
     }
     @PostMapping("/aggiornaUtente")

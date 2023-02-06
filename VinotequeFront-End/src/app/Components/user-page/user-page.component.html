@@ -68,6 +68,8 @@
 
   <div class="rightContainer" *ngIf="showOrdersPage">
     <h1><strong><em>ORDINI EFFETTUATI</em></strong></h1>
+    <app-order-card *ngFor="let order of orders" [order]="order">
+    </app-order-card>
   </div>
 
 
