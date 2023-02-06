@@ -9,6 +9,7 @@ export interface Wine {
   tipologia : string;
   vino_cantina : Cantina;
   premi : String;
+  descrizione : String;
+  vigneto : String;
   foto : Blob;
-
 }

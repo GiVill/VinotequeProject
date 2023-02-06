@@ -108,4 +108,8 @@ export class WineService {
     return wines;
   }
 
+  addWine(wine:Wine): Observable<Boolean>{
+    return this.http.post<Boolean>(this.url + "/newVino",wine,{});
+  }
+
 }

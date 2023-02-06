@@ -1,5 +1,6 @@
 import { ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Cantina } from 'src/app/Model/Cantina';
 import { RequestSommelier } from 'src/app/Model/RequestSommelier';
 import { User } from 'src/app/Model/User';
 import { Wine } from 'src/app/Model/Wine';
@@ -44,12 +45,39 @@ export class UserPageComponent implements OnInit{
     }
   }
 
+  createWine(_nome:String,_annata:String,_prezzo:String,_gradazione:String,_tipologia:string,_cantina:Cantina,_premi:String,_descrizione:String,_vigneto:String,_immagine:Blob){
+    const wine : Wine = {
+      id : BigInt(10),
+      nome : _nome,
+      annata : Number(_annata),
+      prezzo : Number(_prezzo),
+      gradazione_alcolica : Number(_gradazione),
+      tipologia : _tipologia,
+      vino_cantina : null,
+      premi : _premi,
+      descrizione : _descrizione,
+      vigneto : _vigneto,
+      foto : _immagine
+    }
+
+    this.service.addWine(wine).subscribe(data=>{
+      if (data){
+        this._snackBar.open("Il vino è stato aggiunto", "OK")
+      }
+      else{
+        this._snackBar.open("Errore, riprova più tardi","OK")
+      }
+    })
+
+  }
+
   showUserPage = true;
   showOrdersPage = false;
   showFavoritesPage = false;
   showBecomeSommelier = false;
   showRequest = false;
   showChangePassword = false;
+  showAddWine = false;
 
   indirizzo !: String
 
@@ -66,6 +94,7 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = false
     this.showRequest = false
     this.showChangePassword = false
+    this.showAddWine = false
   }
 
   clickOrders(){
@@ -75,6 +104,7 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = false
     this.showRequest = false
     this.showChangePassword = false
+    this.showAddWine = false
   }
 
 
@@ -85,6 +115,7 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = false
     this.showRequest = false
     this.showChangePassword = false
+    this.showAddWine = false
   }
 
   clickBecomeSommelier(){
@@ -94,6 +125,7 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = true
     this.showRequest = false
     this.showChangePassword = false
+    this.showAddWine = false
   }
 
   clickViewRequest(){
@@ -103,6 +135,7 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = false
     this.showRequest = true
     this.showChangePassword = false
+    this.showAddWine = false
   }
 
   clickChangePassword(){
@@ -112,6 +145,17 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = false
     this.showRequest = false
     this.showChangePassword = true
+    this.showAddWine = false
+  }
+
+  clickViewAddWine(){
+    this.showOrdersPage = false
+    this.showUserPage = false
+    this.showFavoritesPage = false
+    this.showBecomeSommelier = false
+    this.showRequest = false
+    this.showChangePassword = false
+    this.showAddWine = true
   }
 
   changePassword(utente: User, pass1 : String, pass2 : String){

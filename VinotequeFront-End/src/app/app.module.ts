@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MainNavComponent } from './Components/main-nav/main-nav.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgpImagePickerModule } from 'ngp-image-picker';
 
 //AngularMaterials
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -97,6 +98,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     MatSliderModule,
     NgxPayPalModule,
     MatProgressSpinnerModule,
+    NgpImagePickerModule,
   ],
   providers: [AuthenticationService],
   bootstrap: [AppComponent]
