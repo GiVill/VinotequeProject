@@ -45,7 +45,7 @@ public class LoginServletController extends HttpServlet {
         if (logged) {
             resp.sendRedirect("http://localhost:4200?jsessionid="+req.getSession().getId());
         }else {
-            resp.sendRedirect("/notAuthorized.html");
+            resp.sendRedirect("/register.html");
         }
 
     }

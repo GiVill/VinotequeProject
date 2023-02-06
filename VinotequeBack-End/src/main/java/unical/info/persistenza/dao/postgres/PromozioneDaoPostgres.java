@@ -40,13 +40,14 @@ public class PromozioneDaoPostgres implements PromozioneDao {
     public int findByDescrizionePrezzo(String codicePromo) {
         int sconto = 0;
         String query = "select * from promozione where descrizione = ?";
-        Promozione promozione = new Promozione();
+        Promozione promozione = null;
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1,codicePromo);
             ResultSet rs = st.executeQuery();
 
             if (rs.next()){
+                promozione = new Promozione();
                 promozione.setId(Long.valueOf("id"));
                 promozione.setDescrizione("descrizione");
                 promozione.setSconto_prezzo(rs.getInt("sconto_prezzo"));
@@ -62,15 +63,34 @@ public class PromozioneDaoPostgres implements PromozioneDao {
     @Override
     public Promozione findByDescrizione(String codicePromo) {
         String query = "select * from promozione where descrizione = ?";
-        Promozione promozione = new Promozione();
+        Promozione promozione = null;
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1,codicePromo);
             ResultSet rs = st.executeQuery();
 
             if (rs.next()){
-                promozione.setId(Long.valueOf("id"));
-                promozione.setDescrizione("descrizione");
+                promozione = new Promozione();
+                promozione.setId(rs.getLong("id"));
+                promozione.setDescrizione((rs.getString("descrizione")));
+                promozione.setSconto_prezzo(rs.getInt("sconto_prezzo"));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return promozione;
+    }
+
+    @Override
+    public Promozione promoRandom() {
+        String query = "select * from promozione where id > 1 order by RANDOM() LIMIT 1";
+        Promozione promozione = new Promozione();
+        try {
+            PreparedStatement st = conn.prepareStatement(query);
+            ResultSet rs = st.executeQuery();
+            if (rs.next()){
+                promozione.setId(rs.getLong("id"));
+                promozione.setDescrizione(rs.getString("descrizione"));
                 promozione.setSconto_prezzo(rs.getInt("sconto_prezzo"));
             }
         } catch (SQLException e) {

@@ -2,15 +2,13 @@ section {
   display: table;
 }
 
-.Filters{
-  display: flex;
-}
-
 .filterContainer{
-  display: table-cell;
+  display: flex;
+  flex-direction: row;
   font-size: 14px;
   min-width: 120px;
 }
+
 
 .wineCardContainer {
   display: flex;
@@ -25,4 +23,38 @@ mat-nav-list{
 .spacer {
   flex: 1 1 auto;
   margin-left: 150px;
+}
+
+
+@media(min-width: 959px){
+  section {
+    display: table;
+  }
+
+  .Filters{
+    display: flex;
+  }
+
+  .filterContainer{
+    display: table-cell;
+    font-size: 14px;
+    min-width: 120px;
+    align-self: center;
+  }
+
+  .wineCardContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: 150px;
+    align-self: center;
+  }
+
+  mat-nav-list{
+    text-align: center;
+  }
+
+  .spacer {
+    flex: 1 1 auto;
+    margin-left: 150px;
+  }
 }

@@ -10,7 +10,7 @@
       <a mat-list-item (click)="clickFavorites()">PREFERITI</a>
       <a mat-list-item *ngIf="utente.ruolo=='UTENTE'" (click)="clickBecomeSommelier()">DIVENTA SOMMELIER</a>
       <a mat-list-item *ngIf="utente.ruolo=='ADMIN'" (click)="clickViewRequest()">VISUALIZZA RICHIESTE SOMMELIER</a>
-      <a mat-list-item *ngIf="utente.ruolo=='ADMIN'" (click)="clickViewAddWine()">AGGIUNGI VINO</a>
+      <a mat-list-item *ngIf="utente.ruolo=='ADMIN'" (click)="clickViewAddWine()">CREA CODICE SCONTO</a>
     </mat-nav-list>
   </div>
 
@@ -99,59 +99,20 @@
   <div class="rightContainer" *ngIf="showRequest">
     <h1>RICHIESTE</h1>
     <div>
-      <app-request-card *ngFor="let request of requestsSommelier" [request]="request">
+      <app-request-card (valueChanged)="reload($event)" *ngFor="let request of requestsSommelier" [request]="request">
       </app-request-card>
     </div>
   </div>
 
-  <div class="rightContainer" style="display: flex; flex-direction: column;" *ngIf="showAddWine">
-    <div style="display: flex;">
-      <div>
-        <mat-form-field>
-          <mat-label>Nome</mat-label>
-          <input matInput #nome>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Annata</mat-label>
-          <input matInput type="number" #annata>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Prezzo</mat-label>
-          <input matInput #prezzo>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Gradazione</mat-label>
-          <input matInput #gradazione>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Tipologia</mat-label>
-          <input matInput #tipologia>
-        </mat-form-field>
-      </div>
-      <div>
-        <mat-form-field>
-          <mat-label>Cantina</mat-label>
-          <input matInput #cantina>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Premi</mat-label>
-          <input matInput #premi>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Descrizione</mat-label>
-          <input matInput #descrizione>
-        </mat-form-field>
-        <mat-form-field>
-          <mat-label>Vigneto</mat-label>
-          <input matInput #vigneto>
-        </mat-form-field>
-      </div>
-      <div class="insertImage">
-        <ngp-image-picker _config="borderRadius: '32px'" #immagine></ngp-image-picker>
-      </div>
+  <div class="rightContainer" style="display: flex; flex-direction: column;" *ngIf="showAddPromo">
+    <div class="codicePromo">
+      <input mat-input #promoInput placeholder="Inserisci codice">
+      <div style="height: 20px;"></div>
+      <input type="number" mat-input #sconto placeholder="Inserisci valore">
+      <div style="height: 10px;"></div>
+      <button mat-flat-button style="margin-left: 5px; background-color: lightyellow;
+      z-index: 0;" (click)="generatePromo(promoInput.value, sconto.value)">Crea</button>
     </div>
-    <button mat-fab extended style="background-color: blue; width: 150px;" (click)="createWine(nome.value, annata.value ,prezzo.value,gradazione.value,tipologia.value,cantina.value,premi.value,descrizione.value,vigneto.value,immagine.handleFileSelect)">Inserisci vino</button>
-  </div>
-
+    <div style="display: flex;">
   <span class="fill"></span>
 </div>

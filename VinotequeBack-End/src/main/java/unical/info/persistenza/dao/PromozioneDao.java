@@ -14,5 +14,6 @@ public interface PromozioneDao {
     public boolean save(Promozione promo);
 
     public boolean delete(Promozione utente);
+    public Promozione promoRandom();
 
 }

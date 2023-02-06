@@ -1,6 +1,7 @@
 package unical.info.persistenza.dao;
 
 import unical.info.model.Preferiti;
+import unical.info.model.Promozione;
 import unical.info.model.Vino;
 
 import java.sql.SQLException;
@@ -12,4 +13,5 @@ public interface PreferitiDao {
     public List<Integer> findByUtenteLong(long id) throws SQLException;
     public boolean save(Preferiti preferiti) throws SQLException;
     public boolean delete(Preferiti preferiti);
+
 }

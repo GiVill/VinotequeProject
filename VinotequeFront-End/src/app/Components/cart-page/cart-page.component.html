@@ -103,9 +103,10 @@
         <mat-step>
           <ng-template matStepLabel><strong>Inserisci codice sconto<em>(facoltativo)</em></strong></ng-template>
           <div style="display: flex;">
-            <input #promoInput type="text" #codiceSconto placeholder="Codice sconto">
+            <input #promoInput type="text" #codiceSconto placeholder="Codice sconto"
+            [ngStyle]="{'color': isPromo ? '' : 'red'}">
             <button mat-flat-button style="margin-left: 5px; background-color: lightyellow;
-            z-index: 0;" (click)="checkPromo(promoInput)">Verifica</button>
+            z-index: 0;" (click)="checkPromo(promoInput)" [disabled]="disabledPromo">Verifica</button>
           </div>
           <div style="margin-top: 3px">
             <button style="z-index: 0;" mat-button matStepperPrevious class="stepperPreviousButton">Precedente</button>

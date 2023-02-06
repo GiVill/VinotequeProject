@@ -26,4 +26,9 @@ public class OrdineRESTController {
         return promozione;
     }
 
+    @GetMapping("/promoRandom")
+    public Promozione promozioneRandom(){
+        return DBManager.getInstance().getPromozioneDao().promoRandom();
+    }
+
 }

@@ -9,6 +9,7 @@ import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { OrderService } from 'src/app/Services/order.service';
 import { RequestService } from 'src/app/Services/request.service';
 import { WineService } from 'src/app/Services/wine.service';
+import { Promotion } from 'src/app/Model/Promotion';
 
 @Component({
   selector: 'app-user-page',
@@ -27,6 +28,10 @@ export class UserPageComponent implements OnInit{
     if(newMessage == "preferiti"){
       this.service.getFavorites(this.utente.id).subscribe(data =>{
         this.favorites = data;
+      })
+    } else if (newMessage == "richiesta"){
+      this.serviceRequest.getRequests().subscribe(data =>{
+        this.requestsSommelier = data;
       })
     }
   }
@@ -51,39 +56,13 @@ export class UserPageComponent implements OnInit{
     }
   }
 
-  createWine(_nome:String,_annata:String,_prezzo:String,_gradazione:String,_tipologia:string,_cantina:Cantina,_premi:String,_descrizione:String,_vigneto:String,_immagine:Blob){
-    const wine : Wine = {
-      id : BigInt(10),
-      nome : _nome,
-      annata : Number(_annata),
-      prezzo : Number(_prezzo),
-      gradazione_alcolica : Number(_gradazione),
-      tipologia : _tipologia,
-      vino_cantina : null,
-      premi : _premi,
-      descrizione : _descrizione,
-      vigneto : _vigneto,
-      foto : _immagine
-    }
-
-    this.service.addWine(wine).subscribe(data=>{
-      if (data){
-        this._snackBar.open("Il vino è stato aggiunto", "OK")
-      }
-      else{
-        this._snackBar.open("Errore, riprova più tardi","OK")
-      }
-    })
-
-  }
-
   showUserPage = true;
   showOrdersPage = false;
   showFavoritesPage = false;
   showBecomeSommelier = false;
   showRequest = false;
   showChangePassword = false;
-  showAddWine = false;
+  showAddPromo = false;
 
   indirizzo !: String
 
@@ -102,7 +81,7 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = false
     this.showRequest = false
     this.showChangePassword = false
-    this.showAddWine = false
+    this.showAddPromo = false
   }
 
   clickOrders(){
@@ -112,7 +91,7 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = false
     this.showRequest = false
     this.showChangePassword = false
-    this.showAddWine = false
+    this.showAddPromo = false
   }
 
 
@@ -123,7 +102,7 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = false
     this.showRequest = false
     this.showChangePassword = false
-    this.showAddWine = false
+    this.showAddPromo = false
   }
 
   clickBecomeSommelier(){
@@ -133,7 +112,7 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = true
     this.showRequest = false
     this.showChangePassword = false
-    this.showAddWine = false
+    this.showAddPromo = false
   }
 
   clickViewRequest(){
@@ -143,7 +122,7 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = false
     this.showRequest = true
     this.showChangePassword = false
-    this.showAddWine = false
+    this.showAddPromo = false
   }
 
   clickChangePassword(){
@@ -153,7 +132,7 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = false
     this.showRequest = false
     this.showChangePassword = true
-    this.showAddWine = false
+    this.showAddPromo = false
   }
 
   clickViewAddWine(){
@@ -163,7 +142,7 @@ export class UserPageComponent implements OnInit{
     this.showBecomeSommelier = false
     this.showRequest = false
     this.showChangePassword = false
-    this.showAddWine = true
+    this.showAddPromo = true
   }
 
   changePassword(utente: User, pass1 : String, pass2 : String){
@@ -180,6 +159,25 @@ export class UserPageComponent implements OnInit{
         }
       })
     }
+  }
+
+
+  generatePromo(input : string, sconto: string){
+    let soldi = Number(sconto)
+    let codice = input
+
+    const promo : Promotion ={
+      id: 19,
+      descrizione: codice,
+      sconto_prezzo: soldi,
+    }
+
+    this.orderService.addPromoCode(promo).subscribe(data =>{
+      if(data){
+        this._snackBar.open("Codice sconto aggiunto con successo!","OK");
+      }
+    })
+
   }
 
   createSommelierRequest(_matricola:String){

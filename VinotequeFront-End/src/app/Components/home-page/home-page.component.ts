@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Promotion } from 'src/app/Model/Promotion';
 import { Review } from 'src/app/Model/Review';
 import { Wine } from 'src/app/Model/Wine';
+import { OrderService } from 'src/app/Services/order.service';
 import { ReviewService } from 'src/app/Services/review.service';
 import { WineService } from 'src/app/Services/wine.service';
 
@@ -12,16 +14,27 @@ import { WineService } from 'src/app/Services/wine.service';
 export class HomePageComponent implements OnInit {
 
   constructor(private service:WineService,
-              private reviewService:ReviewService){}
+              private reviewService:ReviewService,
+              private orderService:OrderService){}
 
-  wines !: Wine[];
-  review !: Review;
+  wines !: Wine[]
+
+  promo !: Promotion
+
+  review !: Review
 
   index : number = 0
 
   wineID !: BigInt
 
   ngOnInit(): void {
+
+
+    this.orderService.getRandomPromoCode().subscribe(data =>{
+      if(data){
+        this.promo = data
+      }
+    })
 
     this.service.getRandomWine().subscribe(data =>{
       this.wines = data

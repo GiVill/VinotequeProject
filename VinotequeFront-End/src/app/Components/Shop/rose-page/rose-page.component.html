@@ -3,14 +3,14 @@
   <div class="filterContainer">
     <mat-nav-list>
       <h2 style="text-align: center; margin-top: 20px;">Filtra:</h2>
-      <a mat-list-item (click)="openRangeGradation()">Gradazione</a>
+      <div><a mat-list-item (click)="openRangeGradation()">Gradazione</a></div>
       <div *ngIf="filterGradation">
         <div>
           <label style="margin-left: 15px;">Gradazione min.</label>
         </div>
         <input type="number" id="valueGradation"><button mat-fab style="background-color: lightblue;" (click)="searchGradation()">Cerca</button>
       </div>
-      <a mat-list-item (click)="openRangePrezzo()">Prezzo</a>
+      <div><a mat-list-item (click)="openRangePrezzo()">Prezzo</a></div>
       <div *ngIf="filterPrice">
         <div style="display: flex;">
           <span class="spacer"></span>

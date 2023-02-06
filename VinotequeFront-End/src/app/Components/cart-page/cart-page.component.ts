@@ -4,7 +4,7 @@ import { MatButton } from '@angular/material/button';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { ICreateOrderRequest, IPayPalConfig } from 'ngx-paypal';
 import { reduce } from 'rxjs';
-import { Cart, removeAllWine } from 'src/app/Model/Cart';
+import { Cart, removeAllWine, sconto } from 'src/app/Model/Cart';
 import { Order } from 'src/app/Model/Order';
 import { Promotion } from 'src/app/Model/Promotion';
 import { User } from 'src/app/Model/User';
@@ -26,6 +26,9 @@ export class CartPageComponent implements OnInit, OnChanges{
 
 
   public payPalConfig?: IPayPalConfig;
+
+  isPromo : Boolean = true
+  disabledPromo : Boolean = false
 
   cart !: Cart
 
@@ -152,7 +155,19 @@ export class CartPageComponent implements OnInit, OnChanges{
         sconto_prezzo : 0
       }
     }
-    //TODO:
+    this.orderService.getPromoCode(promoInput.value).subscribe(data =>{
+      if(data != null){
+        this.promo = data
+        this._snackBar.open("Codice sconto applicato!","OK");
+        sconto(this.cart, Number(this.promo.sconto_prezzo))
+        sessionStorage.setItem("cart",JSON.stringify(this.cart)!)
+        this.service.addCart(this.cart).subscribe()
+        this.disabledPromo = true
+      } else {
+        this.isPromo = false
+        this._snackBar.open("Codice sconto errato!","OK");
+      }
+    })
   }
 
 

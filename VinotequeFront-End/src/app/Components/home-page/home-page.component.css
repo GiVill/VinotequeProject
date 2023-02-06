@@ -5,6 +5,12 @@
   margin-bottom: 20px;
 }
 
+.promo{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 .wineCard:hover{
   cursor: pointer;
@@ -47,6 +53,15 @@
   .vetrina{
     display: flex;
     flex-direction: row;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+
+  .promo{
+    display: flex;
+    align-self: center;
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 150px;

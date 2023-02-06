@@ -7,6 +7,10 @@ export interface Cart{
   totale : number,
 }
 
+export function sconto(cart:Cart,promo: number){
+  cart.totale = cart.totale -( cart.totale * (promo/100))
+}
+
 
 export function setWineQuantity(cart:Cart,wine:Wine,quantita:number){
   let index = cart.vini.indexOf(wine.id)
