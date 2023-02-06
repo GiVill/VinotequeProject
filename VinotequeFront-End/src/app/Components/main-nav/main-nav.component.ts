@@ -5,6 +5,7 @@ import { map, shareReplay } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/Services/authentication.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { WineService } from 'src/app/Services/wine.service';
 
 @Component({
   selector: 'app-main-nav',
@@ -16,6 +17,7 @@ export class MainNavComponent implements OnInit{
   logged : Boolean = false;
   sommelier : Boolean = false;
   admin : Boolean = false;
+  nameFilter !: string;
 
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -25,6 +27,7 @@ export class MainNavComponent implements OnInit{
 
   constructor(private breakpointObserver: BreakpointObserver,
               private service : AuthenticationService,
+              private wineService : WineService,
               private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
@@ -46,7 +49,15 @@ export class MainNavComponent implements OnInit{
 
   registerRedirect(){
     window.location.href = 'http://localhost:8080/register.html';
+  }
 
+  search(){
+    this.wineService.getWinesByName(this.nameFilter).subscribe(data =>{
+      if(data == null)
+        this._snackBar.open("Non ci sono risultati per questo nome!", "OK");
+      else
+        window.location.href = "http://localhost:4200/shop/"+data.id;
+    })
   }
 
   doLogout(){

@@ -103,4 +103,11 @@ public class VinoRESTController {
         return vini;
     }
 
+    @GetMapping("/WineByName")
+    public Vino getWinesByName(String name){
+        Vino vino = DBManager.getInstance().getVinoDao().findByNome(name);
+        return vino;
+    }
+
+
 }

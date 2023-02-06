@@ -26,9 +26,9 @@
       <span routerLink="/" class="title">Vinoteque</span>
         <span class="spacer"></span>
         <span>
-          <mat-form-field appearance="fill" class="search"  *ngIf="!(isHandset$ |async)">
-            <input matInput placeholder="search">
-              <button mat-icon-button matSuffix>
+          <mat-form-field appearance="fill" class="search" *ngIf="!(isHandset$ |async)">
+            <input (keyup.enter)="search()" [(ngModel)]="nameFilter" matInput placeholder="search">
+              <button (click)="search()" mat-icon-button matSuffix>
                 <mat-icon matSuffix>search</mat-icon>
               </button>
           </mat-form-field>
@@ -64,9 +64,9 @@
         <span class="spacer"></span>
         <mat-toolbar-row>
           <span class="spacer"></span>
-          <mat-form-field appearance="fill" class="search"  *ngIf="(isHandset$ |async)">
-            <input matInput placeholder="search">
-              <button mat-icon-button matSuffix>
+          <mat-form-field appearance="fill" class="search" *ngIf="(isHandset$ |async)">
+            <input matInput (keyup.enter)="search()" [(ngModel)]="nameFilter" placeholder="search">
+              <button (click)="search()" mat-icon-button matSuffix>
                 <mat-icon matSuffix>search</mat-icon>
               </button>
           </mat-form-field>
@@ -94,7 +94,6 @@
 
 
 
-   <!-- SOLO PER PROVA!! DA SISTEAMRE-->
    <mat-divider></mat-divider>
    <footer class="footer">
     <div class="riga">

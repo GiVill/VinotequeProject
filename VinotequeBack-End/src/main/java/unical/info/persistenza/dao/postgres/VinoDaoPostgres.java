@@ -498,7 +498,7 @@ public class VinoDaoPostgres implements VinoDao{
     @Override
     public Vino findByNome(String nome) {
         Vino vino = null;
-        String query = "select * from vino where nome= ?";
+        String query = "select * from vino where LOWER(nome)= ?";
         try {
             PreparedStatement st = conn.prepareStatement(query);
             st.setString(1,nome);

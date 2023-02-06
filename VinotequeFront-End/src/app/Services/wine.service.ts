@@ -30,6 +30,11 @@ export class WineService {
     return wines;
   }
 
+  getWinesByName(name : string): Observable<Wine>{
+    var wine : Observable<Wine> = this.http.get<Wine>(this.url + "/WineByName",{params: {name}})
+    return wine;
+  }
+
   getRedWines(): Observable<Wine[]>{
     var wines : Observable<Wine[]> = this.http.post<Wine []>(this.url + "/redWine",{})
     return wines;
@@ -54,7 +59,6 @@ export class WineService {
     var favorites : Observable<Number[]> = this.http.post<Number[]>(this.url + "/favoritesID",id,{})
     return favorites;
   }
-
 
   addFavorite(favorite : Favorite): Observable<Boolean>{
     return this.http.post<Boolean>(this.url + "/addFavorite",favorite);

@@ -6,53 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="54c6546c-eb20-4ea0-a937-c05064d9b449" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/AuthenticationRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/AuthenticationRESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/UtenteRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/UtenteRESTController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/DBManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AdminRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AdminRESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AuthenticationRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/AuthenticationRESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/OrdineRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/OrdineRESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/RecensioniRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/RecensioniRESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/RichiesteRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/RichiesteRESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/UtenteRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/UtenteRESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/VinoRESTController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/RESTApi/VinoRESTController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/ServletUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/ServletUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/VinotequeApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/VinotequeApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/Authentication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/LoginServletController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/controller/LoginServletController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/PasswordCrypt.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/RegistrationServletController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/controller/RegistrationServletController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/controller/checkEmailServletController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Cantina.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/model/Cantina.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Carrello.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/model/Carrello.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Ordine.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/model/Ordine.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Preferiti.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/model/Preferiti.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Promozione.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/model/Promozione.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Recensione.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/model/Recensione.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Richieste.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/model/Richieste.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Utente.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/model/Utente.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/model/Vino.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/model/Vino.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/DBManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/DBManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/IDBroker.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/IDBroker.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/CantinaDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/CantinaDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/OrdineDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/OrdineDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/PreferitiDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/PreferitiDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/PromozioneDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/PromozioneDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/RecensioneDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/RecensioneDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/RichiesteDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/RichiesteDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/UtenteDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/UtenteDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/VinoDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/VinoDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/CantinaDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/OrdineDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/PreferitiDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/PreferitiDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/PromozioneDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/PromozioneDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/RecensioneDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/RichiesteDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/RichiesteDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/UtenteDaoPostgres.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/VinoRESTController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/RESTapi/VinoRESTController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/unical/info/persistenza/dao/postgres/VinoDaoPostgres.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/VinoDaoPostgres.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/unical/info/persistenza/dao/postgres/VinoDaoPostgres.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/unical/info/VinotequeApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/unical/info/VinotequeApplicationTests.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/cart-page/cart-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/cart-page/cart-page.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Model/Cart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Model/Cart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Components/main-nav/main-nav.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/wine.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../VinotequeFront-End/src/app/Services/wine.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +99,7 @@
       <workItem from="1674728349022" duration="914000" />
       <workItem from="1674755376202" duration="933000" />
       <workItem from="1675190424762" duration="675000" />
-      <workItem from="1675624326504" duration="4618000" />
+      <workItem from="1675624326504" duration="8488000" />
     </task>
     <servers />
   </component>
