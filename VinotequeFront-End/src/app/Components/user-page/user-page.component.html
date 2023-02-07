@@ -10,7 +10,7 @@
       <a mat-list-item (click)="clickFavorites()">PREFERITI</a>
       <a mat-list-item *ngIf="utente.ruolo=='UTENTE'" (click)="clickBecomeSommelier()">DIVENTA SOMMELIER</a>
       <a mat-list-item *ngIf="utente.ruolo=='ADMIN'" (click)="clickViewRequest()">VISUALIZZA RICHIESTE SOMMELIER</a>
-      <a mat-list-item *ngIf="utente.ruolo=='ADMIN'" (click)="clickViewAddWine()">CREA CODICE SCONTO</a>
+      <a mat-list-item *ngIf="utente.ruolo=='ADMIN'" (click)="clickViewAddPromo()">CREA CODICE SCONTO</a>
     </mat-nav-list>
   </div>
 
