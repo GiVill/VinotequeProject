@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="css/cantina.css" type="text/css" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/registerValidate.js" ></script>
+    <meta charset="UTF-8">
+    <title th:text="${cantina.nome}"></title>
+</head>
+<body>
+
+
+    <p> <span th:text="${cantina.nome}"></span></p>
+    <p> <span th:text="${cantina.id}"></span></p>
+    <p> <span th:text="${cantina.indirizzo}"></span></p>
+    <p> <span th:text="${cantina.descrizione}"></span></p>
+
+    <tr th:each="vino : ${vini}" >
+        <p th:text="${vino.nome}"></p>
+        <p th:text="${vino.descrizione}"></p>
+
+
+</div>
+</div>
+
+</body>
+</html>

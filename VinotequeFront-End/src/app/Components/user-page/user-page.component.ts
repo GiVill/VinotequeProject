@@ -135,7 +135,7 @@ export class UserPageComponent implements OnInit{
     this.showAddPromo = false
   }
 
-  clickViewAddWine(){
+  clickViewAddPromo(){
     this.showOrdersPage = false
     this.showUserPage = false
     this.showFavoritesPage = false

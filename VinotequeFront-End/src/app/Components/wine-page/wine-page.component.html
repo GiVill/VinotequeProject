@@ -4,7 +4,7 @@
   <img src="{{'data:image/png;base64,' + wine.foto}}">
   <div class="details">
     <mat-card-title>{{wine.nome}}</mat-card-title>
-    <mat-card-subtitle>{{wine.vino_cantina.nome}}</mat-card-subtitle>
+    <mat-card-subtitle class="link" (click)="routerCantina()">{{wine.vino_cantina.nome}}</mat-card-subtitle>
     <p>{{wine.vino_cantina.descrizione}}</p>
     <h1 class="price"><strong>{{wine.prezzo}}$</strong></h1>
     <span class="disponibilita">disponibilità immediata</span>

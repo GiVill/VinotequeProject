@@ -156,6 +156,10 @@ export class WinePageComponent implements OnInit{
     }
   }
 
+  routerCantina(){
+    window.location.href = 'http://localhost:8080/cantine?id=' + this.wine.vino_cantina.id;
+  }
+
   onSubmit(form:NgForm){
 
     let descrizione = this.message.nativeElement.value
